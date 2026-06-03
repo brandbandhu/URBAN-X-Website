@@ -1,23 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
 import { PageBanner } from "@/components/site/PageBanner";
 import { Award, Eye, Target, Heart, Check } from "lucide-react";
 import aboutImg from "@/assets/about-urbanx.jpg";
 import hero1 from "@/assets/hero-1.jpg";
 
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About URBAN-X | Group of Companies" },
-      { name: "description", content: "Discover URBAN-X — the parent brand behind New Royal Services, Aishwarya Rental and URBAN-DE." },
-      { property: "og:title", content: "About URBAN-X" },
-      { property: "og:description", content: "One brand. Three companies. Decades of trusted service." },
-    ],
-  }),
-  component: AboutPage,
-});
 
-function AboutPage() {
+export default function AboutPage() {
   return (
     <SiteLayout>
       <PageBanner

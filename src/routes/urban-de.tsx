@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
 import { ServicePageTemplate } from "@/components/site/ServicePageTemplate";
 import { Sofa, Armchair, Square, Wind, Gem, Lamp } from "lucide-react";
@@ -6,28 +5,19 @@ import marble from "@/assets/service-marble.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import hero1 from "@/assets/hero-1.jpg";
 
-export const Route = createFileRoute("/urban-de")({
-  head: () => ({
-    meta: [
-      { title: "URBAN-DE | Marble & Premium Furnishing — URBAN-X" },
-      { name: "description", content: "Bespoke marble sofas, chairs, pillows and premium interior furnishing — crafted by URBAN-DE." },
-      { property: "og:title", content: "URBAN-DE — Marble & Furnishing" },
-      { property: "og:description", content: "Premium marble furniture and luxury interior solutions." },
-      { property: "og:image", content: marble },
-    ],
-  }),
-  component: () => (
+export default function UrbanDePage() {
+  return (
     <SiteLayout>
       <ServicePageTemplate
         data={{
           companyName: "URBAN-DE",
           accentLabel: "Marble & Furnishing",
-          tagline: "Bespoke marble furniture, drapery and premium décor for interiors that deserve more.",
+          tagline: "Bespoke marble furniture, drapery and premium decor for interiors that deserve more.",
           banner: marble,
-          intro: "URBAN-DE crafts statement marble pieces and curates premium interior furnishing — from sofas and chairs to curtains and accent décor — for homes, hotels and high-end commercial spaces.",
+          intro: "URBAN-DE crafts statement marble pieces and curates premium interior furnishing - from sofas and chairs to curtains and accent decor - for homes, hotels and high-end commercial spaces.",
           about: [
             "Each piece is built around fine materials, considered design and meticulous craftsmanship. We work closely with designers, architects and discerning clients to deliver pieces that elevate any space.",
-            "Our atelier combines traditional artistry with modern manufacturing — so every order is unique, refined and unmistakably premium.",
+            "Our atelier combines traditional artistry with modern manufacturing - so every order is unique, refined and unmistakably premium.",
           ],
           services: [
             { icon: Sofa, title: "Marble Sofas", desc: "Sculpted marble sofas with custom upholstery options." },
@@ -35,7 +25,7 @@ export const Route = createFileRoute("/urban-de")({
             { icon: Square, title: "Marble Pillows", desc: "Decorative carved marble pillows for a sculptural accent." },
             { icon: Wind, title: "Curtains & Drapery", desc: "Bespoke curtains, sheers and drapery in premium fabrics." },
             { icon: Gem, title: "Interior Furnishing", desc: "End-to-end furnishing for premium homes and hospitality." },
-            { icon: Lamp, title: "Premium Décor", desc: "Accent pieces, lighting and curated décor solutions." },
+            { icon: Lamp, title: "Premium Decor", desc: "Accent pieces, lighting and curated decor solutions." },
           ],
           benefits: [
             "Bespoke designs tailored to your space",
@@ -55,5 +45,5 @@ export const Route = createFileRoute("/urban-de")({
         }}
       />
     </SiteLayout>
-  ),
-});
+  );
+}

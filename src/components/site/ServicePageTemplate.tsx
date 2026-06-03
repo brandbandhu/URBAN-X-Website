@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "@/components/site/AppLink";
 import { PageBanner } from "./PageBanner";
 import { useRef, useState } from "react";
 import { Check, ArrowRight, Sparkles, Send, MessageCircle } from "lucide-react";

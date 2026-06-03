@@ -1,23 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteLayout } from "@/components/site/Layout";
 import { PageBanner } from "@/components/site/PageBanner";
 import { Phone, Mail, MapPin, Send, MessageCircle, Check } from "lucide-react";
 import aboutImg from "@/assets/about-urbanx.jpg";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact URBAN-X | Get in Touch" },
-      { name: "description", content: "Contact URBAN-X for cleaning, gardening, construction rental and premium marble furnishing services." },
-      { property: "og:title", content: "Contact URBAN-X" },
-      { property: "og:description", content: "Talk to our team — one call connects you to all three companies." },
-    ],
-  }),
-  component: ContactPage,
-});
 
-function ContactPage() {
+export default function ContactPage() {
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", email: "", service: "", message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});

@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "@/components/site/AppLink";
 import { ChevronRight, Home } from "lucide-react";
 
 interface Props {

@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "@/components/site/AppLink";
 import { SiteLayout } from "@/components/site/Layout";
 import { PageBanner } from "@/components/site/PageBanner";
 import { ArrowRight, Sprout, Wrench, Sofa } from "lucide-react";
@@ -7,17 +7,6 @@ import housekeeping from "@/assets/service-housekeeping.jpg";
 import rental from "@/assets/service-rental.jpg";
 import marble from "@/assets/service-marble.jpg";
 
-export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Our Companies & Services | URBAN-X" },
-      { name: "description", content: "Explore the three URBAN-X companies — New Royal Services, Aishwarya Rental and URBAN-DE." },
-      { property: "og:title", content: "Our Companies & Services" },
-      { property: "og:description", content: "Three specialised brands. One trusted group." },
-    ],
-  }),
-  component: ServicesPage,
-});
 
 const companies = [
   {
@@ -46,7 +35,7 @@ const companies = [
   },
 ];
 
-function ServicesPage() {
+export default function ServicesPage() {
   return (
     <SiteLayout>
       <PageBanner

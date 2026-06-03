@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "@/components/site/AppLink";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 

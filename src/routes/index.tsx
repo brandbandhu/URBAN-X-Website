@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "@/components/site/AppLink";
 import { useEffect, useState } from "react";
 import {
   ArrowRight, MessageCircle, Sparkles, Award, Users, Building2, Shield,
@@ -14,17 +14,6 @@ import rental from "@/assets/service-rental.jpg";
 import marble from "@/assets/service-marble.jpg";
 import aboutImg from "@/assets/about-urbanx.jpg";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "URBAN-X | One Brand, Multiple Business Solutions" },
-      { name: "description", content: "URBAN-X Group — cleaning & gardening, construction equipment rental, and premium marble furnishing under one trusted brand." },
-      { property: "og:title", content: "URBAN-X | One Brand, Multiple Business Solutions" },
-      { property: "og:description", content: "Three companies, one trusted promise: New Royal Services, Aishwarya Rental, and URBAN-DE." },
-    ],
-  }),
-  component: HomePage,
-});
 
 const slides = [
   {
@@ -47,7 +36,7 @@ const slides = [
   },
 ];
 
-function HomePage() {
+export default function HomePage() {
   const [active, setActive] = useState(0);
   useEffect(() => {
     const t = setInterval(() => setActive((p) => (p + 1) % slides.length), 6000);
