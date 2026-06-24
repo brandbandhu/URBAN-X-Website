@@ -1,10 +1,11 @@
-import { Phone, MessageCircle } from "lucide-react";
+import { urbanxContact } from "@/lib/siteContent";
+import { MessageCircle, Phone } from "lucide-react";
 
 export function FloatingActions() {
   return (
     <>
       <a
-        href="https://wa.me/919999999999"
+        href={urbanxContact.whatsappHref}
         target="_blank"
         rel="noreferrer"
         aria-label="WhatsApp"
@@ -14,7 +15,7 @@ export function FloatingActions() {
         <span className="absolute -top-1 -right-1 w-3 h-3 bg-gold rounded-full animate-ping" />
       </a>
       <a
-        href="tel:+919999999999"
+        href={urbanxContact.phoneHref}
         aria-label="Call us"
         className="fixed bottom-6 left-6 z-40 w-14 h-14 rounded-full bg-gradient-gold text-primary flex items-center justify-center shadow-luxe md:hidden hover:scale-110 transition-transform"
       >
