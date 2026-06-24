@@ -5,6 +5,7 @@ import ContactPage from "./routes/contact";
 import NewRoyalServicesPage from "./routes/new-royal-services";
 import AishwaryaRentalPage from "./routes/aishwarya-rental";
 import UrbanDePage from "./routes/urban-de";
+import RoyalFoodsPage from "./routes/royal-foods";
 
 function NotFoundPage() {
   return (
@@ -46,6 +47,8 @@ export default function App() {
       return <AishwaryaRentalPage />;
     case "/urban-de":
       return <UrbanDePage />;
+    case "/royal-foods":
+      return <RoyalFoodsPage />;
     default:
       return <NotFoundPage />;
   }

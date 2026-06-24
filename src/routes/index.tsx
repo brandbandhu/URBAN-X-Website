@@ -1,167 +1,929 @@
 import { Link } from "@/components/site/AppLink";
-import { useEffect, useState } from "react";
-import {
-  ArrowRight, MessageCircle, Sparkles, Award, Users, Building2, Shield,
-  Sprout, Wrench, Sofa, Check, Star, Hotel, Factory, Home as HomeIcon, Briefcase,
-} from "lucide-react";
 import { SiteLayout } from "@/components/site/Layout";
+import {
+  urbanxBrand,
+  urbanxBrandCards,
+  urbanxConstructionDetails,
+  urbanxContact,
+  urbanxCoreCapabilities,
+  urbanxEventsDetails,
+  urbanxFoodDetails,
+  urbanxGardeningDetails,
+  urbanxHousingDetails,
+  urbanxInteriorDetails,
+  urbanxItDetails,
+  urbanxMetrics,
+  urbanxMission,
+  urbanxHousekeepingDetails,
+  urbanxVision,
+  urbanxWhyChoose,
+} from "@/lib/siteContent";
+import { cn } from "@/lib/utils";
+import {
+  ArrowRight,
+  CalendarDays,
+  Check,
+  ChefHat,
+  Construction,
+  Home as HomeIcon,
+  MapPin,
+  MessageCircle,
+  MonitorSmartphone,
+  Phone,
+  ShieldCheck,
+  Sparkles,
+  Sofa,
+  Star,
+  Trees,
+  Wrench,
+} from "lucide-react";
+import { Children, useEffect, useState, type ReactNode } from "react";
+import aboutImg from "@/assets/about-urbanx.jpg";
+import gardening from "@/assets/service-gardening.jpg";
+import housekeeping from "@/assets/service-housekeeping.jpg";
+import marble from "@/assets/service-marble.jpg";
+import rental from "@/assets/service-rental.jpg";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
-import housekeeping from "@/assets/service-housekeeping.jpg";
-import gardening from "@/assets/service-gardening.jpg";
-import rental from "@/assets/service-rental.jpg";
-import marble from "@/assets/service-marble.jpg";
-import aboutImg from "@/assets/about-urbanx.jpg";
 
-
-const slides = [
+const heroSlides = [
   {
     img: hero1,
-    eyebrow: "URBAN-X GROUP",
-    title: "One Brand. Multiple Business Solutions.",
-    desc: "Three specialised companies, one trusted promise — service excellence across cleaning, construction rental, and premium interiors.",
+    eyebrow: "Urbanx",
+    title: "A place created for your happy living.",
+    description:
+      "Simplifying life by connecting housing, food, interiors, events, construction, housekeeping, gardening and IT support under one platform.",
   },
   {
     img: hero2,
-    eyebrow: "NEW ROYAL SERVICES",
-    title: "Housekeeping & Gardening Experts",
-    desc: "Residential, commercial, hotel, society and industrial cleaning, with full-spectrum landscaping & garden care.",
+    eyebrow: "Smart Housing",
+    title: "More than 2,000 living spaces every year across Pune.",
+    description:
+      "Designed for working professionals, boys and girls, students and academic communities with safety, comfort and reliability at the center.",
   },
   {
     img: hero3,
-    eyebrow: "AISHWARYA RENTAL & URBAN-DE",
-    title: "Construction Rental & Premium Marble Furnishing",
-    desc: "On-time equipment, scaffolding and tool rental — plus bespoke marble sofas, chairs and luxury décor.",
+    eyebrow: "Food Delivery",
+    title: "Fresh meals, large-scale catering and cloud kitchen support.",
+    description:
+      "Serving more than 2,000 customers every day with menus built for taste, nutrition, hygiene and timely delivery.",
   },
 ];
 
+function SectionHeading({
+  eyebrow,
+  title,
+  subtitle,
+  titleClassName = "text-primary",
+  subtitleClassName = "text-muted-foreground",
+  align = "center",
+}: {
+  eyebrow: string;
+  title: string;
+  subtitle?: string;
+  titleClassName?: string;
+  subtitleClassName?: string;
+  align?: "center" | "left";
+}) {
+  const alignmentClass = align === "left" ? "max-w-3xl text-left" : "mx-auto max-w-3xl text-center";
+
+  return (
+    <div className={alignmentClass}>
+      <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">{eyebrow}</div>
+      <h2 className={`text-3xl font-bold md:text-5xl ${titleClassName}`}>{title}</h2>
+      {subtitle && <p className={`mt-5 ${subtitleClassName}`}>{subtitle}</p>}
+    </div>
+  );
+}
+
+function BulletGrid({
+  items,
+  icon: Icon,
+}: {
+  items: string[];
+  icon: typeof Check;
+}) {
+  return (
+    <div className="grid gap-4 sm:grid-cols-2">
+      {items.map((item) => (
+        <div key={item} className="flex items-start gap-3 rounded-xl bg-secondary p-5">
+          <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-gold">
+            <Icon className="h-3.5 w-3.5 text-primary" />
+          </div>
+          <span className="text-foreground/90">{item}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function StackRail({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  const cards = Children.toArray(children);
+
+  return (
+    <div className={cn("relative overflow-visible pb-24 md:pb-32", className)}>
+      {cards.map((card, index) => (
+        <div
+          key={index}
+          className={cn(
+            "sticky rounded-[2rem] border border-border bg-background p-5 shadow-luxe md:p-6",
+            index > 0 && "-mt-10 md:-mt-14",
+          )}
+          style={{ top: `calc(7rem - ${index * 0.9}rem)`, zIndex: index + 1 }}
+        >
+          {card}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function ServiceMedia({
+  src,
+  alt,
+}: {
+  src: string;
+  alt: string;
+}) {
+  return (
+    <div className="self-start lg:sticky lg:top-24">
+      <div className="overflow-hidden rounded-[2rem] shadow-luxe">
+        <img src={src} alt={alt} className="h-[320px] w-full object-cover md:h-[420px] lg:h-[520px]" />
+      </div>
+    </div>
+  );
+}
+
+type InteriorStackCard = {
+  id: string;
+  eyebrow: string;
+  summary: string;
+  items?: string[];
+  image?: string;
+  imageAlt?: string;
+  highlight?: string;
+};
+
 export default function HomePage() {
   const [active, setActive] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const slideDurationMs = 6500;
+  const interiorStackCards: InteriorStackCard[] = [
+    {
+      id: "overview",
+      eyebrow: "Interior Overview",
+      summary: urbanxInteriorDetails.summary,
+      image: marble,
+      imageAlt: "Urbanx interior furnishing",
+      highlight: "10+ years of experience and more than 10 lakh square feet of completed work.",
+    },
+    {
+      id: "residential",
+      eyebrow: "Residential",
+      summary: "Designer curtains, wallpapers, sofa sets, study chairs and wardrobe planning.",
+      items: urbanxInteriorDetails.expertise.residential,
+    },
+    {
+      id: "commercial",
+      eyebrow: "Commercial and Healthcare",
+      summary: "Office spaces, laboratories, hospitals, clinics and institutional interiors.",
+      items: urbanxInteriorDetails.expertise.commercial.concat(urbanxInteriorDetails.expertise.healthcare),
+    },
+    {
+      id: "wall",
+      eyebrow: "Wall and Furnishing Solutions",
+      summary: "Premium wallpapers, cladding, textures, custom sofas and smart furnishings.",
+      items: urbanxInteriorDetails.expertise.wallSurface.concat(urbanxInteriorDetails.expertise.furnishings),
+    },
+  ];
+
   useEffect(() => {
-    const t = setInterval(() => setActive((p) => (p + 1) % slides.length), 6000);
-    return () => clearInterval(t);
-  }, []);
+    const start = window.performance.now();
+    let rafId = window.requestAnimationFrame(function tick(now) {
+      const elapsed = now - start;
+      setProgress(Math.min(elapsed / slideDurationMs, 1));
+      if (elapsed < slideDurationMs) {
+        rafId = window.requestAnimationFrame(tick);
+      }
+    });
+
+    const timeoutId = window.setTimeout(() => {
+      setActive((current) => (current + 1) % heroSlides.length);
+    }, slideDurationMs);
+
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      window.clearTimeout(timeoutId);
+    };
+  }, [active]);
 
   return (
     <SiteLayout>
-      {/* HERO CAROUSEL */}
-      <section className="relative h-screen min-h-[640px] overflow-hidden">
-        {slides.map((s, i) => (
-          <div
-            key={i}
-            className={`absolute inset-0 transition-opacity duration-1000 ${i === active ? "opacity-100" : "opacity-0"}`}
-          >
-            <img src={s.img} alt="" className="w-full h-full object-cover scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.18_0.05_255/0.92)] via-[oklch(0.18_0.05_255/0.7)] to-[oklch(0.18_0.05_255/0.35)]" />
-          </div>
-        ))}
-        <div className="absolute inset-0 flex items-center">
-          <div className="container-x text-white">
-            <div key={active} className="max-w-3xl animate-fade-up">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/30 text-gold text-xs font-semibold tracking-[0.25em] uppercase mb-6">
-                <Sparkles className="w-3.5 h-3.5" /> {slides[active].eyebrow}
-              </div>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6">
-                {slides[active].title}
-              </h1>
-              <p className="text-lg md:text-xl text-white/85 max-w-2xl mb-9">{slides[active].desc}</p>
-              <div className="flex flex-wrap gap-4">
-                <Link to="/services" className="px-7 py-3.5 bg-gradient-gold text-primary font-semibold rounded-md hover-lift inline-flex items-center gap-2">
-                  Explore Services <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link to="/contact" className="px-7 py-3.5 border-2 border-white/40 text-white font-semibold rounded-md hover:bg-white hover:text-primary transition-colors">
-                  Contact Us
-                </Link>
-                <a href="https://wa.me/919999999999" className="px-7 py-3.5 bg-[#25D366] text-white font-semibold rounded-md hover-lift inline-flex items-center gap-2">
-                  <MessageCircle className="w-4 h-4" /> WhatsApp Now
-                </a>
-              </div>
+      <section className="relative pb-16 md:pb-20">
+        <div className="relative min-h-[680px] overflow-hidden">
+          {heroSlides.map((slide, index) => (
+            <div
+              key={slide.title}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === active ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <img src={slide.img} alt="" className="h-full w-full object-cover scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.18_0.05_255/0.94)] via-[oklch(0.18_0.05_255/0.72)] to-[oklch(0.18_0.05_255/0.28)]" />
             </div>
-          </div>
-        </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              className={`h-1.5 rounded-full transition-all ${i === active ? "w-10 bg-gold" : "w-5 bg-white/40"}`}
-              aria-label={`Slide ${i + 1}`}
-            />
           ))}
-        </div>
-      </section>
 
-      {/* ABOUT */}
-      <section className="py-20 md:py-28">
-        <div className="container-x grid lg:grid-cols-2 gap-14 items-center">
-          <div className="relative animate-fade-up">
-            <img src={aboutImg} alt="URBAN-X headquarters" className="rounded-2xl shadow-luxe w-full h-[520px] object-cover" loading="lazy" />
-            <div className="absolute -bottom-8 -right-8 bg-gradient-gold p-7 rounded-2xl shadow-luxe text-primary hidden md:block">
-              <div className="text-5xl font-bold">15+</div>
-              <div className="text-xs uppercase tracking-wider mt-1 font-semibold">Years of Excellence</div>
-            </div>
-          </div>
-          <div>
-            <div className="text-gold font-semibold uppercase text-xs tracking-[0.3em] mb-3">About URBAN-X</div>
-            <h2 className="text-3xl md:text-5xl font-bold text-primary leading-tight mb-6 gold-underline">
-              A trusted name behind three exceptional brands.
-            </h2>
-            <p className="text-lg text-muted-foreground mb-5 mt-8">
-              URBAN-X is the parent company of three specialised businesses, each leading in its category. From keeping spaces immaculate to powering construction sites and crafting premium marble furnishing — we deliver service that defines standards.
-            </p>
-            <p className="text-foreground/80 leading-relaxed mb-8">
-              Backed by trained teams, modern processes and uncompromising quality, we serve homes, hotels, societies, offices and industries across the region.
-            </p>
-            <div className="grid sm:grid-cols-3 gap-5">
-              {[
-                { v: "500+", l: "Happy Clients" },
-                { v: "3", l: "Specialised Companies" },
-                { v: "24/7", l: "Support" },
-              ].map((s) => (
-                <div key={s.l} className="text-center p-5 rounded-xl bg-secondary">
-                  <div className="text-3xl font-bold text-primary">{s.v}</div>
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">{s.l}</div>
+          <div className="absolute inset-0 flex items-center pb-24 md:pb-28">
+            <div className="container-x text-white">
+              <div key={active} className="max-w-4xl animate-fade-up">
+                <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-6">
+                  <Sparkles className="h-3.5 w-3.5" />
+                  {heroSlides[active].eyebrow}
                 </div>
-              ))}
+                <h1 className="mb-6 max-w-3xl text-4xl font-bold leading-[1.02] md:text-6xl lg:text-7xl">
+                  {heroSlides[active].title}
+                </h1>
+                <p className="mb-9 max-w-2xl text-lg text-white/85 md:text-xl">
+                  {heroSlides[active].description}
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift"
+                  >
+                    Contact Urbanx <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <Link
+                    to="/services"
+                    className="inline-flex items-center gap-2 rounded-md border-2 border-white/40 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary"
+                  >
+                    View Services <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <a
+                    href={urbanxContact.whatsappHref}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-7 py-3.5 font-semibold text-white hover-lift"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    WhatsApp Now
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="absolute bottom-5 left-1/2 z-20 w-[min(92vw,44rem)] -translate-x-1/2">
+            <div className="rounded-full border border-white/15 bg-navy/70 px-4 py-3 text-white shadow-luxe backdrop-blur-md">
+              <div className="flex items-center gap-3">
+                {heroSlides.map((slide, index) => {
+                  const fill = index < active ? 100 : index === active ? progress * 100 : 0;
+
+                  return (
+                    <button
+                      key={slide.title}
+                      type="button"
+                      onClick={() => setActive(index)}
+                      className="group min-w-0 flex-1 text-left"
+                      aria-label={`Go to slide ${index + 1}`}
+                    >
+                      <div className="mb-2 flex items-center justify-between text-[10px] uppercase tracking-[0.3em] text-white/70">
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+                        {index === active && <span className="text-gold tabular-nums">{String(Math.max(1, Math.ceil((slideDurationMs * (1 - progress)) / 1000))).padStart(2, "0")}s</span>}
+                      </div>
+                      <div className="h-1.5 overflow-hidden rounded-full bg-white/20">
+                        <div
+                          className={`h-full rounded-full bg-gradient-gold transition-[width] duration-100 ${index === active ? "" : "opacity-75"}`}
+                          style={{ width: `${fill}%` }}
+                        />
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* THREE COMPANIES */}
-      <section className="py-20 bg-secondary/40">
+      <section className="relative z-10 -mt-10 pb-6 md:-mt-14 md:pb-8">
         <div className="container-x">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <div className="text-gold font-semibold uppercase text-xs tracking-[0.3em] mb-3">Our 3 Companies</div>
-            <h2 className="text-3xl md:text-5xl font-bold text-primary">Explore the URBAN-X family</h2>
+          <div className="grid gap-4 rounded-[1.75rem] border border-border bg-background/98 p-4 shadow-luxe md:grid-cols-2 xl:grid-cols-4 md:p-6">
+            {urbanxMetrics.map((metric) => (
+              <div key={metric.label} className="rounded-2xl bg-secondary/60 p-4 text-center md:p-5">
+                <div className="text-2xl font-bold text-primary md:text-4xl">{metric.value}</div>
+                <div className="mt-1 text-[11px] uppercase tracking-[0.26em] text-muted-foreground">{metric.label}</div>
+              </div>
+            ))}
           </div>
-          <div className="grid md:grid-cols-3 gap-7">
-            {[
-              { to: "/new-royal-services", img: housekeeping, title: "New Royal Services", tag: "Housekeeping & Gardening", icon: Sprout,
-                desc: "Trusted cleaning and landscaping for homes, hotels, societies and industries." },
-              { to: "/aishwarya-rental", img: rental, title: "Aishwarya Rental", tag: "Construction Equipment", icon: Wrench,
-                desc: "Heavy machinery, scaffolding, tools and project rental — when you need it, where you need it." },
-              { to: "/urban-de", img: marble, title: "URBAN-DE", tag: "Marble & Furnishing", icon: Sofa,
-                desc: "Bespoke marble sofas, pillows, chairs, curtains and luxury interior décor." },
-            ].map((c) => (
-              <Link key={c.to} to={c.to} className="group block bg-card rounded-2xl overflow-hidden shadow-card-luxe hover-lift">
-                <div className="relative h-60 overflow-hidden">
-                  <img src={c.img} alt={c.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
-                  <div className="absolute top-4 left-4 w-12 h-12 rounded-lg bg-gradient-gold flex items-center justify-center">
-                    <c.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="absolute bottom-4 left-5 text-white">
-                    <div className="text-xs uppercase tracking-widest text-gold">{c.tag}</div>
-                    <div className="text-2xl font-display font-bold">{c.title}</div>
+        </div>
+      </section>
+
+      <section className="pt-14 pb-20 md:pt-16 md:pb-28">
+        <div className="container-x grid gap-14 lg:grid-cols-2 lg:items-center">
+          <div className="relative">
+            <img src={aboutImg} alt="Urbanx team and workspace" className="h-[520px] w-full rounded-2xl object-cover shadow-luxe" loading="lazy" />
+            <div className="absolute -bottom-8 -right-6 hidden rounded-2xl bg-gradient-gold p-7 text-primary shadow-luxe md:block">
+              <div className="text-5xl font-bold">10+</div>
+              <div className="mt-1 text-xs font-semibold uppercase tracking-[0.2em]">Years of expertise</div>
+            </div>
+          </div>
+
+          <div>
+            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">About Urbanx</div>
+            <h2 className="gold-underline mb-6 text-3xl font-bold text-primary md:text-5xl">
+              {urbanxBrand.tagline}
+            </h2>
+            <p className="mt-8 mb-5 text-lg text-muted-foreground">
+              Urbanx is more than just a service provider. We are a space where you can discover your ideal home, design your living environment and build your future.
+            </p>
+            <p className="mb-8 leading-relaxed text-foreground/80">
+              We combine innovation, expertise and professionalism to deliver a seamless lifetime experience where every requirement, big or small, is handled with care and precision.
+            </p>
+            <BulletGrid items={urbanxCoreCapabilities.slice(0, 4)} icon={Check} />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-secondary/40 py-20">
+        <div className="container-x">
+          <SectionHeading
+            eyebrow="Core Capabilities"
+            title="We combine innovation, expertise and professionalism"
+            subtitle="Everything Urbanx brings together sits under one platform so homes, lifestyle, food and business needs can be managed more easily."
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {urbanxCoreCapabilities.map((item) => (
+              <div key={item} className="rounded-2xl border border-border bg-card p-7 shadow-card-luxe hover-lift">
+                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary">
+                  <Sparkles className="h-7 w-7 text-gold" />
+                </div>
+                <h3 className="text-xl font-bold text-primary">{item}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28">
+        <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <ServiceMedia src={hero2} alt="Urbanx housing" />
+
+          <StackRail>
+            <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
+              <SectionHeading
+                align="left"
+                eyebrow="Smart Housing"
+                title="More than 2,000 living spaces every year across Pune"
+                subtitle="We create safe, comfortable and well-managed living spaces for working professionals, boys and girls, students and academic communities."
+                titleClassName="max-w-2xl text-primary"
+                subtitleClassName="max-w-xl text-muted-foreground"
+              />
+              <p className="mt-6 text-sm leading-relaxed text-muted-foreground">{urbanxHousingDetails.summary}</p>
+              <p className="mt-4 text-sm leading-relaxed text-foreground/80">
+                Secure living with dependable management and daily comfort for residents and parents.
+              </p>
+            </div>
+
+            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-2xl bg-secondary/40 p-6">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Safety and security</div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Built around safety, security and daily convenience for boys and girls alike.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {urbanxHousingDetails.focus.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+                      <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+              <div className="flex flex-wrap gap-2">
+                {["Working professionals", "Boys and girls", "Students", "Academic communities"].map((item) => (
+                  <span key={item} className="rounded-full border border-border bg-secondary px-4 py-2 text-sm text-foreground/80">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </StackRail>
+        </div>
+      </section>
+
+      <section className="bg-secondary/40 py-20">
+        <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <ServiceMedia src={hero3} alt="Urbanx food delivery" />
+
+          <StackRail>
+            <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
+              <SectionHeading
+                align="left"
+                eyebrow="Urbanx: Food Delivery Services"
+                title="Fresh meals for more than 2,000 customers every day"
+                subtitle="Freshly prepared meals, special dietary options and large-scale catering handled with hygiene, taste and timely delivery."
+                titleClassName="max-w-2xl text-primary"
+                subtitleClassName="max-w-xl text-muted-foreground"
+              />
+              <div className="mt-6 rounded-2xl bg-secondary/50 p-5">
+                <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Kitchen scale</div>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{urbanxFoodDetails.kitchen}</p>
+              </div>
+            </div>
+
+            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-2xl bg-secondary/40 p-6">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Menu range</div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Fresh menus built for changing tastes, nutrition and everyday convenience.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {urbanxFoodDetails.menu.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+                      <ChefHat className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-2xl bg-secondary/40 p-6">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Catering focus</div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Weddings, birthdays, cocktail events, corporate gatherings and social celebrations.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+                <div className="flex flex-wrap gap-2">
+                  {urbanxFoodDetails.catering.map((item) => (
+                    <span key={item} className="rounded-full border border-border bg-secondary px-4 py-2 text-sm text-foreground/80">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+              <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Menus on request</div>
+              <p className="text-sm leading-relaxed text-muted-foreground">{urbanxFoodDetails.note}</p>
+              <p className="mt-4 text-sm leading-relaxed text-foreground/80">
+                We keep the service flexible so changing customer needs and special occasions are easy to handle.
+              </p>
+            </div>
+          </StackRail>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28">
+        <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <ServiceMedia src={marble} alt="Urbanx interior furnishing" />
+
+          <StackRail>
+            <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
+              <SectionHeading
+                align="left"
+                eyebrow="Urbanx: Interior Experience for All Places"
+                title="Modern, functional and aesthetic interiors for every environment"
+                subtitle="Transform your space with modern, functional and aesthetic interior solutions designed by professionals with over 10 years of experience."
+                titleClassName="max-w-2xl text-primary"
+                subtitleClassName="max-w-xl text-muted-foreground"
+              />
+              <div className="mt-6 rounded-2xl bg-secondary/50 p-5">
+                <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Completed work</div>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  Over 10 lakh square feet completed across residential, commercial, healthcare and institutional spaces.
+                </p>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-foreground/80">{urbanxInteriorDetails.note}</p>
+            </div>
+
+            {interiorStackCards.slice(1).map((card) => (
+              <div key={card.id} className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+                <div className="rounded-2xl bg-secondary/40 p-6">
+                  <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">{card.eyebrow}</div>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{card.summary}</p>
+                </div>
+                <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+                  <ul className="grid gap-3 sm:grid-cols-2">
+                    {card.items!.map((item) => (
+                      <li key={item} className="text-sm leading-relaxed text-muted-foreground">
+                        - {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </StackRail>
+        </div>
+      </section>
+
+      <section className="bg-secondary/40 py-20">
+        <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <ServiceMedia src={rental} alt="Urbanx events and construction" />
+
+          <StackRail>
+            <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
+              <SectionHeading
+                align="left"
+                eyebrow="Urbanx: Events & Management"
+                title="Planning, managing and executing memorable events"
+                subtitle="Corporate conferences, birthdays, weddings, inaugurations and celebrity management, handled with precision and professionalism."
+                titleClassName="max-w-2xl text-primary"
+                subtitleClassName="max-w-xl text-muted-foreground"
+              />
+              <div className="mt-6 rounded-2xl bg-secondary/50 p-5">
+                <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Event promise</div>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{urbanxEventsDetails.promise}</p>
+              </div>
+            </div>
+
+            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-2xl bg-secondary/40 p-6">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Planning and execution</div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  We plan every detail, from decor and ambience to the final guest experience.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {urbanxEventsDetails.services.slice(0, 3).map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+                      <CalendarDays className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-2xl bg-secondary/40 p-6">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Guest care</div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Guest coordination, hospitality and celebrity handling with a polished, professional approach.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+                <div className="flex flex-wrap gap-2">
+                  {urbanxEventsDetails.services.slice(3).map((item) => (
+                    <span key={item} className="rounded-full border border-border bg-secondary px-4 py-2 text-sm text-foreground/80">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+              <p className="text-sm leading-relaxed text-muted-foreground">{urbanxEventsDetails.promise}</p>
+              <p className="mt-4 text-sm leading-relaxed text-foreground/80">
+                From intimate gatherings to grand celebrations, every event is timed, styled and delivered with care.
+              </p>
+            </div>
+          </StackRail>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28">
+        <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <ServiceMedia src={hero1} alt="Urbanx construction" />
+
+          <StackRail>
+            <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
+              <SectionHeading
+                align="left"
+                eyebrow="Urbanx Construction and Contracting Services"
+                title="Planning to execution and complete project management"
+                subtitle="Residential, commercial and institutional projects handled with modern design, structural strength and environmental suitability."
+                titleClassName="max-w-2xl text-primary"
+                subtitleClassName="max-w-xl text-muted-foreground"
+              />
+              <div className="mt-6 rounded-2xl bg-secondary/50 p-5">
+                <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Project focus</div>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{urbanxConstructionDetails.summary}</p>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-foreground/80">{urbanxConstructionDetails.promise}</p>
+            </div>
+
+            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-2xl bg-secondary/40 p-6">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Structural expertise</div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  From slab casting and brickwork to marble finishes, automation and HVAC systems.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {urbanxConstructionDetails.services.slice(0, 4).map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+                      <Construction className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-2xl bg-secondary/40 p-6">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Project portfolio</div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Aishwarya Heights, Aishwarya Poorva, Aishwarya Hostels, bungalows and more.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {urbanxConstructionDetails.projects.map((item) => (
+                    <li key={item} className="rounded-xl border border-border bg-secondary/40 px-4 py-3 text-sm text-foreground/80">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-2xl bg-secondary/40 p-6">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">More services</div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Glass facades, common areas, lift lobbies and other finishing work for future-ready spaces.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+                <ul className="grid gap-2 sm:grid-cols-2">
+                  {urbanxConstructionDetails.services.slice(4).map((item) => (
+                    <li key={item} className="text-sm text-muted-foreground">
+                      - {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </StackRail>
+        </div>
+      </section>
+
+      <section className="bg-secondary/40 py-20">
+        <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <ServiceMedia src={housekeeping} alt="Urbanx housekeeping" />
+
+          <StackRail>
+            <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
+              <SectionHeading
+                align="left"
+                eyebrow="Housekeeping and Cleaning Services"
+                title="Professional cleaning and maintenance for every kind of space"
+                subtitle="Hygienic, reliable support for hospitals, hostels, offices, residential societies and individual homes."
+                titleClassName="max-w-2xl text-primary"
+                subtitleClassName="max-w-xl text-muted-foreground"
+              />
+              <div className="mt-6 rounded-2xl bg-secondary/50 p-5">
+                <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Service promise</div>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{urbanxHousekeepingDetails.promise}</p>
+              </div>
+            </div>
+
+            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-2xl bg-secondary/40 p-6">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Daily and office care</div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Daily cleaning, office maintenance, deep cleaning and floor scrubbing that keeps spaces fresh.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {urbanxHousekeepingDetails.services.slice(0, 6).map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-2xl bg-secondary/40 p-6">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Specialised care</div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Glass facade cleaning, solar panel care, water tank cleaning and corridor maintenance.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+                <ul className="grid gap-2 sm:grid-cols-2">
+                  {urbanxHousekeepingDetails.services.slice(6).map((item) => (
+                    <li key={item} className="text-sm text-muted-foreground">
+                      - {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </StackRail>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28">
+        <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <ServiceMedia src={gardening} alt="Urbanx landscaping" />
+
+          <StackRail>
+            <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
+              <SectionHeading
+                align="left"
+                eyebrow="Urbanx Landscaping"
+                title="Creative, functional and sustainable outdoor solutions"
+                subtitle="Outdoor spaces designed for long-term value across campuses, offices, homes and public spaces."
+                titleClassName="max-w-2xl text-primary"
+                subtitleClassName="max-w-xl text-muted-foreground"
+              />
+              <div className="mt-6 rounded-2xl bg-secondary/50 p-5">
+                <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Landscaping promise</div>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{urbanxGardeningDetails.promise}</p>
+              </div>
+            </div>
+
+            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-2xl bg-secondary/40 p-6">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Where we work</div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Hospitals, corporate offices, educational campuses, industrial facilities and residential communities.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {[
+                    "Hospitals and healthcare campuses",
+                    "Corporate offices and IT parks",
+                    "Educational institutions and university campuses",
+                    "Industrial areas and manufacturing facilities",
+                  ].map((item) => (
+                    <li key={item} className="rounded-xl border border-border bg-secondary/40 px-4 py-3 text-sm text-foreground/80">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-2xl bg-secondary/40 p-6">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Garden services</div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Garden maintenance, mowing, watering and pruning with seasonal plantation support.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {urbanxGardeningDetails.services.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+                      <Trees className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                From concept design to execution and maintenance, every project is delivered with precision, creativity and long-term value.
+              </p>
+            </div>
+          </StackRail>
+        </div>
+      </section>
+
+      <section className="bg-secondary/40 py-20">
+        <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <ServiceMedia src={hero2} alt="Urbanx IT solutions" />
+
+          <StackRail>
+            <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
+              <SectionHeading
+                align="left"
+                eyebrow="Technology and Media"
+                title="Professional, customized and scalable IT solutions"
+                subtitle="Supporting social media, digital marketing, software, content, training and automation needs."
+                titleClassName="max-w-2xl text-primary"
+                subtitleClassName="max-w-xl text-muted-foreground"
+              />
+              <div className="mt-6 rounded-2xl bg-secondary/50 p-5">
+                <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">IT support promise</div>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{urbanxItDetails.promise}</p>
+              </div>
+            </div>
+
+            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-2xl bg-secondary/40 p-6">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Content and growth</div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Social media content, lead management, campaigns and production support shaped for consistent growth.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {urbanxItDetails.services.slice(0, 4).map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+                      <MonitorSmartphone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-2xl bg-secondary/40 p-6">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Development and operations</div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Website content, ERP implementation, mobile apps, team handling and training support.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {urbanxItDetails.services.slice(4, 8).map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+                      <MonitorSmartphone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-2xl bg-secondary/40 p-6">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Engagement and support</div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Chatbot development, customer engagement and scalable support built around your workflow.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {urbanxItDetails.services.slice(8).map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+                      <MonitorSmartphone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </StackRail>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28">
+        <div className="container-x">
+          <SectionHeading
+            eyebrow="Turning your space into vibrant living"
+            title="Projects handled"
+            subtitle="A few of the project names highlighted in your content brief."
+          />
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {urbanxInteriorDetails.projectsHandled.map((project) => (
+              <div key={project} className="rounded-xl border border-border bg-card p-6 shadow-card-luxe">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-gold">
+                  <Star className="h-5 w-5 text-primary" />
+                </div>
+                <div className="text-lg font-bold text-primary">{project}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 grid gap-7 md:grid-cols-2 xl:grid-cols-4">
+            {urbanxBrandCards.map((brand) => (
+              <Link key={brand.to} to={brand.to} className="group overflow-hidden rounded-2xl bg-card shadow-card-luxe hover-lift">
+                <div className="relative h-48 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary via-navy to-primary" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <brand.icon className="h-12 w-12 text-gold" />
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">{c.desc}</p>
-                  <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-gold transition-colors">
-                    Discover <ArrowRight className="w-4 h-4" />
-                  </div>
+                  <div className="text-[10px] uppercase tracking-[0.3em] text-gold">{brand.tagline}</div>
+                  <div className="mt-1 text-2xl font-bold text-primary">{brand.label}</div>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{brand.description}</p>
                 </div>
               </Link>
             ))}
@@ -169,145 +931,83 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHY CHOOSE US */}
+      <section className="bg-navy py-20 text-white">
+        <div className="container-x">
+          <SectionHeading
+            eyebrow="Why Choose Urbanx"
+            title="Reliable, customer-first and built around modern urban living"
+            subtitle="One platform for multiple services, trusted professionals, affordable pricing and quick, reliable support."
+            titleClassName="text-white"
+            subtitleClassName="text-white/80"
+          />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-5">
+            {urbanxWhyChoose.map((item) => (
+              <div key={item} className="rounded-xl border border-white/10 bg-white/5 p-6 text-center transition-all hover:border-gold hover:bg-white/10">
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-gold">
+                  <Star className="h-7 w-7 text-primary" />
+                </div>
+                <p className="text-sm font-semibold">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 md:py-28">
-        <div className="container-x">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <div className="text-gold font-semibold uppercase text-xs tracking-[0.3em] mb-3">Why URBAN-X</div>
-            <h2 className="text-3xl md:text-5xl font-bold text-primary">Reasons clients keep coming back</h2>
+        <div className="container-x grid gap-8 lg:grid-cols-2">
+          <div className="rounded-3xl bg-card p-8 shadow-luxe">
+            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Our Vision</div>
+            <h3 className="mb-4 text-3xl font-bold text-primary">To become the most trusted and comprehensive service platform</h3>
+            <p className="leading-relaxed text-muted-foreground">{urbanxVision}</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: Shield, t: "Trusted & Insured", d: "Verified teams, transparent processes and fully accountable service delivery." },
-              { icon: Award, t: "Premium Quality", d: "We benchmark every job against the highest industry standards." },
-              { icon: Users, t: "Trained Professionals", d: "Skilled, uniformed and background-checked staff for every assignment." },
-              { icon: Sparkles, t: "End-to-End Solutions", d: "Three companies, one point of contact — saves time and simplifies vendors." },
-            ].map((b) => (
-              <div key={b.t} className="bg-card border border-border rounded-xl p-7 hover-lift group">
-                <div className="w-14 h-14 rounded-xl bg-primary group-hover:bg-gradient-gold flex items-center justify-center mb-5 transition-all">
-                  <b.icon className="w-7 h-7 text-gold group-hover:text-primary transition-colors" />
-                </div>
-                <h3 className="text-lg font-bold text-primary mb-2">{b.t}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{b.d}</p>
-              </div>
-            ))}
+          <div className="rounded-3xl bg-primary p-8 text-white shadow-luxe">
+            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Our Mission</div>
+            <h3 className="mb-4 text-3xl font-bold">Connecting people with reliable services across daily life</h3>
+            <p className="leading-relaxed text-white/80">{urbanxMission}</p>
           </div>
         </div>
       </section>
 
-      {/* INDUSTRIES */}
-      <section className="py-20 bg-navy text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,oklch(0.78_0.13_78/0.15),transparent_55%)]" />
-        <div className="container-x relative">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <div className="text-gold font-semibold uppercase text-xs tracking-[0.3em] mb-3">Industries We Serve</div>
-            <h2 className="text-3xl md:text-5xl font-bold">Tailored solutions across sectors</h2>
-          </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              { icon: HomeIcon, l: "Residential" },
-              { icon: Building2, l: "Commercial" },
-              { icon: Hotel, l: "Hotels" },
-              { icon: Briefcase, l: "Offices" },
-              { icon: Users, l: "Societies" },
-              { icon: Factory, l: "Industrial" },
-            ].map((i) => (
-              <div key={i.l} className="text-center p-6 rounded-xl bg-white/5 border border-white/10 hover:border-gold hover:bg-white/10 transition-all">
-                <i.icon className="w-9 h-9 mx-auto text-gold mb-3" />
-                <div className="text-sm font-semibold">{i.l}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURED SERVICES */}
-      <section className="py-20 md:py-28">
-        <div className="container-x">
-          <div className="flex flex-wrap items-end justify-between gap-4 mb-12">
-            <div>
-              <div className="text-gold font-semibold uppercase text-xs tracking-[0.3em] mb-3">Featured Services</div>
-              <h2 className="text-3xl md:text-5xl font-bold text-primary gold-underline">Service highlights</h2>
-            </div>
-            <Link to="/services" className="text-sm font-semibold text-primary hover:text-gold inline-flex items-center gap-2">
-              View all <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { img: housekeeping, t: "Hotel & Society Cleaning", c: "New Royal Services" },
-              { img: gardening, t: "Lawn Care & Landscaping", c: "New Royal Services" },
-              { img: rental, t: "Scaffolding & Equipment", c: "Aishwarya Rental" },
-              { img: marble, t: "Marble Sofa & Décor", c: "URBAN-DE" },
-            ].map((f) => (
-              <div key={f.t} className="group rounded-xl overflow-hidden shadow-card-luxe hover-lift bg-card">
-                <div className="relative h-52 overflow-hidden">
-                  <img src={f.img} alt={f.t} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent" />
-                </div>
-                <div className="p-5">
-                  <div className="text-[10px] uppercase tracking-widest text-gold font-semibold">{f.c}</div>
-                  <div className="font-bold text-primary mt-1">{f.t}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TRUST / STATS */}
-      <section className="py-20 bg-secondary/40">
-        <div className="container-x">
-          <div className="grid md:grid-cols-4 gap-6 text-center">
-            {[
-              { v: "500+", l: "Projects Delivered" },
-              { v: "150+", l: "Trusted Partners" },
-              { v: "98%", l: "Client Retention" },
-              { v: "15+", l: "Years Experience" },
-            ].map((s) => (
-              <div key={s.l} className="bg-card p-8 rounded-xl shadow-card-luxe">
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-1">{s.v}</div>
-                <div className="text-sm uppercase tracking-wider text-muted-foreground">{s.l}</div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-14 grid md:grid-cols-3 gap-6">
-            {[
-              { n: "Rohan Mehta", r: "Hotel General Manager", t: "URBAN-X handles three of our properties — housekeeping is flawless and the team is always proactive." },
-              { n: "Priya Shah", r: "Builder, Aishwarya partner", t: "Aishwarya Rental never lets us down. Equipment is on-site exactly when promised — every single time." },
-              { n: "Anita Verma", r: "Interior Designer", t: "URBAN-DE's marble pieces are exquisite. My clients are blown away by the craftsmanship and finish." },
-            ].map((tt) => (
-              <div key={tt.n} className="bg-card p-7 rounded-xl shadow-card-luxe">
-                <div className="flex gap-1 text-gold mb-4">
-                  {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
-                </div>
-                <p className="text-foreground/85 leading-relaxed mb-5">"{tt.t}"</p>
-                <div>
-                  <div className="font-semibold text-primary">{tt.n}</div>
-                  <div className="text-xs text-muted-foreground">{tt.r}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT CTA */}
       <section className="pb-20">
         <div className="container-x">
-          <div className="relative bg-gradient-to-br from-primary via-navy to-primary rounded-3xl p-10 md:p-16 text-white text-center overflow-hidden shadow-luxe">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,oklch(0.78_0.13_78/0.25),transparent_50%)]" />
-            <div className="relative max-w-2xl mx-auto">
-              <Check className="w-12 h-12 text-gold mx-auto mb-4" />
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">Let's build something exceptional together.</h2>
-              <p className="text-white/80 mb-8">Whether it's cleaning, equipment rental or premium marble interiors — one call connects you to all three.</p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Link to="/contact" className="px-7 py-3.5 bg-gradient-gold text-primary font-semibold rounded-md hover-lift inline-flex items-center gap-2">
-                  Contact Us <ArrowRight className="w-4 h-4" />
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-navy to-primary p-10 text-center text-white shadow-luxe md:p-16">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,oklch(0.78_0.13_78/0.22),transparent_45%)]" />
+            <div className="relative mx-auto max-w-3xl">
+              <Check className="mx-auto mb-4 h-12 w-12 text-gold" />
+              <h2 className="mb-4 text-3xl font-bold md:text-5xl">Let us handle the details, big and small.</h2>
+              <p className="mb-8 text-white/80">
+                From housing and interiors to catering, events, housekeeping and IT support, Urbanx is built to deliver care and precision.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link to="/contact" className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift">
+                  Contact Us <ArrowRight className="h-4 w-4" />
                 </Link>
-                <a href="tel:+919999999999" className="px-7 py-3.5 border-2 border-white/40 text-white font-semibold rounded-md hover:bg-white hover:text-primary transition-colors">
-                  Call +91 99999 99999
+                <a
+                  href={urbanxContact.phoneHref}
+                  className="inline-flex items-center gap-2 rounded-md border-2 border-white/40 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary"
+                >
+                  <Phone className="h-4 w-4" />
+                  {urbanxContact.phoneDisplay}
                 </a>
+                <a
+                  href={urbanxContact.whatsappHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md border-2 border-white/40 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  WhatsApp
+                </a>
+              </div>
+              <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-white/75">
+                <span className="inline-flex items-center gap-2">
+                  <MapPin className="h-4 w-4 text-gold" />
+                  {urbanxContact.office}
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <ShieldCheck className="h-4 w-4 text-gold" />
+                  {urbanxContact.director}
+                </span>
               </div>
             </div>
           </div>
