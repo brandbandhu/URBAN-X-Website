@@ -50,12 +50,15 @@ export default function ContactPage() {
         <div className="container-x grid gap-10 lg:grid-cols-5">
           <div className="space-y-6 lg:col-span-2">
             <div>
-              <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Reach Us</div>
+              <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+                Reach Us
+              </div>
               <h2 className="gold-underline mb-6 text-3xl font-bold text-primary md:text-4xl">
                 {urbanxBrand.tagline}
               </h2>
               <p className="mt-8 text-muted-foreground">
-                Urbanx is here to help with everything from city living and interiors to food services and project work. Reach out and we will route you to the right team.
+                Urbanx is here to help with everything from city living and interiors to food
+                services and project work. Reach out and we will route you to the right team.
               </p>
             </div>
 
@@ -125,15 +128,24 @@ export default function ContactPage() {
             </div>
 
             <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
-              <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Royal Foods</div>
+              <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+                Royal Foods
+              </div>
               <div className="text-lg font-bold text-primary">Institutional catering contact</div>
               <p className="mt-3 text-sm text-muted-foreground">{royalFoodsContact.venue}</p>
-              <p className="mt-2 text-sm text-muted-foreground">Director: {royalFoodsContact.director}</p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Director: {royalFoodsContact.director}
+              </p>
               <div className="mt-4 space-y-2 text-sm">
                 {royalFoodsContact.phones.map((phone) => (
-                  <div key={phone} className="text-primary">{phone}</div>
+                  <div key={phone} className="text-primary">
+                    {phone}
+                  </div>
                 ))}
-                <a href={royalFoodsContact.emailHref} className="inline-flex items-center gap-2 font-semibold text-primary hover:text-gold">
+                <a
+                  href={royalFoodsContact.emailHref}
+                  className="inline-flex items-center gap-2 font-semibold text-primary hover:text-gold"
+                >
                   <Mail className="h-4 w-4" />
                   {royalFoodsContact.email}
                 </a>
@@ -149,7 +161,9 @@ export default function ContactPage() {
                     <Check className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="mb-2 text-2xl font-bold text-primary">Thank you!</h3>
-                  <p className="mb-6 text-muted-foreground">We have received your enquiry and will get back within 24 hours.</p>
+                  <p className="mb-6 text-muted-foreground">
+                    We have received your enquiry and will get back within 24 hours.
+                  </p>
                   <button
                     type="button"
                     onClick={() => setSent(false)}
@@ -167,19 +181,39 @@ export default function ContactPage() {
 
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
-                      <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">Name *</label>
-                      <input className={inputClass} value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} maxLength={100} />
-                      {errors.name && <p className="mt-1 text-xs text-destructive">{errors.name}</p>}
+                      <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        Name *
+                      </label>
+                      <input
+                        className={inputClass}
+                        value={form.name}
+                        onChange={(event) => setForm({ ...form, name: event.target.value })}
+                        maxLength={100}
+                      />
+                      {errors.name && (
+                        <p className="mt-1 text-xs text-destructive">{errors.name}</p>
+                      )}
                     </div>
                     <div>
-                      <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">Phone *</label>
-                      <input className={inputClass} value={form.phone} onChange={(event) => setForm({ ...form, phone: event.target.value })} maxLength={20} />
-                      {errors.phone && <p className="mt-1 text-xs text-destructive">{errors.phone}</p>}
+                      <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        Phone *
+                      </label>
+                      <input
+                        className={inputClass}
+                        value={form.phone}
+                        onChange={(event) => setForm({ ...form, phone: event.target.value })}
+                        maxLength={20}
+                      />
+                      {errors.phone && (
+                        <p className="mt-1 text-xs text-destructive">{errors.phone}</p>
+                      )}
                     </div>
                   </div>
 
                   <div>
-                    <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">Email *</label>
+                    <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      Email *
+                    </label>
                     <input
                       type="email"
                       className={inputClass}
@@ -187,12 +221,20 @@ export default function ContactPage() {
                       onChange={(event) => setForm({ ...form, email: event.target.value })}
                       maxLength={255}
                     />
-                    {errors.email && <p className="mt-1 text-xs text-destructive">{errors.email}</p>}
+                    {errors.email && (
+                      <p className="mt-1 text-xs text-destructive">{errors.email}</p>
+                    )}
                   </div>
 
                   <div>
-                    <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">Service Required *</label>
-                    <select className={inputClass} value={form.service} onChange={(event) => setForm({ ...form, service: event.target.value })}>
+                    <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      Service Required *
+                    </label>
+                    <select
+                      className={inputClass}
+                      value={form.service}
+                      onChange={(event) => setForm({ ...form, service: event.target.value })}
+                    >
                       <option value="">Select a service</option>
                       <option>Smart Housing & Real Estate Solutions</option>
                       <option>Food Delivery Services</option>
@@ -206,11 +248,15 @@ export default function ContactPage() {
                       <option>Royal Foods - Institutional Catering</option>
                       <option>General Enquiry</option>
                     </select>
-                    {errors.service && <p className="mt-1 text-xs text-destructive">{errors.service}</p>}
+                    {errors.service && (
+                      <p className="mt-1 text-xs text-destructive">{errors.service}</p>
+                    )}
                   </div>
 
                   <div>
-                    <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">Message *</label>
+                    <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      Message *
+                    </label>
                     <textarea
                       rows={5}
                       className={inputClass}
@@ -219,7 +265,9 @@ export default function ContactPage() {
                       maxLength={1000}
                       placeholder="Share your location, quantity, timeline, room count, menu needs or any other detail."
                     />
-                    {errors.message && <p className="mt-1 text-xs text-destructive">{errors.message}</p>}
+                    {errors.message && (
+                      <p className="mt-1 text-xs text-destructive">{errors.message}</p>
+                    )}
                   </div>
 
                   <button
@@ -233,9 +281,11 @@ export default function ContactPage() {
             </div>
 
             <div className="flex min-h-[320px] flex-1 flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-luxe">
-              <div className="flex items-start justify-between gap-4 border-b border-border px-6 py-4">
+              <div className="flex flex-col gap-4 border-b border-border px-6 py-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                  <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Location</div>
+                  <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+                    Location
+                  </div>
                   <h3 className="mt-1 text-lg font-bold text-primary">{urbanxContact.office}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{urbanxContact.highway}</p>
                 </div>
@@ -248,7 +298,7 @@ export default function ContactPage() {
                   Open Map
                 </a>
               </div>
-              <div className="relative min-h-[260px] flex-1">
+              <div className="relative min-h-[220px] flex-1 sm:min-h-[260px]">
                 <iframe
                   title="Urbanx location map"
                   src={mapEmbedSrc}
