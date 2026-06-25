@@ -1,11 +1,26 @@
-import HomePage from "./routes";
-import AboutPage from "./routes/about";
-import ServicesPage from "./routes/services";
-import ContactPage from "./routes/contact";
-import NewRoyalServicesPage from "./routes/new-royal-services";
-import AishwaryaRentalPage from "./routes/aishwarya-rental";
-import UrbanDePage from "./routes/urban-de";
-import RoyalFoodsPage from "./routes/royal-foods";
+import { lazy, Suspense } from "react";
+
+const HomePage = lazy(() => import("./routes"));
+const AboutPage = lazy(() => import("./routes/about"));
+const ServicesPage = lazy(() => import("./routes/services"));
+const ContactPage = lazy(() => import("./routes/contact"));
+const NewRoyalServicesPage = lazy(() => import("./routes/new-royal-services"));
+const AishwaryaRentalPage = lazy(() => import("./routes/aishwarya-rental"));
+const UrbanDePage = lazy(() => import("./routes/urban-de"));
+const RoyalFoodsPage = lazy(() => import("./routes/royal-foods"));
+
+function RouteFallback() {
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+      <div className="text-center">
+        <div className="mx-auto mb-4 h-10 w-10 animate-spin rounded-full border-2 border-gold border-t-transparent" />
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+          Loading page
+        </p>
+      </div>
+    </div>
+  );
+}
 
 function NotFoundPage() {
   return (
@@ -32,24 +47,30 @@ function NotFoundPage() {
 export default function App() {
   const path = window.location.pathname.replace(/\/$/, "") || "/";
 
-  switch (path) {
-    case "/":
-      return <HomePage />;
-    case "/about":
-      return <AboutPage />;
-    case "/services":
-      return <ServicesPage />;
-    case "/contact":
-      return <ContactPage />;
-    case "/new-royal-services":
-      return <NewRoyalServicesPage />;
-    case "/aishwarya-rental":
-      return <AishwaryaRentalPage />;
-    case "/urban-de":
-      return <UrbanDePage />;
-    case "/royal-foods":
-      return <RoyalFoodsPage />;
-    default:
-      return <NotFoundPage />;
-  }
+  return (
+    <Suspense fallback={<RouteFallback />}>
+      {(() => {
+        switch (path) {
+          case "/":
+            return <HomePage />;
+          case "/about":
+            return <AboutPage />;
+          case "/services":
+            return <ServicesPage />;
+          case "/contact":
+            return <ContactPage />;
+          case "/new-royal-services":
+            return <NewRoyalServicesPage />;
+          case "/aishwarya-rental":
+            return <AishwaryaRentalPage />;
+          case "/urban-de":
+            return <UrbanDePage />;
+          case "/royal-foods":
+            return <RoyalFoodsPage />;
+          default:
+            return <NotFoundPage />;
+        }
+      })()}
+    </Suspense>
+  );
 }
