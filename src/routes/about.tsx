@@ -11,7 +11,7 @@ import {
   urbanxMission,
   urbanxWhyChoose,
 } from "@/lib/siteContent";
-import { ArrowRight, Check, Mail, Phone, Sparkles, Star } from "lucide-react";
+import { ArrowRight, Compass, Mail, Phone, Route, Sparkles, Star } from "lucide-react";
 import aboutImg from "@/assets/about-urbanx.jpg";
 import hero1 from "@/assets/hero-1.jpg";
 
@@ -114,21 +114,51 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-navy text-white">
-        <div className="container-x grid gap-8 lg:grid-cols-2">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+      <section className="bg-navy py-20 text-white">
+        <div className="container-x grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          <div>
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-              Vision
+              Vision & Mission
             </div>
-            <h3 className="mb-4 text-3xl font-bold">A platform that simplifies urban living</h3>
-            <p className="leading-relaxed text-white/80">{urbanxVision}</p>
+            <h2 className="mb-5 text-3xl font-bold md:text-5xl">
+              The direction behind every Urbanx service
+            </h2>
+            <p className="max-w-xl leading-relaxed text-white/75">
+              Every vertical works toward the same promise: simplify daily life through reliable,
+              connected and professionally managed services.
+            </p>
           </div>
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-              Mission
+
+          <div className="divide-y divide-white/10 border-y border-white/10">
+            <div className="grid gap-5 py-7 md:grid-cols-[4rem_1fr] md:gap-6">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-gold">
+                <Compass className="h-7 w-7 text-primary" />
+              </div>
+              <div>
+                <div className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+                  Vision
+                </div>
+                <h3 className="mb-3 text-2xl font-bold md:text-3xl">
+                  A platform that simplifies urban living
+                </h3>
+                <p className="leading-relaxed text-white/75">{urbanxVision}</p>
+              </div>
             </div>
-            <h3 className="mb-4 text-3xl font-bold">Reliable services, delivered with trust</h3>
-            <p className="leading-relaxed text-white/80">{urbanxMission}</p>
+
+            <div className="grid gap-5 py-7 md:grid-cols-[4rem_1fr] md:gap-6">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/10">
+                <Route className="h-7 w-7 text-gold" />
+              </div>
+              <div>
+                <div className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+                  Mission
+                </div>
+                <h3 className="mb-3 text-2xl font-bold md:text-3xl">
+                  Reliable services, delivered with trust
+                </h3>
+                <p className="leading-relaxed text-white/75">{urbanxMission}</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -143,14 +173,18 @@ export default function AboutPage() {
               The Urbanx advantage
             </h2>
             <div className="space-y-4">
-              {urbanxWhyChoose.map((item) => (
-                <div key={item} className="flex items-start gap-3 rounded-xl bg-secondary p-5">
-                  <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-gold">
-                    <Check className="h-3.5 w-3.5 text-primary" />
+              {urbanxWhyChoose.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <div key={item.title} className="flex items-start gap-3 rounded-xl bg-secondary p-5">
+                    <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-gold">
+                      <Icon className="h-3.5 w-3.5 text-primary" />
+                    </div>
+                    <span className="text-foreground/90">{item.title}</span>
                   </div>
-                  <span className="text-foreground/90">{item}</span>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 

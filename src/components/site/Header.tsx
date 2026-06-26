@@ -50,17 +50,10 @@ export function Header() {
           <div className="flex h-10 w-10 items-center justify-center rounded bg-gradient-gold text-lg font-bold text-primary shadow-card-luxe">
             UX
           </div>
-          <div className="leading-tight">
-            <div
-              className={`font-display font-bold text-xl tracking-wider ${scrolled ? "text-primary" : "text-white"}`}
-            >
-              {urbanxBrand.name}
-            </div>
-            <div
-              className={`hidden text-[10px] uppercase tracking-[0.25em] sm:block ${scrolled ? "text-muted-foreground" : "text-white/80"}`}
-            >
-              {urbanxBrand.tagline}
-            </div>
+          <div
+            className={`font-display font-bold text-xl tracking-wider ${scrolled ? "text-primary" : "text-white"}`}
+          >
+            {urbanxBrand.name}
           </div>
         </Link>
 

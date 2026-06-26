@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { SiteLayout } from "@/components/site/Layout";
 import { PageBanner } from "@/components/site/PageBanner";
+import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import { urbanxBrand, urbanxContact, royalFoodsContact } from "@/lib/siteContent";
-import { Check, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
+import { Check, Mail, MapPin, Phone, Send } from "lucide-react";
 import type { FormEvent } from "react";
 import aboutImg from "@/assets/about-urbanx.jpg";
 
@@ -82,7 +83,7 @@ export default function ContactPage() {
                   href: urbanxContact.emailHref,
                 },
                 {
-                  icon: MessageCircle,
+                  icon: WhatsAppIcon,
                   title: "WhatsApp",
                   lines: ["Chat with us instantly"],
                   href: urbanxContact.whatsappHref,
