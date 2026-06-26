@@ -6,8 +6,9 @@ const ServicesPage = lazy(() => import("./routes/services"));
 const ContactPage = lazy(() => import("./routes/contact"));
 const NewRoyalServicesPage = lazy(() => import("./routes/new-royal-services"));
 const AishwaryaRentalPage = lazy(() => import("./routes/aishwarya-rental"));
-const UrbanDePage = lazy(() => import("./routes/urban-de"));
+const DeMarvelFurnishingsPage = lazy(() => import("./routes/de-marvel-furnishings"));
 const RoyalFoodsPage = lazy(() => import("./routes/royal-foods"));
+const BrandServiceDetailPage = lazy(() => import("./routes/brand-service-detail"));
 
 function RouteFallback() {
   return (
@@ -46,10 +47,31 @@ function NotFoundPage() {
 
 export default function App() {
   const path = window.location.pathname.replace(/\/$/, "") || "/";
+  const detailMatch = path.match(
+    /^\/(new-royal-services|aishwarya-rental|de-marvel-furnishings|royal-foods|urban-de)\/([^/]+)$/,
+  );
 
   return (
     <Suspense fallback={<RouteFallback />}>
       {(() => {
+        if (detailMatch) {
+          const [, brandKey, serviceSlug] = detailMatch;
+
+          return (
+            <BrandServiceDetailPage
+              brandKey={
+                brandKey as
+                  | "new-royal-services"
+                  | "aishwarya-rental"
+                  | "de-marvel-furnishings"
+                  | "royal-foods"
+                  | "urban-de"
+              }
+              serviceSlug={serviceSlug}
+            />
+          );
+        }
+
         switch (path) {
           case "/":
             return <HomePage />;
@@ -63,8 +85,10 @@ export default function App() {
             return <NewRoyalServicesPage />;
           case "/aishwarya-rental":
             return <AishwaryaRentalPage />;
+          case "/de-marvel-furnishings":
+            return <DeMarvelFurnishingsPage />;
           case "/urban-de":
-            return <UrbanDePage />;
+            return <DeMarvelFurnishingsPage />;
           case "/royal-foods":
             return <RoyalFoodsPage />;
           default:

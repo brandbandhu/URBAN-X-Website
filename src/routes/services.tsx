@@ -111,6 +111,7 @@ export default function ServicesPage() {
               <Link
                 key={brand.to}
                 to={brand.to}
+                aria-label={`Open ${brand.label} brand details`}
                 className="group overflow-hidden rounded-2xl bg-card shadow-card-luxe hover-lift"
               >
                 <div className="relative h-52 overflow-hidden sm:h-60">
@@ -138,7 +139,7 @@ export default function ServicesPage() {
                     {brand.description}
                   </p>
                   <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors group-hover:text-gold">
-                    Explore <ArrowRight className="h-4 w-4" />
+                    View Details <ArrowRight className="h-4 w-4" />
                   </div>
                 </div>
               </Link>

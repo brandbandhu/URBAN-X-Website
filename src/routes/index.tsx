@@ -331,7 +331,10 @@ export default function HomePage() {
               We combine innovation, expertise and professionalism to deliver a seamless lifetime
               experience where every requirement, big or small, is handled with care and precision.
             </p>
-            <BulletGrid items={urbanxCoreCapabilities.slice(0, 4).map((item) => item.title)} icon={Check} />
+            <BulletGrid
+              items={urbanxCoreCapabilities.slice(0, 4).map((item) => item.title)}
+              icon={Check}
+            />
           </div>
         </div>
       </section>
@@ -1041,6 +1044,7 @@ export default function HomePage() {
               <Link
                 key={brand.to}
                 to={brand.to}
+                aria-label={`Open ${brand.label} brand details`}
                 className="group overflow-hidden rounded-2xl bg-card shadow-card-luxe hover-lift"
               >
                 <div className="relative h-48 overflow-hidden">
@@ -1061,6 +1065,9 @@ export default function HomePage() {
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                     {brand.description}
                   </p>
+                  <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors group-hover:text-gold">
+                    View Details <ArrowRight className="h-4 w-4" />
+                  </div>
                 </div>
               </Link>
             ))}
@@ -1107,8 +1114,8 @@ export default function HomePage() {
               Clear direction. Reliable execution.
             </h2>
             <p className="mt-8 max-w-xl leading-relaxed text-muted-foreground">
-              Urbanx is built around one simple idea: connect essential services under a
-              dependable platform so people can manage everyday needs with more confidence.
+              Urbanx is built around one simple idea: connect essential services under a dependable
+              platform so people can manage everyday needs with more confidence.
             </p>
           </div>
 
