@@ -151,7 +151,7 @@ export const urbanxBrandCards: BrandCard[] = [
     tagline: "Interior Experience",
     description:
       "Custom interiors, furnishing, mood boards and aesthetic solutions for homes, offices and specialist spaces.",
-    to: "/urban-de",
+    to: "/de-marvel-furnishings",
   },
   {
     icon: ChefHat,
@@ -340,8 +340,7 @@ export const urbanxInteriorDetails = {
     "De Marvel Furnishings",
     "Aishwarya Heights",
   ],
-  note:
-    "Our specialty lies in mood board design and colour theme development, ranging from contemporary and modern to neoclassical interiors.",
+  note: "Our specialty lies in mood board design and colour theme development, ranging from contemporary and modern to neoclassical interiors.",
 };
 
 export const urbanxEventsDetails = {

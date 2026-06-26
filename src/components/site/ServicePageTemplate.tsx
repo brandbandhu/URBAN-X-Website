@@ -1,6 +1,7 @@
 import { Link } from "@/components/site/AppLink";
 import { PageBanner } from "./PageBanner";
 import { WhatsAppIcon } from "./WhatsAppIcon";
+import { slugify } from "@/lib/utils";
 import { useRef, useState } from "react";
 import { Check, ArrowRight, Sparkles, Send } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -17,6 +18,7 @@ export interface ServicePageData {
   process: { step: string; title: string; desc: string }[];
   gallery: string[];
   accentLabel: string;
+  detailBasePath: string;
 }
 
 export function ServicePageTemplate({ data }: { data: ServicePageData }) {
@@ -60,7 +62,7 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
       <PageBanner
         title={data.companyName}
         subtitle={data.tagline}
-        crumbs={[{ label: "Companies", to: "/services" }, { label: data.companyName }]}
+        crumbs={[{ label: "Brands", to: "/services" }, { label: data.companyName }]}
         image={data.banner}
       />
 
@@ -111,23 +113,21 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.services.map((s) => (
-              <div
+              <Link
                 key={s.title}
-                className="group bg-card rounded-xl p-7 border border-border hover-lift"
+                to={`${data.detailBasePath}/${slugify(s.title)}`}
+                aria-label={`Open ${s.title} details`}
+                className="group block h-full bg-card rounded-xl p-7 border border-border hover-lift"
               >
                 <div className="w-14 h-14 rounded-lg bg-gradient-gold flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
                   <s.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-primary mb-2">{s.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
-                <button
-                  type="button"
-                  onClick={() => selectService(s.title)}
-                  className="mt-5 text-sm font-semibold text-gold inline-flex items-center gap-1 hover:text-primary transition-colors"
-                >
-                  Enquire <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
+                <div className="mt-5 text-sm font-semibold text-gold inline-flex items-center gap-1 hover:text-primary transition-colors">
+                  View Details <ArrowRight className="w-4 h-4" />
+                </div>
+              </Link>
             ))}
           </div>
         </div>
