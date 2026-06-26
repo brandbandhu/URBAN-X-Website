@@ -1,5 +1,6 @@
 import { Link } from "@/components/site/AppLink";
 import { SiteLayout } from "@/components/site/Layout";
+import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import {
   urbanxBrand,
   urbanxBrandCards,
@@ -24,12 +25,13 @@ import {
   CalendarDays,
   Check,
   ChefHat,
+  Compass,
   Construction,
   Home as HomeIcon,
   MapPin,
-  MessageCircle,
   MonitorSmartphone,
   Phone,
+  Route,
   ShieldCheck,
   Sparkles,
   Sofa,
@@ -37,7 +39,7 @@ import {
   Trees,
   Wrench,
 } from "lucide-react";
-import { Children, useEffect, useState, type ReactNode } from "react";
+import { Children, useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import aboutImg from "@/assets/about-urbanx.jpg";
 import gardening from "@/assets/service-gardening.jpg";
 import housekeeping from "@/assets/service-housekeeping.jpg";
@@ -118,19 +120,27 @@ function StackRail({ children, className = "" }: { children: ReactNode; classNam
   const cards = Children.toArray(children);
 
   return (
-    <div className={cn("relative space-y-4 pb-12 md:space-y-0 md:pb-32", className)}>
-      {cards.map((card, index) => (
-        <div
-          key={index}
-          className={cn(
-            "rounded-[2rem] border border-border bg-background p-5 shadow-luxe md:sticky md:p-6",
-            index > 0 && "md:-mt-14",
-          )}
-          style={{ top: `calc(7rem - ${index * 0.9}rem)`, zIndex: index + 1 }}
-        >
-          {card}
-        </div>
-      ))}
+    <div className={cn("relative pb-24 md:pb-32", className)}>
+      {cards.map((card, index) => {
+        const stackStyle = {
+          "--stack-top": `calc(5.75rem + ${Math.min(index, 4) * 0.45}rem)`,
+          "--stack-top-md": `calc(7rem - ${index * 0.9}rem)`,
+          zIndex: index + 1,
+        } as CSSProperties;
+
+        return (
+          <div
+            key={index}
+            className={cn(
+              "sticky top-[var(--stack-top)] rounded-[2rem] border border-border bg-background p-5 shadow-luxe md:top-[var(--stack-top-md)] md:p-6",
+              index > 0 && "-mt-6 md:-mt-14",
+            )}
+            style={stackStyle}
+          >
+            {card}
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -225,20 +235,20 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.18_0.05_255/0.94)] via-[oklch(0.18_0.05_255/0.72)] to-[oklch(0.18_0.05_255/0.28)]" />
           </div>
 
-          <div className="absolute inset-0 flex items-center pb-24 md:pb-28">
+          <div className="absolute inset-0 flex items-start pt-24 pb-20 md:items-center md:pt-0 md:pb-28 lg:items-start lg:pt-28 xl:pt-28">
             <div className="container-x text-white">
               <div key={active} className="max-w-4xl animate-fade-up">
                 <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-6">
                   <Sparkles className="h-3.5 w-3.5" />
                   {activeSlide.eyebrow}
                 </div>
-                <h1 className="mb-6 max-w-3xl text-4xl font-bold leading-[1.02] md:text-6xl lg:text-7xl">
+                <h1 className="mb-4 max-w-3xl text-3xl font-bold leading-[1.08] sm:mb-6 sm:text-4xl md:text-6xl lg:text-7xl">
                   {activeSlide.title}
                 </h1>
-                <p className="mb-9 max-w-2xl text-lg text-white/85 md:text-xl">
+                <p className="mb-7 max-w-2xl text-base text-white/85 sm:mb-9 sm:text-lg md:text-xl">
                   {activeSlide.description}
                 </p>
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                   <Link
                     to="/contact"
                     className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift"
@@ -257,53 +267,17 @@ export default function HomePage() {
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-7 py-3.5 font-semibold text-white hover-lift"
                   >
-                    <MessageCircle className="h-4 w-4" />
+                    <WhatsAppIcon className="h-4 w-4" />
                     WhatsApp Now
                   </a>
                 </div>
               </div>
             </div>
           </div>
-
-          <div className="absolute bottom-5 left-1/2 z-20 w-[min(92vw,44rem)] -translate-x-1/2">
-            <div className="rounded-full border border-white/15 bg-navy/70 px-4 py-3 text-white shadow-luxe backdrop-blur-md">
-              <div className="flex items-center gap-3">
-                {heroSlides.map((slide, index) => {
-                  const isActive = index === active;
-                  const isComplete = index < active;
-
-                  return (
-                    <button
-                      key={slide.title}
-                      type="button"
-                      onClick={() => setActive(index)}
-                      className="group min-w-0 flex-1 text-left"
-                      aria-label={`Go to slide ${index + 1}`}
-                    >
-                      <div className="mb-2 flex items-center justify-between text-[10px] uppercase tracking-[0.3em] text-white/70">
-                        <span>{String(index + 1).padStart(2, "0")}</span>
-                      </div>
-                      <div className="h-1.5 overflow-hidden rounded-full bg-white/20">
-                        <div
-                          key={isActive ? active : slide.title}
-                          className="h-full w-full origin-left rounded-full bg-gradient-gold transition-transform duration-300"
-                          style={
-                            isActive
-                              ? { animation: `hero-progress ${slideDurationMs}ms linear forwards` }
-                              : { transform: `scaleX(${isComplete ? 1 : 0})` }
-                          }
-                        />
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-      <section className="relative z-10 -mt-10 pb-6 md:-mt-14 md:pb-8">
+      <section className="relative z-10 -mt-10 pb-6 md:-mt-10 md:pb-8">
         <div className="container-x">
           <div className="grid gap-4 rounded-[1.75rem] border border-border bg-background/98 p-4 shadow-luxe md:grid-cols-2 xl:grid-cols-4 md:p-6">
             {urbanxMetrics.map((metric) => (
@@ -355,7 +329,7 @@ export default function HomePage() {
               We combine innovation, expertise and professionalism to deliver a seamless lifetime
               experience where every requirement, big or small, is handled with care and precision.
             </p>
-            <BulletGrid items={urbanxCoreCapabilities.slice(0, 4)} icon={Check} />
+            <BulletGrid items={urbanxCoreCapabilities.slice(0, 4).map((item) => item.title)} icon={Check} />
           </div>
         </div>
       </section>
@@ -368,17 +342,21 @@ export default function HomePage() {
             subtitle="Everything Urbanx brings together sits under one platform so homes, lifestyle, food and business needs can be managed more easily."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {urbanxCoreCapabilities.map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-border bg-card p-7 shadow-card-luxe hover-lift"
-              >
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary">
-                  <Sparkles className="h-7 w-7 text-gold" />
+            {urbanxCoreCapabilities.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <div
+                  key={item.title}
+                  className="rounded-2xl border border-border bg-card p-7 shadow-card-luxe hover-lift"
+                >
+                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary">
+                    <Icon className="h-7 w-7 text-gold" />
+                  </div>
+                  <h3 className="text-xl font-bold text-primary">{item.title}</h3>
                 </div>
-                <h3 className="text-xl font-bold text-primary">{item}</h3>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -1094,40 +1072,70 @@ export default function HomePage() {
             subtitleClassName="text-white/80"
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-5">
-            {urbanxWhyChoose.map((item) => (
-              <div
-                key={item}
-                className="rounded-xl border border-white/10 bg-white/5 p-6 text-center transition-all hover:border-gold hover:bg-white/10"
-              >
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-gold">
-                  <Star className="h-7 w-7 text-primary" />
+            {urbanxWhyChoose.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <div
+                  key={item.title}
+                  className="rounded-xl border border-white/10 bg-white/5 p-6 text-center transition-all hover:border-gold hover:bg-white/10"
+                >
+                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-gold">
+                    <Icon className="h-7 w-7 text-primary" />
+                  </div>
+                  <p className="text-sm font-semibold">{item.title}</p>
                 </div>
-                <p className="text-sm font-semibold">{item}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       <section className="py-20 md:py-28">
-        <div className="container-x grid gap-8 lg:grid-cols-2">
-          <div className="rounded-3xl bg-card p-8 shadow-luxe">
+        <div className="container-x grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          <div>
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-              Our Vision
+              Vision & Mission
             </div>
-            <h3 className="mb-4 text-3xl font-bold text-primary">
-              To become the most trusted and comprehensive service platform
-            </h3>
-            <p className="leading-relaxed text-muted-foreground">{urbanxVision}</p>
+            <h2 className="gold-underline mb-6 text-3xl font-bold text-primary md:text-5xl">
+              Clear direction. Reliable execution.
+            </h2>
+            <p className="mt-8 max-w-xl leading-relaxed text-muted-foreground">
+              Urbanx is built around one simple idea: connect essential services under a
+              dependable platform so people can manage everyday needs with more confidence.
+            </p>
           </div>
-          <div className="rounded-3xl bg-primary p-8 text-white shadow-luxe">
-            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-              Our Mission
+
+          <div className="border-y border-border">
+            <div className="grid gap-5 border-b border-border py-7 md:grid-cols-[4rem_1fr] md:gap-6">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-gold">
+                <Compass className="h-7 w-7 text-primary" />
+              </div>
+              <div>
+                <div className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+                  Our Vision
+                </div>
+                <h3 className="mb-3 text-2xl font-bold text-primary md:text-3xl">
+                  To become the most trusted comprehensive service platform
+                </h3>
+                <p className="leading-relaxed text-muted-foreground">{urbanxVision}</p>
+              </div>
             </div>
-            <h3 className="mb-4 text-3xl font-bold">
-              Connecting people with reliable services across daily life
-            </h3>
-            <p className="leading-relaxed text-white/80">{urbanxMission}</p>
+
+            <div className="grid gap-5 py-7 md:grid-cols-[4rem_1fr] md:gap-6">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary">
+                <Route className="h-7 w-7 text-gold" />
+              </div>
+              <div>
+                <div className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+                  Our Mission
+                </div>
+                <h3 className="mb-3 text-2xl font-bold text-primary md:text-3xl">
+                  Connecting people with reliable services across daily life
+                </h3>
+                <p className="leading-relaxed text-muted-foreground">{urbanxMission}</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1165,7 +1173,7 @@ export default function HomePage() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-md border-2 border-white/40 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary"
                 >
-                  <MessageCircle className="h-4 w-4" />
+                  <WhatsAppIcon className="h-4 w-4" />
                   WhatsApp
                 </a>
               </div>

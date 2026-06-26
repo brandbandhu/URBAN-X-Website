@@ -1,7 +1,8 @@
 import { Link } from "@/components/site/AppLink";
 import { PageBanner } from "./PageBanner";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import { useRef, useState } from "react";
-import { Check, ArrowRight, Sparkles, Send, MessageCircle } from "lucide-react";
+import { Check, ArrowRight, Sparkles, Send } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { FormEvent } from "react";
 
@@ -336,7 +337,7 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
                     href="https://wa.me/919999999999"
                     className="px-6 py-3.5 border border-border text-primary font-semibold rounded-md hover:border-gold hover:text-gold transition-colors inline-flex items-center justify-center gap-2"
                   >
-                    WhatsApp <MessageCircle className="w-4 h-4" />
+                    WhatsApp <WhatsAppIcon className="w-4 h-4" />
                   </a>
                 </div>
               </form>
@@ -365,9 +366,9 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
                 </Link>
                 <a
                   href="https://wa.me/919999999999"
-                  className="px-7 py-3.5 border border-white/30 text-white font-semibold rounded-md hover:bg-white/10 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-white/30 text-white font-semibold rounded-md hover:bg-white/10 transition-colors"
                 >
-                  WhatsApp Now
+                  WhatsApp Now <WhatsAppIcon className="w-4 h-4" />
                 </a>
               </div>
             </div>

@@ -178,14 +178,6 @@
       transform: translateX(0);
     }
   }
-  @keyframes hero-progress {
-    from {
-      transform: scaleX(0);
-    }
-    to {
-      transform: scaleX(1);
-    }
-  }
   .animate-fade-up {
     animation: fade-up 0.8s ease-out both;
   }

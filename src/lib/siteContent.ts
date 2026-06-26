@@ -164,10 +164,10 @@ export const urbanxBrandCards: BrandCard[] = [
 ];
 
 export const urbanxMetrics = [
-  { value: "2,000+", label: "living spaces every year" },
-  { value: "2,000+", label: "meals served every day" },
-  { value: "10+", label: "years of interior experience" },
-  { value: "10 lakh+", label: "square feet completed" },
+  { value: "8", label: "service verticals" },
+  { value: "4", label: "specialist brands" },
+  { value: "6", label: "sectors served" },
+  { value: "1", label: "point of contact" },
 ];
 
 export const urbanxIndustries = [
@@ -179,12 +179,32 @@ export const urbanxIndustries = [
   { icon: Factory, label: "Industrial" },
 ];
 
-export const urbanxWhyChoose = [
-  "One platform for multiple services",
-  "Trusted professionals and verified vendors",
-  "Affordable pricing",
-  "Quick and reliable service",
-  "Customer-first approach",
+export const urbanxWhyChoose: IconCard[] = [
+  {
+    icon: Building2,
+    title: "One platform for multiple services",
+    description: "",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Trusted professionals and verified vendors",
+    description: "",
+  },
+  {
+    icon: Award,
+    title: "Affordable pricing",
+    description: "",
+  },
+  {
+    icon: Wrench,
+    title: "Quick and reliable service",
+    description: "",
+  },
+  {
+    icon: Star,
+    title: "Customer-first approach",
+    description: "",
+  },
 ];
 
 export const urbanxProjectHighlights = [
@@ -200,15 +220,47 @@ export const urbanxVision =
 export const urbanxMission =
   "To connect people with reliable services across all daily life segments through innovation, quality and trust.";
 
-export const urbanxCoreCapabilities = [
-  "Smart housing and real estate solutions",
-  "Architectural and interior design services",
-  "Landscaping and outdoor enhancements",
-  "Event planning and execution",
-  "Food and lifestyle services",
-  "Product development and project management",
-  "Housekeeping services",
-  "Gardening services",
+export const urbanxCoreCapabilities: IconCard[] = [
+  {
+    icon: Home,
+    title: "Smart housing and real estate solutions",
+    description: "",
+  },
+  {
+    icon: Sofa,
+    title: "Architectural and interior design services",
+    description: "",
+  },
+  {
+    icon: Trees,
+    title: "Landscaping and outdoor enhancements",
+    description: "",
+  },
+  {
+    icon: CalendarDays,
+    title: "Event planning and execution",
+    description: "",
+  },
+  {
+    icon: ChefHat,
+    title: "Food and lifestyle services",
+    description: "",
+  },
+  {
+    icon: Construction,
+    title: "Product development and project management",
+    description: "",
+  },
+  {
+    icon: Sparkles,
+    title: "Housekeeping services",
+    description: "",
+  },
+  {
+    icon: Sprout,
+    title: "Gardening services",
+    description: "",
+  },
 ];
 
 export const urbanxHousingDetails = {
