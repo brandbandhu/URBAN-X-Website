@@ -73,6 +73,8 @@ const heroSlides = [
   },
 ];
 
+const brandPlaceholderImages = [housekeeping, rental, marble, hero3] as const;
+
 function SectionHeading({
   eyebrow,
   title,
@@ -1035,17 +1037,21 @@ export default function HomePage() {
           </div>
 
           <div className="mt-12 grid gap-7 md:grid-cols-2 xl:grid-cols-4">
-            {urbanxBrandCards.map((brand) => (
+            {urbanxBrandCards.map((brand, index) => (
               <Link
                 key={brand.to}
                 to={brand.to}
                 className="group overflow-hidden rounded-2xl bg-card shadow-card-luxe hover-lift"
               >
                 <div className="relative h-48 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary via-navy to-primary" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <brand.icon className="h-12 w-12 text-gold" />
-                  </div>
+                  <img
+                    src={brandPlaceholderImages[index % brandPlaceholderImages.length]}
+                    alt=""
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="absolute inset-0 bg-primary/35" />
                 </div>
                 <div className="p-6">
                   <div className="text-[10px] uppercase tracking-[0.3em] text-gold">
