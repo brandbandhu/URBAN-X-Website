@@ -2,7 +2,7 @@ import { useState } from "react";
 import { SiteLayout } from "@/components/site/Layout";
 import { PageBanner } from "@/components/site/PageBanner";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
-import { urbanxBrand, urbanxContact, royalFoodsContact } from "@/lib/siteContent";
+import { urbanxBrand, urbanxContact, theHungryScholarsContact } from "@/lib/siteContent";
 import { Check, Mail, MapPin, Phone, Send } from "lucide-react";
 import type { FormEvent } from "react";
 import aboutImg from "@/assets/about-urbanx.jpg";
@@ -130,25 +130,27 @@ export default function ContactPage() {
 
             <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
               <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                Royal Foods
+                The Hungry Scholars
               </div>
               <div className="text-lg font-bold text-primary">Institutional catering contact</div>
-              <p className="mt-3 text-sm text-muted-foreground">{royalFoodsContact.venue}</p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                {theHungryScholarsContact.venue}
+              </p>
               <p className="mt-2 text-sm text-muted-foreground">
-                Director: {royalFoodsContact.director}
+                Director: {theHungryScholarsContact.director}
               </p>
               <div className="mt-4 space-y-2 text-sm">
-                {royalFoodsContact.phones.map((phone) => (
+                {theHungryScholarsContact.phones.map((phone) => (
                   <div key={phone} className="text-primary">
                     {phone}
                   </div>
                 ))}
                 <a
-                  href={royalFoodsContact.emailHref}
+                  href={theHungryScholarsContact.emailHref}
                   className="inline-flex items-center gap-2 font-semibold text-primary hover:text-gold"
                 >
                   <Mail className="h-4 w-4" />
-                  {royalFoodsContact.email}
+                  {theHungryScholarsContact.email}
                 </a>
               </div>
             </div>
@@ -246,7 +248,7 @@ export default function ContactPage() {
                       <option>Gardening Services</option>
                       <option>Landscaping & Outdoor Solutions</option>
                       <option>IT Solutions</option>
-                      <option>Royal Foods - Institutional Catering</option>
+                      <option>The Hungry Scholars - Institutional Catering</option>
                       <option>General Enquiry</option>
                     </select>
                     {errors.service && (

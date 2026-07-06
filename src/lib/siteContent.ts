@@ -35,6 +35,12 @@ export type BrandCard = {
   to: string;
 };
 
+export type UrbanxMetric = {
+  target: number;
+  label: string;
+  unit?: string;
+};
+
 export const urbanxBrand = {
   name: "Urbanx",
   tagline: "Simplifying Life. Connecting Services. Delivering Excellence.",
@@ -132,18 +138,18 @@ export const urbanxBrandCards: BrandCard[] = [
   {
     icon: Sprout,
     label: "New Royal Services",
-    tagline: "Housekeeping & Gardening",
+    tagline: "Housekeeping, Gardening & More",
     description:
-      "Professional cleaning and grounds care for hospitals, hostels, homes, societies, offices and industrial facilities.",
+      "Housekeeping, gardening, landscaping, interior designing, architecture and IT support for homes, societies and businesses.",
     to: "/new-royal-services",
   },
   {
     icon: Construction,
-    label: "Aishwarya Rental",
-    tagline: "Construction & Contracting",
+    label: "Aishwarya Heights",
+    tagline: "2 BHK & 3 BHK Homes",
     description:
-      "Project rental, scaffolding, tools, execution support and site services for residential and commercial builds.",
-    to: "/aishwarya-rental",
+      "Inspired living in Kothrud with thoughtfully designed homes, modern amenities and project support from Marvel Holdings LLP.",
+    to: "/aishwarya-height",
   },
   {
     icon: Sofa,
@@ -155,19 +161,19 @@ export const urbanxBrandCards: BrandCard[] = [
   },
   {
     icon: ChefHat,
-    label: "Royal Foods",
+    label: "The Hungry Scholars",
     tagline: "Institutional Catering",
     description:
       "Trusted food service for educational institutions, large-scale daily operations and hygienic kitchen management.",
-    to: "/royal-foods",
+    to: "/the-hungry-scholars",
   },
 ];
 
-export const urbanxMetrics = [
-  { value: "8", label: "service verticals" },
-  { value: "4", label: "specialist brands" },
-  { value: "6", label: "sectors served" },
-  { value: "1", label: "point of contact" },
+export const urbanxMetrics: UrbanxMetric[] = [
+  { target: 350, label: "Staff" },
+  { target: 15, label: "Years of experience", unit: "years" },
+  { target: 150, label: "Happy clients" },
+  { target: 2000, label: "Students/Guests served per day" },
 ];
 
 export const urbanxIndustries = [
@@ -508,14 +514,14 @@ export const urbanxFoodServiceCategories = [
   "Social celebrations",
 ];
 
-export const royalFoodsMetrics = [
+export const theHungryScholarsMetrics = [
   { value: "25+ Years", label: "industry experience" },
   { value: "2,200-2,500", label: "students served daily" },
   { value: "8", label: "service specialities" },
   { value: "1000+ sq ft", label: "kitchen space" },
 ];
 
-export const royalFoodsStrengths = [
+export const theHungryScholarsStrengths = [
   "25+ years of experience in institutional catering",
   "Trusted by educational institutions",
   "Large-scale daily operations",
@@ -526,7 +532,7 @@ export const royalFoodsStrengths = [
   "Customer satisfaction focus",
 ];
 
-export const royalFoodsServices = [
+export const theHungryScholarsServices = [
   "Hostel Mess Management",
   "College and University Catering",
   "Breakfast, Lunch and Dinner Services",
@@ -537,7 +543,7 @@ export const royalFoodsServices = [
   "Customized Meal Planning",
 ];
 
-export const royalFoodsQualityCommitments = [
+export const theHungryScholarsQualityCommitments = [
   "Fresh and quality ingredients",
   "Clean and hygienic cooking environment",
   "Balanced and nutritious meal planning",
@@ -546,7 +552,7 @@ export const royalFoodsQualityCommitments = [
   "Professional staff training and discipline",
 ];
 
-export const royalFoodsOperationalStrength = [
+export const theHungryScholarsOperationalStrength = [
   { category: "Industry Experience", details: "25+ Years" },
   { category: "Daily Serving Capacity", details: "2,200-2,500 Students" },
   { category: "Core Specialization", details: "Institutional Catering" },
@@ -555,18 +561,18 @@ export const royalFoodsOperationalStrength = [
   { category: "Client Segment", details: "Educational Institutions" },
 ];
 
-export const royalFoodsDirectorMessage =
-  "At Royal Foods, our mission is to provide safe, hygienic, nutritious and quality food with complete dedication and professionalism. For more than 25 years, we have focused on high standards, operational discipline and long-term trust.";
+export const theHungryScholarsDirectorMessage =
+  "At The Hungry Scholars, our mission is to provide safe, hygienic, nutritious and quality food with complete dedication and professionalism. For more than 25 years, we have focused on high standards, operational discipline and long-term trust.";
 
-export const royalFoodsContact = {
+export const theHungryScholarsContact = {
   venue: "MIT ADT University, Loni Kalbhor, Pune, Maharashtra 412201",
   director: "Shri Ravindra Vitthal Deshmukh",
   phones: ["+91 98220 80115", "7057450842"],
-  email: "royalfoods8@email.com",
-  emailHref: "mailto:royalfoods8@email.com",
+  email: "thehungryscholars8@email.com",
+  emailHref: "mailto:thehungryscholars8@email.com",
 };
 
-export const royalFoodsWhyChoose = [
+export const theHungryScholarsWhyChoose = [
   "Decades of institutional catering experience",
   "Consistent quality for large student communities",
   "Balanced nutrition built into every menu plan",
@@ -575,7 +581,7 @@ export const royalFoodsWhyChoose = [
   "Responsive service and long-term relationship focus",
 ];
 
-export const royalFoodsMenuFocus = [
+export const theHungryScholarsMenuFocus = [
   "Healthy daily meals",
   "Hostel dining support",
   "Special diet meal plans",

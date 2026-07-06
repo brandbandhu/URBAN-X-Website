@@ -5,9 +5,9 @@ const AboutPage = lazy(() => import("./routes/about"));
 const ServicesPage = lazy(() => import("./routes/services"));
 const ContactPage = lazy(() => import("./routes/contact"));
 const NewRoyalServicesPage = lazy(() => import("./routes/new-royal-services"));
-const AishwaryaRentalPage = lazy(() => import("./routes/aishwarya-rental"));
+const AishwaryaHeightPage = lazy(() => import("./routes/aishwarya-height"));
 const DeMarvelFurnishingsPage = lazy(() => import("./routes/de-marvel-furnishings"));
-const RoyalFoodsPage = lazy(() => import("./routes/royal-foods"));
+const TheHungryScholarsPage = lazy(() => import("./routes/royal-foods"));
 const BrandServiceDetailPage = lazy(() => import("./routes/brand-service-detail"));
 
 function RouteFallback() {
@@ -48,7 +48,7 @@ function NotFoundPage() {
 export default function App() {
   const path = window.location.pathname.replace(/\/$/, "") || "/";
   const detailMatch = path.match(
-    /^\/(new-royal-services|aishwarya-rental|de-marvel-furnishings|royal-foods|urban-de)\/([^/]+)$/,
+    /^\/(new-royal-services|aishwarya-height|aishwarya-rental|de-marvel-furnishings|the-hungry-scholars|royal-foods|urban-de)\/([^/]+)$/,
   );
 
   return (
@@ -62,8 +62,10 @@ export default function App() {
               brandKey={
                 brandKey as
                   | "new-royal-services"
+                  | "aishwarya-height"
                   | "aishwarya-rental"
                   | "de-marvel-furnishings"
+                  | "the-hungry-scholars"
                   | "royal-foods"
                   | "urban-de"
               }
@@ -83,14 +85,16 @@ export default function App() {
             return <ContactPage />;
           case "/new-royal-services":
             return <NewRoyalServicesPage />;
+          case "/aishwarya-height":
           case "/aishwarya-rental":
-            return <AishwaryaRentalPage />;
+            return <AishwaryaHeightPage />;
           case "/de-marvel-furnishings":
             return <DeMarvelFurnishingsPage />;
           case "/urban-de":
             return <DeMarvelFurnishingsPage />;
+          case "/the-hungry-scholars":
           case "/royal-foods":
-            return <RoyalFoodsPage />;
+            return <TheHungryScholarsPage />;
           default:
             return <NotFoundPage />;
         }

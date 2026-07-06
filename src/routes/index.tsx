@@ -18,6 +18,7 @@ import {
   urbanxHousekeepingDetails,
   urbanxVision,
   urbanxWhyChoose,
+  type UrbanxMetric,
 } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import {
@@ -39,7 +40,14 @@ import {
   Trees,
   Wrench,
 } from "lucide-react";
-import { Children, useEffect, useState, type CSSProperties, type ReactNode } from "react";
+import {
+  Children,
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type ReactNode,
+} from "react";
 import aboutImg from "@/assets/about-urbanx.jpg";
 import gardening from "@/assets/service-gardening.jpg";
 import housekeeping from "@/assets/service-housekeeping.jpg";
@@ -147,6 +155,86 @@ function StackRail({ children, className = "" }: { children: ReactNode; classNam
   );
 }
 
+function useCountUp(target: number, active: boolean, delayMs = 0, durationMs = 1600) {
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    if (!active) {
+      setValue(0);
+      return;
+    }
+
+    const reduceMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduceMotion) {
+      setValue(target);
+      return;
+    }
+
+    let rafId = 0;
+    let timeoutId = 0;
+
+    const start = () => {
+      const startTime = performance.now();
+
+      const tick = (now: number) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / durationMs, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setValue(Math.round(target * eased));
+
+        if (progress < 1) {
+          rafId = window.requestAnimationFrame(tick);
+        }
+      };
+
+      rafId = window.requestAnimationFrame(tick);
+    };
+
+    if (delayMs > 0) {
+      timeoutId = window.setTimeout(start, delayMs);
+    } else {
+      start();
+    }
+
+    return () => {
+      window.clearTimeout(timeoutId);
+      window.cancelAnimationFrame(rafId);
+    };
+  }, [active, delayMs, durationMs, target]);
+
+  return value;
+}
+
+function MetricCard({
+  metric,
+  active,
+  delayMs,
+}: {
+  metric: UrbanxMetric;
+  active: boolean;
+  delayMs: number;
+}) {
+  const count = useCountUp(metric.target, active, delayMs);
+  const valueText = `${count}+${metric.unit ? ` ${metric.unit}` : ""}`;
+
+  return (
+    <div className="flex min-h-[120px] flex-col items-center justify-center rounded-2xl bg-secondary/60 p-4 text-center md:min-h-[132px] md:p-5">
+      <div
+        className="text-2xl font-bold leading-none text-primary md:text-4xl"
+        aria-label={valueText}
+      >
+        {valueText}
+      </div>
+      <div className="mt-2 max-w-[12rem] text-[11px] uppercase leading-tight tracking-[0.26em] text-muted-foreground">
+        {metric.label}
+      </div>
+    </div>
+  );
+}
+
 function ServiceMedia({ src, alt }: { src: string; alt: string }) {
   return (
     <div className="self-start lg:sticky lg:top-24">
@@ -176,6 +264,8 @@ type InteriorStackCard = {
 
 export default function HomePage() {
   const [active, setActive] = useState(0);
+  const statsRef = useRef<HTMLElement>(null);
+  const [statsInView, setStatsInView] = useState(false);
   const slideDurationMs = 6500;
   const activeSlide = heroSlides[active];
   const interiorStackCards: InteriorStackCard[] = [
@@ -220,6 +310,42 @@ export default function HomePage() {
       window.clearTimeout(timeoutId);
     };
   }, [active]);
+
+  useEffect(() => {
+    const section = statsRef.current;
+
+    if (!section) {
+      return;
+    }
+
+    const reduceMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduceMotion || typeof window.IntersectionObserver === "undefined") {
+      setStatsInView(true);
+      return;
+    }
+
+    const observer = new window.IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setStatsInView(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.35,
+        rootMargin: "0px 0px -10% 0px",
+      },
+    );
+
+    observer.observe(section);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <SiteLayout>
@@ -279,19 +405,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative z-10 -mt-10 pb-6 md:-mt-10 md:pb-8">
+      <section ref={statsRef} className="relative z-10 -mt-10 pb-6 md:-mt-10 md:pb-8">
         <div className="container-x">
           <div className="grid gap-4 rounded-[1.75rem] border border-border bg-background/98 p-4 shadow-luxe md:grid-cols-2 xl:grid-cols-4 md:p-6">
-            {urbanxMetrics.map((metric) => (
-              <div
+            {urbanxMetrics.map((metric, index) => (
+              <MetricCard
                 key={metric.label}
-                className="rounded-2xl bg-secondary/60 p-4 text-center md:p-5"
-              >
-                <div className="text-2xl font-bold text-primary md:text-4xl">{metric.value}</div>
-                <div className="mt-1 text-[11px] uppercase tracking-[0.26em] text-muted-foreground">
-                  {metric.label}
-                </div>
-              </div>
+                metric={metric}
+                active={statsInView}
+                delayMs={index * 120}
+              />
             ))}
           </div>
         </div>

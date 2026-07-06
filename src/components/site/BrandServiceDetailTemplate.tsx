@@ -123,14 +123,20 @@ export function BrandServiceDetailTemplate({ data }: { data: BrandServiceDetailD
             <h2 className="text-3xl font-bold text-primary md:text-5xl">
               Reliable service delivery with a practical plan
             </h2>
+            <p className="mt-4 text-muted-foreground">
+              Clear scope, trained teams and steady coordination keep every project moving smoothly.
+            </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {data.brandBenefits.map((benefit) => (
-              <div key={benefit} className="rounded-2xl bg-card p-6 shadow-card-luxe">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-gold">
+              <div
+                key={benefit}
+                className="flex h-full items-start gap-4 rounded-2xl border border-border bg-card p-6 shadow-card-luxe transition-transform duration-300 hover:-translate-y-1 hover:shadow-luxe"
+              >
+                <div className="mt-0.5 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-gold">
                   <Check className="h-6 w-6 text-primary" />
                 </div>
-                <p className="text-sm leading-relaxed text-muted-foreground">{benefit}</p>
+                <p className="text-sm leading-relaxed text-foreground/85">{benefit}</p>
               </div>
             ))}
           </div>

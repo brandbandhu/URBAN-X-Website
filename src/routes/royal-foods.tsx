@@ -2,26 +2,26 @@ import { Link } from "@/components/site/AppLink";
 import { PageBanner } from "@/components/site/PageBanner";
 import { SiteLayout } from "@/components/site/Layout";
 import {
-  royalFoodsContact,
-  royalFoodsDirectorMessage,
-  royalFoodsMetrics,
-  royalFoodsOperationalStrength,
-  royalFoodsQualityCommitments,
-  royalFoodsServices,
-  royalFoodsStrengths,
-  royalFoodsMenuFocus,
+  theHungryScholarsContact,
+  theHungryScholarsDirectorMessage,
+  theHungryScholarsMetrics,
+  theHungryScholarsOperationalStrength,
+  theHungryScholarsQualityCommitments,
+  theHungryScholarsServices,
+  theHungryScholarsStrengths,
+  theHungryScholarsMenuFocus,
 } from "@/lib/siteContent";
 import { slugify } from "@/lib/utils";
 import { ArrowRight, Check, ChefHat, Mail, MapPin, Phone, ShieldCheck, Star } from "lucide-react";
 import hero2 from "@/assets/hero-2.jpg";
 
-export default function RoyalFoodsPage() {
+export default function TheHungryScholarsPage() {
   return (
     <SiteLayout>
       <PageBanner
-        title="Royal Foods"
+        title="The Hungry Scholars"
         subtitle="Trusted Food Service Partner for Educational Institutions"
-        crumbs={[{ label: "Brands", to: "/services" }, { label: "Royal Foods" }]}
+        crumbs={[{ label: "Brands", to: "/services" }, { label: "The Hungry Scholars" }]}
         image={hero2}
       />
 
@@ -35,8 +35,8 @@ export default function RoyalFoodsPage() {
               Safe, hygienic and nutritious food service at scale.
             </h2>
             <p className="mt-8 mb-5 text-lg text-muted-foreground">
-              Royal Foods is a professionally managed food service company with more than 25 years
-              of experience in institutional catering and large-scale food operations.
+              The Hungry Scholars is a professionally managed food service company with more than
+              25 years of experience in institutional catering and large-scale food operations.
             </p>
             <p className="mb-5 leading-relaxed text-foreground/80">
               We currently serve approximately 2,200 to 2,500 students at MIT ADT University and are
@@ -49,7 +49,7 @@ export default function RoyalFoodsPage() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            {royalFoodsMetrics.map((metric) => (
+            {theHungryScholarsMetrics.map((metric) => (
               <div
                 key={metric.label}
                 className="rounded-2xl bg-card p-7 text-center shadow-card-luxe"
@@ -68,14 +68,14 @@ export default function RoyalFoodsPage() {
         <div className="container-x">
           <div className="mx-auto mb-14 max-w-3xl text-center">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-              Why Choose Royal Foods
+              Why Choose The Hungry Scholars
             </div>
             <h2 className="text-3xl font-bold text-primary md:text-5xl">
               Experience, hygiene and consistency
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {royalFoodsStrengths.map((item) => (
+            {theHungryScholarsStrengths.map((item) => (
               <div
                 key={item}
                 className="rounded-2xl border border-border bg-card p-7 shadow-card-luxe hover-lift"
@@ -100,10 +100,10 @@ export default function RoyalFoodsPage() {
               Built for institutional food service
             </h2>
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              {royalFoodsServices.map((service) => (
+              {theHungryScholarsServices.map((service) => (
                 <Link
                   key={service}
-                  to={`/royal-foods/${slugify(service)}`}
+                  to={`/the-hungry-scholars/${slugify(service)}`}
                   aria-label={`Open ${service} details`}
                   className="group block rounded-xl bg-secondary p-5 transition-colors hover:bg-secondary/80"
                 >
@@ -170,7 +170,7 @@ export default function RoyalFoodsPage() {
               <div>Details</div>
             </div>
             <div className="divide-y divide-border">
-              {royalFoodsOperationalStrength.map((row) => (
+              {theHungryScholarsOperationalStrength.map((row) => (
                 <div key={row.category} className="grid gap-2 px-6 py-5 sm:grid-cols-2 sm:gap-6">
                   <div className="font-semibold text-primary">{row.category}</div>
                   <div className="text-muted-foreground">{row.details}</div>
@@ -190,7 +190,9 @@ export default function RoyalFoodsPage() {
             <h3 className="mb-4 text-3xl font-bold text-primary">
               Quality food is the foundation of student well-being
             </h3>
-            <p className="leading-relaxed text-muted-foreground">{royalFoodsDirectorMessage}</p>
+            <p className="leading-relaxed text-muted-foreground">
+              {theHungryScholarsDirectorMessage}
+            </p>
             <div className="mt-6 rounded-2xl border border-gold/30 bg-gold/10 p-5 text-sm text-foreground/90">
               Continuous improvement, operational excellence and customer satisfaction remain at the
               center of our work.
@@ -205,7 +207,7 @@ export default function RoyalFoodsPage() {
               Every meal is served with discipline and care
             </h3>
             <ul className="space-y-4">
-              {royalFoodsQualityCommitments.map((item) => (
+              {theHungryScholarsQualityCommitments.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
                   <span className="text-white/85">{item}</span>
@@ -213,7 +215,7 @@ export default function RoyalFoodsPage() {
               ))}
             </ul>
             <div className="mt-6 flex flex-wrap gap-3 text-sm text-white/75">
-              {royalFoodsMenuFocus.map((item) => (
+              {theHungryScholarsMenuFocus.map((item) => (
                 <span
                   key={item}
                   className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5"
@@ -233,7 +235,7 @@ export default function RoyalFoodsPage() {
               Contact
             </div>
             <h2 className="text-3xl font-bold text-primary md:text-5xl">
-              Talk to the Royal Foods team
+              Talk to The Hungry Scholars team
             </h2>
           </div>
 
@@ -243,7 +245,7 @@ export default function RoyalFoodsPage() {
                 <MapPin className="h-7 w-7 text-primary" />
               </div>
               <h3 className="mb-2 text-xl font-bold text-primary">Location</h3>
-              <p className="text-muted-foreground">{royalFoodsContact.venue}</p>
+              <p className="text-muted-foreground">{theHungryScholarsContact.venue}</p>
             </div>
             <div className="rounded-2xl bg-card p-7 shadow-card-luxe">
               <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-gold">
@@ -251,7 +253,7 @@ export default function RoyalFoodsPage() {
               </div>
               <h3 className="mb-2 text-xl font-bold text-primary">Phone</h3>
               <div className="space-y-2 text-muted-foreground">
-                {royalFoodsContact.phones.map((phone) => (
+                {theHungryScholarsContact.phones.map((phone) => (
                   <div key={phone}>{phone}</div>
                 ))}
               </div>
@@ -262,13 +264,13 @@ export default function RoyalFoodsPage() {
               </div>
               <h3 className="mb-2 text-xl font-bold text-primary">Email</h3>
               <a
-                href={royalFoodsContact.emailHref}
+                href={theHungryScholarsContact.emailHref}
                 className="text-muted-foreground hover:text-gold"
               >
-                {royalFoodsContact.email}
+                {theHungryScholarsContact.email}
               </a>
               <p className="mt-4 text-sm text-muted-foreground">
-                Director: {royalFoodsContact.director}
+                Director: {theHungryScholarsContact.director}
               </p>
             </div>
           </div>
