@@ -2,9 +2,9 @@ import { Link } from "@/components/site/AppLink";
 import { SiteLayout } from "@/components/site/Layout";
 import { BrandServiceDetailTemplate } from "@/components/site/BrandServiceDetailTemplate";
 import {
-  aishwaryaRentalData,
+  aishwaryaHeightData,
   deMarvelFurnishingsData,
-  royalFoodsData,
+  theHungryScholarsData,
   newRoyalServicesData,
 } from "@/lib/brandServiceData";
 import { slugify } from "@/lib/utils";
@@ -12,9 +12,11 @@ import { ChevronRight } from "lucide-react";
 
 const brandCatalog = {
   "new-royal-services": newRoyalServicesData,
-  "aishwarya-rental": aishwaryaRentalData,
+  "aishwarya-height": aishwaryaHeightData,
+  "aishwarya-rental": aishwaryaHeightData,
   "de-marvel-furnishings": deMarvelFurnishingsData,
-  "royal-foods": royalFoodsData,
+  "the-hungry-scholars": theHungryScholarsData,
+  "royal-foods": theHungryScholarsData,
   "urban-de": deMarvelFurnishingsData,
 } as const;
 

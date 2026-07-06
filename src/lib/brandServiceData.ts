@@ -21,6 +21,7 @@ import {
   Armchair,
   Gem,
   Wind,
+  MonitorSmartphone,
 } from "lucide-react";
 import gardening from "@/assets/service-gardening.jpg";
 import hero1 from "@/assets/hero-1.jpg";
@@ -30,90 +31,70 @@ import housekeeping from "@/assets/service-housekeeping.jpg";
 import marble from "@/assets/service-marble.jpg";
 import rental from "@/assets/service-rental.jpg";
 import {
-  royalFoodsDirectorMessage,
-  royalFoodsOperationalStrength,
-  royalFoodsServices,
-  royalFoodsStrengths,
+  theHungryScholarsDirectorMessage,
+  theHungryScholarsOperationalStrength,
+  theHungryScholarsServices,
+  theHungryScholarsStrengths,
 } from "@/lib/siteContent";
 
 export const newRoyalServicesData = {
   companyName: "New Royal Services",
-  accentLabel: "Housekeeping & Gardening",
+  accentLabel: "Housekeeping, Gardening & More",
   tagline:
-    "Professional cleaning, maintenance and outdoor care for homes, institutions and workplaces.",
+    "Housekeeping, gardening, landscaping, interior designing, architecture and IT support for homes and businesses.",
   detailBasePath: "/new-royal-services",
   banner: housekeeping,
   intro:
-    "Urbanx Housekeeping Services bring professional cleaning solutions right to your doorstep - from everyday maintenance to deep sanitization and floor care.",
+    "New Royal Services brings multi-discipline support for homes, institutions and workplaces - from housekeeping and gardening to landscaping, interiors, architecture and IT solutions.",
   about: [
-    "We serve hospitals, hostels, canteens, corporate offices, residential societies and individual homes with tailored cleaning programmes.",
-    "Teams are trained, uniformed and supervised, and we use modern tools and eco-friendly cleaning agents to deliver consistent, dependable results.",
+    "We serve homes, societies, offices and institutions with practical services tailored to each site and project scope.",
+    "Our team handles upkeep, outdoor care, design support and digital solutions through one reliable point of contact.",
   ],
   services: [
     {
       icon: Sparkles,
-      title: "Daily Cleaning & Maintenance",
-      desc: "Everyday upkeep for homes, offices and common areas.",
-    },
-    {
-      icon: Building2,
-      title: "Office & Commercial Cleaning",
-      desc: "Workspaces, reception areas and shared zones kept spotless.",
-    },
-    {
-      icon: Hotel,
-      title: "Hostel & Institutional Cleaning",
-      desc: "Reliable cleaning for hostels, canteens and educational spaces.",
-    },
-    {
-      icon: ShieldCheck,
-      title: "Sanitization & Disinfection",
-      desc: "Hygienic treatment for high-contact areas and shared facilities.",
-    },
-    {
-      icon: Wrench,
-      title: "Floor Scrubbing & Polishing",
-      desc: "Care for tile, stone and marble surfaces with a professional finish.",
-    },
-    {
-      icon: Home,
-      title: "Glass, Carpet & Sofa Cleaning",
-      desc: "Deep cleaning for furnishings, windows and interiors.",
+      title: "Housekeeping",
+      desc: "Daily cleaning, upkeep and sanitization for homes, offices and shared spaces.",
     },
     {
       icon: Sprout,
-      title: "Garden Maintenance",
-      desc: "Plant care, watering, pruning and seasonal plantation support.",
+      title: "Gardening",
+      desc: "Plant care, watering, pruning and seasonal garden maintenance.",
     },
     {
       icon: Trees,
-      title: "Lawn & Landscape Care",
-      desc: "Mowing, trimming and garden presentation for outdoor spaces.",
+      title: "Landscaping",
+      desc: "Outdoor design, lawn care and green-space presentation.",
     },
     {
-      icon: Factory,
-      title: "Waste & Facility Support",
-      desc: "Waste management and maintenance support for larger sites.",
+      icon: Sofa,
+      title: "Interior Designing",
+      desc: "Functional and stylish interior planning for homes and workplaces.",
     },
     {
-      icon: HardHat,
-      title: "Special Occasion Cleaning",
-      desc: "Festival and event readiness for a polished finish.",
+      icon: Building2,
+      title: "Architecture",
+      desc: "Concept planning, design coordination and build-ready guidance.",
+    },
+    {
+      icon: MonitorSmartphone,
+      title: "IT Solutions",
+      desc: "Digital support, web, software and technology services for growing teams.",
     },
   ],
   benefits: [
-    "Trained, uniformed and background-verified staff",
-    "Modern equipment and eco-friendly cleaning agents",
-    "Dedicated supervisor for every long-term contract",
-    "Transparent SLAs and quality audits",
-    "Flexible daily, weekly or one-time plans",
-    "Rapid response and 24/7 client support",
+    "Trained professionals and reliable execution",
+    "Flexible plans for recurring work or project-based needs",
+    "Transparent pricing and clear scope from the start",
+    "Timely delivery with responsive coordination",
+    "Quality checks to keep work standards consistent",
+    "One team for multiple service needs",
   ],
   process: [
     {
       step: "01",
-      title: "Free Site Survey",
-      desc: "We visit, assess your space and understand the cleaning or garden scope.",
+      title: "Discovery Visit",
+      desc: "We visit, assess your space and understand the service or project scope.",
     },
     {
       step: "02",
@@ -123,7 +104,7 @@ export const newRoyalServicesData = {
     {
       step: "03",
       title: "Team Deployment",
-      desc: "Trained teams arrive on time, in uniform, with the right equipment.",
+      desc: "The right team arrives on time with the right tools and coordination.",
     },
     {
       step: "04",
@@ -134,15 +115,15 @@ export const newRoyalServicesData = {
   gallery: [housekeeping, gardening, hero2, hero1, gardening, housekeeping],
 } satisfies ServicePageData;
 
-export const aishwaryaRentalData = {
-  companyName: "Aishwarya Rental",
+export const aishwaryaHeightData = {
+  companyName: "Aishwarya Heights",
   accentLabel: "Construction & Contracting",
   tagline:
     "End-to-end construction, project support and site equipment rental for residential, commercial and institutional work.",
-  detailBasePath: "/aishwarya-rental",
+  detailBasePath: "/aishwarya-height",
   banner: rental,
   intro:
-    "Aishwarya Rental powers builders, contractors and developers with a complete construction ecosystem - from planning and execution to machinery, scaffolding and site support.",
+    "Aishwarya Height powers builders, contractors and developers with a complete construction ecosystem - from planning and execution to machinery, scaffolding and site support.",
   about: [
     "Our team manages labour, budgeting, billing and detailed execution oversight so projects stay on schedule and on spec.",
     "We provide reliable equipment rental and site support for residential towers, commercial complexes, hospitals, institutions and more.",
@@ -312,24 +293,24 @@ export const deMarvelFurnishingsData = {
   gallery: [marble, hero3, marble, hero1, hero3, marble],
 } satisfies ServicePageData;
 
-export const royalFoodsData = {
-  companyName: "Royal Foods",
+export const theHungryScholarsData = {
+  companyName: "The Hungry Scholars",
   accentLabel: "Institutional Catering",
   tagline: "Trusted food service partner for educational institutions",
-  detailBasePath: "/royal-foods",
+  detailBasePath: "/the-hungry-scholars",
   banner: hero2,
-  intro: royalFoodsDirectorMessage,
+  intro: theHungryScholarsDirectorMessage,
   about: [
-    "Royal Foods is a professionally managed food service company with more than 25 years of experience in institutional catering and large-scale food operations.",
+    "The Hungry Scholars is a professionally managed food service company with more than 25 years of experience in institutional catering and large-scale food operations.",
     "We currently serve approximately 2,200 to 2,500 students at MIT ADT University and are known for reliable service, hygienic kitchens, balanced menus and consistent quality.",
   ],
-  services: royalFoodsServices.map((service) => ({
+  services: theHungryScholarsServices.map((service) => ({
     icon: ChefHat,
     title: service,
     desc: "Dedicated food service planning and execution for institutional operations.",
   })),
-  benefits: royalFoodsStrengths,
-  process: royalFoodsOperationalStrength.map((row, index) => ({
+  benefits: theHungryScholarsStrengths,
+  process: theHungryScholarsOperationalStrength.map((row, index) => ({
     step: String(index + 1).padStart(2, "0"),
     title: row.category,
     desc: row.details,
