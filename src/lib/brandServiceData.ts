@@ -30,6 +30,7 @@ import hero3 from "@/assets/hero-3.jpg";
 import housekeeping from "@/assets/service-housekeeping.jpg";
 import marble from "@/assets/service-marble.jpg";
 import rental from "@/assets/service-rental.jpg";
+import { theHungryScholarsGallery } from "@/lib/theHungryScholarsGallery";
 import {
   theHungryScholarsDirectorMessage,
   theHungryScholarsOperationalStrength,
@@ -298,7 +299,7 @@ export const theHungryScholarsData = {
   accentLabel: "Institutional Catering",
   tagline: "Trusted food service partner for educational institutions",
   detailBasePath: "/the-hungry-scholars",
-  banner: hero2,
+  banner: theHungryScholarsGallery[0] ?? hero2,
   intro: theHungryScholarsDirectorMessage,
   about: [
     "The Hungry Scholars is a professionally managed food service company with more than 25 years of experience in institutional catering and large-scale food operations.",
@@ -315,5 +316,8 @@ export const theHungryScholarsData = {
     title: row.category,
     desc: row.details,
   })),
-  gallery: [hero2, hero1, hero3, hero2, hero1, hero3],
+  gallery:
+    theHungryScholarsGallery.length > 0
+      ? theHungryScholarsGallery
+      : [hero2, hero1, hero3, hero2, hero1, hero3],
 } satisfies ServicePageData;

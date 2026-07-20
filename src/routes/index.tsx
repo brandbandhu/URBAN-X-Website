@@ -1,9 +1,9 @@
 import { Link } from "@/components/site/AppLink";
+import { ActiveBrandsSection } from "@/components/site/ActiveBrandsSection";
 import { SiteLayout } from "@/components/site/Layout";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import {
   urbanxBrand,
-  urbanxBrandCards,
   urbanxConstructionDetails,
   urbanxContact,
   urbanxCoreCapabilities,
@@ -36,7 +36,6 @@ import {
   ShieldCheck,
   Sparkles,
   Sofa,
-  Star,
   Trees,
   Wrench,
 } from "lucide-react";
@@ -80,8 +79,6 @@ const heroSlides = [
       "Serving more than 2,000 customers every day with menus built for taste, nutrition, hygiene and timely delivery.",
   },
 ];
-
-const brandPlaceholderImages = [housekeeping, rental, marble, hero3] as const;
 
 function SectionHeading({
   eyebrow,
@@ -462,6 +459,14 @@ export default function HomePage() {
         </div>
       </section>
 
+      <ActiveBrandsSection
+        eyebrow="Urbanx Network"
+        title="Companies and facilities working under Urbanx"
+        subtitle="Visitors landing on Urbanx can quickly see the active brands and dedicated facilities operating under the Urbanx umbrella."
+        ctaLabel="View all services"
+        ctaTo="/services"
+      />
+
       <section className="bg-secondary/40 py-20">
         <div className="container-x">
           <SectionHeading
@@ -469,19 +474,21 @@ export default function HomePage() {
             title="We combine innovation, expertise and professionalism"
             subtitle="Everything Urbanx brings together sits under one platform so homes, lifestyle, food and business needs can be managed more easily."
           />
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-12 grid items-stretch gap-6 md:grid-cols-2 xl:grid-cols-4">
             {urbanxCoreCapabilities.map((item) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-border bg-card p-7 shadow-card-luxe hover-lift"
+                  className="flex h-full min-h-[13rem] flex-col rounded-2xl border border-border bg-card px-6 py-5 shadow-card-luxe hover-lift"
                 >
-                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary">
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary">
                     <Icon className="h-7 w-7 text-gold" />
                   </div>
-                  <h3 className="text-xl font-bold text-primary">{item.title}</h3>
+                  <h3 className="text-balance text-xl font-bold leading-tight text-primary">
+                    {item.title}
+                  </h3>
                 </div>
               );
             })}
@@ -1138,63 +1145,6 @@ export default function HomePage() {
               </div>
             </div>
           </StackRail>
-        </div>
-      </section>
-
-      <section className="py-20 md:py-28">
-        <div className="container-x">
-          <SectionHeading
-            eyebrow="Turning your space into vibrant living"
-            title="Projects handled"
-            subtitle="A few of the project names highlighted in your content brief."
-          />
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {urbanxInteriorDetails.projectsHandled.map((project) => (
-              <div
-                key={project}
-                className="rounded-xl border border-border bg-card p-6 shadow-card-luxe"
-              >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-gold">
-                  <Star className="h-5 w-5 text-primary" />
-                </div>
-                <div className="text-lg font-bold text-primary">{project}</div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 grid gap-7 md:grid-cols-2 xl:grid-cols-4">
-            {urbanxBrandCards.map((brand, index) => (
-              <Link
-                key={brand.to}
-                to={brand.to}
-                aria-label={`Open ${brand.label} brand details`}
-                className="group overflow-hidden rounded-2xl bg-card shadow-card-luxe hover-lift"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={brandPlaceholderImages[index % brandPlaceholderImages.length]}
-                    alt=""
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div className="absolute inset-0 bg-primary/35" />
-                </div>
-                <div className="p-6">
-                  <div className="text-[10px] uppercase tracking-[0.3em] text-gold">
-                    {brand.tagline}
-                  </div>
-                  <div className="mt-1 text-2xl font-bold text-primary">{brand.label}</div>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {brand.description}
-                  </p>
-                  <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors group-hover:text-gold">
-                    View Details <ArrowRight className="h-4 w-4" />
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
         </div>
       </section>
 

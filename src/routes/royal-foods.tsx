@@ -1,6 +1,7 @@
 import { Link } from "@/components/site/AppLink";
 import { PageBanner } from "@/components/site/PageBanner";
 import { SiteLayout } from "@/components/site/Layout";
+import { theHungryScholarsGallery } from "@/lib/theHungryScholarsGallery";
 import {
   theHungryScholarsContact,
   theHungryScholarsDirectorMessage,
@@ -16,13 +17,15 @@ import { ArrowRight, Check, ChefHat, Mail, MapPin, Phone, ShieldCheck, Star } fr
 import hero2 from "@/assets/hero-2.jpg";
 
 export default function TheHungryScholarsPage() {
+  const hungryScholarsBanner = theHungryScholarsGallery[0] ?? hero2;
+
   return (
     <SiteLayout>
       <PageBanner
         title="The Hungry Scholars"
         subtitle="Trusted Food Service Partner for Educational Institutions"
         crumbs={[{ label: "Brands", to: "/services" }, { label: "The Hungry Scholars" }]}
-        image={hero2}
+        image={hungryScholarsBanner}
       />
 
       <section className="py-20 md:py-28">
@@ -180,6 +183,43 @@ export default function TheHungryScholarsPage() {
           </div>
         </div>
       </section>
+
+      {theHungryScholarsGallery.length > 0 ? (
+        <section className="py-20 md:py-28">
+          <div className="container-x">
+            <div className="mx-auto mb-12 max-w-3xl text-center">
+              <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+                Photo Gallery
+              </div>
+              <h2 className="text-3xl font-bold text-primary md:text-5xl">
+                Inside The Hungry Scholars experience
+              </h2>
+              <p className="mt-5 text-muted-foreground">
+                A closer look at our dining spaces, presentation standards, food quality and the
+                daily service environment behind The Hungry Scholars.
+              </p>
+            </div>
+
+            <div className="columns-1 gap-5 sm:columns-2 xl:columns-3">
+              {theHungryScholarsGallery.map((src, index) => (
+                <div
+                  key={src}
+                  className="group mb-5 break-inside-avoid overflow-hidden rounded-3xl bg-card shadow-card-luxe"
+                >
+                  <img
+                    src={src}
+                    alt={`The Hungry Scholars facility and food service photo ${index + 1}`}
+                    className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-8 lg:grid-cols-2">
