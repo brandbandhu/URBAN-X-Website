@@ -5,7 +5,6 @@ import { SiteLayout } from "@/components/site/Layout";
 import {
   urbanxBrand,
   urbanxContact,
-  urbanxMetrics,
   urbanxServiceAreas,
 } from "@/lib/siteContent";
 import { ArrowRight, Sparkles } from "lucide-react";
@@ -49,32 +48,6 @@ export default function ServicesPage() {
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {service.description}
                 </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-secondary/40 py-20">
-        <div className="container-x">
-          <div className="mx-auto mb-14 max-w-3xl text-center">
-            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-              At a Glance
-            </div>
-            <h2 className="text-3xl font-bold text-primary md:text-5xl">
-              Numbers that show the scale of the brief
-            </h2>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {urbanxMetrics.map((metric) => (
-              <div
-                key={metric.label}
-                className="rounded-2xl bg-card p-8 text-center shadow-card-luxe"
-              >
-                <div className="text-4xl font-bold text-primary md:text-5xl">{metric.value}</div>
-                <div className="mt-2 text-sm uppercase tracking-[0.2em] text-muted-foreground">
-                  {metric.label}
-                </div>
               </div>
             ))}
           </div>
