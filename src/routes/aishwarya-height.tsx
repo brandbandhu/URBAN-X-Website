@@ -8,8 +8,6 @@ import locationMap from "@/assets/aishwarya-location-map.png";
 import rental from "@/assets/service-rental.jpg";
 
 const quickFacts = [
-  { label: "Project Lead", value: "Dr. Mangesh Karad Sir" },
-  { label: "Developer", value: "Marvel Holdings LLP" },
   { label: "Location", value: "Kothrud, Pune" },
   { label: "Homes", value: "2 BHK & 3 BHK" },
 ];
@@ -44,26 +42,26 @@ const amenityGroups = [
   },
 ];
 
-const unitPlans = [
+const companyHighlights = [
   {
-    title: "3 BHK",
-    flats: "201, 301, 401, 501, 601",
-    carpet: "1042 sq.ft.",
-    builtUp: "1405 sq.ft.",
+    label: "Residential focus",
+    title: "Thoughtful home planning",
+    description:
+      "Aishwarya Heights focuses on residential developments designed around comfort, practical layouts and day-to-day ease for families and professionals.",
     accent: "bg-secondary/40",
   },
   {
-    title: "2 BHK",
-    flats: "102, 202, 302, 402, 502, 602",
-    carpet: "873 sq.ft.",
-    builtUp: "1179 sq.ft.",
+    label: "Location approach",
+    title: "Well-connected living",
+    description:
+      "The company emphasizes projects in accessible urban locations so residents can stay close to city essentials while enjoying a more comfortable lifestyle.",
     accent: "bg-background",
   },
   {
-    title: "2 BHK",
-    flats: "103, 203, 303, 403, 503, 603",
-    carpet: "850 sq.ft.",
-    builtUp: "1148 sq.ft.",
+    label: "Project philosophy",
+    title: "Quality with convenience",
+    description:
+      "Across projects, the aim is to combine dependable execution, useful amenities and a living experience that feels practical, modern and welcoming.",
     accent: "bg-secondary/40",
   },
 ];
@@ -132,42 +130,6 @@ const nearbyPlaces = [
   "Sahyadri Hospital",
   "Paranjape School",
   "Karve Road",
-];
-
-const projectTeam = [
-  {
-    title: "Promoters and Developer",
-    name: "Marvel Holdings LLP",
-    details: [
-      "CTS No. 714, Serve No. 163, Sutar Hospital Road, Azad Nagar, Kothrud, Pune, Maharashtra - 411038.",
-      "Mobile: +91 9637672233",
-      "Email: Suneel.gilda@live.com",
-    ],
-  },
-  {
-    title: "Architect Consultant",
-    name: "LA Modelier Studios",
-    details: [
-      "Architects and interior designers.",
-      "Ramesh Hulgeri Cell: +91 98223 08038",
-    ],
-  },
-  {
-    title: "Civil Structural Consultant",
-    name: "VM Consultants Pvt. Ltd.",
-    details: [
-      "Govt. app. valuer and chartered engineer.",
-      "Cell: +91 99229 21747",
-    ],
-  },
-  {
-    title: "Legal Advisor",
-    name: "Prolific Designs Studio",
-    details: [
-      "Pds, parking floor, Rainbow Residency, Mohannagar Society, Baner, Pune 411045.",
-      "Cell: +91 8087475968",
-    ],
-  },
 ];
 
 function SectionHeading({
@@ -246,7 +208,7 @@ export default function AishwaryaHeightPage() {
               clear area statements, practical amenities and a strong focus on everyday ease.
             </p>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-10 grid max-w-2xl gap-4 sm:grid-cols-2">
               {quickFacts.map((fact) => (
                 <FactCard key={fact.label} label={fact.label} value={fact.value} />
               ))}
@@ -367,38 +329,24 @@ export default function AishwaryaHeightPage() {
       <section className="py-20 md:py-28">
         <div className="container-x">
           <SectionHeading
-            eyebrow="Unit Plans"
-            title="Three layout options with clear area statements"
-            subtitle="The brochure shows typical 2nd through 6th floor plans with straightforward carpet and built-up area details."
+            eyebrow="Aishwarya Heights"
+            title="What people should know about the company"
+            subtitle="Project layouts and specifications may vary, but Aishwarya Heights is consistently centered on thoughtful planning, city convenience and comfortable residential living."
           />
 
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {unitPlans.map((plan) => (
+            {companyHighlights.map((item) => (
               <div
-                key={`${plan.title}-${plan.flats}`}
-                className={`rounded-3xl border border-border ${plan.accent} p-7 shadow-card-luxe`}
+                key={item.title}
+                className={`rounded-3xl border border-border ${item.accent} p-7 shadow-card-luxe`}
               >
                 <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                  {plan.title}
+                  {item.label}
                 </div>
-                <h3 className="mt-3 text-3xl font-bold text-primary">Area statement</h3>
+                <h3 className="mt-3 text-3xl font-bold text-primary">{item.title}</h3>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  Flat numbers: {plan.flats}
+                  {item.description}
                 </p>
-                <div className="mt-6 grid gap-3">
-                  <div className="rounded-2xl bg-background/80 p-4">
-                    <div className="text-[10px] font-semibold uppercase tracking-[0.25em] text-gold">
-                      Carpet area
-                    </div>
-                    <div className="mt-2 text-lg font-bold text-primary">{plan.carpet}</div>
-                  </div>
-                  <div className="rounded-2xl bg-background/80 p-4">
-                    <div className="text-[10px] font-semibold uppercase tracking-[0.25em] text-gold">
-                      Built-up area
-                    </div>
-                    <div className="mt-2 text-lg font-bold text-primary">{plan.builtUp}</div>
-                  </div>
-                </div>
               </div>
             ))}
           </div>
@@ -427,8 +375,8 @@ export default function AishwaryaHeightPage() {
       </section>
 
       <section className="py-20 md:py-28">
-        <div className="container-x grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-stretch">
-          <div className="flex h-full flex-col gap-6">
+        <div className="container-x">
+          <div className="mx-auto flex max-w-5xl flex-col gap-6">
             <div className="rounded-3xl bg-card p-8 shadow-luxe">
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
                 <MapPin className="h-4 w-4" />
@@ -472,22 +420,6 @@ export default function AishwaryaHeightPage() {
                 fetchPriority="low"
               />
             </div>
-          </div>
-
-          <div className="grid gap-6">
-            {projectTeam.map((member) => (
-              <div key={member.title} className="rounded-3xl bg-card p-7 shadow-card-luxe">
-                <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                  {member.title}
-                </div>
-                <h4 className="mt-3 text-2xl font-bold text-primary">{member.name}</h4>
-                <div className="mt-4 space-y-2 text-sm leading-relaxed text-muted-foreground">
-                  {member.details.map((line) => (
-                    <p key={line}>{line}</p>
-                  ))}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

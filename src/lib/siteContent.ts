@@ -566,7 +566,7 @@ export const theHungryScholarsDirectorMessage =
 
 export const theHungryScholarsContact = {
   venue: "MIT ADT University, Loni Kalbhor, Pune, Maharashtra 412201",
-  director: "Shri Ravindra Vitthal Deshmukh",
+  director: "Dr. Rajeshwari Mangesh Karad",
   phones: ["+91 98220 80115", "7057450842"],
   email: "thehungryscholars8@email.com",
   emailHref: "mailto:thehungryscholars8@email.com",
