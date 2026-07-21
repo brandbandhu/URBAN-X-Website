@@ -17,8 +17,36 @@ import {
   theHungryScholarsMenuFocus,
 } from "@/lib/siteContent";
 import { slugify } from "@/lib/utils";
-import { ArrowRight, Check, ChefHat, Mail, MapPin, Phone, ShieldCheck, Star } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  Building2,
+  Check,
+  ChefHat,
+  Clock3,
+  Mail,
+  MapPin,
+  Phone,
+  School,
+  ShieldCheck,
+  Smile,
+  Star,
+  Users,
+  UtensilsCrossed,
+} from "lucide-react";
 import hero2 from "@/assets/hero-2.jpg";
+
+const hungryScholarsStrengthIcons: Record<string, LucideIcon> = {
+  "25+ years of experience in institutional catering": Award,
+  "Trusted by educational institutions": School,
+  "Large-scale daily operations": Building2,
+  "Strict hygiene and food safety controls": ShieldCheck,
+  "Nutritious and balanced meals": UtensilsCrossed,
+  "Experienced and professional team": Users,
+  "Timely and reliable service": Clock3,
+  "Customer satisfaction focus": Smile,
+};
 
 export default function TheHungryScholarsPage() {
   const hungryScholarsBanner = theHungryScholarsBanner ?? hero2;
@@ -82,17 +110,21 @@ export default function TheHungryScholarsPage() {
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {theHungryScholarsStrengths.map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-border bg-card p-7 shadow-card-luxe hover-lift"
-              >
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary">
-                  <Star className="h-7 w-7 text-gold" />
+            {theHungryScholarsStrengths.map((item) => {
+              const StrengthIcon = hungryScholarsStrengthIcons[item] ?? Star;
+
+              return (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-border bg-card p-7 shadow-card-luxe hover-lift"
+                >
+                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary">
+                    <StrengthIcon className="h-7 w-7 text-gold" />
+                  </div>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{item}</p>
                 </div>
-                <p className="text-sm leading-relaxed text-muted-foreground">{item}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
