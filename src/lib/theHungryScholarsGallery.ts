@@ -3,6 +3,20 @@ const galleryModules = import.meta.glob("../assets/the-hungry-scholars/*.{jpeg,j
   import: "default",
 }) as Record<string, string>;
 
-export const theHungryScholarsGallery = Object.entries(galleryModules)
+const galleryLabels: Record<string, string> = {
+  "zz-university-higher-authority-guests.jpg": "University Higher authority Guests",
+};
+
+export const theHungryScholarsGalleryItems = Object.entries(galleryModules)
   .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }))
-  .map(([, src]) => src);
+  .map(([path, src]) => {
+    const fileName = path.split("/").pop() ?? "";
+
+    return {
+      src,
+      fileName,
+      label: galleryLabels[fileName],
+    };
+  });
+
+export const theHungryScholarsGallery = theHungryScholarsGalleryItems.map((item) => item.src);

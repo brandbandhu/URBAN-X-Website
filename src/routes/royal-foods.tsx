@@ -1,7 +1,10 @@
 import { Link } from "@/components/site/AppLink";
 import { PageBanner } from "@/components/site/PageBanner";
 import { SiteLayout } from "@/components/site/Layout";
-import { theHungryScholarsGallery } from "@/lib/theHungryScholarsGallery";
+import {
+  theHungryScholarsGallery,
+  theHungryScholarsGalleryItems,
+} from "@/lib/theHungryScholarsGallery";
 import {
   theHungryScholarsContact,
   theHungryScholarsDirectorMessage,
@@ -201,19 +204,30 @@ export default function TheHungryScholarsPage() {
             </div>
 
             <div className="columns-1 gap-5 sm:columns-2 xl:columns-3">
-              {theHungryScholarsGallery.map((src, index) => (
+              {theHungryScholarsGalleryItems.map((item, index) => (
                 <div
-                  key={src}
+                  key={item.src}
                   className="group mb-5 break-inside-avoid overflow-hidden rounded-3xl bg-card shadow-card-luxe"
                 >
                   <img
-                    src={src}
-                    alt={`The Hungry Scholars facility and food service photo ${index + 1}`}
+                    src={item.src}
+                    alt={
+                      item.label ??
+                      `The Hungry Scholars facility and food service photo ${index + 1}`
+                    }
                     className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                     loading="lazy"
                     decoding="async"
                     fetchPriority="low"
                   />
+                  {item.label ? (
+                    <div className="border-t border-border bg-background px-5 py-4">
+                      <div className="text-xs font-semibold uppercase tracking-[0.28em] text-gold">
+                        Special Visit
+                      </div>
+                      <div className="mt-2 text-base font-semibold text-primary">{item.label}</div>
+                    </div>
+                  ) : null}
                 </div>
               ))}
             </div>

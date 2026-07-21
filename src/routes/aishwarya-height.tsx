@@ -47,7 +47,7 @@ const companyHighlights = [
     label: "Residential focus",
     title: "Thoughtful home planning",
     description:
-      "Aishwarya Heights focuses on residential developments designed around comfort, practical layouts and day-to-day ease for families and professionals.",
+      "Aishwarya Realtors focuses on residential developments designed around comfort, practical layouts and day-to-day ease for families and professionals.",
     accent: "bg-secondary/40",
   },
   {
@@ -182,9 +182,9 @@ export default function AishwaryaHeightPage() {
   return (
     <SiteLayout>
       <PageBanner
-        title="Aishwarya Heights"
+        title="Aishwarya Realtors"
         subtitle="Inspired Living, Perfectly Placed in Kothrud"
-        crumbs={[{ label: "Brands", to: "/services" }, { label: "Aishwarya Heights" }]}
+        crumbs={[{ label: "Brands", to: "/services" }, { label: "Aishwarya Realtors" }]}
         image={rental}
       />
 
@@ -199,7 +199,7 @@ export default function AishwaryaHeightPage() {
               A smarter way of city living
             </h2>
             <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
-              At Aishwarya Heights, you are not just buying a flat. You are stepping into a more
+              At Aishwarya Realtors, you are not just buying a flat. You are stepping into a more
               thoughtful way of living, with 2 BHK and 3 BHK homes designed for urban families and
               professionals who want city access without giving up privacy, comfort or lifestyle.
             </p>
@@ -228,7 +228,7 @@ export default function AishwaryaHeightPage() {
           <div className="grid gap-5 sm:grid-cols-2">
             <img
               src={hero1}
-              alt="Aishwarya Heights living interior"
+              alt="Aishwarya Realtors living interior"
               className="h-64 w-full rounded-3xl object-cover shadow-luxe sm:col-span-2 sm:h-80"
               loading="lazy"
               decoding="async"
@@ -236,7 +236,7 @@ export default function AishwaryaHeightPage() {
             />
             <img
               src={hero2}
-              alt="Aishwarya Heights residential ambience"
+              alt="Aishwarya Realtors residential ambience"
               className="h-56 w-full rounded-3xl object-cover shadow-card-luxe"
               loading="lazy"
               decoding="async"
@@ -329,9 +329,9 @@ export default function AishwaryaHeightPage() {
       <section className="py-20 md:py-28">
         <div className="container-x">
           <SectionHeading
-            eyebrow="Aishwarya Heights"
+            eyebrow="Aishwarya Realtors"
             title="What people should know about the company"
-            subtitle="Project layouts and specifications may vary, but Aishwarya Heights is consistently centered on thoughtful planning, city convenience and comfortable residential living."
+            subtitle="Project layouts and specifications may vary, but Aishwarya Realtors is consistently centered on thoughtful planning, city convenience and comfortable residential living."
           />
 
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
@@ -413,7 +413,7 @@ export default function AishwaryaHeightPage() {
             <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-luxe">
               <img
                 src={locationMap}
-                alt="Aishwarya Heights location map"
+                alt="Aishwarya Realtors location map"
                 className="aspect-[16/7] w-full object-cover object-center"
                 loading="lazy"
                 decoding="async"
@@ -431,7 +431,7 @@ export default function AishwaryaHeightPage() {
             <div className="relative mx-auto max-w-3xl">
               <Sparkles className="mx-auto mb-4 h-12 w-12 text-gold" />
               <h2 className="mb-4 text-3xl font-bold md:text-5xl">
-                Ready to explore Aishwarya Heights?
+                Ready to explore Aishwarya Realtors?
               </h2>
               <p className="mb-8 text-white/80">
                 Reach out for availability, unit plans and a walk-through of the brochure details.

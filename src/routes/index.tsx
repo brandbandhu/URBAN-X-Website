@@ -845,7 +845,7 @@ export default function HomePage() {
                   Project portfolio
                 </div>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  Aishwarya Heights, Aishwarya Poorva, Aishwarya Hostels, bungalows and more.
+                  Aishwarya Realtors, Aishwarya Poorva, Aishwarya Hostels, bungalows and more.
                 </p>
               </div>
               <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
