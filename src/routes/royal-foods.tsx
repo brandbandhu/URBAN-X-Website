@@ -2,6 +2,7 @@ import { Link } from "@/components/site/AppLink";
 import { PageBanner } from "@/components/site/PageBanner";
 import { SiteLayout } from "@/components/site/Layout";
 import {
+  theHungryScholarsBanner,
   theHungryScholarsGallery,
   theHungryScholarsGalleryItems,
 } from "@/lib/theHungryScholarsGallery";
@@ -20,7 +21,7 @@ import { ArrowRight, Check, ChefHat, Mail, MapPin, Phone, ShieldCheck, Star } fr
 import hero2 from "@/assets/hero-2.jpg";
 
 export default function TheHungryScholarsPage() {
-  const hungryScholarsBanner = theHungryScholarsGallery[0] ?? hero2;
+  const hungryScholarsBanner = theHungryScholarsBanner ?? hero2;
 
   return (
     <SiteLayout>

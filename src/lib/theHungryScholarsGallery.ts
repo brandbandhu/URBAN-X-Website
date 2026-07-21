@@ -7,8 +7,21 @@ const galleryLabels: Record<string, string> = {
   "zz-university-higher-authority-guests.jpg": "University Higher authority Guests",
 };
 
+const compareGalleryEntries = ([pathA]: [string, string], [pathB]: [string, string]) => {
+  const fileNameA = pathA.split("/").pop() ?? "";
+  const fileNameB = pathB.split("/").pop() ?? "";
+  const hasLabelA = Boolean(galleryLabels[fileNameA]);
+  const hasLabelB = Boolean(galleryLabels[fileNameB]);
+
+  if (hasLabelA !== hasLabelB) {
+    return hasLabelA ? -1 : 1;
+  }
+
+  return pathA.localeCompare(pathB, undefined, { numeric: true, sensitivity: "base" });
+};
+
 export const theHungryScholarsGalleryItems = Object.entries(galleryModules)
-  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }))
+  .sort(compareGalleryEntries)
   .map(([path, src]) => {
     const fileName = path.split("/").pop() ?? "";
 
@@ -20,3 +33,6 @@ export const theHungryScholarsGalleryItems = Object.entries(galleryModules)
   });
 
 export const theHungryScholarsGallery = theHungryScholarsGalleryItems.map((item) => item.src);
+
+export const theHungryScholarsBanner =
+  theHungryScholarsGalleryItems.find((item) => !item.label)?.src ?? theHungryScholarsGallery[0];
