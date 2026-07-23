@@ -1,3 +1,4 @@
+import { BrandLogo } from "@/components/site/BrandLogo";
 import { Link } from "@/components/site/AppLink";
 import { urbanxBrand, urbanxBrandCards, urbanxContact } from "@/lib/siteContent";
 import { Mail, MapPin, Phone } from "lucide-react";
@@ -7,15 +8,14 @@ export function Footer() {
     <footer className="bg-navy text-white/85 pt-20 pb-8 mt-24">
       <div className="container-x grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-10 h-10 bg-gradient-gold rounded flex items-center justify-center font-bold text-primary">UX</div>
-            <div>
-              <div className="font-display font-bold text-xl text-white">{urbanxBrand.name}</div>
-              <div className="text-[10px] tracking-[0.25em] uppercase text-gold">Your Everyday Living Partner</div>
-            </div>
-          </div>
+          <BrandLogo
+            variant="full"
+            className="mb-5 max-w-[11rem]"
+            imageClassName="max-h-[7.5rem]"
+          />
           <p className="text-sm leading-relaxed text-white/70">
-            {urbanxBrand.tagline} - bringing housing, food, interiors, maintenance and project support together under one trusted roof.
+            {urbanxBrand.tagline} - bringing housing, food, interiors, maintenance and
+            project support together under one trusted roof.
           </p>
         </div>
 

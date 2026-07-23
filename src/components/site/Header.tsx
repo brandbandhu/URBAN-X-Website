@@ -1,5 +1,6 @@
+import { BrandLogo } from "@/components/site/BrandLogo";
 import { Link } from "@/components/site/AppLink";
-import { urbanxBrand, urbanxBrandCards } from "@/lib/siteContent";
+import { urbanxBrandCards } from "@/lib/siteContent";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -37,24 +38,25 @@ export function Header() {
   }, []);
 
   const chromeClass = scrolled
-    ? "border-b border-border/60 bg-background/95 shadow-card-luxe backdrop-blur-md"
-    : "bg-transparent";
-  const linkClass = scrolled ? "text-foreground hover:text-gold" : "text-white hover:text-gold";
+    ? "border-b border-border/60 bg-white/95 shadow-card-luxe backdrop-blur-md"
+    : "border-b border-border/30 bg-white/95 backdrop-blur-md";
+  const linkClass = "text-foreground hover:text-gold";
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${chromeClass}`}
     >
       <div className="container-x flex h-20 items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="flex h-10 w-10 items-center justify-center rounded bg-gradient-gold text-lg font-bold text-primary shadow-card-luxe">
-            UX
-          </div>
-          <div
-            className={`font-display font-bold text-xl tracking-wider ${scrolled ? "text-primary" : "text-white"}`}
-          >
-            {urbanxBrand.name}
-          </div>
+        <Link to="/" className="group flex items-center">
+          <BrandLogo
+            variant="navbar"
+            className="h-[4.35rem] w-[4.35rem] shrink-0 sm:h-[4.75rem] sm:w-[4.75rem]"
+            imageClassName={
+              scrolled
+                ? "drop-shadow-[0_4px_12px_rgba(15,23,42,0.12)]"
+                : "drop-shadow-[0_6px_14px_rgba(15,23,42,0.1)]"
+            }
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -113,7 +115,7 @@ export function Header() {
           type="button"
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
-          className={`rounded-md p-2 transition-colors hover:bg-white/10 lg:hidden ${scrolled ? "text-foreground" : "text-white"}`}
+          className="rounded-md p-2 text-foreground transition-colors hover:bg-secondary lg:hidden"
           onClick={() => setOpen((current) => !current)}
         >
           {open ? <X /> : <Menu />}
