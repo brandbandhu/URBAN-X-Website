@@ -566,10 +566,10 @@ export const theHungryScholarsDirectorMessage =
 
 export const theHungryScholarsContact = {
   venue: "MIT ADT University, Loni Kalbhor, Pune, Maharashtra 412201",
-  director: "Dr. Rajeshwari Mangesh Karad",
+  director: "Dr. Rajeshwari M Karad",
   phones: ["+91 98220 80115", "7057450842"],
-  email: "thehungryscholars8@email.com",
-  emailHref: "mailto:thehungryscholars8@email.com",
+  email: "thehungryscholars8@gmail.com",
+  emailHref: "mailto:thehungryscholars8@gmail.com",
 };
 
 export const theHungryScholarsWhyChoose = [
