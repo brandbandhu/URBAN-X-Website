@@ -291,7 +291,9 @@ export const deMarvelFurnishingsData = {
     },
     { step: "04", title: "Installation", desc: "Careful delivery and installation in your space." },
   ],
-  gallery: [marble, hero3, marble, hero1, hero3, marble],
+  gallery: Array.from({ length: 31 }, (_, index) =>
+    `/de-marvel-furnishings/furnishing-${String(index + 1).padStart(2, "0")}.jpeg`,
+  ),
 } satisfies ServicePageData;
 
 export const theHungryScholarsData = {
