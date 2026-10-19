@@ -10,7 +10,7 @@ export function Footer() {
         <div>
           <BrandLogo
             variant="full"
-            className="mb-5 max-w-[11rem]"
+            className="mb-5 max-w-[11rem] rounded-md bg-white p-3"
             imageClassName="max-h-[7.5rem]"
           />
           <p className="text-sm leading-relaxed text-white/70">
