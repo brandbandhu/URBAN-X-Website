@@ -264,7 +264,7 @@ export default function AishwaryaHeightPage() {
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
-                  href="tel:+919637672233"
+                  href="tel:+918983630096"
                   className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-4 py-2.5 text-sm font-semibold text-primary hover-lift"
                 >
                   <Phone className="h-4 w-4" />
@@ -476,7 +476,7 @@ export default function AishwaryaHeightPage() {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a
-                  href="tel:+919637672233"
+                  href="tel:+918983630096"
                   className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift"
                 >
                   <Phone className="h-4 w-4" />

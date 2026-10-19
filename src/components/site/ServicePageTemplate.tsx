@@ -334,7 +334,7 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
                     Send Enquiry <Send className="w-4 h-4" />
                   </button>
                   <a
-                    href="https://wa.me/919999999999"
+                    href="https://wa.me/918983630096"
                     className="px-6 py-3.5 border border-border text-primary font-semibold rounded-md hover:border-gold hover:text-gold transition-colors inline-flex items-center justify-center gap-2"
                   >
                     WhatsApp <WhatsAppIcon className="w-4 h-4" />
@@ -365,7 +365,7 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
                   Enquire Now <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
-                  href="https://wa.me/919999999999"
+                    href="https://wa.me/918983630096"
                   className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-white/30 text-white font-semibold rounded-md hover:bg-white/10 transition-colors"
                 >
                   WhatsApp Now <WhatsAppIcon className="w-4 h-4" />

@@ -54,9 +54,9 @@ export const demarvelBrand = {
 export const demarvelContact = {
   office: "Shop No 138, The Capital, Hadapsar, Pune",
   highway: "Pune-Solapur Highway, Pune, Maharashtra",
-  phoneDisplay: "+91 98220 80115",
-  phoneHref: "tel:+919822080115",
-  whatsappHref: "https://wa.me/919822080115",
+  phoneDisplay: "+91 8983630096",
+  phoneHref: "tel:+918983630096",
+  whatsappHref: "https://wa.me/918983630096",
   email: "Urbanx.pune96@gmail.com",
   emailHref: "mailto:Urbanx.pune96@gmail.com",
   director: "Raghvendra Chate",
@@ -734,7 +734,7 @@ export const theHungryScholarsDirectorMessage =
 export const theHungryScholarsContact = {
   venue: "MIT ADT University, Loni Kalbhor, Pune, Maharashtra 412201",
   director: "Dr. Rajeshwari M Karad",
-  phones: ["+91 98220 80115", "7057450842"],
+  phones: ["+91 8983630096"],
   email: "thehungryscholars8@gmail.com",
   emailHref: "mailto:thehungryscholars8@gmail.com",
 };
