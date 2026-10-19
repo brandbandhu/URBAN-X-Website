@@ -5,9 +5,14 @@ import { SiteLayout } from "@/components/site/Layout";
 import {
   urbanxBrand,
   urbanxContact,
+  urbanxDetailedServices,
+  urbanxProjectHighlights,
+  urbanxProductCategories,
+  urbanxSofaStyles,
   urbanxServiceAreas,
+  urbanxStudio,
 } from "@/lib/siteContent";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Sparkles } from "lucide-react";
 import aboutImg from "@/assets/about-urbanx.jpg";
 
 export default function ServicesPage() {
@@ -20,18 +25,17 @@ export default function ServicesPage() {
         image={aboutImg}
       />
 
-      <section className="py-20 md:py-28">
+      <section id="services" className="py-20 md:py-28">
         <div className="container-x">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
               What Urbanx Connects
             </div>
             <h2 className="text-3xl font-bold text-primary md:text-5xl">
-              A service ecosystem for modern urban living
+              One vision. One partner. Complete solutions.
             </h2>
             <p className="mt-5 text-muted-foreground">
-              The website content brief positions Urbanx as a one-stop solution for everyday living.
-              These are the core service areas that sit underneath the brand.
+              {urbanxStudio.summary} {urbanxStudio.promise}
             </p>
           </div>
 
@@ -48,6 +52,127 @@ export default function ServicesPage() {
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {service.description}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-secondary/40 py-20 md:py-28">
+        <div className="container-x">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+              Complete Design, Décor & Execution
+            </div>
+            <h2 className="text-3xl font-bold text-primary md:text-5xl">
+              From the first concept to the final detail
+            </h2>
+            <p className="mt-5 text-muted-foreground">
+              Our integrated approach brings architecture, interiors, furniture, décor, smart-home
+              technology, landscaping and execution together through one design studio.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            {urbanxDetailedServices.map((service) => (
+              <article key={service.title} className="rounded-3xl bg-card p-7 shadow-card-luxe">
+                <h3 className="text-2xl font-bold text-primary">{service.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {service.description}
+                </p>
+                <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {service.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-foreground/80">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="products" className="py-20 md:py-28">
+        <div className="container-x grid gap-6 lg:grid-cols-2">
+          <div className="rounded-3xl bg-primary p-8 text-white shadow-luxe md:p-10">
+            <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+              Sofa Making Studio
+            </div>
+            <h2 className="mt-3 text-3xl font-bold md:text-4xl">Seating designed around you</h2>
+            <p className="mt-4 leading-relaxed text-white/75">
+              From compact loveseats to statement pieces, UrbanX creates customised seating that
+              responds to room proportions, comfort, upholstery and lifestyle.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-2">
+              {urbanxSofaStyles.map((style) => (
+                <span key={style} className="rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-sm text-white/85">
+                  {style}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-3xl bg-card p-8 shadow-luxe md:p-10">
+            <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+              Products & Lifestyle Details
+            </div>
+            <h2 className="mt-3 text-3xl font-bold text-primary md:text-4xl">
+              The details that complete a space
+            </h2>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              Explore coordinated furniture, soft furnishings, décor and material selections as
+              part of a complete design story.
+            </p>
+            <ul className="mt-7 grid gap-3 sm:grid-cols-2">
+              {urbanxProductCategories.map((category) => (
+                <li key={category} className="flex items-start gap-2 text-sm text-foreground/80">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                  <span>{category}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" className="bg-secondary/40 py-20 md:py-28">
+        <div className="container-x">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+              Projects & Gallery
+            </div>
+            <h2 className="text-3xl font-bold text-primary md:text-5xl">
+              Selected work and project references
+            </h2>
+            <p className="mt-5 text-muted-foreground">
+              The UrbanX design ecosystem spans residences, offices, laboratories, hostels,
+              hospitality spaces and complete project environments.
+            </p>
+          </div>
+
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            {urbanxProjectHighlights.map((project) => (
+              <span
+                key={project}
+                className="rounded-full border border-border bg-card px-4 py-2.5 text-sm font-semibold text-primary shadow-card-luxe"
+              >
+                {project}
+              </span>
+            ))}
+          </div>
+
+          <div id="gallery" className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              ["/de-marvel-furnishings/interior-bedroom-01.png", "Bedroom interior"],
+              ["/de-marvel-furnishings/interior-study-01.png", "Study and storage interior"],
+              ["/de-marvel-furnishings/interior-living-01.png", "Living room interior"],
+              ["/de-marvel-furnishings/interior-bedroom-02.png", "Bedroom design"],
+              ["/de-marvel-furnishings/interior-living-02.png", "Living and TV unit"],
+            ].map(([src, alt]) => (
+              <div key={src} className="overflow-hidden rounded-2xl bg-card shadow-card-luxe">
+                <img src={src} alt={alt} className="h-64 w-full object-cover" loading="lazy" />
               </div>
             ))}
           </div>

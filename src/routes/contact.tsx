@@ -42,7 +42,7 @@ export default function ContactPage() {
     <SiteLayout>
       <PageBanner
         title="Contact Urbanx"
-        subtitle="Tell us what you need - housing, food, interiors, cleaning or project support."
+        subtitle="From site development to the final detail, let’s design and transform your space."
         crumbs={[{ label: "Contact" }]}
         image={aboutImg}
       />
@@ -58,8 +58,9 @@ export default function ContactPage() {
                 {urbanxBrand.tagline}
               </h2>
               <p className="mt-8 text-muted-foreground">
-                Urbanx is here to help with everything from city living and interiors to food
-                services and project work. Reach out and we will route you to the right team.
+                Share your lifestyle, site, functional requirements and design preferences with our
+                team. We can support architecture, interiors, automation, landscaping, furniture,
+                décor, renovation and turnkey execution through one integrated studio.
               </p>
             </div>
 
@@ -68,7 +69,7 @@ export default function ContactPage() {
                 {
                   icon: MapPin,
                   title: "Urbanx Office",
-                  lines: [urbanxContact.office, urbanxContact.highway],
+                  lines: [urbanxContact.office, urbanxContact.highway, urbanxContact.studioSize],
                 },
                 {
                   icon: Phone,

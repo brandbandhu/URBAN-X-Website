@@ -14,8 +14,8 @@ export function Footer() {
             imageClassName="max-h-[7.5rem]"
           />
           <p className="text-sm leading-relaxed text-white/70">
-            {urbanxBrand.tagline} - bringing housing, food, interiors, maintenance and
-            project support together under one trusted roof.
+            {urbanxBrand.tagline} - bringing architecture, interiors, automation, furniture,
+            décor, landscaping and turnkey execution together under one trusted roof.
           </p>
         </div>
 

@@ -7,6 +7,8 @@ import {
   urbanxMetrics,
   urbanxProjectHighlights,
   urbanxServiceAreas,
+  urbanxStudio,
+  urbanxTeam,
   urbanxVision,
   urbanxMission,
   urbanxWhyChoose,
@@ -34,21 +36,20 @@ export default function AboutPage() {
               Our Story
             </div>
             <h2 className="gold-underline mb-6 text-3xl font-bold text-primary md:text-5xl">
-              Urbanx is built to simplify everyday living.
+              UrbanX – Your One-Stop Solution for Everyday Living
             </h2>
             <p className="mt-8 mb-5 text-lg text-muted-foreground">
-              Urbanx is an emerging destination in Pune that connects the services people need most
-              under one platform. We help customers manage homes, food, interiors, projects and
-              daily operations with more confidence and less friction.
+              UrbanX is an emerging lifestyle destination in Pune, thoughtfully designed to
+              simplify and elevate everyday living. Our 1,500 sq. ft. Hadapsar design studio brings
+              together creativity, functionality, artistry and comfort.
             </p>
             <p className="mb-5 leading-relaxed text-foreground/80">
-              The goal is simple: make life easier, faster and more convenient by combining real
-              estate support, architectural and interior expertise, landscaping, event management,
-              food services, housekeeping, gardening and IT solutions in one ecosystem.
+              As a bespoke design brand, we create personalised spaces that reflect each client’s
+              story, lifestyle and aspirations with elegance, charm and sophistication.
             </p>
             <p className="leading-relaxed text-foreground/80">
-              That means one trusted partner for discovery, planning, delivery and ongoing support
-              across every stage of modern urban living.
+              From architectural drawings and interior design to project execution and curated
+              lifestyle products, UrbanX brings the complete design journey together under one roof.
             </p>
           </div>
 
@@ -73,11 +74,12 @@ export default function AboutPage() {
         <div className="container-x">
           <div className="mx-auto mb-14 max-w-3xl text-center">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-              What We Connect
+              Architecture & Interior Studio
             </div>
             <h2 className="text-3xl font-bold text-primary md:text-5xl">
-              A complete ecosystem for daily life
+              Complete Design, Décor & Execution Solutions
             </h2>
+            <p className="mt-5 text-muted-foreground">{urbanxStudio.promise}</p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {focusCards.map((service) => (
@@ -231,6 +233,37 @@ export default function AboutPage() {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-secondary/40 py-20">
+        <div className="container-x">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+              Our Team
+            </div>
+            <h2 className="text-3xl font-bold text-primary md:text-5xl">
+              People behind the complete design journey
+            </h2>
+            <p className="mt-5 text-muted-foreground">
+              A multidisciplinary team supporting architecture, interiors, operations and project
+              execution from the first conversation to final handover.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {urbanxTeam.map((member) => (
+              <div
+                key={`${member.name}-${member.role}`}
+                className="rounded-2xl border border-border bg-card p-6 shadow-card-luxe"
+              >
+                <div className="text-lg font-bold text-primary">{member.name}</div>
+                <div className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+                  {member.role}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -44,11 +44,11 @@ export type UrbanxMetric = {
 export const urbanxBrand = {
   name: "Urbanx",
   tagline: "Simplifying Life. Connecting Services. Delivering Excellence.",
-  heroTitle: "A place created for your happy living.",
+  heroTitle: "UrbanX – Your One-Stop Solution for Everyday Living",
   heroLead:
-    "Urbanx is an emerging destination in Pune, designed to simplify and enhance everyday living. We bring together essential services across homes, lifestyle, property, food and business needs under one trusted platform.",
+    "UrbanX is an emerging lifestyle destination in Pune, thoughtfully designed to simplify and elevate everyday living. Our 1,500 sq. ft. Hadapsar design studio brings together creativity, functionality, artistry and comfort.",
   heroDetail:
-    "From finding the right property and shaping modern interiors to running kitchens, maintaining spaces and managing projects, Urbanx creates a complete ecosystem built around convenience and care.",
+    "From architectural drawings and interior design to project execution and carefully curated lifestyle products, UrbanX is an end-to-end partner for spaces shaped around your story, lifestyle and aspirations.",
 };
 
 export const urbanxContact = {
@@ -59,8 +59,29 @@ export const urbanxContact = {
   whatsappHref: "https://wa.me/919822080115",
   email: "Urbanx.pune96@gmail.com",
   emailHref: "mailto:Urbanx.pune96@gmail.com",
-  director: "Mr. Yash Nagargoje",
+  director: "Raghvendra Chate",
+  studioSize: "1,500 sq. ft. design studio",
 };
+
+export const urbanxStudio = {
+  headline: "Curating Spaces. Creating Lifestyles. Building Happy Living.",
+  summary:
+    "UrbanX is more than a service provider: it is a complete design and lifestyle ecosystem where architecture, interiors, furniture, décor, automation, landscaping and execution come together under one roof.",
+  promise:
+    "We combine innovation, expertise, craftsmanship, technology and professionalism to transform ideas into thoughtfully designed and beautifully executed spaces.",
+};
+
+export const urbanxTeam = [
+  { name: "Rajeshwari Karad", role: "UrbanX Team" },
+  { name: "Raghvendra Chate", role: "Director" },
+  { name: "Virendra Pratap Karad", role: "Deputy Director" },
+  { name: "Krishna Yadav", role: "Special Duty Officer" },
+  { name: "Bhosale", role: "Operations Manager" },
+  { name: "Alefia", role: "Interior Designer" },
+  { name: "Sahil", role: "Interior Design Team" },
+  { name: "Rahul Singh", role: "Interior Design Team" },
+  { name: "Anil Karad", role: "UrbanX Team" },
+];
 
 export const urbanxHeroSlides = [
   {
@@ -85,53 +106,199 @@ export const urbanxHeroSlides = [
 
 export const urbanxServiceAreas: IconCard[] = [
   {
-    icon: Home,
-    title: "Smart Housing & Real Estate Solutions",
+    icon: Building2,
+    title: "Site Development & Architectural Planning",
     description:
-      "Buy, sell or rent spaces with support tailored to working professionals, students and academic communities across Pune.",
-  },
-  {
-    icon: ChefHat,
-    title: "Food Delivery Services",
-    description:
-      "Freshly prepared meals, custom menus and large-scale catering for daily dining, events and institutional needs.",
+      "Site analysis, development planning, architectural concepts, floor plans, elevations, 3D visualisation and coordination with building services.",
   },
   {
     icon: Sofa,
-    title: "Interior Experience for All Places",
+    title: "Architectural & Interior Design",
     description:
-      "Modern interiors, furnishing and styling for homes, offices, healthcare spaces, schools and colleges.",
-  },
-  {
-    icon: CalendarDays,
-    title: "Events & Management",
-    description:
-      "Corporate conferences, weddings, birthdays, inaugurations and VIP hospitality handled end to end.",
-  },
-  {
-    icon: Construction,
-    title: "Construction & Contracting Services",
-    description:
-      "Planning, execution and project management for residential, commercial and institutional developments.",
-  },
-  {
-    icon: Sparkles,
-    title: "Housekeeping Services",
-    description:
-      "Deep cleaning, sanitisation, floor care and maintenance for homes, offices, institutions and shared spaces.",
-  },
-  {
-    icon: Trees,
-    title: "Landscaping & Outdoor Solutions",
-    description:
-      "Creative outdoor design, plantation, maintenance and sustainable landscape care for every site type.",
+      "Personalised spaces shaped through brief mapping, space planning, mood boards, material palettes, furniture layouts, lighting and execution drawings.",
   },
   {
     icon: MonitorSmartphone,
-    title: "IT Solutions",
+    title: "Smart Home & Space Automation",
     description:
-      "Content, digital marketing, ERP, app development, automation and training support for modern businesses.",
+      "Connected environments with smart lighting, security, audio-video, home theatre, climate control, motorised curtains and app-based control.",
   },
+  {
+    icon: Trees,
+    title: "Landscaping & Outdoor Enhancements",
+    description:
+      "Landscape planning, entrance and driveway enhancement, terrace gardens, outdoor seating, water features, green walls and lighting.",
+  },
+  {
+    icon: Sparkles,
+    title: "Bespoke Lifestyle, Furniture & Décor",
+    description:
+      "Custom sofas, furniture, wardrobes, wall units, curtains, upholstery, wallpapers, rugs and décor coordinated to complete the design vision.",
+  },
+  {
+    icon: Wrench,
+    title: "Renovation, Refurbishment & Restoration",
+    description:
+      "Home, office, hospitality, healthcare and institutional upgrades, including reconfiguration, adaptive reuse and sensitive restoration.",
+  },
+  {
+    icon: Construction,
+    title: "Turnkey Design & Execution",
+    description:
+      "One coordinated partner from concept, materials and furniture through civil work, services, styling, installation and final handover.",
+  },
+];
+
+export const urbanxDetailedServices = [
+  {
+    title: "Site Development & Architectural Planning",
+    description:
+      "From developing the site to creating the architectural vision, we shape functional, contemporary and inspiring spaces.",
+    items: [
+      "Site analysis and development planning",
+      "Architectural planning and space utilisation",
+      "Concept development and architectural design",
+      "Floor plans, elevations and sections",
+      "Façade and elevation design",
+      "Residential, commercial and institutional architecture",
+      "Renovation, remodelling and adaptive reuse",
+      "Structural and building-services coordination",
+      "3D architectural visualisation and walkthroughs",
+      "Landscape integration and outdoor planning",
+    ],
+  },
+  {
+    title: "Architectural & Interior Design",
+    description:
+      "Personalised environments that balance beauty, functionality, comfort and individual lifestyle.",
+    items: [
+      "Client brief and requirement mapping",
+      "Space planning and zoning",
+      "Concept development and mood boards",
+      "Colour, texture and material palettes",
+      "Furniture and lighting layouts",
+      "False-ceiling, flooring and wall-treatment concepts",
+      "2D working and execution drawings",
+      "Detailed furniture and joinery drawings",
+      "3D visualisation and walkthroughs",
+      "Material selection and design coordination",
+    ],
+  },
+  {
+    title: "Smart Home & Space Automation",
+    description:
+      "Future-ready environments where technology is seamlessly integrated into the architecture and interiors.",
+    items: [
+      "Smart lighting and scene control",
+      "Home automation and smart access",
+      "Security and surveillance integration",
+      "Audio-video and home theatre systems",
+      "Climate and comfort control",
+      "Motorised curtains and blinds",
+      "Energy management",
+      "Voice and app-based control",
+    ],
+  },
+  {
+    title: "Landscaping & Outdoor Enhancements",
+    description:
+      "Outdoor environments planned to be beautiful, functional and connected to the architecture.",
+    items: [
+      "Landscape planning and garden design",
+      "Entrance and driveway enhancement",
+      "Terrace and balcony gardens",
+      "Outdoor seating areas",
+      "Courtyards and recreational spaces",
+      "Pergolas and shaded outdoor areas",
+      "Outdoor lighting and water features",
+      "Green walls and vertical gardens",
+      "Landscape décor and customised outdoor solutions",
+    ],
+  },
+  {
+    title: "Bespoke Lifestyle, Furniture & Décor",
+    description:
+      "Customised elements that complete the design vision and make each space feel personal.",
+    items: [
+      "Customised sofa sets and sectional sofas",
+      "Single chairs, lounge chairs and study chairs",
+      "Dining, bedroom, office and institutional furniture",
+      "Wardrobes, storage and modular furniture",
+      "Wall units and customised joinery",
+      "Premium upholstery and designer curtains",
+      "Cushions, throws and coordinated décor",
+      "Wallpapers, rugs, carpets, art and mirrors",
+      "Complete colour, texture and material coordination",
+    ],
+  },
+  {
+    title: "Renovation, Refurbishment & Restoration",
+    description:
+      "We transform existing spaces while respecting their character, purpose and future needs.",
+    items: [
+      "Residential renovation and complete home makeovers",
+      "Office and commercial refurbishment",
+      "Hospitality and restaurant renovation",
+      "Hospital and institutional renovation",
+      "Government-office renovation projects",
+      "Space reconfiguration and modernisation",
+      "Lighting, finishes, furniture and services upgrades",
+      "Adaptive reuse of existing spaces",
+      "Restoration of iconic, heritage and old properties",
+    ],
+  },
+  {
+    title: "Turnkey Design & Execution",
+    description:
+      "One coordinated partner from the initial concept to final styling and handover.",
+    items: [
+      "Design and planning",
+      "3D visualisation",
+      "Material and finish selection",
+      "Furniture selection and customisation",
+      "Lighting and décor",
+      "Civil and interior works",
+      "Electrical, plumbing and service coordination",
+      "Modular solutions and storage",
+      "Soft furnishings and upholstery",
+      "Landscaping, site coordination and execution",
+      "Final styling and handover",
+    ],
+  },
+];
+
+export const urbanxSofaStyles = [
+  "L-shaped sofa",
+  "Sectional sofa",
+  "3-seater sofa",
+  "2-seater sofa / loveseat",
+  "Sofa cum bed",
+  "Recliner sofa",
+  "Chesterfield sofa",
+  "Modular sofa",
+  "Curved sofa",
+  "Chaise lounge sofa",
+  "U-shaped sofa",
+  "Accent sofa",
+  "Tuxedo sofa",
+  "Camelback sofa",
+  "Lawson sofa",
+  "Barrel sofa",
+  "Daybed sofa",
+  "Low-profile sofa",
+];
+
+export const urbanxProductCategories = [
+  "Sofas and customised seating",
+  "Designer curtains and blinds",
+  "Premium upholstery and fabric samples",
+  "Dining and bedroom furniture",
+  "Custom beds and side tables",
+  "Modular wardrobes and kitchen furniture",
+  "Display units and TV units",
+  "Wallpapers and wall décor",
+  "Rugs and carpets",
+  "Cushions, throws and lifestyle accessories",
 ];
 
 export const urbanxBrandCards: BrandCard[] = [
@@ -214,10 +381,15 @@ export const urbanxWhyChoose: IconCard[] = [
 ];
 
 export const urbanxProjectHighlights = [
-  "New Royal Services",
-  "The Hungry Scholars",
-  "De Marvel Furnishings",
-  "Aishwarya Realtors",
+  "Aishwarya Purva",
+  "Aishwarya Heights",
+  "New Hostel Tower - Aishwarya Realtors",
+  "SRM Services",
+  "Surya Jyoti Services",
+  "Royal Foods",
+  "SGM Services",
+  "Sahara Properties",
+  "SSPL",
 ];
 
 export const urbanxVision =
@@ -228,44 +400,39 @@ export const urbanxMission =
 
 export const urbanxCoreCapabilities: IconCard[] = [
   {
-    icon: Home,
-    title: "Smart housing and real estate solutions",
-    description: "",
+    icon: Building2,
+    title: "Site development and architectural planning",
+    description: "From site analysis and planning to drawings, elevations, visualisation and coordination.",
   },
   {
     icon: Sofa,
-    title: "Architectural and interior design services",
-    description: "",
+    title: "Architectural and interior design",
+    description: "Personalised spaces shaped through mood boards, materials, layouts, lighting and execution drawings.",
+  },
+  {
+    icon: MonitorSmartphone,
+    title: "Smart home and space automation",
+    description: "Connected lighting, access, security, audio-video, climate control and motorised solutions.",
   },
   {
     icon: Trees,
     title: "Landscaping and outdoor enhancements",
-    description: "",
-  },
-  {
-    icon: CalendarDays,
-    title: "Event planning and execution",
-    description: "",
-  },
-  {
-    icon: ChefHat,
-    title: "Food and lifestyle services",
-    description: "",
-  },
-  {
-    icon: Construction,
-    title: "Product development and project management",
-    description: "",
+    description: "Landscape planning, gardens, outdoor seating, water features, green walls and lighting.",
   },
   {
     icon: Sparkles,
-    title: "Housekeeping services",
-    description: "",
+    title: "Bespoke furniture and décor",
+    description: "Custom furniture, sofas, wardrobes, wall units, curtains, upholstery, wallpapers and styling.",
   },
   {
-    icon: Sprout,
-    title: "Gardening services",
-    description: "",
+    icon: Wrench,
+    title: "Renovation and restoration",
+    description: "Residential, commercial, hospitality, healthcare and institutional refurbishment and adaptive reuse.",
+  },
+  {
+    icon: Construction,
+    title: "Turnkey design and execution",
+    description: "One coordinated partner from concept and materials through services, installation and handover.",
   },
 ];
 

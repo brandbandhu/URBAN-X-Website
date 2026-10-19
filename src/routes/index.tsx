@@ -60,9 +60,9 @@ const heroSlides = [
   {
     img: hero1,
     eyebrow: "Urbanx",
-    title: "A place created for your happy living.",
+    title: "UrbanX – Your One-Stop Solution for Everyday Living",
     description:
-      "Simplifying life by connecting housing, food, interiors, events, construction, housekeeping, gardening and IT support under one platform.",
+      "From site development and architectural planning to interiors, automation, landscaping, furniture and turnkey execution - one integrated design studio for the complete journey.",
   },
   {
     img: hero2,
@@ -444,12 +444,13 @@ export default function HomePage() {
               {urbanxBrand.tagline}
             </h2>
             <p className="mt-8 mb-5 text-lg text-muted-foreground">
-              Urbanx is more than just a service provider. We are a space where you can discover
-              your ideal home, design your living environment and build your future.
+              UrbanX is more than just a service provider. We are a destination where you can
+              envision your lifestyle, design your living environment and create a future that
+              reflects who you are.
             </p>
             <p className="mb-8 leading-relaxed text-foreground/80">
-              We combine innovation, expertise and professionalism to deliver a seamless lifetime
-              experience where every requirement, big or small, is handled with care and precision.
+              We combine innovation, expertise, craftsmanship, technology and professionalism to
+              transform ideas into thoughtfully designed and beautifully executed spaces.
             </p>
             <BulletGrid
               items={urbanxCoreCapabilities.slice(0, 4).map((item) => item.title)}

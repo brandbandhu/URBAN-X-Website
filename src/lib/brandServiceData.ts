@@ -38,6 +38,14 @@ import {
   theHungryScholarsStrengths,
 } from "@/lib/siteContent";
 
+const featuredInteriorGallery = [
+  "/de-marvel-furnishings/interior-bedroom-01.png",
+  "/de-marvel-furnishings/interior-study-01.png",
+  "/de-marvel-furnishings/interior-living-01.png",
+  "/de-marvel-furnishings/interior-bedroom-02.png",
+  "/de-marvel-furnishings/interior-living-02.png",
+];
+
 export const newRoyalServicesData = {
   companyName: "New Royal Services",
   accentLabel: "Housekeeping, Gardening & More",
@@ -291,9 +299,12 @@ export const deMarvelFurnishingsData = {
     },
     { step: "04", title: "Installation", desc: "Careful delivery and installation in your space." },
   ],
-  gallery: Array.from({ length: 31 }, (_, index) =>
-    `/de-marvel-furnishings/furnishing-${String(index + 1).padStart(2, "0")}.jpeg`,
-  ),
+  gallery: [
+    ...featuredInteriorGallery,
+    ...Array.from({ length: 31 }, (_, index) =>
+      `/de-marvel-furnishings/furnishing-${String(index + 1).padStart(2, "0")}.jpeg`,
+    ),
+  ],
 } satisfies ServicePageData;
 
 export const theHungryScholarsData = {
