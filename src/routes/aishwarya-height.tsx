@@ -132,6 +132,17 @@ const nearbyPlaces = [
   "Karve Road",
 ];
 
+const projectPhotos = [
+  {
+    src: "/aishwarya-height/aishwarya-heights-exterior-01.jpeg",
+    alt: "Aishwarya Heights residential building exterior",
+  },
+  {
+    src: "/aishwarya-height/aishwarya-heights-exterior-02.jpeg",
+    alt: "Aishwarya Heights front elevation and entrance",
+  },
+];
+
 function SectionHeading({
   eyebrow,
   title,
@@ -268,6 +279,33 @@ export default function AishwaryaHeightPage() {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-secondary/40 py-20">
+        <div className="container-x">
+          <SectionHeading
+            eyebrow="Project Gallery"
+            title="Aishwarya Heights in Kothrud"
+            subtitle="A closer look at the residential project exterior, elevation and entrance approach."
+          />
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {projectPhotos.map((photo) => (
+              <div
+                key={photo.src}
+                className="group overflow-hidden rounded-3xl bg-card shadow-luxe"
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="h-[28rem] w-full object-cover object-center transition-transform duration-700 group-hover:scale-105 md:h-[36rem]"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
