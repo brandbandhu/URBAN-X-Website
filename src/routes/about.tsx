@@ -2,29 +2,29 @@ import { Link } from "@/components/site/AppLink";
 import { PageBanner } from "@/components/site/PageBanner";
 import { SiteLayout } from "@/components/site/Layout";
 import {
-  urbanxBrand,
-  urbanxContact,
-  urbanxMetrics,
-  urbanxProjectHighlights,
-  urbanxServiceAreas,
-  urbanxStudio,
-  urbanxTeam,
-  urbanxVision,
-  urbanxMission,
-  urbanxWhyChoose,
+  demarvelBrand,
+  demarvelContact,
+  demarvelMetrics,
+  demarvelProjectHighlights,
+  demarvelServiceAreas,
+  demarvelStudio,
+  demarvelTeam,
+  demarvelVision,
+  demarvelMission,
+  demarvelWhyChoose,
 } from "@/lib/siteContent";
 import { ArrowRight, Compass, Mail, Phone, Route, Sparkles, Star } from "lucide-react";
-import aboutImg from "@/assets/about-urbanx.jpg";
+import aboutImg from "@/assets/about-demarvel.jpg";
 import hero1 from "@/assets/hero-1.jpg";
 
-const focusCards = urbanxServiceAreas.slice(0, 4);
+const focusCards = demarvelServiceAreas.slice(0, 4);
 
 export default function AboutPage() {
   return (
     <SiteLayout>
       <PageBanner
-        title="About Urbanx"
-        subtitle={urbanxBrand.tagline}
+        title="About De marvel"
+        subtitle={demarvelBrand.tagline}
         crumbs={[{ label: "About" }]}
         image={aboutImg}
       />
@@ -36,10 +36,10 @@ export default function AboutPage() {
               Our Story
             </div>
             <h2 className="gold-underline mb-6 text-3xl font-bold text-primary md:text-5xl">
-              UrbanX – Your One-Stop Solution for Everyday Living
+              De marvel – Your One-Stop Solution for Everyday Living
             </h2>
             <p className="mt-8 mb-5 text-lg text-muted-foreground">
-              UrbanX is an emerging lifestyle destination in Pune, thoughtfully designed to
+              De marvel is an emerging lifestyle destination in Pune, thoughtfully designed to
               simplify and elevate everyday living. Our 1,500 sq. ft. Hadapsar design studio brings
               together creativity, functionality, artistry and comfort.
             </p>
@@ -49,14 +49,14 @@ export default function AboutPage() {
             </p>
             <p className="leading-relaxed text-foreground/80">
               From architectural drawings and interior design to project execution and curated
-              lifestyle products, UrbanX brings the complete design journey together under one roof.
+              lifestyle products, De marvel brings the complete design journey together under one roof.
             </p>
           </div>
 
           <div className="relative">
             <img
               src={hero1}
-              alt="Urbanx team and workspace"
+              alt="De marvel team and workspace"
               className="h-[320px] w-full rounded-2xl object-cover shadow-luxe sm:h-[420px] lg:h-[520px]"
               loading="eager"
               decoding="async"
@@ -64,7 +64,7 @@ export default function AboutPage() {
             />
             <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-gradient-gold p-6 text-primary shadow-luxe md:block">
               <div className="text-sm font-semibold uppercase tracking-[0.24em]">Based in Pune</div>
-              <div className="mt-2 text-2xl font-bold">{urbanxContact.office}</div>
+              <div className="mt-2 text-2xl font-bold">{demarvelContact.office}</div>
             </div>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold text-primary md:text-5xl">
               Complete Design, Décor & Execution Solutions
             </h2>
-            <p className="mt-5 text-muted-foreground">{urbanxStudio.promise}</p>
+            <p className="mt-5 text-muted-foreground">{demarvelStudio.promise}</p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {focusCards.map((service) => (
@@ -102,7 +102,7 @@ export default function AboutPage() {
 
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-8 lg:grid-cols-4">
-          {urbanxMetrics.map((metric) => (
+          {demarvelMetrics.map((metric) => (
             <div
               key={metric.label}
               className="rounded-2xl bg-card p-8 text-center shadow-card-luxe"
@@ -123,7 +123,7 @@ export default function AboutPage() {
               Vision & Mission
             </div>
             <h2 className="mb-5 text-3xl font-bold md:text-5xl">
-              The direction behind every Urbanx service
+              The direction behind every De marvel service
             </h2>
             <p className="max-w-xl leading-relaxed text-white/75">
               Every vertical works toward the same promise: simplify daily life through reliable,
@@ -143,7 +143,7 @@ export default function AboutPage() {
                 <h3 className="mb-3 text-2xl font-bold md:text-3xl">
                   A platform that simplifies urban living
                 </h3>
-                <p className="leading-relaxed text-white/75">{urbanxVision}</p>
+                <p className="leading-relaxed text-white/75">{demarvelVision}</p>
               </div>
             </div>
 
@@ -158,7 +158,7 @@ export default function AboutPage() {
                 <h3 className="mb-3 text-2xl font-bold md:text-3xl">
                   Reliable services, delivered with trust
                 </h3>
-                <p className="leading-relaxed text-white/75">{urbanxMission}</p>
+                <p className="leading-relaxed text-white/75">{demarvelMission}</p>
               </div>
             </div>
           </div>
@@ -169,13 +169,13 @@ export default function AboutPage() {
         <div className="container-x grid gap-14 lg:grid-cols-2 lg:items-start">
           <div>
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-              Why Urbanx
+              Why De marvel
             </div>
             <h2 className="gold-underline mb-8 text-3xl font-bold text-primary md:text-5xl">
-              The Urbanx advantage
+              The De marvel advantage
             </h2>
             <div className="space-y-4">
-              {urbanxWhyChoose.map((item) => {
+              {demarvelWhyChoose.map((item) => {
                 const Icon = item.icon;
 
                 return (
@@ -195,10 +195,10 @@ export default function AboutPage() {
               Projects Handled
             </div>
             <h3 className="mb-5 text-3xl font-bold text-primary">
-              Work that reflects the Urbanx standard
+              Work that reflects the De marvel standard
             </h3>
             <div className="space-y-4">
-              {urbanxProjectHighlights.map((project) => (
+              {demarvelProjectHighlights.map((project) => (
                 <div
                   key={project}
                   className="flex items-center gap-3 rounded-xl border border-border bg-secondary p-4"
@@ -213,23 +213,23 @@ export default function AboutPage() {
                 Leadership
               </div>
               <p className="leading-relaxed text-white/80">
-                {urbanxContact.director} leads the company from {urbanxContact.office}, with a focus
+                {demarvelContact.director} leads the company from {demarvelContact.office}, with a focus
                 on reliability, service quality and long-term relationships.
               </p>
               <div className="mt-4 flex flex-wrap gap-3 text-sm">
                 <a
-                  href={urbanxContact.phoneHref}
+                  href={demarvelContact.phoneHref}
                   className="inline-flex items-center gap-2 rounded-md border border-white/20 px-4 py-2 hover:bg-white/10"
                 >
                   <Phone className="h-4 w-4" />
-                  {urbanxContact.phoneDisplay}
+                  {demarvelContact.phoneDisplay}
                 </a>
                 <a
-                  href={urbanxContact.emailHref}
+                  href={demarvelContact.emailHref}
                   className="inline-flex items-center gap-2 rounded-md border border-white/20 px-4 py-2 hover:bg-white/10"
                 >
                   <Mail className="h-4 w-4" />
-                  {urbanxContact.email}
+                  {demarvelContact.email}
                 </a>
               </div>
             </div>
@@ -253,7 +253,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {urbanxTeam.map((member) => (
+            {demarvelTeam.map((member) => (
               <div
                 key={`${member.name}-${member.role}`}
                 className="rounded-2xl border border-border bg-card p-6 shadow-card-luxe"
@@ -277,7 +277,7 @@ export default function AboutPage() {
                 One platform. Multiple services. A better daily experience.
               </h2>
               <p className="mb-8 text-white/80">
-                From housing and food to interiors, events, cleaning and support services, Urbanx is
+                From housing and food to interiors, events, cleaning and support services, De marvel is
                 designed to keep everything connected.
               </p>
               <Link

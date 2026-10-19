@@ -2,16 +2,16 @@ import { useState } from "react";
 import { SiteLayout } from "@/components/site/Layout";
 import { PageBanner } from "@/components/site/PageBanner";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
-import { urbanxBrand, urbanxContact, theHungryScholarsContact } from "@/lib/siteContent";
+import { demarvelBrand, demarvelContact, theHungryScholarsContact } from "@/lib/siteContent";
 import { Check, Mail, MapPin, Phone, Send } from "lucide-react";
 import type { FormEvent } from "react";
-import aboutImg from "@/assets/about-urbanx.jpg";
+import aboutImg from "@/assets/about-demarvel.jpg";
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", email: "", service: "", message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const mapQuery = encodeURIComponent(urbanxContact.office);
+  const mapQuery = encodeURIComponent(demarvelContact.office);
   const mapEmbedSrc = `https://www.google.com/maps?q=${mapQuery}&z=17&output=embed`;
   const mapSearchHref = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
 
@@ -41,7 +41,7 @@ export default function ContactPage() {
   return (
     <SiteLayout>
       <PageBanner
-        title="Contact Urbanx"
+        title="Contact De marvel"
         subtitle="From site development to the final detail, let’s design and transform your space."
         crumbs={[{ label: "Contact" }]}
         image={aboutImg}
@@ -55,7 +55,7 @@ export default function ContactPage() {
                 Reach Us
               </div>
               <h2 className="gold-underline mb-6 text-3xl font-bold text-primary md:text-4xl">
-                {urbanxBrand.tagline}
+                {demarvelBrand.tagline}
               </h2>
               <p className="mt-8 text-muted-foreground">
                 Share your lifestyle, site, functional requirements and design preferences with our
@@ -68,26 +68,26 @@ export default function ContactPage() {
               {[
                 {
                   icon: MapPin,
-                  title: "Urbanx Office",
-                  lines: [urbanxContact.office, urbanxContact.highway, urbanxContact.studioSize],
+                  title: "De marvel Office",
+                  lines: [demarvelContact.office, demarvelContact.highway, demarvelContact.studioSize],
                 },
                 {
                   icon: Phone,
                   title: "Phone",
-                  lines: [urbanxContact.phoneDisplay],
-                  href: urbanxContact.phoneHref,
+                  lines: [demarvelContact.phoneDisplay],
+                  href: demarvelContact.phoneHref,
                 },
                 {
                   icon: Mail,
                   title: "Email",
-                  lines: [urbanxContact.email],
-                  href: urbanxContact.emailHref,
+                  lines: [demarvelContact.email],
+                  href: demarvelContact.emailHref,
                 },
                 {
                   icon: WhatsAppIcon,
                   title: "WhatsApp",
                   lines: ["Chat with us instantly"],
-                  href: urbanxContact.whatsappHref,
+                  href: demarvelContact.whatsappHref,
                 },
               ].map((item) => {
                 const content = (
@@ -180,7 +180,7 @@ export default function ContactPage() {
                 <form onSubmit={onSubmit} className="space-y-5">
                   <h3 className="mb-2 text-2xl font-bold text-primary">Enquiry Form</h3>
                   <p className="text-sm text-muted-foreground">
-                    Tell us the service you need and we will connect you with the right Urbanx team.
+                    Tell us the service you need and we will connect you with the right De marvel team.
                   </p>
 
                   <div className="grid gap-4 sm:grid-cols-2">
@@ -290,8 +290,8 @@ export default function ContactPage() {
                   <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
                     Location
                   </div>
-                  <h3 className="mt-1 text-lg font-bold text-primary">{urbanxContact.office}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{urbanxContact.highway}</p>
+                  <h3 className="mt-1 text-lg font-bold text-primary">{demarvelContact.office}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{demarvelContact.highway}</p>
                 </div>
                 <a
                   href={mapSearchHref}
@@ -304,7 +304,7 @@ export default function ContactPage() {
               </div>
               <div className="relative min-h-[220px] flex-1 sm:min-h-[260px]">
                 <iframe
-                  title="Urbanx location map"
+                  title="De marvel location map"
                   src={mapEmbedSrc}
                   className="absolute inset-0 h-full w-full border-0"
                   loading="lazy"

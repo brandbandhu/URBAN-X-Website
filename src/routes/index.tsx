@@ -3,22 +3,22 @@ import { ActiveBrandsSection } from "@/components/site/ActiveBrandsSection";
 import { SiteLayout } from "@/components/site/Layout";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import {
-  urbanxBrand,
-  urbanxConstructionDetails,
-  urbanxContact,
-  urbanxCoreCapabilities,
-  urbanxEventsDetails,
-  urbanxFoodDetails,
-  urbanxGardeningDetails,
-  urbanxHousingDetails,
-  urbanxInteriorDetails,
-  urbanxItDetails,
-  urbanxMetrics,
-  urbanxMission,
-  urbanxHousekeepingDetails,
-  urbanxVision,
-  urbanxWhyChoose,
-  type UrbanxMetric,
+  demarvelBrand,
+  demarvelConstructionDetails,
+  demarvelContact,
+  demarvelCoreCapabilities,
+  demarvelEventsDetails,
+  demarvelFoodDetails,
+  demarvelGardeningDetails,
+  demarvelHousingDetails,
+  demarvelInteriorDetails,
+  demarvelItDetails,
+  demarvelMetrics,
+  demarvelMission,
+  demarvelHousekeepingDetails,
+  demarvelVision,
+  demarvelWhyChoose,
+  type DeMarvelMetric,
 } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import {
@@ -47,7 +47,7 @@ import {
   type CSSProperties,
   type ReactNode,
 } from "react";
-import aboutImg from "@/assets/about-urbanx.jpg";
+import aboutImg from "@/assets/about-demarvel.jpg";
 import gardening from "@/assets/service-gardening.jpg";
 import housekeeping from "@/assets/service-housekeeping.jpg";
 import marble from "@/assets/service-marble.jpg";
@@ -59,8 +59,8 @@ import hero3 from "@/assets/hero-3.jpg";
 const heroSlides = [
   {
     img: hero1,
-    eyebrow: "Urbanx",
-    title: "UrbanX – Your One-Stop Solution for Everyday Living",
+    eyebrow: "De marvel",
+    title: "De marvel – Your One-Stop Solution for Everyday Living",
     description:
       "From site development and architectural planning to interiors, automation, landscaping, furniture and turnkey execution - one integrated design studio for the complete journey.",
   },
@@ -210,7 +210,7 @@ function MetricCard({
   active,
   delayMs,
 }: {
-  metric: UrbanxMetric;
+  metric: DeMarvelMetric;
   active: boolean;
   delayMs: number;
 }) {
@@ -269,31 +269,31 @@ export default function HomePage() {
     {
       id: "overview",
       eyebrow: "Interior Overview",
-      summary: urbanxInteriorDetails.summary,
+      summary: demarvelInteriorDetails.summary,
       image: marble,
-      imageAlt: "Urbanx interior furnishing",
+      imageAlt: "De marvel interior furnishing",
       highlight: "10+ years of experience and more than 10 lakh square feet of completed work.",
     },
     {
       id: "residential",
       eyebrow: "Residential",
       summary: "Designer curtains, wallpapers, sofa sets, study chairs and wardrobe planning.",
-      items: urbanxInteriorDetails.expertise.residential,
+      items: demarvelInteriorDetails.expertise.residential,
     },
     {
       id: "commercial",
       eyebrow: "Commercial and Healthcare",
       summary: "Office spaces, laboratories, hospitals, clinics and institutional interiors.",
-      items: urbanxInteriorDetails.expertise.commercial.concat(
-        urbanxInteriorDetails.expertise.healthcare,
+      items: demarvelInteriorDetails.expertise.commercial.concat(
+        demarvelInteriorDetails.expertise.healthcare,
       ),
     },
     {
       id: "wall",
       eyebrow: "Wall and Furnishing Solutions",
       summary: "Premium wallpapers, cladding, textures, custom sofas and smart furnishings.",
-      items: urbanxInteriorDetails.expertise.wallSurface.concat(
-        urbanxInteriorDetails.expertise.furnishings,
+      items: demarvelInteriorDetails.expertise.wallSurface.concat(
+        demarvelInteriorDetails.expertise.furnishings,
       ),
     },
   ];
@@ -378,7 +378,7 @@ export default function HomePage() {
                     to="/contact"
                     className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift"
                   >
-                    Contact Urbanx <ArrowRight className="h-4 w-4" />
+                    Contact De marvel <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
                     to="/services"
@@ -387,7 +387,7 @@ export default function HomePage() {
                     View Services <ArrowRight className="h-4 w-4" />
                   </Link>
                   <a
-                    href={urbanxContact.whatsappHref}
+                    href={demarvelContact.whatsappHref}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-7 py-3.5 font-semibold text-white hover-lift"
@@ -405,7 +405,7 @@ export default function HomePage() {
       <section ref={statsRef} className="relative z-10 -mt-10 pb-6 md:-mt-10 md:pb-8">
         <div className="container-x">
           <div className="grid gap-4 rounded-[1.75rem] border border-border bg-background/98 p-4 shadow-luxe md:grid-cols-2 xl:grid-cols-4 md:p-6">
-            {urbanxMetrics.map((metric, index) => (
+            {demarvelMetrics.map((metric, index) => (
               <MetricCard
                 key={metric.label}
                 metric={metric}
@@ -422,7 +422,7 @@ export default function HomePage() {
           <div className="relative">
             <img
               src={aboutImg}
-              alt="Urbanx team and workspace"
+              alt="De marvel team and workspace"
               className="h-[280px] w-full rounded-2xl object-cover shadow-luxe sm:h-[380px] md:h-[460px] lg:h-[520px]"
               loading="lazy"
               decoding="async"
@@ -438,13 +438,13 @@ export default function HomePage() {
 
           <div>
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-              About Urbanx
+              About De marvel
             </div>
             <h2 className="gold-underline mb-6 text-3xl font-bold text-primary md:text-5xl">
-              {urbanxBrand.tagline}
+              {demarvelBrand.tagline}
             </h2>
             <p className="mt-8 mb-5 text-lg text-muted-foreground">
-              UrbanX is more than just a service provider. We are a destination where you can
+              De marvel is more than just a service provider. We are a destination where you can
               envision your lifestyle, design your living environment and create a future that
               reflects who you are.
             </p>
@@ -453,7 +453,7 @@ export default function HomePage() {
               transform ideas into thoughtfully designed and beautifully executed spaces.
             </p>
             <BulletGrid
-              items={urbanxCoreCapabilities.slice(0, 4).map((item) => item.title)}
+              items={demarvelCoreCapabilities.slice(0, 4).map((item) => item.title)}
               icon={Check}
             />
           </div>
@@ -461,9 +461,9 @@ export default function HomePage() {
       </section>
 
       <ActiveBrandsSection
-        eyebrow="Urbanx Network"
-        title="Companies and facilities working under Urbanx"
-        subtitle="Visitors landing on Urbanx can quickly see the active brands and dedicated facilities operating under the Urbanx umbrella."
+        eyebrow="De marvel Network"
+        title="Companies and facilities working under De marvel"
+        subtitle="Visitors landing on De marvel can quickly see the active brands and dedicated facilities operating under the De marvel umbrella."
         ctaLabel="View all services"
         ctaTo="/services"
       />
@@ -473,10 +473,10 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Core Capabilities"
             title="We combine innovation, expertise and professionalism"
-            subtitle="Everything Urbanx brings together sits under one platform so homes, lifestyle, food and business needs can be managed more easily."
+            subtitle="Everything De marvel brings together sits under one platform so homes, lifestyle, food and business needs can be managed more easily."
           />
           <div className="mt-12 grid items-stretch gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {urbanxCoreCapabilities.map((item) => {
+            {demarvelCoreCapabilities.map((item) => {
               const Icon = item.icon;
 
               return (
@@ -499,7 +499,7 @@ export default function HomePage() {
 
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={hero2} alt="Urbanx housing" />
+          <ServiceMedia src={hero2} alt="De marvel housing" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
@@ -512,7 +512,7 @@ export default function HomePage() {
                 subtitleClassName="max-w-xl text-muted-foreground"
               />
               <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-                {urbanxHousingDetails.summary}
+                {demarvelHousingDetails.summary}
               </p>
               <p className="mt-4 text-sm leading-relaxed text-foreground/80">
                 Secure living with dependable management and daily comfort for residents and
@@ -531,7 +531,7 @@ export default function HomePage() {
               </div>
               <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
                 <ul className="grid gap-3 sm:grid-cols-2">
-                  {urbanxHousingDetails.focus.map((item) => (
+                  {demarvelHousingDetails.focus.map((item) => (
                     <li
                       key={item}
                       className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
@@ -567,13 +567,13 @@ export default function HomePage() {
 
       <section className="bg-secondary/40 py-20">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={hero3} alt="Urbanx food delivery" />
+          <ServiceMedia src={hero3} alt="De marvel food delivery" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
               <SectionHeading
                 align="left"
-                eyebrow="Urbanx: Food Delivery Services"
+                eyebrow="De marvel: Food Delivery Services"
                 title="Fresh meals for more than 2,000 customers every day"
                 subtitle="Freshly prepared meals, special dietary options and large-scale catering handled with hygiene, taste and timely delivery."
                 titleClassName="max-w-2xl text-primary"
@@ -584,7 +584,7 @@ export default function HomePage() {
                   Kitchen scale
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {urbanxFoodDetails.kitchen}
+                  {demarvelFoodDetails.kitchen}
                 </p>
               </div>
             </div>
@@ -600,7 +600,7 @@ export default function HomePage() {
               </div>
               <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
                 <ul className="grid gap-3 sm:grid-cols-2">
-                  {urbanxFoodDetails.menu.map((item) => (
+                  {demarvelFoodDetails.menu.map((item) => (
                     <li
                       key={item}
                       className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
@@ -625,7 +625,7 @@ export default function HomePage() {
               </div>
               <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
                 <div className="flex flex-wrap gap-2">
-                  {urbanxFoodDetails.catering.map((item) => (
+                  {demarvelFoodDetails.catering.map((item) => (
                     <span
                       key={item}
                       className="rounded-full border border-border bg-secondary px-4 py-2 text-sm text-foreground/80"
@@ -642,7 +642,7 @@ export default function HomePage() {
                 Menus on request
               </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                {urbanxFoodDetails.note}
+                {demarvelFoodDetails.note}
               </p>
               <p className="mt-4 text-sm leading-relaxed text-foreground/80">
                 We keep the service flexible so changing customer needs and special occasions are
@@ -655,13 +655,13 @@ export default function HomePage() {
 
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={marble} alt="Urbanx interior furnishing" />
+          <ServiceMedia src={marble} alt="De marvel interior furnishing" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
               <SectionHeading
                 align="left"
-                eyebrow="Urbanx: Interior Experience for All Places"
+                eyebrow="De marvel: Interior Experience for All Places"
                 title="Modern, functional and aesthetic interiors for every environment"
                 subtitle="Transform your space with modern, functional and aesthetic interior solutions designed by professionals with over 10 years of experience."
                 titleClassName="max-w-2xl text-primary"
@@ -677,7 +677,7 @@ export default function HomePage() {
                 </p>
               </div>
               <p className="mt-4 text-sm leading-relaxed text-foreground/80">
-                {urbanxInteriorDetails.note}
+                {demarvelInteriorDetails.note}
               </p>
             </div>
 
@@ -706,13 +706,13 @@ export default function HomePage() {
 
       <section className="bg-secondary/40 py-20">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={rental} alt="Urbanx events and construction" />
+          <ServiceMedia src={rental} alt="De marvel events and construction" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
               <SectionHeading
                 align="left"
-                eyebrow="Urbanx: Events & Management"
+                eyebrow="De marvel: Events & Management"
                 title="Planning, managing and executing memorable events"
                 subtitle="Corporate conferences, birthdays, weddings, inaugurations and celebrity management, handled with precision and professionalism."
                 titleClassName="max-w-2xl text-primary"
@@ -723,7 +723,7 @@ export default function HomePage() {
                   Event promise
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {urbanxEventsDetails.promise}
+                  {demarvelEventsDetails.promise}
                 </p>
               </div>
             </div>
@@ -739,7 +739,7 @@ export default function HomePage() {
               </div>
               <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
                 <ul className="grid gap-3 sm:grid-cols-2">
-                  {urbanxEventsDetails.services.slice(0, 3).map((item) => (
+                  {demarvelEventsDetails.services.slice(0, 3).map((item) => (
                     <li
                       key={item}
                       className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
@@ -764,7 +764,7 @@ export default function HomePage() {
               </div>
               <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
                 <div className="flex flex-wrap gap-2">
-                  {urbanxEventsDetails.services.slice(3).map((item) => (
+                  {demarvelEventsDetails.services.slice(3).map((item) => (
                     <span
                       key={item}
                       className="rounded-full border border-border bg-secondary px-4 py-2 text-sm text-foreground/80"
@@ -778,7 +778,7 @@ export default function HomePage() {
 
             <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
               <p className="text-sm leading-relaxed text-muted-foreground">
-                {urbanxEventsDetails.promise}
+                {demarvelEventsDetails.promise}
               </p>
               <p className="mt-4 text-sm leading-relaxed text-foreground/80">
                 From intimate gatherings to grand celebrations, every event is timed, styled and
@@ -791,13 +791,13 @@ export default function HomePage() {
 
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={hero1} alt="Urbanx construction" />
+          <ServiceMedia src={hero1} alt="De marvel construction" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
               <SectionHeading
                 align="left"
-                eyebrow="Urbanx Construction and Contracting Services"
+                eyebrow="De marvel Construction and Contracting Services"
                 title="Planning to execution and complete project management"
                 subtitle="Residential, commercial and institutional projects handled with modern design, structural strength and environmental suitability."
                 titleClassName="max-w-2xl text-primary"
@@ -808,11 +808,11 @@ export default function HomePage() {
                   Project focus
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {urbanxConstructionDetails.summary}
+                  {demarvelConstructionDetails.summary}
                 </p>
               </div>
               <p className="mt-4 text-sm leading-relaxed text-foreground/80">
-                {urbanxConstructionDetails.promise}
+                {demarvelConstructionDetails.promise}
               </p>
             </div>
 
@@ -827,7 +827,7 @@ export default function HomePage() {
               </div>
               <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
                 <ul className="grid gap-3 sm:grid-cols-2">
-                  {urbanxConstructionDetails.services.slice(0, 4).map((item) => (
+                  {demarvelConstructionDetails.services.slice(0, 4).map((item) => (
                     <li
                       key={item}
                       className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
@@ -851,7 +851,7 @@ export default function HomePage() {
               </div>
               <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
                 <ul className="grid gap-3 sm:grid-cols-2">
-                  {urbanxConstructionDetails.projects.map((item) => (
+                  {demarvelConstructionDetails.projects.map((item) => (
                     <li
                       key={item}
                       className="rounded-xl border border-border bg-secondary/40 px-4 py-3 text-sm text-foreground/80"
@@ -875,7 +875,7 @@ export default function HomePage() {
               </div>
               <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
                 <ul className="grid gap-2 sm:grid-cols-2">
-                  {urbanxConstructionDetails.services.slice(4).map((item) => (
+                  {demarvelConstructionDetails.services.slice(4).map((item) => (
                     <li key={item} className="text-sm text-muted-foreground">
                       - {item}
                     </li>
@@ -889,7 +889,7 @@ export default function HomePage() {
 
       <section className="bg-secondary/40 py-20">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={housekeeping} alt="Urbanx housekeeping" />
+          <ServiceMedia src={housekeeping} alt="De marvel housekeeping" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
@@ -906,7 +906,7 @@ export default function HomePage() {
                   Service promise
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {urbanxHousekeepingDetails.promise}
+                  {demarvelHousekeepingDetails.promise}
                 </p>
               </div>
             </div>
@@ -923,7 +923,7 @@ export default function HomePage() {
               </div>
               <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
                 <ul className="grid gap-3 sm:grid-cols-2">
-                  {urbanxHousekeepingDetails.services.slice(0, 6).map((item) => (
+                  {demarvelHousekeepingDetails.services.slice(0, 6).map((item) => (
                     <li
                       key={item}
                       className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
@@ -948,7 +948,7 @@ export default function HomePage() {
               </div>
               <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
                 <ul className="grid gap-2 sm:grid-cols-2">
-                  {urbanxHousekeepingDetails.services.slice(6).map((item) => (
+                  {demarvelHousekeepingDetails.services.slice(6).map((item) => (
                     <li key={item} className="text-sm text-muted-foreground">
                       - {item}
                     </li>
@@ -962,13 +962,13 @@ export default function HomePage() {
 
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={gardening} alt="Urbanx landscaping" />
+          <ServiceMedia src={gardening} alt="De marvel landscaping" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
               <SectionHeading
                 align="left"
-                eyebrow="Urbanx Landscaping"
+                eyebrow="De marvel Landscaping"
                 title="Creative, functional and sustainable outdoor solutions"
                 subtitle="Outdoor spaces designed for long-term value across campuses, offices, homes and public spaces."
                 titleClassName="max-w-2xl text-primary"
@@ -979,7 +979,7 @@ export default function HomePage() {
                   Landscaping promise
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {urbanxGardeningDetails.promise}
+                  {demarvelGardeningDetails.promise}
                 </p>
               </div>
             </div>
@@ -1024,7 +1024,7 @@ export default function HomePage() {
               </div>
               <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
                 <ul className="grid gap-3 sm:grid-cols-2">
-                  {urbanxGardeningDetails.services.map((item) => (
+                  {demarvelGardeningDetails.services.map((item) => (
                     <li
                       key={item}
                       className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
@@ -1049,7 +1049,7 @@ export default function HomePage() {
 
       <section className="bg-secondary/40 py-20">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={hero2} alt="Urbanx IT solutions" />
+          <ServiceMedia src={hero2} alt="De marvel IT solutions" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
@@ -1066,7 +1066,7 @@ export default function HomePage() {
                   IT support promise
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {urbanxItDetails.promise}
+                  {demarvelItDetails.promise}
                 </p>
               </div>
             </div>
@@ -1083,7 +1083,7 @@ export default function HomePage() {
               </div>
               <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
                 <ul className="grid gap-3 sm:grid-cols-2">
-                  {urbanxItDetails.services.slice(0, 4).map((item) => (
+                  {demarvelItDetails.services.slice(0, 4).map((item) => (
                     <li
                       key={item}
                       className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
@@ -1108,7 +1108,7 @@ export default function HomePage() {
               </div>
               <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
                 <ul className="grid gap-3 sm:grid-cols-2">
-                  {urbanxItDetails.services.slice(4, 8).map((item) => (
+                  {demarvelItDetails.services.slice(4, 8).map((item) => (
                     <li
                       key={item}
                       className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
@@ -1133,7 +1133,7 @@ export default function HomePage() {
               </div>
               <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
                 <ul className="grid gap-3 sm:grid-cols-2">
-                  {urbanxItDetails.services.slice(8).map((item) => (
+                  {demarvelItDetails.services.slice(8).map((item) => (
                     <li
                       key={item}
                       className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
@@ -1152,14 +1152,14 @@ export default function HomePage() {
       <section className="bg-navy py-20 text-white">
         <div className="container-x">
           <SectionHeading
-            eyebrow="Why Choose Urbanx"
+            eyebrow="Why Choose De marvel"
             title="Reliable, customer-first and built around modern urban living"
             subtitle="One platform for multiple services, trusted professionals, affordable pricing and quick, reliable support."
             titleClassName="text-white"
             subtitleClassName="text-white/80"
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-5">
-            {urbanxWhyChoose.map((item) => {
+            {demarvelWhyChoose.map((item) => {
               const Icon = item.icon;
 
               return (
@@ -1188,7 +1188,7 @@ export default function HomePage() {
               Clear direction. Reliable execution.
             </h2>
             <p className="mt-8 max-w-xl leading-relaxed text-muted-foreground">
-              Urbanx is built around one simple idea: connect essential services under a dependable
+              De marvel is built around one simple idea: connect essential services under a dependable
               platform so people can manage everyday needs with more confidence.
             </p>
           </div>
@@ -1205,7 +1205,7 @@ export default function HomePage() {
                 <h3 className="mb-3 text-2xl font-bold text-primary md:text-3xl">
                   To become the most trusted comprehensive service platform
                 </h3>
-                <p className="leading-relaxed text-muted-foreground">{urbanxVision}</p>
+                <p className="leading-relaxed text-muted-foreground">{demarvelVision}</p>
               </div>
             </div>
 
@@ -1220,7 +1220,7 @@ export default function HomePage() {
                 <h3 className="mb-3 text-2xl font-bold text-primary md:text-3xl">
                   Connecting people with reliable services across daily life
                 </h3>
-                <p className="leading-relaxed text-muted-foreground">{urbanxMission}</p>
+                <p className="leading-relaxed text-muted-foreground">{demarvelMission}</p>
               </div>
             </div>
           </div>
@@ -1237,7 +1237,7 @@ export default function HomePage() {
                 Let us handle the details, big and small.
               </h2>
               <p className="mb-8 text-white/80">
-                From housing and interiors to catering, events, housekeeping and IT support, Urbanx
+                From housing and interiors to catering, events, housekeeping and IT support, De marvel
                 is built to deliver care and precision.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
@@ -1248,14 +1248,14 @@ export default function HomePage() {
                   Contact Us <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
-                  href={urbanxContact.phoneHref}
+                  href={demarvelContact.phoneHref}
                   className="inline-flex items-center gap-2 rounded-md border-2 border-white/40 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary"
                 >
                   <Phone className="h-4 w-4" />
-                  {urbanxContact.phoneDisplay}
+                  {demarvelContact.phoneDisplay}
                 </a>
                 <a
-                  href={urbanxContact.whatsappHref}
+                  href={demarvelContact.whatsappHref}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-md border-2 border-white/40 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary"
@@ -1267,11 +1267,11 @@ export default function HomePage() {
               <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-white/75">
                 <span className="inline-flex items-center gap-2">
                   <MapPin className="h-4 w-4 text-gold" />
-                  {urbanxContact.office}
+                  {demarvelContact.office}
                 </span>
                 <span className="inline-flex items-center gap-2">
                   <ShieldCheck className="h-4 w-4 text-gold" />
-                  {urbanxContact.director}
+                  {demarvelContact.director}
                 </span>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import { BrandLogo } from "@/components/site/BrandLogo";
 import { Link } from "@/components/site/AppLink";
-import { urbanxBrand, urbanxBrandCards, urbanxContact } from "@/lib/siteContent";
+import { demarvelBrand, demarvelBrandCards, demarvelContact } from "@/lib/siteContent";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 export function Footer() {
@@ -14,7 +14,7 @@ export function Footer() {
             imageClassName="max-h-[7.5rem]"
           />
           <p className="text-sm leading-relaxed text-white/70">
-            {urbanxBrand.tagline} - bringing architecture, interiors, automation, furniture,
+            {demarvelBrand.tagline} - bringing architecture, interiors, automation, furniture,
             décor, landscaping and turnkey execution together under one trusted roof.
           </p>
         </div>
@@ -24,7 +24,7 @@ export function Footer() {
           <ul className="space-y-2 text-sm mt-7">
             {[
               ["/", "Home"],
-              ["/about", "About Urbanx"],
+              ["/about", "About De marvel"],
               ["/services", "Services"],
               ["/contact", "Contact"],
             ].map(([to, label]) => (
@@ -40,7 +40,7 @@ export function Footer() {
         <div>
           <h4 className="text-white font-display text-lg mb-5 gold-underline">Our Brands</h4>
           <ul className="space-y-2 text-sm mt-7">
-            {urbanxBrandCards.map((brand) => (
+            {demarvelBrandCards.map((brand) => (
               <li key={brand.to}>
                 <Link to={brand.to} className="hover:text-gold transition-colors">
                   {brand.label}
@@ -55,18 +55,18 @@ export function Footer() {
           <ul className="space-y-3 text-sm mt-7">
             <li className="flex gap-3">
               <MapPin className="w-4 h-4 text-gold shrink-0 mt-1" />
-              <span>{urbanxContact.office}</span>
+              <span>{demarvelContact.office}</span>
             </li>
             <li className="flex gap-3">
               <Phone className="w-4 h-4 text-gold shrink-0 mt-1" />
-              <a href={urbanxContact.phoneHref} className="hover:text-gold">
-                {urbanxContact.phoneDisplay}
+              <a href={demarvelContact.phoneHref} className="hover:text-gold">
+                {demarvelContact.phoneDisplay}
               </a>
             </li>
             <li className="flex gap-3">
               <Mail className="w-4 h-4 text-gold shrink-0 mt-1" />
-              <a href={urbanxContact.emailHref} className="hover:text-gold">
-                {urbanxContact.email}
+              <a href={demarvelContact.emailHref} className="hover:text-gold">
+                {demarvelContact.email}
               </a>
             </li>
           </ul>
@@ -74,8 +74,8 @@ export function Footer() {
       </div>
 
       <div className="container-x mt-14 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 text-xs text-white/60">
-        <div>Copyright {new Date().getFullYear()} Urbanx. All rights reserved.</div>
-        <div>{urbanxBrand.tagline}</div>
+        <div>Copyright {new Date().getFullYear()} De marvel. All rights reserved.</div>
+        <div>{demarvelBrand.tagline}</div>
       </div>
     </footer>
   );

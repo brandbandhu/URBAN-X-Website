@@ -3,24 +3,24 @@ import { ActiveBrandsSection } from "@/components/site/ActiveBrandsSection";
 import { PageBanner } from "@/components/site/PageBanner";
 import { SiteLayout } from "@/components/site/Layout";
 import {
-  urbanxBrand,
-  urbanxContact,
-  urbanxDetailedServices,
-  urbanxProjectHighlights,
-  urbanxProductCategories,
-  urbanxSofaStyles,
-  urbanxServiceAreas,
-  urbanxStudio,
+  demarvelBrand,
+  demarvelContact,
+  demarvelDetailedServices,
+  demarvelProjectHighlights,
+  demarvelProductCategories,
+  demarvelSofaStyles,
+  demarvelServiceAreas,
+  demarvelStudio,
 } from "@/lib/siteContent";
 import { ArrowRight, Check, Sparkles } from "lucide-react";
-import aboutImg from "@/assets/about-urbanx.jpg";
+import aboutImg from "@/assets/about-demarvel.jpg";
 
 export default function ServicesPage() {
   return (
     <SiteLayout>
       <PageBanner
         title="Services"
-        subtitle={urbanxBrand.tagline}
+        subtitle={demarvelBrand.tagline}
         crumbs={[{ label: "Services" }]}
         image={aboutImg}
       />
@@ -29,18 +29,18 @@ export default function ServicesPage() {
         <div className="container-x">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-              What Urbanx Connects
+              What De marvel Connects
             </div>
             <h2 className="text-3xl font-bold text-primary md:text-5xl">
               One vision. One partner. Complete solutions.
             </h2>
             <p className="mt-5 text-muted-foreground">
-              {urbanxStudio.summary} {urbanxStudio.promise}
+              {demarvelStudio.summary} {demarvelStudio.promise}
             </p>
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {urbanxServiceAreas.map((service) => (
+            {demarvelServiceAreas.map((service) => (
               <div
                 key={service.title}
                 className="group rounded-2xl border border-border bg-card p-7 shadow-card-luxe hover-lift"
@@ -74,7 +74,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {urbanxDetailedServices.map((service) => (
+            {demarvelDetailedServices.map((service) => (
               <article key={service.title} className="rounded-3xl bg-card p-7 shadow-card-luxe">
                 <h3 className="text-2xl font-bold text-primary">{service.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -102,11 +102,11 @@ export default function ServicesPage() {
             </div>
             <h2 className="mt-3 text-3xl font-bold md:text-4xl">Seating designed around you</h2>
             <p className="mt-4 leading-relaxed text-white/75">
-              From compact loveseats to statement pieces, UrbanX creates customised seating that
+              From compact loveseats to statement pieces, De marvel creates customised seating that
               responds to room proportions, comfort, upholstery and lifestyle.
             </p>
             <div className="mt-7 flex flex-wrap gap-2">
-              {urbanxSofaStyles.map((style) => (
+              {demarvelSofaStyles.map((style) => (
                 <span key={style} className="rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-sm text-white/85">
                   {style}
                 </span>
@@ -126,7 +126,7 @@ export default function ServicesPage() {
               part of a complete design story.
             </p>
             <ul className="mt-7 grid gap-3 sm:grid-cols-2">
-              {urbanxProductCategories.map((category) => (
+              {demarvelProductCategories.map((category) => (
                 <li key={category} className="flex items-start gap-2 text-sm text-foreground/80">
                   <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                   <span>{category}</span>
@@ -147,13 +147,13 @@ export default function ServicesPage() {
               Selected work and project references
             </h2>
             <p className="mt-5 text-muted-foreground">
-              The UrbanX design ecosystem spans residences, offices, laboratories, hostels,
+              The De marvel design ecosystem spans residences, offices, laboratories, hostels,
               hospitality spaces and complete project environments.
             </p>
           </div>
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            {urbanxProjectHighlights.map((project) => (
+            {demarvelProjectHighlights.map((project) => (
               <span
                 key={project}
                 className="rounded-full border border-border bg-card px-4 py-2.5 text-sm font-semibold text-primary shadow-card-luxe"
@@ -195,7 +195,7 @@ export default function ServicesPage() {
                 Need a service plan that fits your situation?
               </h2>
               <p className="mb-8 text-white/80">
-                Urbanx is structured to handle both everyday needs and larger operational
+                De marvel is structured to handle both everyday needs and larger operational
                 requirements with one point of contact.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
@@ -206,10 +206,10 @@ export default function ServicesPage() {
                   Request a Quote <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
-                  href={urbanxContact.phoneHref}
+                  href={demarvelContact.phoneHref}
                   className="inline-flex items-center gap-2 rounded-md border-2 border-white/40 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary"
                 >
-                  {urbanxContact.phoneDisplay}
+                  {demarvelContact.phoneDisplay}
                 </a>
               </div>
             </div>

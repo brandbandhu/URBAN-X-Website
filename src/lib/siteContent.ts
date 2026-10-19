@@ -35,23 +35,23 @@ export type BrandCard = {
   to: string;
 };
 
-export type UrbanxMetric = {
+export type DeMarvelMetric = {
   target: number;
   label: string;
   unit?: string;
 };
 
-export const urbanxBrand = {
-  name: "Urbanx",
+export const demarvelBrand = {
+  name: "De marvel",
   tagline: "Simplifying Life. Connecting Services. Delivering Excellence.",
-  heroTitle: "UrbanX – Your One-Stop Solution for Everyday Living",
+  heroTitle: "De marvel – Your One-Stop Solution for Everyday Living",
   heroLead:
-    "UrbanX is an emerging lifestyle destination in Pune, thoughtfully designed to simplify and elevate everyday living. Our 1,500 sq. ft. Hadapsar design studio brings together creativity, functionality, artistry and comfort.",
+    "De marvel is an emerging lifestyle destination in Pune, thoughtfully designed to simplify and elevate everyday living. Our 1,500 sq. ft. Hadapsar design studio brings together creativity, functionality, artistry and comfort.",
   heroDetail:
-    "From architectural drawings and interior design to project execution and carefully curated lifestyle products, UrbanX is an end-to-end partner for spaces shaped around your story, lifestyle and aspirations.",
+    "From architectural drawings and interior design to project execution and carefully curated lifestyle products, De marvel is an end-to-end partner for spaces shaped around your story, lifestyle and aspirations.",
 };
 
-export const urbanxContact = {
+export const demarvelContact = {
   office: "Shop No 138, The Capital, Hadapsar, Pune",
   highway: "Pune-Solapur Highway, Pune, Maharashtra",
   phoneDisplay: "+91 98220 80115",
@@ -63,16 +63,16 @@ export const urbanxContact = {
   studioSize: "1,500 sq. ft. design studio",
 };
 
-export const urbanxStudio = {
+export const demarvelStudio = {
   headline: "Curating Spaces. Creating Lifestyles. Building Happy Living.",
   summary:
-    "UrbanX is more than a service provider: it is a complete design and lifestyle ecosystem where architecture, interiors, furniture, décor, automation, landscaping and execution come together under one roof.",
+    "De marvel is more than a service provider: it is a complete design and lifestyle ecosystem where architecture, interiors, furniture, décor, automation, landscaping and execution come together under one roof.",
   promise:
     "We combine innovation, expertise, craftsmanship, technology and professionalism to transform ideas into thoughtfully designed and beautifully executed spaces.",
 };
 
-export const urbanxTeam = [
-  { name: "Rajeshwari Karad", role: "UrbanX Team" },
+export const demarvelTeam = [
+  { name: "Rajeshwari Karad", role: "De marvel Team" },
   { name: "Raghvendra Chate", role: "Director" },
   { name: "Virendra Pratap Karad", role: "Deputy Director" },
   { name: "Krishna Yadav", role: "Special Duty Officer" },
@@ -80,12 +80,12 @@ export const urbanxTeam = [
   { name: "Alefia", role: "Interior Designer" },
   { name: "Sahil", role: "Interior Design Team" },
   { name: "Rahul Singh", role: "Interior Design Team" },
-  { name: "Anil Karad", role: "UrbanX Team" },
+  { name: "Anil Karad", role: "De marvel Team" },
 ];
 
-export const urbanxHeroSlides = [
+export const demarvelHeroSlides = [
   {
-    eyebrow: "Urbanx One-Stop Living",
+    eyebrow: "De marvel One-Stop Living",
     title: "Everything you need for a smoother everyday life.",
     description:
       "Housing, food, interiors, events, housekeeping, landscaping and IT support - all delivered with one point of contact.",
@@ -100,11 +100,11 @@ export const urbanxHeroSlides = [
     eyebrow: "Food and Interiors",
     title: "Fresh meals and beautiful spaces, planned with care.",
     description:
-      "From daily meals and catering to custom interiors and premium furnishing, Urbanx helps build better routines and better environments.",
+      "From daily meals and catering to custom interiors and premium furnishing, De marvel helps build better routines and better environments.",
   },
 ];
 
-export const urbanxServiceAreas: IconCard[] = [
+export const demarvelServiceAreas: IconCard[] = [
   {
     icon: Building2,
     title: "Site Development & Architectural Planning",
@@ -149,7 +149,7 @@ export const urbanxServiceAreas: IconCard[] = [
   },
 ];
 
-export const urbanxDetailedServices = [
+export const demarvelDetailedServices = [
   {
     title: "Site Development & Architectural Planning",
     description:
@@ -267,7 +267,7 @@ export const urbanxDetailedServices = [
   },
 ];
 
-export const urbanxSofaStyles = [
+export const demarvelSofaStyles = [
   "L-shaped sofa",
   "Sectional sofa",
   "3-seater sofa",
@@ -288,7 +288,7 @@ export const urbanxSofaStyles = [
   "Low-profile sofa",
 ];
 
-export const urbanxProductCategories = [
+export const demarvelProductCategories = [
   "Sofas and customised seating",
   "Designer curtains and blinds",
   "Premium upholstery and fabric samples",
@@ -301,7 +301,7 @@ export const urbanxProductCategories = [
   "Cushions, throws and lifestyle accessories",
 ];
 
-export const urbanxBrandCards: BrandCard[] = [
+export const demarvelBrandCards: BrandCard[] = [
   {
     icon: Sprout,
     label: "New Royal Services",
@@ -336,14 +336,14 @@ export const urbanxBrandCards: BrandCard[] = [
   },
 ];
 
-export const urbanxMetrics: UrbanxMetric[] = [
+export const demarvelMetrics: DeMarvelMetric[] = [
   { target: 350, label: "Staff" },
   { target: 15, label: "Years of experience", unit: "years" },
   { target: 150, label: "Happy clients" },
   { target: 2000, label: "Students/Guests served per day" },
 ];
 
-export const urbanxIndustries = [
+export const demarvelIndustries = [
   { icon: Home, label: "Residential" },
   { icon: Building2, label: "Commercial" },
   { icon: Hotel, label: "Hospitality" },
@@ -352,7 +352,7 @@ export const urbanxIndustries = [
   { icon: Factory, label: "Industrial" },
 ];
 
-export const urbanxWhyChoose: IconCard[] = [
+export const demarvelWhyChoose: IconCard[] = [
   {
     icon: Building2,
     title: "One platform for multiple services",
@@ -380,7 +380,7 @@ export const urbanxWhyChoose: IconCard[] = [
   },
 ];
 
-export const urbanxProjectHighlights = [
+export const demarvelProjectHighlights = [
   "Aishwarya Purva",
   "Aishwarya Heights",
   "New Hostel Tower - Aishwarya Realtors",
@@ -392,13 +392,13 @@ export const urbanxProjectHighlights = [
   "SSPL",
 ];
 
-export const urbanxVision =
+export const demarvelVision =
   "To become the most trusted and comprehensive service platform that simplifies urban living.";
 
-export const urbanxMission =
+export const demarvelMission =
   "To connect people with reliable services across all daily life segments through innovation, quality and trust.";
 
-export const urbanxCoreCapabilities: IconCard[] = [
+export const demarvelCoreCapabilities: IconCard[] = [
   {
     icon: Building2,
     title: "Site development and architectural planning",
@@ -436,9 +436,9 @@ export const urbanxCoreCapabilities: IconCard[] = [
   },
 ];
 
-export const urbanxHousingDetails = {
+export const demarvelHousingDetails = {
   summary:
-    "Urbanx provides more than 2,000 living spaces every year across Pune for working professionals, boys and girls, students and academic communities.",
+    "De marvel provides more than 2,000 living spaces every year across Pune for working professionals, boys and girls, students and academic communities.",
   focus: [
     "Safety and security for both boys and girls",
     "Essential amenities for daily living",
@@ -448,9 +448,9 @@ export const urbanxHousingDetails = {
     "Every space is thoughtfully planned to feel like a true home away from home, giving parents peace of mind and residents a secure, supportive environment.",
 };
 
-export const urbanxFoodDetails = {
+export const demarvelFoodDetails = {
   summary:
-    "Urbanx serves freshly prepared meals to more than 2,000 customers every day with a strong focus on taste, nutrition, hygiene and timely delivery.",
+    "De marvel serves freshly prepared meals to more than 2,000 customers every day with a strong focus on taste, nutrition, hygiene and timely delivery.",
   menu: [
     "Indian cuisine, including authentic Maharashtrian flavours",
     "Continental dishes",
@@ -470,7 +470,7 @@ export const urbanxFoodDetails = {
   note: "Add different menus to suit changing customer needs and special occasions.",
 };
 
-export const urbanxInteriorDetails = {
+export const demarvelInteriorDetails = {
   summary:
     "Transform your space with modern, functional and aesthetic interior solutions designed by professionals with over 10 years of experience and more than 10 lakh square feet of completed work.",
   expertise: {
@@ -516,9 +516,9 @@ export const urbanxInteriorDetails = {
   note: "Our specialty lies in mood board design and colour theme development, ranging from contemporary and modern to neoclassical interiors.",
 };
 
-export const urbanxEventsDetails = {
+export const demarvelEventsDetails = {
   summary:
-    "Urbanx provides comprehensive event solutions for corporate conferences, birthdays, weddings, inaugurations and celebrity management.",
+    "De marvel provides comprehensive event solutions for corporate conferences, birthdays, weddings, inaugurations and celebrity management.",
   services: [
     "Event planning and execution",
     "Decor and ambience design",
@@ -530,9 +530,9 @@ export const urbanxEventsDetails = {
     "From intimate gatherings to grand celebrations, we plan, manage and execute memorable events that are elegant, organized and truly unforgettable.",
 };
 
-export const urbanxConstructionDetails = {
+export const demarvelConstructionDetails = {
   summary:
-    "Urbanx offers end-to-end construction and contracting solutions from planning and design to execution and complete project management for residential, commercial and institutional spaces.",
+    "De marvel offers end-to-end construction and contracting solutions from planning and design to execution and complete project management for residential, commercial and institutional spaces.",
   expertise: [
     "Residential buildings and high-rise towers",
     "Commercial complexes and corporate IT spaces",
@@ -558,9 +558,9 @@ export const urbanxConstructionDetails = {
     "Every project is built with a focus on modern design, structural strength, functionality and environmental suitability.",
 };
 
-export const urbanxHousekeepingDetails = {
+export const demarvelHousekeepingDetails = {
   summary:
-    "Urbanx offers comprehensive housekeeping and maintenance solutions for hospitals, hostels, canteens, corporate offices, residential societies and individual homes.",
+    "De marvel offers comprehensive housekeeping and maintenance solutions for hospitals, hostels, canteens, corporate offices, residential societies and individual homes.",
   services: [
     "Daily cleaning and maintenance",
     "Office and commercial cleaning",
@@ -577,12 +577,12 @@ export const urbanxHousekeepingDetails = {
     "High-end marble floor polishing",
   ],
   promise:
-    "With Urbanx, there is no need to search for a maid or cleaning service - we bring professional solutions right to your doorstep.",
+    "With De marvel, there is no need to search for a maid or cleaning service - we bring professional solutions right to your doorstep.",
 };
 
-export const urbanxGardeningDetails = {
+export const demarvelGardeningDetails = {
   summary:
-    "Urbanx provides expert landscaping and gardening services for hospitals, corporate offices, educational institutions, industrial areas, residential societies and landmark public spaces.",
+    "De marvel provides expert landscaping and gardening services for hospitals, corporate offices, educational institutions, industrial areas, residential societies and landmark public spaces.",
   services: [
     "Garden maintenance",
     "Lawn mowing and trimming",
@@ -596,9 +596,9 @@ export const urbanxGardeningDetails = {
     "From concept design to execution and maintenance, every landscaping project is delivered with precision, creativity and long-term value.",
 };
 
-export const urbanxItDetails = {
+export const demarvelItDetails = {
   summary:
-    "Urbanx provides comprehensive IT and digital solutions to help businesses and individuals grow, engage and operate efficiently.",
+    "De marvel provides comprehensive IT and digital solutions to help businesses and individuals grow, engage and operate efficiently.",
   services: [
     "Social media content development and management",
     "Social media lead management to generation",
@@ -613,10 +613,10 @@ export const urbanxItDetails = {
     "Chatbot development for enhanced customer engagement",
   ],
   promise:
-    "Whether it is digital marketing, software solutions or employee productivity tools, Urbanx delivers professional, customized and scalable IT support.",
+    "Whether it is digital marketing, software solutions or employee productivity tools, De marvel delivers professional, customized and scalable IT support.",
 };
 
-export const urbanxHousekeepingServices = [
+export const demarvelHousekeepingServices = [
   "Daily Cleaning & Maintenance",
   "Office & Commercial Cleaning",
   "Deep Cleaning Services",
@@ -626,7 +626,7 @@ export const urbanxHousekeepingServices = [
   "Sofa, Carpet & Glass Cleaning",
 ];
 
-export const urbanxGardeningServices = [
+export const demarvelGardeningServices = [
   "Garden Maintenance",
   "Lawn Mowing & Trimming",
   "Plant Care & Watering",
@@ -636,7 +636,7 @@ export const urbanxGardeningServices = [
   "Organic Garden Care",
 ];
 
-export const urbanxInteriorSpecialties = [
+export const demarvelInteriorSpecialties = [
   "Residential interiors",
   "Designer curtains and customized fabrics",
   "Stylish wallpapers and wall decor",
@@ -651,7 +651,7 @@ export const urbanxInteriorSpecialties = [
   "Curtains with lighting automation and smart controls",
 ];
 
-export const urbanxConstructionSpecialties = [
+export const demarvelConstructionSpecialties = [
   "Residential buildings and high-rise towers",
   "Commercial complexes and corporate IT spaces",
   "Hospitals and institutional infrastructure",
@@ -665,7 +665,7 @@ export const urbanxConstructionSpecialties = [
   "Glass facades and cladding for corporate spaces",
 ];
 
-export const urbanxFoodMenuHighlights = [
+export const demarvelFoodMenuHighlights = [
   "Indian cuisine with authentic Maharashtrian flavors",
   "Continental dishes",
   "Italian, Mexican and Chinese cuisine",
@@ -673,7 +673,7 @@ export const urbanxFoodMenuHighlights = [
   "Dietary foods, salads and sprouts",
 ];
 
-export const urbanxFoodServiceCategories = [
+export const demarvelFoodServiceCategories = [
   "Weddings",
   "Birthday parties",
   "Cocktail events",

@@ -1,6 +1,6 @@
 import { BrandLogo } from "@/components/site/BrandLogo";
 import { Link } from "@/components/site/AppLink";
-import { urbanxBrandCards } from "@/lib/siteContent";
+import { demarvelBrandCards } from "@/lib/siteContent";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -88,7 +88,7 @@ export function Header() {
             {drop && (
               <div className="absolute top-full right-0 w-72 pt-2">
                 <div className="bg-card rounded-lg shadow-luxe border border-border overflow-hidden animate-fade-in">
-                  {urbanxBrandCards.map((brand) => (
+                  {demarvelBrandCards.map((brand) => (
                     <Link
                       key={brand.to}
                       to={brand.to}
@@ -138,7 +138,7 @@ export function Header() {
             <div className="px-4 py-2 text-xs uppercase tracking-wider text-muted-foreground mt-2">
               Brands
             </div>
-            {urbanxBrandCards.map((brand) => (
+            {demarvelBrandCards.map((brand) => (
               <Link
                 key={brand.to}
                 to={brand.to}

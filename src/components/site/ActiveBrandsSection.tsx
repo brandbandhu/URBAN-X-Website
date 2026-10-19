@@ -1,5 +1,5 @@
 import { Link } from "@/components/site/AppLink";
-import { urbanxBrandCards } from "@/lib/siteContent";
+import { demarvelBrandCards } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import hero2 from "@/assets/hero-2.jpg";
@@ -51,7 +51,7 @@ export function ActiveBrandsSection({
         </div>
 
         <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-4">
-          {urbanxBrandCards.map((brand, index) => (
+          {demarvelBrandCards.map((brand, index) => (
             <Link
               key={brand.to}
               to={brand.to}

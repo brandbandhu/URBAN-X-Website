@@ -1,7 +1,7 @@
 import { Link } from "@/components/site/AppLink";
 import { PageBanner } from "./PageBanner";
 import { WhatsAppIcon } from "./WhatsAppIcon";
-import { urbanxContact } from "@/lib/siteContent";
+import { demarvelContact } from "@/lib/siteContent";
 import { ArrowRight, Check, ChevronRight, Mail, Phone, Sparkles } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -221,13 +221,13 @@ export function BrandServiceDetailTemplate({ data }: { data: BrandServiceDetailD
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a
-                  href={urbanxContact.phoneHref}
+                  href={demarvelContact.phoneHref}
                   className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift"
                 >
-                  {urbanxContact.phoneDisplay} <ChevronRight className="h-4 w-4" />
+                  {demarvelContact.phoneDisplay} <ChevronRight className="h-4 w-4" />
                 </a>
                 <a
-                  href={urbanxContact.whatsappHref}
+                  href={demarvelContact.whatsappHref}
                   className="inline-flex items-center gap-2 rounded-md border border-white/30 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary"
                 >
                   WhatsApp <WhatsAppIcon className="h-4 w-4" />

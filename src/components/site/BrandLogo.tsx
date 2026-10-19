@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-const LOGO_SRC = "/urbanx-logo-removebg.png";
+const LOGO_SRC = "/demarvel-logo-removebg.png";
 
 type BrandLogoProps = {
   alt?: string;
@@ -10,7 +10,7 @@ type BrandLogoProps = {
 };
 
 export function BrandLogo({
-  alt = "Urbanx logo",
+  alt = "De marvel logo",
   className,
   imageClassName,
   variant = "navbar",
