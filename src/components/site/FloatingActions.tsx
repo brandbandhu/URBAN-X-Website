@@ -12,7 +12,7 @@ export function FloatingActions() {
         aria-label="WhatsApp"
         className="fixed bottom-4 right-4 z-40 hidden h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-luxe transition-transform hover:scale-110 md:bottom-6 md:right-6 md:flex"
       >
-        <WhatsAppIcon className="w-6 h-6" />
+        <WhatsAppIcon className="h-8 w-8" />
         <span
           className="absolute -right-1 -top-1 h-3 w-3 rounded-full bg-gold"
           aria-hidden="true"
