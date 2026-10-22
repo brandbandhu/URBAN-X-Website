@@ -127,7 +127,7 @@ function StackRail({ children, className = "" }: { children: ReactNode; classNam
   const cards = Children.toArray(children);
 
   return (
-    <div className={cn("relative pb-24 md:pb-32", className)}>
+    <div className={cn("relative pb-16 md:pb-32", className)}>
       {cards.map((card, index) => {
         const stackStyle = {
           "--stack-top": `calc(5.75rem + ${Math.min(index, 4) * 0.45}rem)`,
@@ -139,7 +139,7 @@ function StackRail({ children, className = "" }: { children: ReactNode; classNam
           <div
             key={index}
             className={cn(
-              "sticky top-[var(--stack-top)] rounded-[2rem] border border-border bg-background p-5 shadow-luxe md:top-[var(--stack-top-md)] md:p-6",
+              "sticky top-[var(--stack-top)] rounded-[1.5rem] border border-border bg-background p-4 shadow-luxe sm:p-5 md:top-[var(--stack-top-md)] md:rounded-[2rem] md:p-6",
               index > 0 && "-mt-6 md:-mt-14",
             )}
             style={stackStyle}
@@ -346,13 +346,13 @@ export default function HomePage() {
 
   return (
     <SiteLayout>
-      <section className="relative pb-16 md:pb-20">
-        <div className="relative min-h-[560px] overflow-hidden sm:min-h-[620px] lg:min-h-[680px]">
+      <section className="relative pb-8 sm:pb-16 md:pb-20">
+        <div className="relative min-h-[430px] overflow-hidden sm:min-h-[560px] md:min-h-[620px] lg:min-h-[680px]">
           <div key={activeSlide.title} className="absolute inset-0 animate-fade-in">
             <img
               src={activeSlide.img}
               alt=""
-              className="h-full w-full scale-105 object-cover"
+              className="h-full w-full scale-105 object-cover object-[68%_center] sm:object-center"
               loading="eager"
               decoding="async"
               fetchPriority="high"
@@ -360,29 +360,29 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.18_0.05_255/0.94)] via-[oklch(0.18_0.05_255/0.72)] to-[oklch(0.18_0.05_255/0.28)]" />
           </div>
 
-          <div className="absolute inset-0 flex items-start pt-24 pb-20 md:items-center md:pt-0 md:pb-28 lg:items-start lg:pt-28 xl:pt-28">
+          <div className="absolute inset-0 flex items-start pt-4 pb-8 sm:pt-20 sm:pb-20 md:items-center md:pt-0 md:pb-28 lg:items-start lg:pt-28 xl:pt-28">
             <div className="container-x text-white">
               <div key={active} className="max-w-4xl animate-fade-up">
-                <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-6">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/15 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-gold sm:mb-6 sm:px-4 sm:text-xs">
                   <Sparkles className="h-3.5 w-3.5" />
                   {activeSlide.eyebrow}
                 </div>
-                <h1 className="mb-4 max-w-3xl text-3xl font-bold leading-[1.08] sm:mb-6 sm:text-4xl md:text-6xl lg:text-7xl">
+                <h1 className="mb-3 max-w-3xl text-[1.875rem] font-bold leading-[1.04] sm:mb-6 sm:text-4xl md:text-6xl lg:text-7xl">
                   {activeSlide.title}
                 </h1>
-                <p className="mb-7 max-w-2xl text-base text-white/85 sm:mb-9 sm:text-lg md:text-xl">
+                <p className="mb-5 max-w-2xl text-[0.9rem] leading-[1.45] text-white/85 sm:mb-9 sm:text-lg md:text-xl">
                   {activeSlide.description}
                 </p>
                 <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-gold px-7 py-2.5 font-semibold text-primary hover-lift sm:w-auto sm:py-3.5"
                   >
                     Contact De marvel <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
                     to="/services"
-                    className="inline-flex items-center gap-2 rounded-md border-2 border-white/40 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-md border-2 border-white/40 px-7 py-2.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary sm:w-auto sm:py-3.5"
                   >
                     View Services <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -390,7 +390,7 @@ export default function HomePage() {
                     href={demarvelContact.whatsappHref}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-7 py-3.5 font-semibold text-white hover-lift"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#25D366] px-7 py-2.5 font-semibold text-white hover-lift sm:w-auto sm:py-3.5"
                   >
                     <WhatsAppIcon className="h-4 w-4" />
                     WhatsApp Now
@@ -402,9 +402,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section ref={statsRef} className="relative z-10 -mt-10 pb-6 md:-mt-10 md:pb-8">
+      <section ref={statsRef} className="relative z-10 mt-0 pb-6 sm:-mt-10 md:pb-8">
         <div className="container-x">
-          <div className="grid gap-4 rounded-[1.75rem] border border-border bg-background/98 p-4 shadow-luxe md:grid-cols-2 xl:grid-cols-4 md:p-6">
+          <div className="grid gap-3 rounded-[1.5rem] border border-border bg-background/98 p-3 shadow-luxe sm:gap-4 sm:p-4 md:grid-cols-2 xl:grid-cols-4 md:rounded-[1.75rem] md:p-6">
             {demarvelMetrics.map((metric, index) => (
               <MetricCard
                 key={metric.label}

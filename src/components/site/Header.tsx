@@ -44,13 +44,13 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${chromeClass}`}
+      className={`sticky top-0 z-50 transition-all duration-300 ${chromeClass}`}
     >
-      <div className="container-x flex h-20 items-center justify-between gap-4">
+      <div className="container-x flex h-16 items-center justify-between gap-4 sm:h-20">
         <Link to="/" className="group flex items-center">
           <BrandLogo
             variant="navbar"
-            className="h-[4.35rem] w-[4.35rem] shrink-0 sm:h-[4.75rem] sm:w-[4.75rem]"
+            className="h-11 w-16 shrink-0 sm:h-[4.25rem] sm:w-[4.75rem]"
             imageClassName={
               scrolled
                 ? "drop-shadow-[0_4px_12px_rgba(15,23,42,0.12)]"
@@ -123,7 +123,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="lg:hidden max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-border bg-background shadow-card-luxe animate-fade-in">
+        <div className="lg:hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-border bg-background shadow-card-luxe animate-fade-in sm:max-h-[calc(100vh-5rem)]">
           <div className="container-x flex flex-col gap-1 py-4">
             {nav.map((item) => (
               <Link

@@ -147,7 +147,7 @@
     width: 100%;
     max-width: 1280px;
     margin-inline: auto;
-    padding-inline: 1.25rem;
+    padding-inline: 1rem;
   }
 
   @keyframes fade-up {
@@ -210,6 +210,26 @@
     width: 56px;
     background: var(--gradient-gold);
     border-radius: 2px;
+  }
+}
+
+@media (min-width: 640px) {
+  .container-x {
+    padding-inline: 1.25rem;
+  }
+}
+
+@media (max-width: 639px) {
+  html,
+  body {
+    min-width: 320px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    overflow-wrap: anywhere;
   }
 }
 
