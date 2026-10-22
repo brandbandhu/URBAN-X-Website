@@ -346,7 +346,7 @@ export default function HomePage() {
 
   return (
     <SiteLayout>
-      <section className="relative pb-8 sm:pb-16 md:pb-20">
+      <section className="relative pb-4 sm:pb-16 md:pb-20">
         <div className="relative overflow-hidden sm:min-h-[560px] md:min-h-[620px] lg:min-h-[680px]">
           <div key={activeSlide.title} className="absolute inset-0 animate-fade-in">
             <img
@@ -402,7 +402,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section ref={statsRef} className="relative z-10 mt-0 pb-6 sm:-mt-10 md:pb-8">
+      <section ref={statsRef} className="relative z-10 mt-0 pb-3 sm:-mt-10 md:pb-8">
         <div className="container-x">
           <div className="grid gap-3 rounded-[1.5rem] border border-border bg-background/98 p-3 shadow-luxe sm:gap-4 sm:p-4 md:grid-cols-2 xl:grid-cols-4 md:rounded-[1.75rem] md:p-6">
             {demarvelMetrics.map((metric, index) => (
@@ -417,7 +417,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="pt-14 pb-20 md:pt-16 md:pb-28">
+      <section className="pt-8 pb-20 sm:pt-14 md:pt-16 md:pb-28">
         <div className="container-x grid gap-14 lg:grid-cols-2 lg:items-center">
           <div className="relative">
             <img
