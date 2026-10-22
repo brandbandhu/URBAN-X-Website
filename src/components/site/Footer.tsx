@@ -74,8 +74,17 @@ export function Footer() {
       </div>
 
       <div className="container-x mt-14 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 text-xs text-white/60">
-        <div>Copyright {new Date().getFullYear()} De marvel. All rights reserved.</div>
-        <div>{demarvelBrand.tagline}</div>
+        <div>
+          Copyright {new Date().getFullYear()} De marvel. All Rights Reserved. Developed by{" "}
+          <a
+            href="https://webakoof.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="font-semibold text-white transition-colors hover:text-gold"
+          >
+            Webakoof
+          </a>
+        </div>
       </div>
     </footer>
   );
