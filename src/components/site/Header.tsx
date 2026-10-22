@@ -50,7 +50,7 @@ export function Header() {
         <Link to="/" className="group flex items-center">
           <BrandLogo
             variant="navbar"
-            className="h-11 w-16 shrink-0 sm:h-[4.25rem] sm:w-[4.75rem]"
+            className="h-14 w-24 shrink-0 sm:h-[4.75rem] sm:w-28"
             imageClassName={
               scrolled
                 ? "drop-shadow-[0_4px_12px_rgba(15,23,42,0.12)]"
