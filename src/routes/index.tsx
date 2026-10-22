@@ -475,16 +475,16 @@ export default function HomePage() {
             title="We combine innovation, expertise and professionalism"
             subtitle="Everything De marvel brings together sits under one platform so homes, lifestyle, food and business needs can be managed more easily."
           />
-          <div className="mt-12 grid items-stretch gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-12 grid items-stretch gap-x-6 gap-y-4 md:grid-cols-2 xl:grid-cols-4">
             {demarvelCoreCapabilities.map((item) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={item.title}
-                  className="flex h-full min-h-[13rem] flex-col rounded-2xl border border-border bg-card px-6 py-5 shadow-card-luxe hover-lift"
+                  className="flex h-full min-h-[11rem] flex-col rounded-2xl border border-border bg-card px-5 py-4 shadow-card-luxe hover-lift"
                 >
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary">
+                  <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-xl bg-primary">
                     <Icon className="h-7 w-7 text-gold" />
                   </div>
                   <h3 className="text-balance text-xl font-bold leading-tight text-primary">
