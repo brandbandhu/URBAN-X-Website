@@ -75,7 +75,7 @@ export function Footer() {
 
       <div className="container-x mt-14 flex justify-center border-t border-white/10 pt-6 text-center text-xs text-white/60">
         <div>
-          Copyright {new Date().getFullYear()} De marvel. All Rights Reserved. Developed by{" "}
+          © 2026 De marvel. All Rights Reserved. Developed by{" "}
           <a
             href="https://webakoof.com/"
             target="_blank"
