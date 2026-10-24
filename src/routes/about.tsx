@@ -23,7 +23,7 @@ export default function AboutPage() {
   return (
     <SiteLayout>
       <PageBanner
-        title="About De marvel"
+        title="About D Marvel Infra Solutions"
         subtitle={demarvelBrand.tagline}
         crumbs={[{ label: "About" }]}
         image={aboutImg}
@@ -36,27 +36,28 @@ export default function AboutPage() {
               Our Story
             </div>
             <h2 className="gold-underline mb-6 text-3xl font-bold text-primary md:text-5xl">
-              De marvel – Your One-Stop Solution for Everyday Living
+              Design, infrastructure and execution with one clear point of contact
             </h2>
             <p className="mt-8 mb-5 text-lg text-muted-foreground">
-              De marvel is an emerging lifestyle destination in Pune, thoughtfully designed to
-              simplify and elevate everyday living. Our 1,500 sq. ft. Hadapsar design studio brings
-              together creativity, functionality, artistry and comfort.
+              D Marvel Infra Solutions brings together interior design, architectural planning,
+              infrastructure development and landscaping for spaces that need clarity from concept
+              through execution.
             </p>
             <p className="mb-5 leading-relaxed text-foreground/80">
-              As a bespoke design brand, we create personalised spaces that reflect each client’s
-              story, lifestyle and aspirations with elegance, charm and sophistication.
+              The work is shaped around each client’s brief, combining practical planning,
+              thoughtful materials and disciplined execution.
             </p>
             <p className="leading-relaxed text-foreground/80">
               From architectural drawings and interior design to project execution and curated
-              lifestyle products, De marvel brings the complete design journey together under one roof.
+              design solutions and project execution, D Marvel Infra Solutions brings the complete
+              design journey together under one roof.
             </p>
           </div>
 
           <div className="relative">
             <img
               src={hero1}
-              alt="De marvel team and workspace"
+              alt="D Marvel Infra Solutions team and workspace"
               className="h-[320px] w-full rounded-2xl object-cover shadow-luxe sm:h-[420px] lg:h-[520px]"
               loading="eager"
               decoding="async"
@@ -123,7 +124,7 @@ export default function AboutPage() {
               Vision & Mission
             </div>
             <h2 className="mb-5 text-3xl font-bold md:text-5xl">
-              The direction behind every De marvel service
+              The direction behind every D Marvel service
             </h2>
             <p className="max-w-xl leading-relaxed text-white/75">
               Every vertical works toward the same promise: simplify daily life through reliable,
@@ -169,10 +170,10 @@ export default function AboutPage() {
         <div className="container-x grid gap-14 lg:grid-cols-2 lg:items-start">
           <div>
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-              Why De marvel
+              Why D Marvel
             </div>
             <h2 className="gold-underline mb-8 text-3xl font-bold text-primary md:text-5xl">
-              The De marvel advantage
+              The D Marvel advantage
             </h2>
             <div className="space-y-4">
               {demarvelWhyChoose.map((item) => {
@@ -195,7 +196,7 @@ export default function AboutPage() {
               Projects Handled
             </div>
             <h3 className="mb-5 text-3xl font-bold text-primary">
-              Work that reflects the De marvel standard
+              Work that reflects the D Marvel standard
             </h3>
             <div className="space-y-4">
               {demarvelProjectHighlights.map((project) => (
@@ -277,8 +278,8 @@ export default function AboutPage() {
                 One platform. Multiple services. A better daily experience.
               </h2>
               <p className="mb-8 text-white/80">
-                From housing and food to interiors, events, cleaning and support services, De marvel is
-                designed to keep everything connected.
+                From interiors and architectural planning to infrastructure and landscaping, D Marvel
+                Infra Solutions is designed to keep the project journey connected.
               </p>
               <Link
                 to="/services"

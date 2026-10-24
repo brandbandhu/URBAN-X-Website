@@ -29,7 +29,7 @@ export default function ServicesPage() {
         <div className="container-x">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-              What De marvel Connects
+              What D Marvel Infra Solutions Connects
             </div>
             <h2 className="text-3xl font-bold text-primary md:text-5xl">
               One vision. One partner. Complete solutions.
@@ -102,7 +102,7 @@ export default function ServicesPage() {
             </div>
             <h2 className="mt-3 text-3xl font-bold md:text-4xl">Seating designed around you</h2>
             <p className="mt-4 leading-relaxed text-white/75">
-              From compact loveseats to statement pieces, De marvel creates customised seating that
+              From compact loveseats to statement pieces, D Marvel creates customised seating that
               responds to room proportions, comfort, upholstery and lifestyle.
             </p>
             <div className="mt-7 flex flex-wrap gap-2">
@@ -147,7 +147,7 @@ export default function ServicesPage() {
               Selected work and project references
             </h2>
             <p className="mt-5 text-muted-foreground">
-              The De marvel design ecosystem spans residences, offices, laboratories, hostels,
+              The D Marvel design ecosystem spans residences, offices, laboratories, hostels,
               hospitality spaces and complete project environments.
             </p>
           </div>
@@ -195,7 +195,7 @@ export default function ServicesPage() {
                 Need a service plan that fits your situation?
               </h2>
               <p className="mb-8 text-white/80">
-                De marvel is structured to handle both everyday needs and larger operational
+                D Marvel Infra Solutions is structured to handle both everyday needs and larger operational
                 requirements with one point of contact.
               </p>
               <div className="flex flex-wrap justify-center gap-4">

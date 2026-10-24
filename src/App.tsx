@@ -3,6 +3,8 @@ import { lazy, Suspense } from "react";
 const HomePage = lazy(() => import("./routes"));
 const AboutPage = lazy(() => import("./routes/about"));
 const ServicesPage = lazy(() => import("./routes/services"));
+const PortfolioPage = lazy(() => import("./routes/portfolio"));
+const ProjectPage = lazy(() => import("./routes/project"));
 const ContactPage = lazy(() => import("./routes/contact"));
 const NewRoyalServicesPage = lazy(() => import("./routes/new-royal-services"));
 const AishwaryaHeightPage = lazy(() => import("./routes/aishwarya-height"));
@@ -50,10 +52,15 @@ export default function App() {
   const detailMatch = path.match(
     /^\/(new-royal-services|aishwarya-height|aishwarya-rental|de-marvel-furnishings|the-hungry-scholars|royal-foods|urban-de)\/([^/]+)$/,
   );
+  const projectMatch = path.match(/^\/projects\/([^/]+)$/);
 
   return (
     <Suspense fallback={<RouteFallback />}>
       {(() => {
+        if (projectMatch) {
+          return <ProjectPage projectSlug={projectMatch[1]} />;
+        }
+
         if (detailMatch) {
           const [, brandKey, serviceSlug] = detailMatch;
 
@@ -81,6 +88,8 @@ export default function App() {
             return <AboutPage />;
           case "/services":
             return <ServicesPage />;
+          case "/portfolio":
+            return <PortfolioPage />;
           case "/contact":
             return <ContactPage />;
           case "/new-royal-services":

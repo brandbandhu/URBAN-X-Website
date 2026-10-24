@@ -12,7 +12,6 @@ import {
   Lamp,
   ShieldCheck,
   Sofa,
-  Sparkles,
   Sprout,
   Trees,
   Wrench,
@@ -27,7 +26,6 @@ import gardening from "@/assets/service-gardening.jpg";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
-import housekeeping from "@/assets/service-housekeeping.jpg";
 import marble from "@/assets/service-marble.jpg";
 import rental from "@/assets/service-rental.jpg";
 import { theHungryScholarsGallery } from "@/lib/theHungryScholarsGallery";
@@ -48,23 +46,18 @@ const featuredInteriorGallery = [
 
 export const newRoyalServicesData = {
   companyName: "New Royal Services",
-  accentLabel: "Housekeeping, Gardening & More",
+  accentLabel: "Landscaping, Interior & Design Support",
   tagline:
-    "Housekeeping, gardening, landscaping, interior designing, architecture and IT support for homes and businesses.",
+    "Landscaping, outdoor design, interior designing, architecture and IT support for homes and businesses.",
   detailBasePath: "/new-royal-services",
-  banner: housekeeping,
+  banner: gardening,
   intro:
-    "New Royal Services brings multi-discipline support for homes, institutions and workplaces - from housekeeping and gardening to landscaping, interiors, architecture and IT solutions.",
+    "New Royal Services brings multi-discipline support for homes, institutions and workplaces - from landscaping and outdoor design to interiors, architecture and IT solutions.",
   about: [
     "We serve homes, societies, offices and institutions with practical services tailored to each site and project scope.",
     "Our team handles upkeep, outdoor care, design support and digital solutions through one reliable point of contact.",
   ],
   services: [
-    {
-      icon: Sparkles,
-      title: "Housekeeping",
-      desc: "Daily cleaning, upkeep and sanitization for homes, offices and shared spaces.",
-    },
     {
       icon: Sprout,
       title: "Gardening",
@@ -121,7 +114,7 @@ export const newRoyalServicesData = {
       desc: "Supervision and feedback keep standards consistent over time.",
     },
   ],
-  gallery: [housekeeping, gardening, hero2, hero1, gardening, housekeeping],
+  gallery: [gardening, hero2, hero1, gardening],
 } satisfies ServicePageData;
 
 export const aishwaryaHeightData = {

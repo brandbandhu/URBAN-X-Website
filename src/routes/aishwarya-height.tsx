@@ -493,7 +493,7 @@ export default function AishwaryaHeightPage() {
                   to="/contact"
                   className="inline-flex items-center gap-2 rounded-md border-2 border-white/40 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary"
                 >
-                  De marvel Contact <ArrowRight className="h-4 w-4" />
+                  D Marvel Contact <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>

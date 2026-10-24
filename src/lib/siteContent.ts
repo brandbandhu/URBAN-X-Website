@@ -42,13 +42,13 @@ export type DeMarvelMetric = {
 };
 
 export const demarvelBrand = {
-  name: "De marvel",
-  tagline: "Simplifying Life. Connecting Services. Delivering Excellence.",
-  heroTitle: "De marvel – Your One-Stop Solution for Everyday Living",
+  name: "D Marvel Infra Solutions",
+  tagline: "Designing Spaces. Building Possibilities.",
+  heroTitle: "D Marvel Infra Solutions – Interior, Infrastructure & Design",
   heroLead:
-    "De marvel is an emerging lifestyle destination in Pune, thoughtfully designed to simplify and elevate everyday living. Our 1,500 sq. ft. Hadapsar design studio brings together creativity, functionality, artistry and comfort.",
+    "D Marvel Infra Solutions brings interior design, architectural planning, infrastructure development and landscaping together through one coordinated team.",
   heroDetail:
-    "From architectural drawings and interior design to project execution and carefully curated lifestyle products, De marvel is an end-to-end partner for spaces shaped around your story, lifestyle and aspirations.",
+    "From architectural drawings and interior execution to infrastructure development and outdoor design, the work is shaped around the purpose of each space.",
 };
 
 export const demarvelContact = {
@@ -57,16 +57,16 @@ export const demarvelContact = {
   phoneDisplay: "+91 8983630096",
   phoneHref: "tel:+918983630096",
   whatsappHref: "https://wa.me/918983630096",
-  email: "Urbanx.pune96@gmail.com",
-  emailHref: "mailto:Urbanx.pune96@gmail.com",
+  email: undefined,
+  emailHref: undefined,
   director: "Raghvendra Chate",
   studioSize: "1,500 sq. ft. design studio",
 };
 
 export const demarvelStudio = {
-  headline: "Curating Spaces. Creating Lifestyles. Building Happy Living.",
+  headline: "Designing Spaces. Building Possibilities.",
   summary:
-    "De marvel is more than a service provider: it is a complete design and lifestyle ecosystem where architecture, interiors, furniture, décor, automation, landscaping and execution come together under one roof.",
+    "D Marvel Infra Solutions is an interior and infrastructure partner where architecture, interiors, landscaping and execution come together under one roof.",
   promise:
     "We combine innovation, expertise, craftsmanship, technology and professionalism to transform ideas into thoughtfully designed and beautifully executed spaces.",
 };
@@ -85,10 +85,10 @@ export const demarvelTeam = [
 
 export const demarvelHeroSlides = [
   {
-    eyebrow: "De marvel One-Stop Living",
+    eyebrow: "D Marvel Infra Solutions",
     title: "Everything you need for a smoother everyday life.",
     description:
-      "Housing, food, interiors, events, housekeeping, landscaping and IT support - all delivered with one point of contact.",
+      "Interior design, infrastructure development, architectural solutions and landscaping for residential, commercial and institutional spaces.",
   },
   {
     eyebrow: "Smart Housing",
@@ -100,7 +100,7 @@ export const demarvelHeroSlides = [
     eyebrow: "Food and Interiors",
     title: "Fresh meals and beautiful spaces, planned with care.",
     description:
-      "From daily meals and catering to custom interiors and premium furnishing, De marvel helps build better routines and better environments.",
+      "From daily meals and catering to custom interiors and premium furnishing, D Marvel helps build better routines and better environments.",
   },
 ];
 
@@ -305,9 +305,9 @@ export const demarvelBrandCards: BrandCard[] = [
   {
     icon: Sprout,
     label: "New Royal Services",
-    tagline: "Housekeeping, Gardening & More",
+    tagline: "Landscaping & Outdoor Design",
     description:
-      "Housekeeping, gardening, landscaping, interior designing, architecture and IT support for homes, societies and businesses.",
+      "Landscaping, outdoor design, interior design and architectural support through New Royal Services.",
     to: "/new-royal-services",
   },
   {
@@ -438,7 +438,7 @@ export const demarvelCoreCapabilities: IconCard[] = [
 
 export const demarvelHousingDetails = {
   summary:
-    "De marvel provides more than 2,000 living spaces every year across Pune for working professionals, boys and girls, students and academic communities.",
+    "D Marvel provides more than 2,000 living spaces every year across Pune for working professionals, boys and girls, students and academic communities.",
   focus: [
     "Safety and security for both boys and girls",
     "Essential amenities for daily living",
@@ -450,7 +450,7 @@ export const demarvelHousingDetails = {
 
 export const demarvelFoodDetails = {
   summary:
-    "De marvel serves freshly prepared meals to more than 2,000 customers every day with a strong focus on taste, nutrition, hygiene and timely delivery.",
+    "D Marvel serves freshly prepared meals to more than 2,000 customers every day with a strong focus on taste, nutrition, hygiene and timely delivery.",
   menu: [
     "Indian cuisine, including authentic Maharashtrian flavours",
     "Continental dishes",
@@ -518,7 +518,7 @@ export const demarvelInteriorDetails = {
 
 export const demarvelEventsDetails = {
   summary:
-    "De marvel provides comprehensive event solutions for corporate conferences, birthdays, weddings, inaugurations and celebrity management.",
+    "D Marvel provides comprehensive event solutions for corporate conferences, birthdays, weddings, inaugurations and celebrity management.",
   services: [
     "Event planning and execution",
     "Decor and ambience design",
@@ -532,7 +532,7 @@ export const demarvelEventsDetails = {
 
 export const demarvelConstructionDetails = {
   summary:
-    "De marvel offers end-to-end construction and contracting solutions from planning and design to execution and complete project management for residential, commercial and institutional spaces.",
+    "D Marvel offers end-to-end construction and contracting solutions from planning and design to execution and complete project management for residential, commercial and institutional spaces.",
   expertise: [
     "Residential buildings and high-rise towers",
     "Commercial complexes and corporate IT spaces",
@@ -558,31 +558,9 @@ export const demarvelConstructionDetails = {
     "Every project is built with a focus on modern design, structural strength, functionality and environmental suitability.",
 };
 
-export const demarvelHousekeepingDetails = {
-  summary:
-    "De marvel offers comprehensive housekeeping and maintenance solutions for hospitals, hostels, canteens, corporate offices, residential societies and individual homes.",
-  services: [
-    "Daily cleaning and maintenance",
-    "Office and commercial cleaning",
-    "Deep cleaning services",
-    "Floor scrubbing and polishing",
-    "Washroom cleaning and sanitization",
-    "Waste management support",
-    "Sofa, carpet and glass cleaning",
-    "Glass facade and window cleaning",
-    "Water tank cleaning and maintenance",
-    "Solar panel cleaning",
-    "Corridor, lobby and high-traffic area cleaning",
-    "Special occasion and festival cleaning",
-    "High-end marble floor polishing",
-  ],
-  promise:
-    "With De marvel, there is no need to search for a maid or cleaning service - we bring professional solutions right to your doorstep.",
-};
-
 export const demarvelGardeningDetails = {
   summary:
-    "De marvel provides expert landscaping and gardening services for hospitals, corporate offices, educational institutions, industrial areas, residential societies and landmark public spaces.",
+    "D Marvel provides expert landscaping and gardening services for hospitals, corporate offices, educational institutions, industrial areas, residential societies and landmark public spaces.",
   services: [
     "Garden maintenance",
     "Lawn mowing and trimming",
@@ -598,7 +576,7 @@ export const demarvelGardeningDetails = {
 
 export const demarvelItDetails = {
   summary:
-    "De marvel provides comprehensive IT and digital solutions to help businesses and individuals grow, engage and operate efficiently.",
+    "D Marvel provides comprehensive IT and digital solutions to help businesses and individuals grow, engage and operate efficiently.",
   services: [
     "Social media content development and management",
     "Social media lead management to generation",
@@ -613,18 +591,8 @@ export const demarvelItDetails = {
     "Chatbot development for enhanced customer engagement",
   ],
   promise:
-    "Whether it is digital marketing, software solutions or employee productivity tools, De marvel delivers professional, customized and scalable IT support.",
+    "Whether it is digital marketing, software solutions or employee productivity tools, D Marvel delivers professional, customized and scalable IT support.",
 };
-
-export const demarvelHousekeepingServices = [
-  "Daily Cleaning & Maintenance",
-  "Office & Commercial Cleaning",
-  "Deep Cleaning Services",
-  "Floor Scrubbing & Polishing",
-  "Washroom Cleaning & Sanitization",
-  "Waste Management Support",
-  "Sofa, Carpet & Glass Cleaning",
-];
 
 export const demarvelGardeningServices = [
   "Garden Maintenance",

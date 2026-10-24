@@ -5,21 +5,25 @@ interface Props {
   title: string;
   subtitle?: string;
   crumbs: { label: string; to?: string }[];
-  image: string;
+  image?: string;
 }
 
 export function PageBanner({ title, subtitle, crumbs, image }: Props) {
   return (
     <section className="relative overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-44 md:pb-28">
       <div className="absolute inset-0">
-        <img
-          src={image}
-          alt=""
-          className="h-full w-full object-cover"
-          loading="eager"
-          decoding="async"
-          fetchPriority="high"
-        />
+        {image ? (
+          <img
+            src={image}
+            alt=""
+            className="h-full w-full object-cover"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+          />
+        ) : (
+          <div className="h-full w-full bg-[radial-gradient(circle_at_75%_20%,oklch(0.42_0.04_70),transparent_32%),linear-gradient(135deg,oklch(0.2_0.05_255),oklch(0.1_0.03_255))]" />
+        )}
         <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.18_0.05_255/0.92)] via-[oklch(0.18_0.05_255/0.78)] to-[oklch(0.18_0.05_255/0.5)]" />
       </div>
       <div className="container-x relative z-10 text-white animate-fade-up">

@@ -15,12 +15,12 @@ import {
   demarvelItDetails,
   demarvelMetrics,
   demarvelMission,
-  demarvelHousekeepingDetails,
   demarvelVision,
   demarvelWhyChoose,
   type DeMarvelMetric,
 } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
+import { projects } from "@/lib/projects";
 import {
   ArrowRight,
   CalendarDays,
@@ -49,7 +49,6 @@ import {
 } from "react";
 import aboutImg from "@/assets/about-demarvel.jpg";
 import gardening from "@/assets/service-gardening.jpg";
-import housekeeping from "@/assets/service-housekeeping.jpg";
 import marble from "@/assets/service-marble.jpg";
 import rental from "@/assets/service-rental.jpg";
 import hero1 from "@/assets/hero-1.jpg";
@@ -59,8 +58,8 @@ import hero3 from "@/assets/hero-3.jpg";
 const heroSlides = [
   {
     img: hero1,
-    eyebrow: "De marvel",
-    title: "De marvel – Your One-Stop Solution for Everyday Living",
+    eyebrow: "D Marvel Infra Solutions",
+    title: "Designing Spaces. Building Possibilities.",
     description:
       "From site development and architectural planning to interiors, automation, landscaping, furniture and turnkey execution - one integrated design studio for the complete journey.",
   },
@@ -271,7 +270,7 @@ export default function HomePage() {
       eyebrow: "Interior Overview",
       summary: demarvelInteriorDetails.summary,
       image: marble,
-      imageAlt: "De marvel interior furnishing",
+      imageAlt: "D Marvel interior furnishing",
       highlight: "10+ years of experience and more than 10 lakh square feet of completed work.",
     },
     {
@@ -378,7 +377,7 @@ export default function HomePage() {
                     to="/contact"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-gold px-7 py-2.5 font-semibold text-primary hover-lift sm:w-auto sm:py-3.5"
                   >
-                    Contact De marvel <ArrowRight className="h-4 w-4" />
+                    Contact D Marvel <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
                     to="/services"
@@ -422,7 +421,7 @@ export default function HomePage() {
           <div className="relative">
             <img
               src={aboutImg}
-              alt="De marvel team and workspace"
+              alt="D Marvel Infra Solutions team and workspace"
               className="h-[280px] w-full rounded-2xl object-cover shadow-luxe sm:h-[380px] md:h-[460px] lg:h-[520px]"
               loading="lazy"
               decoding="async"
@@ -438,15 +437,14 @@ export default function HomePage() {
 
           <div>
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-              About De marvel
+              About D Marvel Infra Solutions
             </div>
             <h2 className="gold-underline mb-6 text-3xl font-bold text-primary md:text-5xl">
               {demarvelBrand.tagline}
             </h2>
             <p className="mt-8 mb-5 text-lg text-muted-foreground">
-              De marvel is more than just a service provider. We are a destination where you can
-              envision your lifestyle, design your living environment and create a future that
-              reflects who you are.
+              D Marvel Infra Solutions is an interior and infrastructure partner where you can
+              shape your living, working or institutional environment with clarity and care.
             </p>
             <p className="mb-8 leading-relaxed text-foreground/80">
               We combine innovation, expertise, craftsmanship, technology and professionalism to
@@ -461,19 +459,42 @@ export default function HomePage() {
       </section>
 
       <ActiveBrandsSection
-        eyebrow="De marvel Network"
-        title="Companies and facilities working under De marvel"
-        subtitle="Visitors landing on De marvel can quickly see the active brands and dedicated facilities operating under the De marvel umbrella."
+        eyebrow="D Marvel Infra Solutions"
+        title="Design, infrastructure and outdoor work under one roof"
+        subtitle="Explore the connected services and specialist brands that support residential, commercial and institutional requirements."
         ctaLabel="View all services"
         ctaTo="/services"
       />
+
+      <section className="py-20 md:py-28">
+        <div className="container-x">
+          <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
+            <div className="max-w-3xl">
+              <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Featured projects</div>
+              <h2 className="gold-underline text-3xl font-bold text-primary md:text-5xl">Work that makes the brief visible</h2>
+              <p className="mt-5 text-muted-foreground">A first look at the named project groups, supplied photographs and design-stage records in the portfolio.</p>
+            </div>
+            <Link to="/portfolio" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-gold">View complete portfolio <ArrowRight className="h-4 w-4" /></Link>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {projects.slice(0, 4).map((project) => (
+              <Link key={project.id} to={`/projects/${project.slug}`} className="group overflow-hidden rounded-2xl border border-border bg-card shadow-card-luxe transition hover:-translate-y-1 hover:shadow-luxe">
+                <div className="relative h-48 overflow-hidden bg-[linear-gradient(135deg,#e9e4d9,#c8bda9)]">
+                  {project.thumbnail ? <img src={project.thumbnail} alt={`${project.title} project visual`} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" /> : <div className="flex h-full items-center justify-center p-5 text-center text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">Project visual pending</div>}
+                </div>
+                <div className="p-5"><div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold">{project.primaryCategory}</div><h3 className="mt-2 text-xl font-bold text-primary">{project.title}</h3><span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-gold">View project <ArrowRight className="h-4 w-4" /></span></div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="bg-secondary/40 py-20">
         <div className="container-x">
           <SectionHeading
             eyebrow="Core Capabilities"
             title="We combine innovation, expertise and professionalism"
-            subtitle="Everything De marvel brings together sits under one platform so homes, lifestyle, food and business needs can be managed more easily."
+            subtitle="Everything D Marvel Infra Solutions brings together sits under one platform so residential, commercial and institutional projects can move more easily."
           />
           <div className="mt-12 grid items-stretch gap-x-6 gap-y-4 md:grid-cols-2 xl:grid-cols-4">
             {demarvelCoreCapabilities.map((item) => {
@@ -499,7 +520,7 @@ export default function HomePage() {
 
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={hero2} alt="De marvel housing" />
+          <ServiceMedia src={hero2} alt="D Marvel residential spaces" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
@@ -567,13 +588,13 @@ export default function HomePage() {
 
       <section className="bg-secondary/40 py-20">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={hero3} alt="De marvel food delivery" />
+          <ServiceMedia src={hero3} alt="D Marvel institutional food service" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
               <SectionHeading
                 align="left"
-                eyebrow="De marvel: Food Delivery Services"
+                eyebrow="D Marvel: Food Delivery Services"
                 title="Fresh meals for more than 2,000 customers every day"
                 subtitle="Freshly prepared meals, special dietary options and large-scale catering handled with hygiene, taste and timely delivery."
                 titleClassName="max-w-2xl text-primary"
@@ -655,13 +676,14 @@ export default function HomePage() {
 
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={marble} alt="De marvel interior furnishing" />
+          <ServiceMedia src={marble} alt="D Marvel interior furnishing"
+          />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
               <SectionHeading
                 align="left"
-                eyebrow="De marvel: Interior Experience for All Places"
+                eyebrow="D Marvel: Interior Experience for All Places"
                 title="Modern, functional and aesthetic interiors for every environment"
                 subtitle="Transform your space with modern, functional and aesthetic interior solutions designed by professionals with over 10 years of experience."
                 titleClassName="max-w-2xl text-primary"
@@ -706,13 +728,13 @@ export default function HomePage() {
 
       <section className="bg-secondary/40 py-20">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={rental} alt="De marvel events and construction" />
+          <ServiceMedia src={rental} alt="D Marvel events and construction" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
               <SectionHeading
                 align="left"
-                eyebrow="De marvel: Events & Management"
+                eyebrow="D Marvel: Events & Management"
                 title="Planning, managing and executing memorable events"
                 subtitle="Corporate conferences, birthdays, weddings, inaugurations and celebrity management, handled with precision and professionalism."
                 titleClassName="max-w-2xl text-primary"
@@ -791,13 +813,13 @@ export default function HomePage() {
 
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={hero1} alt="De marvel construction" />
+          <ServiceMedia src={hero1} alt="D Marvel construction" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
               <SectionHeading
                 align="left"
-                eyebrow="De marvel Construction and Contracting Services"
+                eyebrow="D Marvel Construction and Contracting Services"
                 title="Planning to execution and complete project management"
                 subtitle="Residential, commercial and institutional projects handled with modern design, structural strength and environmental suitability."
                 titleClassName="max-w-2xl text-primary"
@@ -887,88 +909,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-secondary/40 py-20">
-        <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={housekeeping} alt="De marvel housekeeping" />
-
-          <StackRail>
-            <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
-              <SectionHeading
-                align="left"
-                eyebrow="Housekeeping and Cleaning Services"
-                title="Professional cleaning and maintenance for every kind of space"
-                subtitle="Hygienic, reliable support for hospitals, hostels, offices, residential societies and individual homes."
-                titleClassName="max-w-2xl text-primary"
-                subtitleClassName="max-w-xl text-muted-foreground"
-              />
-              <div className="mt-6 rounded-2xl bg-secondary/50 p-5">
-                <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                  Service promise
-                </div>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {demarvelHousekeepingDetails.promise}
-                </p>
-              </div>
-            </div>
-
-            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="rounded-2xl bg-secondary/40 p-6">
-                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                  Daily and office care
-                </div>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  Daily cleaning, office maintenance, deep cleaning and floor scrubbing that keeps
-                  spaces fresh.
-                </p>
-              </div>
-              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
-                <ul className="grid gap-3 sm:grid-cols-2">
-                  {demarvelHousekeepingDetails.services.slice(0, 6).map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
-                    >
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="rounded-2xl bg-secondary/40 p-6">
-                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                  Specialised care
-                </div>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  Glass facade cleaning, solar panel care, water tank cleaning and corridor
-                  maintenance.
-                </p>
-              </div>
-              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
-                <ul className="grid gap-2 sm:grid-cols-2">
-                  {demarvelHousekeepingDetails.services.slice(6).map((item) => (
-                    <li key={item} className="text-sm text-muted-foreground">
-                      - {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </StackRail>
-        </div>
-      </section>
-
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={gardening} alt="De marvel landscaping" />
+          <ServiceMedia src={gardening} alt="D Marvel landscaping" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
               <SectionHeading
                 align="left"
-                eyebrow="De marvel Landscaping"
+                eyebrow="D Marvel Landscaping"
                 title="Creative, functional and sustainable outdoor solutions"
                 subtitle="Outdoor spaces designed for long-term value across campuses, offices, homes and public spaces."
                 titleClassName="max-w-2xl text-primary"
@@ -1049,7 +998,7 @@ export default function HomePage() {
 
       <section className="bg-secondary/40 py-20">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={hero2} alt="De marvel IT solutions" />
+          <ServiceMedia src={hero2} alt="D Marvel IT solutions" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
@@ -1152,7 +1101,7 @@ export default function HomePage() {
       <section className="bg-navy py-20 text-white">
         <div className="container-x">
           <SectionHeading
-            eyebrow="Why Choose De marvel"
+            eyebrow="Why Choose D Marvel"
             title="Reliable, customer-first and built around modern urban living"
             subtitle="One platform for multiple services, trusted professionals, affordable pricing and quick, reliable support."
             titleClassName="text-white"
@@ -1188,7 +1137,7 @@ export default function HomePage() {
               Clear direction. Reliable execution.
             </h2>
             <p className="mt-8 max-w-xl leading-relaxed text-muted-foreground">
-              De marvel is built around one simple idea: connect essential services under a dependable
+              D Marvel Infra Solutions is built around one simple idea: connect essential services under a dependable
               platform so people can manage everyday needs with more confidence.
             </p>
           </div>
@@ -1237,8 +1186,8 @@ export default function HomePage() {
                 Let us handle the details, big and small.
               </h2>
               <p className="mb-8 text-white/80">
-                From housing and interiors to catering, events, housekeeping and IT support, De marvel
-                is built to deliver care and precision.
+                From interior design and architectural planning to infrastructure and landscaping,
+                D Marvel Infra Solutions is built to deliver care and precision.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link

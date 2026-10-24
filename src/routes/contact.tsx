@@ -41,7 +41,7 @@ export default function ContactPage() {
   return (
     <SiteLayout>
       <PageBanner
-        title="Contact De marvel"
+        title="Contact D Marvel Infra Solutions"
         subtitle="From site development to the final detail, let’s design and transform your space."
         crumbs={[{ label: "Contact" }]}
         image={aboutImg}
@@ -68,7 +68,7 @@ export default function ContactPage() {
               {[
                 {
                   icon: MapPin,
-                  title: "De marvel Office",
+                  title: "D Marvel Infra Solutions Office",
                   lines: [demarvelContact.office, demarvelContact.highway, demarvelContact.studioSize],
                 },
                 {
@@ -77,12 +77,14 @@ export default function ContactPage() {
                   lines: [demarvelContact.phoneDisplay],
                   href: demarvelContact.phoneHref,
                 },
-                {
-                  icon: Mail,
-                  title: "Email",
-                  lines: [demarvelContact.email],
-                  href: demarvelContact.emailHref,
-                },
+                ...(demarvelContact.email && demarvelContact.emailHref
+                  ? [{
+                      icon: Mail,
+                      title: "Email",
+                      lines: [demarvelContact.email],
+                      href: demarvelContact.emailHref,
+                    }]
+                  : []),
                 {
                   icon: WhatsAppIcon,
                   title: "WhatsApp",
@@ -180,7 +182,7 @@ export default function ContactPage() {
                 <form onSubmit={onSubmit} className="space-y-5">
                   <h3 className="mb-2 text-2xl font-bold text-primary">Enquiry Form</h3>
                   <p className="text-sm text-muted-foreground">
-                    Tell us the service you need and we will connect you with the right De marvel team.
+                    Tell us the service you need and we will connect you with the right D Marvel team.
                   </p>
 
                   <div className="grid gap-4 sm:grid-cols-2">
@@ -245,7 +247,6 @@ export default function ContactPage() {
                       <option>Interior Experience for All Places</option>
                       <option>Events & Management</option>
                       <option>Construction & Contracting Services</option>
-                      <option>Housekeeping Services</option>
                       <option>Gardening Services</option>
                       <option>Landscaping & Outdoor Solutions</option>
                       <option>IT Solutions</option>
@@ -304,7 +305,7 @@ export default function ContactPage() {
               </div>
               <div className="relative min-h-[220px] flex-1 sm:min-h-[260px]">
                 <iframe
-                  title="De marvel location map"
+                  title="D Marvel Infra Solutions location map"
                   src={mapEmbedSrc}
                   className="absolute inset-0 h-full w-full border-0"
                   loading="lazy"
