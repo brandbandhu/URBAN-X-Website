@@ -320,7 +320,7 @@ export const demarvelBrandCards: BrandCard[] = [
   },
   {
     icon: Sofa,
-    label: "De Marvel Furnishings",
+    label: "D Marvel Infra Solutions",
     tagline: "Interior Experience",
     description:
       "Custom interiors, furnishing, mood boards and aesthetic solutions for homes, offices and specialist spaces.",
@@ -510,7 +510,7 @@ export const demarvelInteriorDetails = {
   projectsHandled: [
     "New Royal Services",
     "The Hungry Scholars",
-    "De Marvel Furnishings",
+    "D Marvel Infra Solutions",
     "Aishwarya Realtors",
   ],
   note: "Our specialty lies in mood board design and colour theme development, ranging from contemporary and modern to neoclassical interiors.",
