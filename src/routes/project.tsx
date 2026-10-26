@@ -163,7 +163,7 @@ export default function ProjectPage({ projectSlug }: { projectSlug: string }) {
               </div>
               {gallery.length > 0 && (
                 <p className="text-sm text-muted-foreground">
-                  Select an image to expand. Use arrow keys to navigate.
+                  Select a visual to expand. Use arrow keys to navigate the gallery.
                 </p>
               )}
             </div>

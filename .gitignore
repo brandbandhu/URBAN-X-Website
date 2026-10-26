@@ -12,6 +12,7 @@ dist
 dist-ssr
 .output
 *.local
+project-source-pdfs/
 
 # Wrangler / Cloudflare
 .wrangler/

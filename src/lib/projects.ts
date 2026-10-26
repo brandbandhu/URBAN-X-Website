@@ -1,5 +1,3 @@
-import { theHungryScholarsGalleryItems } from "@/lib/theHungryScholarsGallery";
-
 export type ProjectStatus = "completed" | "ongoing" | "proposed";
 export type ProjectCategory =
   | "interior-design"
@@ -56,14 +54,34 @@ export const portfolioFilters: { value: "all" | ProjectCategory; label: string }
   { value: "architectural", label: "Architectural Drawings & Design Solutions" },
 ];
 
-const hungryScholarGallery = theHungryScholarsGalleryItems.slice(0, 8).map((item, index) => ({
-  src: item.src,
-  alt: item.label
-    ? `Hungry Scholar ${item.label}`
-    : `Hungry Scholar institutional project photograph ${index + 1}`,
-  type: "photo" as const,
-  caption: item.label ?? "Verified project photograph",
-}));
+const projectPhotoGallery = (slug: string, title: string, count: number) =>
+  Array.from({ length: count }, (_, index) => ({
+    src: `/project-photos/${slug}/${slug}-${String(index + 1).padStart(2, "0")}.jpeg`,
+    alt: `${title} project photograph ${index + 1}`,
+    type: "photo" as const,
+    caption: "Project photograph",
+  }));
+
+const hungryScholarGallery = projectPhotoGallery("hungry-scholar-cafe", "Hungry Scholar Cafe", 12);
+const rajBungalowGallery = projectPhotoGallery("raj-bungalow", "Raj Bungalow", 9);
+const royalFoodsGallery = projectPhotoGallery(
+  "royal-foods-hospitality-services",
+  "Royal Foods Hospitality Services",
+  18,
+);
+const shreeAnganGallery = projectPhotoGallery("shree-angan-hostel", "Shree Angan Hostel", 7);
+const vaishnaviPrideGallery = projectPhotoGallery(
+  "vaishnavi-pride-hostel",
+  "Vaishnavi Pride Hostel",
+  6,
+);
+const vipEventsGallery = projectPhotoGallery("vip-events", "VIP Events", 7);
+const vitthalKrupaGallery = projectPhotoGallery("vitthal-krupa-hostel", "Vitthal Krupa Hostel", 6);
+const classroomsGallery = projectPhotoGallery("classrooms", "Classrooms", 9);
+const guestHouseGallery = projectPhotoGallery("guest-house", "Guest House", 4);
+const isbjStudioGallery = projectPhotoGallery("isbj-studio", "ISBJ Studio", 4);
+const libraryGallery = projectPhotoGallery("library", "Library", 12);
+const naliniPrideGallery = projectPhotoGallery("nalini-pride-hostel", "Nalini Pride Hostel", 5);
 
 export const projects: Project[] = [
   {
@@ -149,6 +167,8 @@ export const projects: Project[] = [
     description: "Residential interior design work for bungalow spaces.",
     scopeOfWork: ["Residential interior design"],
     status: "completed",
+    thumbnail: rajBungalowGallery[0]?.src,
+    gallery: rajBungalowGallery,
   },
   {
     id: "shrinivas-building",
@@ -332,6 +352,126 @@ export const projects: Project[] = [
     associatedOrganization: "New Royal Services",
     confirmationNote:
       "Project credits are retained as an association and require permission/asset confirmation for each case study.",
+  },
+  {
+    id: "royal-foods-hospitality-services",
+    slug: "royal-foods-hospitality-services",
+    title: "Royal Foods Hospitality Services",
+    primaryCategory: portfolioCategories.commercial,
+    categories: ["commercial", "institutional", "interior-design"],
+    description: "Hospitality and food-service spaces documented through the supplied project album.",
+    scopeOfWork: ["Hospitality space support", "Food-service environments", "Interior execution"],
+    status: "completed",
+    thumbnail: royalFoodsGallery[0]?.src,
+    gallery: royalFoodsGallery,
+  },
+  {
+    id: "shree-angan-hostel",
+    slug: "shree-angan-hostel",
+    title: "Shree Angan Hostel",
+    primaryCategory: portfolioCategories.institutional,
+    categories: ["institutional", "infrastructure", "interior-design"],
+    description: "Hostel interiors and institutional facilities represented by the supplied project album.",
+    scopeOfWork: ["Hostel interiors", "Institutional facilities", "Project execution"],
+    status: "completed",
+    thumbnail: shreeAnganGallery[0]?.src,
+    gallery: shreeAnganGallery,
+  },
+  {
+    id: "vaishnavi-pride-hostel",
+    slug: "vaishnavi-pride-hostel",
+    title: "Vaishnavi Pride Hostel",
+    primaryCategory: portfolioCategories.institutional,
+    categories: ["institutional", "infrastructure", "interior-design"],
+    description: "Hostel and institutional work documented through the supplied project album.",
+    scopeOfWork: ["Hostel facilities", "Interior execution", "Institutional project support"],
+    status: "completed",
+    thumbnail: vaishnaviPrideGallery[0]?.src,
+    gallery: vaishnaviPrideGallery,
+  },
+  {
+    id: "vip-events",
+    slug: "vip-events",
+    title: "VIP Events",
+    primaryCategory: portfolioCategories.commercial,
+    categories: ["commercial", "institutional", "interior-design"],
+    description: "Event, hospitality and guest coordination work represented through the supplied album.",
+    scopeOfWork: ["Event environments", "Hospitality coordination", "Guest-facing spaces"],
+    status: "completed",
+    thumbnail: vipEventsGallery[0]?.src,
+    gallery: vipEventsGallery,
+  },
+  {
+    id: "vitthal-krupa-hostel",
+    slug: "vitthal-krupa-hostel",
+    title: "Vitthal Krupa Hostel",
+    primaryCategory: portfolioCategories.institutional,
+    categories: ["institutional", "infrastructure", "interior-design"],
+    description: "Hostel facilities and institutional interiors documented through the supplied album.",
+    scopeOfWork: ["Hostel interiors", "Institutional facilities", "Project execution"],
+    status: "completed",
+    thumbnail: vitthalKrupaGallery[0]?.src,
+    gallery: vitthalKrupaGallery,
+  },
+  {
+    id: "classrooms",
+    slug: "classrooms",
+    title: "Classrooms",
+    primaryCategory: portfolioCategories.educational,
+    categories: ["educational", "institutional", "interior-design"],
+    description: "Learning environments and classroom facilities represented through the supplied album.",
+    scopeOfWork: ["Classroom environments", "Educational interiors", "Facility execution"],
+    status: "completed",
+    thumbnail: classroomsGallery[0]?.src,
+    gallery: classroomsGallery,
+  },
+  {
+    id: "guest-house",
+    slug: "guest-house",
+    title: "Guest House",
+    primaryCategory: portfolioCategories.commercial,
+    categories: ["commercial", "residential", "interior-design"],
+    description: "Guest-house interiors and hospitality spaces documented through the supplied album.",
+    scopeOfWork: ["Guest-house interiors", "Hospitality spaces", "Interior execution"],
+    status: "completed",
+    thumbnail: guestHouseGallery[0]?.src,
+    gallery: guestHouseGallery,
+  },
+  {
+    id: "isbj-studio",
+    slug: "isbj-studio",
+    title: "ISBJ Studio",
+    primaryCategory: portfolioCategories.commercial,
+    categories: ["commercial", "interior-design", "architectural"],
+    description: "Studio and workplace design work represented through the supplied project album.",
+    scopeOfWork: ["Studio interiors", "Workplace design", "Interior execution"],
+    status: "completed",
+    thumbnail: isbjStudioGallery[0]?.src,
+    gallery: isbjStudioGallery,
+  },
+  {
+    id: "library",
+    slug: "library",
+    title: "Library",
+    primaryCategory: portfolioCategories.educational,
+    categories: ["educational", "institutional", "interior-design"],
+    description: "Library and study environments documented through the supplied project album.",
+    scopeOfWork: ["Library interiors", "Study environments", "Educational facility support"],
+    status: "completed",
+    thumbnail: libraryGallery[0]?.src,
+    gallery: libraryGallery,
+  },
+  {
+    id: "nalini-pride-hostel",
+    slug: "nalini-pride-hostel",
+    title: "Nalini Pride Hostel",
+    primaryCategory: portfolioCategories.institutional,
+    categories: ["institutional", "infrastructure", "interior-design"],
+    description: "Hostel and institutional facilities documented through the supplied project album.",
+    scopeOfWork: ["Hostel facilities", "Interior execution", "Institutional project support"],
+    status: "completed",
+    thumbnail: naliniPrideGallery[0]?.src,
+    gallery: naliniPrideGallery,
   },
 ];
 
