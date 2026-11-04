@@ -236,17 +236,15 @@ export default function PortfolioPage() {
           </div>
 
           <div className="mt-12 md:mt-16" id="project-records">
-            <div className="grid gap-5 lg:grid-cols-[220px_minmax(0,1fr)] lg:items-start">
-              <div className="min-w-0">
-                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                  Project records
-                </div>
-                <h2 className="whitespace-nowrap text-3xl font-bold text-primary md:text-4xl">
-                  {filter === "all" ? "Selected work" : portfolioCategories[filter]}
-                </h2>
+            <div className="mb-7">
+              <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+                Project records
               </div>
+              <h2 className="text-3xl font-bold text-primary md:text-4xl">
+                {filter === "all" ? "Selected work" : portfolioCategories[filter]}
+              </h2>
               <div
-                className="flex min-w-0 flex-wrap gap-2 lg:pt-1"
+                className="mt-5 flex flex-wrap gap-2"
                 role="group"
                 aria-label="Filter projects by category"
               >

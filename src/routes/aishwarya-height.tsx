@@ -139,19 +139,19 @@ const nearbyPlaces = [
 const projectPhotos = [
   {
     src: buildingExterior,
-    alt: "Aishwarya Heights residential building exterior",
+    alt: "Aishwarya Realtors residential building exterior",
   },
   {
     src: livingRoom,
-    alt: "Aishwarya Heights living room from the brochure",
+    alt: "Aishwarya Realtors living room from the brochure",
   },
   {
     src: diningRoom,
-    alt: "Aishwarya Heights dining room from the brochure",
+    alt: "Aishwarya Realtors dining room from the brochure",
   },
   {
     src: tvUnit,
-    alt: "Aishwarya Heights TV unit from the brochure",
+    alt: "Aishwarya Realtors TV unit from the brochure",
   },
 ];
 
@@ -205,9 +205,9 @@ export default function AishwaryaHeightPage() {
   return (
     <SiteLayout>
       <PageBanner
-        title="Aishwarya Heights"
+        title="Aishwarya Realtors"
         subtitle="Inspired Living, Perfectly Placed in Kothrud"
-        crumbs={[{ label: "Brands", to: "/services" }, { label: "Aishwarya Heights" }]}
+        crumbs={[{ label: "Brands", to: "/services" }, { label: "Aishwarya Realtors" }]}
         image={buildingExterior}
       />
 
@@ -222,7 +222,7 @@ export default function AishwaryaHeightPage() {
               Inspired living, perfectly placed in Kothrud
             </h2>
             <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
-              At Aishwarya Heights, you're not just buying a flat - you're stepping into a smarter
+              At Aishwarya Realtors, you're not just buying a flat - you're stepping into a smarter
               way of city living. These thoughtfully designed 2 BHK and 3 BHK homes are made for
               urban families and professionals who want to stay connected to the city's pulse
               without compromising on privacy and lifestyle.
@@ -251,7 +251,7 @@ export default function AishwaryaHeightPage() {
           <div className="grid gap-5 sm:grid-cols-2">
             <img
               src={buildingExterior}
-              alt="Aishwarya Heights building exterior from the brochure"
+              alt="Aishwarya Realtors building exterior from the brochure"
               className="h-56 w-full rounded-3xl object-cover shadow-luxe sm:col-span-2 sm:h-80"
               loading="lazy"
               decoding="async"
@@ -259,7 +259,7 @@ export default function AishwaryaHeightPage() {
             />
             <img
               src={livingRoom}
-              alt="Aishwarya Heights living room from the brochure"
+              alt="Aishwarya Realtors living room from the brochure"
               className="h-56 w-full rounded-3xl object-cover shadow-card-luxe"
               loading="lazy"
               decoding="async"
@@ -299,8 +299,8 @@ export default function AishwaryaHeightPage() {
         <div className="container-x">
           <SectionHeading
             eyebrow="Brochure Gallery"
-            title="Aishwarya Heights in Kothrud"
-            subtitle="Actual project and interior visuals taken from the Aishwarya Heights brochure."
+            title="Aishwarya Realtors in Kothrud"
+            subtitle="Actual project and interior visuals taken from the Aishwarya Realtors brochure."
           />
 
           <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -332,7 +332,7 @@ export default function AishwaryaHeightPage() {
           <div className="mx-auto mt-12 max-w-6xl overflow-hidden rounded-3xl bg-card shadow-luxe">
             <img
               src={unitPlans}
-              alt="Aishwarya Heights unit plans and area statements from the brochure"
+              alt="Aishwarya Realtors unit plans and area statements from the brochure"
               className="h-auto w-full"
               loading="lazy"
               decoding="async"
@@ -353,7 +353,7 @@ export default function AishwaryaHeightPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <img
                 src={livingRoom}
-                alt="Aishwarya Heights living room from the brochure"
+                alt="Aishwarya Realtors living room from the brochure"
                 className="h-64 w-full rounded-3xl object-cover shadow-luxe sm:col-span-2"
                 loading="lazy"
                 decoding="async"
@@ -361,7 +361,7 @@ export default function AishwaryaHeightPage() {
               />
               <img
                 src={diningRoom}
-                alt="Aishwarya Heights dining room from the brochure"
+                alt="Aishwarya Realtors dining room from the brochure"
                 className="h-56 w-full rounded-3xl object-cover shadow-card-luxe"
                 loading="lazy"
                 decoding="async"
@@ -398,9 +398,9 @@ export default function AishwaryaHeightPage() {
       <section className="py-14 md:py-28">
         <div className="container-x">
           <SectionHeading
-            eyebrow="Aishwarya Heights"
+            eyebrow="Aishwarya Realtors"
             title="What people should know about the company"
-            subtitle="Aishwarya Heights combines practical layouts, everyday amenities and a connected Kothrud location for comfortable residential living."
+            subtitle="Aishwarya Realtors combines practical layouts, everyday amenities and a connected Kothrud location for comfortable residential living."
           />
 
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
@@ -482,7 +482,7 @@ export default function AishwaryaHeightPage() {
             <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-luxe">
               <img
                 src={locationMap}
-                alt="Aishwarya Heights location map from the brochure"
+                alt="Aishwarya Realtors location map from the brochure"
                 className="aspect-[16/7] w-full object-cover object-center"
                 loading="lazy"
                 decoding="async"
@@ -500,7 +500,7 @@ export default function AishwaryaHeightPage() {
             <div className="relative mx-auto max-w-3xl">
               <Sparkles className="mx-auto mb-4 h-12 w-12 text-gold" />
               <h2 className="mb-4 text-3xl font-bold md:text-5xl">
-                Ready to explore Aishwarya Heights?
+                Ready to explore Aishwarya Realtors?
               </h2>
               <p className="mb-8 text-white/80">
                 Reach out for availability, unit plans and a walk-through of the brochure details.

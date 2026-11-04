@@ -124,14 +124,14 @@ export const newRoyalServicesData = {
 } satisfies ServicePageData;
 
 export const aishwaryaHeightData = {
-  companyName: "Aishwarya Heights",
+  companyName: "Aishwarya Realtors",
   accentLabel: "Construction & Contracting",
   tagline:
     "End-to-end construction, project support and site equipment rental for residential, commercial and institutional work.",
   detailBasePath: "/aishwarya-height",
   banner: rental,
   intro:
-    "Aishwarya Heights brings together planning, execution and site support for a complete residential project experience.",
+    "Aishwarya Realtors brings together planning, execution and site support for a complete residential project experience.",
   about: [
     "Our team manages labour, budgeting, billing and detailed execution oversight so projects stay on schedule and on spec.",
     "We provide reliable equipment rental and site support for residential towers, commercial complexes, hospitals, institutions and more.",

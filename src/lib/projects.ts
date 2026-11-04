@@ -1,4 +1,5 @@
 import { newRoyalServicesGallery } from "@/lib/newRoyalServicesGallery";
+import { comLaboratoriesGallery } from "@/lib/comLaboratoriesGallery";
 
 export type ProjectStatus = "completed" | "ongoing" | "proposed";
 export type ProjectCategory =
@@ -69,6 +70,13 @@ const newRoyalProjectGallery = newRoyalServicesGallery.map((src, index) => ({
   alt: `New Royal Services project photograph ${index + 1}`,
   type: "photo" as const,
   caption: "Original New Royal Services photograph",
+}));
+
+const comLaboratoriesProjectGallery = comLaboratoriesGallery.map((src, index) => ({
+  src,
+  alt: `COM Laboratories project photograph ${index + 1}`,
+  type: "photo" as const,
+  caption: "Original COM Laboratories photograph",
 }));
 
 const hungryScholarGallery = projectPhotoGallery("hungry-scholar-cafe", "Hungry Scholar Cafe", 12).slice(1);
@@ -163,14 +171,14 @@ export const projects: Project[] = [
   {
     id: "aishwarya-realtors",
     slug: "aishwarya-realtors",
-    title: "Aishwarya Heights",
+    title: "Aishwarya Realtors",
     primaryCategory: portfolioCategories.residential,
     categories: ["residential", "architectural"],
     description:
-      "Residential development work including villas, Aishwarya Heights, guest houses and related design work.",
+      "Residential development work including villas, Aishwarya Realtors, guest houses and related design work.",
     scopeOfWork: [
       "Villas",
-      "Aishwarya Heights",
+      "Aishwarya Realtors",
       "Guest houses",
       "Residential development projects",
     ],
@@ -178,25 +186,25 @@ export const projects: Project[] = [
     gallery: [
       {
         src: "/aishwarya-realtors/aishwarya-realtors.jpg",
-        alt: "Aishwarya Heights building site photograph",
+        alt: "Aishwarya Realtors building site photograph",
         type: "photo",
         caption: "Verified project photograph",
       },
       {
         src: "/aishwarya-height/aishwarya-heights-exterior-01.jpeg",
-        alt: "Aishwarya Heights exterior",
+        alt: "Aishwarya Realtors exterior",
         type: "photo",
         caption: "Verified project photograph",
       },
       {
         src: "/aishwarya-height/aishwarya-heights-exterior-02.jpeg",
-        alt: "Aishwarya Heights entrance exterior",
+        alt: "Aishwarya Realtors entrance exterior",
         type: "photo",
         caption: "Verified project photograph",
       },
     ],
     confirmationNote:
-      "The available gallery is limited to the supplied Aishwarya Heights exterior photographs.",
+      "The available gallery is limited to the supplied Aishwarya Realtors exterior photographs.",
   },
   {
     id: "com-laboratories",
@@ -208,39 +216,8 @@ export const projects: Project[] = [
       "Laboratory development and interior execution work for educational infrastructure.",
     scopeOfWork: ["Laboratory development", "Interior execution"],
     status: "completed",
-    thumbnail: "/library/DSC_6863.jpg",
-    gallery: [
-      {
-        src: "/library/DSC_6863.jpg",
-        alt: "Educational library interior with book shelves and study desks",
-        type: "photo",
-        caption: "Verified library facility photograph",
-      },
-      {
-        src: "/library/DSC_4145.jpg",
-        alt: "Educational library reading hall with students",
-        type: "photo",
-        caption: "Verified library facility photograph",
-      },
-      {
-        src: "/library/DSC_4123.jpg",
-        alt: "Library book stacks and shelving system",
-        type: "photo",
-        caption: "Verified library facility photograph",
-      },
-      {
-        src: "/library/DSC_4086.jpg",
-        alt: "Library reading area with students at study tables",
-        type: "photo",
-        caption: "Verified library facility photograph",
-      },
-      {
-        src: "/library/DSC_3889.jpg",
-        alt: "Library book shelves and student reading area",
-        type: "photo",
-        caption: "Verified library facility photograph",
-      },
-    ],
+    thumbnail: comLaboratoriesProjectGallery[0]?.src,
+    gallery: comLaboratoriesProjectGallery,
   },
   {
     id: "new-royal-services",
