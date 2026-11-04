@@ -18,7 +18,7 @@ export function Footer() {
         <div>
           <h4 className="gold-underline mb-5 font-display text-lg text-white">Quick Links</h4>
           <ul className="mt-7 space-y-2 text-sm">
-            {[["/", "Home"], ["/about", "About D Marvel"], ["/services", "Services"], ["/portfolio", "Projects & Portfolio"], ["/contact", "Contact"]].map(([to, label]) => (
+            {[["/", "Home"], ["/about", "About De Marvel Infra Solutions"], ["/services", "Services"], ["/portfolio", "Projects & Portfolio"], ["/contact", "Contact"]].map(([to, label]) => (
               <li key={to}><Link to={to} className="transition-colors hover:text-gold">{label}</Link></li>
             ))}
           </ul>
@@ -43,7 +43,7 @@ export function Footer() {
       </div>
 
       <div className="container-x mt-10 flex justify-center border-t border-white/10 pt-6 text-center text-xs text-white/60 sm:mt-14">
-        <div>© 2026 D Marvel Infra Solutions. All Rights Reserved. Developed by{" "}<a href="https://webakoof.com/" target="_blank" rel="noreferrer" className="font-semibold text-white transition-colors hover:text-gold">Webakoof</a></div>
+        <div>© 2026 De Marvel Infra Solutions. All Rights Reserved. Developed by{" "}<a href="https://webakoof.com/" target="_blank" rel="noreferrer" className="font-semibold text-white transition-colors hover:text-gold">Webakoof</a></div>
       </div>
     </footer>
   );

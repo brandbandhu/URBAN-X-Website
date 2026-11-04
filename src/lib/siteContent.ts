@@ -36,11 +36,11 @@ export type BrandCard = {
 };
 
 export const demarvelBrand = {
-  name: "D Marvel Infra Solutions",
+  name: "De Marvel Infra Solutions",
   tagline: "Designing Spaces. Building Possibilities.",
-  heroTitle: "D Marvel Infra Solutions – Interior, Infrastructure & Design",
+  heroTitle: "De Marvel Infra Solutions – Interior, Infrastructure & Design",
   heroLead:
-    "D Marvel Infra Solutions brings interior design, architectural planning, infrastructure development and landscaping together through one coordinated team.",
+    "De Marvel Infra Solutions brings interior design, architectural planning, infrastructure development and landscaping together through one coordinated team.",
   heroDetail:
     "From architectural drawings and interior execution to infrastructure development and outdoor design, the work is shaped around the purpose of each space.",
 };
@@ -60,13 +60,13 @@ export const demarvelContact = {
 export const demarvelStudio = {
   headline: "Designing Spaces. Building Possibilities.",
   summary:
-    "D Marvel Infra Solutions is an interior and infrastructure partner where architecture, interiors, landscaping and execution come together under one roof.",
+    "De Marvel Infra Solutions is an interior and infrastructure partner where architecture, interiors, landscaping and execution come together under one roof.",
   promise:
     "We combine innovation, expertise, craftsmanship, technology and professionalism to transform ideas into thoughtfully designed and beautifully executed spaces.",
 };
 
 export const demarvelTeam = [
-  { name: "Rajeshwari Karad", role: "De marvel Team" },
+  { name: "Rajeshwari Karad", role: "De Marvel Infra Solutions Team" },
   { name: "Raghvendra Chate", role: "Director" },
   { name: "Virendra Pratap Karad", role: "Deputy Director" },
   { name: "Krishna Yadav", role: "Special Duty Officer" },
@@ -74,12 +74,12 @@ export const demarvelTeam = [
   { name: "Alefia", role: "Interior Designer" },
   { name: "Sahil", role: "Interior Design Team" },
   { name: "Rahul Singh", role: "Interior Design Team" },
-  { name: "Anil Karad", role: "De marvel Team" },
+  { name: "Anil Karad", role: "De Marvel Infra Solutions Team" },
 ];
 
 export const demarvelHeroSlides = [
   {
-    eyebrow: "D Marvel Infra Solutions",
+    eyebrow: "De Marvel Infra Solutions",
     title: "Everything you need for a smoother everyday life.",
     description:
       "Interior design, infrastructure development, architectural solutions and landscaping for residential, commercial and institutional spaces.",
@@ -94,7 +94,7 @@ export const demarvelHeroSlides = [
     eyebrow: "Food and Interiors",
     title: "Fresh meals and beautiful spaces, planned with care.",
     description:
-      "From daily meals and catering to custom interiors and premium furnishing, D Marvel helps build better routines and better environments.",
+      "From daily meals and catering to custom interiors and premium furnishing, De Marvel Infra Solutions helps build better routines and better environments.",
   },
 ];
 
@@ -314,7 +314,7 @@ export const demarvelBrandCards: BrandCard[] = [
   },
   {
     icon: Sofa,
-    label: "D Marvel Infra Solutions",
+    label: "De Marvel Infra Solutions",
     tagline: "Interior Experience",
     description:
       "Custom interiors, furnishing, mood boards and aesthetic solutions for homes, offices and specialist spaces.",
@@ -425,7 +425,7 @@ export const demarvelCoreCapabilities: IconCard[] = [
 
 export const demarvelHousingDetails = {
   summary:
-    "D Marvel has delivered 50+ projects across Pune for working professionals, students and academic communities.",
+    "De Marvel Infra Solutions has delivered 50+ projects across Pune for working professionals, students and academic communities.",
   focus: [
     "Essential amenities for daily living",
     "Comfortable and well-maintained spaces",
@@ -436,7 +436,7 @@ export const demarvelHousingDetails = {
 
 export const demarvelFoodDetails = {
   summary:
-    "D Marvel serves freshly prepared meals to more than 2,000 customers every day with a strong focus on taste, nutrition, hygiene and timely delivery.",
+    "De Marvel Infra Solutions serves freshly prepared meals to more than 2,000 customers every day with a strong focus on taste, nutrition, hygiene and timely delivery.",
   menu: [
     "Indian cuisine, including authentic Maharashtrian flavours",
     "Continental dishes",
@@ -496,7 +496,7 @@ export const demarvelInteriorDetails = {
   projectsHandled: [
     "New Royal Services",
     "The Hungry Scholars",
-    "D Marvel Infra Solutions",
+    "De Marvel Infra Solutions",
     "Aishwarya Realtors",
   ],
   note: "Our specialty lies in mood board design and colour theme development, ranging from contemporary and modern to neoclassical interiors.",
@@ -504,7 +504,7 @@ export const demarvelInteriorDetails = {
 
 export const demarvelEventsDetails = {
   summary:
-    "D Marvel provides comprehensive event solutions for corporate conferences, birthdays, weddings, inaugurations and celebrity management.",
+    "De Marvel Infra Solutions provides comprehensive event solutions for corporate conferences, birthdays, weddings, inaugurations and celebrity management.",
   services: [
     "Event planning and execution",
     "Decor and ambience design",
@@ -518,7 +518,7 @@ export const demarvelEventsDetails = {
 
 export const demarvelConstructionDetails = {
   summary:
-    "D Marvel offers end-to-end construction and contracting solutions from planning and design to execution and complete project management for residential, commercial and institutional spaces.",
+    "De Marvel Infra Solutions offers end-to-end construction and contracting solutions from planning and design to execution and complete project management for residential, commercial and institutional spaces.",
   expertise: [
     "Residential buildings and high-rise towers",
     "Commercial complexes and corporate IT spaces",
@@ -546,7 +546,7 @@ export const demarvelConstructionDetails = {
 
 export const demarvelGardeningDetails = {
   summary:
-    "D Marvel provides expert landscaping and gardening services for hospitals, corporate offices, educational institutions, industrial areas, residential societies and landmark public spaces.",
+    "De Marvel Infra Solutions provides expert landscaping and gardening services for hospitals, corporate offices, educational institutions, industrial areas, residential societies and landmark public spaces.",
   services: [
     "Garden maintenance",
     "Lawn mowing and trimming",
@@ -562,7 +562,7 @@ export const demarvelGardeningDetails = {
 
 export const demarvelItDetails = {
   summary:
-    "D Marvel provides comprehensive IT and digital solutions to help businesses and individuals grow, engage and operate efficiently.",
+    "De Marvel Infra Solutions provides comprehensive IT and digital solutions to help businesses and individuals grow, engage and operate efficiently.",
   services: [
     "Social media content development and management",
     "Social media lead management to generation",
@@ -577,7 +577,7 @@ export const demarvelItDetails = {
     "Chatbot development for enhanced customer engagement",
   ],
   promise:
-    "Whether it is digital marketing, software solutions or employee productivity tools, D Marvel delivers professional, customized and scalable IT support.",
+    "Whether it is digital marketing, software solutions or employee productivity tools, De Marvel Infra Solutions delivers professional, customized and scalable IT support.",
 };
 
 export const demarvelGardeningServices = [

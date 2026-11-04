@@ -58,7 +58,7 @@ const foodDeliveryImage =
 const heroSlides = [
   {
     img: interiorDesign,
-    eyebrow: "D Marvel Infra Solutions",
+    eyebrow: "De marvel infra solutions",
     title: "Designing Spaces. Building Possibilities.",
     description:
       "From site development and architectural planning to interiors, automation, landscaping, furniture and turnkey execution - one integrated design studio for the complete journey.",
@@ -188,7 +188,7 @@ export default function HomePage() {
       eyebrow: "Interior Overview",
       summary: demarvelInteriorDetails.summary,
       image: marble,
-      imageAlt: "D Marvel interior furnishing",
+      imageAlt: "De Marvel Infra Solutions interior furnishing",
       highlight: "10+ years of experience and more than 10 lakh square feet of completed work.",
     },
     {
@@ -253,7 +253,7 @@ export default function HomePage() {
           <div className="relative flex min-h-[calc(100svh-4rem)] items-center py-8 sm:min-h-[min(100svh-5rem,760px)] sm:py-14 lg:py-10">
             <div className="container-x text-white">
               <div key={active} className="max-w-5xl animate-fade-up">
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/15 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-gold sm:mb-6 sm:px-4 sm:text-xs">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/15 px-3.5 py-1.5 text-[11px] font-semibold normal-case tracking-[0.25em] text-gold sm:mb-6 sm:px-4 sm:text-xs">
                   <Sparkles className="h-3.5 w-3.5" />
                   {activeSlide.eyebrow}
                 </div>
@@ -268,7 +268,7 @@ export default function HomePage() {
                     to="/contact"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-gold px-7 py-2.5 font-semibold text-primary hover-lift sm:w-auto sm:py-3.5"
                   >
-                    Contact D Marvel <ArrowRight className="h-4 w-4" />
+                    Contact De Marvel Infra Solutions <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
                     to="/services"
@@ -297,7 +297,7 @@ export default function HomePage() {
           <div className="relative">
             <img
               src={aboutImg}
-              alt="D Marvel Infra Solutions team and workspace"
+              alt="De Marvel Infra Solutions team and workspace"
               className="h-[280px] w-full rounded-2xl object-cover shadow-luxe sm:h-[380px] md:h-[460px] lg:h-[520px]"
               loading="lazy"
               decoding="async"
@@ -313,13 +313,13 @@ export default function HomePage() {
 
           <div>
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-              About D Marvel Infra Solutions
+              About De Marvel Infra Solutions
             </div>
             <h2 className="gold-underline mb-6 text-3xl font-bold text-primary md:text-5xl">
               {demarvelBrand.tagline}
             </h2>
             <p className="mt-8 mb-5 text-lg text-muted-foreground">
-              D Marvel Infra Solutions is an interior and infrastructure partner where you can
+              De Marvel Infra Solutions is an interior and infrastructure partner where you can
               shape your living, working or institutional environment with clarity and care.
             </p>
             <p className="mb-8 leading-relaxed text-foreground/80">
@@ -335,7 +335,7 @@ export default function HomePage() {
       </section>
 
       <ActiveBrandsSection
-        eyebrow="D Marvel Infra Solutions"
+        eyebrow="De Marvel Infra Solutions"
         title="Design, infrastructure and outdoor work under one roof"
         subtitle="Explore the connected services and specialist brands that support residential, commercial and institutional requirements."
         ctaLabel="View all services"
@@ -370,7 +370,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Core Capabilities"
             title="We combine innovation, expertise and professionalism"
-            subtitle="Everything D Marvel Infra Solutions brings together sits under one platform so residential, commercial and institutional projects can move more easily."
+            subtitle="Everything De Marvel Infra Solutions brings together sits under one platform so residential, commercial and institutional projects can move more easily."
           />
           <div className="mt-12 grid items-stretch gap-x-6 gap-y-4 md:grid-cols-2 xl:grid-cols-4">
             {demarvelCoreCapabilities.map((item) => {
@@ -396,7 +396,7 @@ export default function HomePage() {
 
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={hero2} alt="D Marvel residential spaces" />
+          <ServiceMedia src={hero2} alt="De Marvel Infra Solutions residential spaces" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
@@ -459,7 +459,7 @@ export default function HomePage() {
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
               <SectionHeading
                 align="left"
-                eyebrow="D Marvel: Food Delivery Services"
+                eyebrow="De Marvel Infra Solutions: Food Delivery Services"
                 title="Fresh meals for more than 2,000 customers every day"
                 subtitle="Freshly prepared meals, special dietary options and large-scale catering handled with hygiene, taste and timely delivery."
                 titleClassName="max-w-2xl text-primary"
@@ -541,14 +541,14 @@ export default function HomePage() {
 
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={marble} alt="D Marvel interior furnishing"
+          <ServiceMedia src={marble} alt="De Marvel Infra Solutions interior furnishing"
           />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
               <SectionHeading
                 align="left"
-                eyebrow="D Marvel: Interior Experience for All Places"
+                eyebrow="De Marvel Infra Solutions: Interior Experience for All Places"
                 title="Modern, functional and aesthetic interiors for every environment"
                 subtitle="Transform your space with modern, functional and aesthetic interior solutions designed by professionals with over 10 years of experience."
                 titleClassName="max-w-2xl text-primary"
@@ -593,13 +593,13 @@ export default function HomePage() {
 
       <section className="bg-secondary/40 py-20">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={rental} alt="D Marvel events and construction" />
+          <ServiceMedia src={rental} alt="De Marvel Infra Solutions events and construction" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
               <SectionHeading
                 align="left"
-                eyebrow="D Marvel: Events & Management"
+                eyebrow="De Marvel Infra Solutions: Events & Management"
                 title="Planning, managing and executing memorable events"
                 subtitle="Corporate conferences, birthdays, weddings, inaugurations and celebrity management, handled with precision and professionalism."
                 titleClassName="max-w-2xl text-primary"
@@ -684,7 +684,7 @@ export default function HomePage() {
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
               <SectionHeading
                 align="left"
-                eyebrow="D Marvel Construction and Contracting Services"
+                eyebrow="De Marvel Infra Solutions Construction and Contracting Services"
                 title="Planning to execution and complete project management"
                 subtitle="Residential, commercial and institutional projects handled with modern design, structural strength and environmental suitability."
                 titleClassName="max-w-2xl text-primary"
@@ -776,13 +776,13 @@ export default function HomePage() {
 
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={gardening} alt="D Marvel landscaping" />
+          <ServiceMedia src={gardening} alt="De Marvel Infra Solutions landscaping" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
               <SectionHeading
                 align="left"
-                eyebrow="D Marvel Landscaping"
+                eyebrow="De Marvel Infra Solutions Landscaping"
                 title="Creative, functional and sustainable outdoor solutions"
                 subtitle="Outdoor spaces designed for long-term value across campuses, offices, homes and public spaces."
                 titleClassName="max-w-2xl text-primary"
@@ -863,7 +863,7 @@ export default function HomePage() {
 
       <section className="bg-secondary/40 py-20">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={hero2} alt="D Marvel IT solutions" />
+          <ServiceMedia src={hero2} alt="De Marvel Infra Solutions IT solutions" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
@@ -966,7 +966,7 @@ export default function HomePage() {
       <section className="bg-navy py-20 text-white">
         <div className="container-x">
           <SectionHeading
-            eyebrow="Why Choose D Marvel"
+            eyebrow="Why Choose De Marvel Infra Solutions"
             title="Reliable, customer-first and built around modern urban living"
             subtitle="One platform for multiple services, trusted professionals, affordable pricing and quick, reliable support."
             titleClassName="text-white"
@@ -1002,7 +1002,7 @@ export default function HomePage() {
               Clear direction. Reliable execution.
             </h2>
             <p className="mt-8 max-w-xl leading-relaxed text-muted-foreground">
-              D Marvel Infra Solutions is built around one simple idea: connect essential services under a dependable
+              De Marvel Infra Solutions is built around one simple idea: connect essential services under a dependable
               platform so people can manage everyday needs with more confidence.
             </p>
           </div>
@@ -1052,7 +1052,7 @@ export default function HomePage() {
               </h2>
               <p className="mb-8 text-white/80">
                 From interior design and architectural planning to infrastructure and landscaping,
-                D Marvel Infra Solutions is built to deliver care and precision.
+                De Marvel Infra Solutions is built to deliver care and precision.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link

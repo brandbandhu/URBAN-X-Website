@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 
-const siteName = "D Marvel Infra Solutions";
+const siteName = "De Marvel Infra Solutions";
 const defaultDescription =
-  "D Marvel Infra Solutions delivers interior design, architectural design solutions, infrastructure development, landscaping and project execution.";
+  "De Marvel Infra Solutions delivers interior design, architectural design solutions, infrastructure development, landscaping and project execution.";
 
 const routeMeta: Record<string, { title: string; description: string }> = {
   "/": {

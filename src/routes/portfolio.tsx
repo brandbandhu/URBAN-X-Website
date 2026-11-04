@@ -137,9 +137,9 @@ export default function PortfolioPage() {
   return (
     <SiteLayout
       seo={{
-        title: "Projects & Portfolio | D Marvel Infra Solutions",
+        title: "Projects & Portfolio | De Marvel Infra Solutions",
         description:
-          "Explore D Marvel Infra Solutions project records across interior design, residential, commercial, institutional, infrastructure, landscaping and architectural design.",
+          "Explore De Marvel Infra Solutions project records across interior design, residential, commercial, institutional, infrastructure, landscaping and architectural design.",
       }}
     >
       <PageBanner
@@ -154,13 +154,13 @@ export default function PortfolioPage() {
           <div className="grid gap-6 rounded-[1.5rem] border border-border bg-secondary/60 p-5 sm:p-6 md:grid-cols-[1.2fr_0.8fr] md:gap-8 md:p-9">
             <div>
               <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                D Marvel Infra Solutions
+                De Marvel Infra Solutions
               </div>
               <h2 className="max-w-3xl text-3xl font-bold text-primary md:text-5xl">
                 A portfolio organised by the work we undertake.
               </h2>
               <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">
-                Explore D Marvel Infra Solutions through eight clear categories, from interior
+                Explore De Marvel Infra Solutions through eight clear categories, from interior
                 execution and residential work to infrastructure, landscaping and architectural
                 design solutions. Each project record identifies its current stage and available
                 visual assets.
@@ -290,7 +290,7 @@ export default function PortfolioPage() {
             to="/contact"
             className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-gold px-6 py-3.5 font-semibold text-primary hover-lift md:w-auto"
           >
-            Contact D Marvel <ArrowRight className="h-4 w-4" />
+            Contact De Marvel Infra Solutions <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>

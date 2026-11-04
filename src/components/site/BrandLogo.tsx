@@ -10,7 +10,7 @@ type BrandLogoProps = {
 };
 
 export function BrandLogo({
-  alt = "D Marvel Infra Solutions logo",
+  alt = "De Marvel Infra Solutions logo",
   className,
   imageClassName,
   variant = "navbar",

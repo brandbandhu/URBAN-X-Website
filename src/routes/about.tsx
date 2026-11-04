@@ -21,7 +21,7 @@ export default function AboutPage() {
   return (
     <SiteLayout>
       <PageBanner
-        title="About D Marvel Infra Solutions"
+        title="About De Marvel Infra Solutions"
         subtitle={demarvelBrand.tagline}
         crumbs={[{ label: "About" }]}
         image={aboutImg}
@@ -37,7 +37,7 @@ export default function AboutPage() {
               Design, infrastructure and execution with one clear point of contact
             </h2>
             <p className="mt-8 mb-5 text-lg text-muted-foreground">
-              D Marvel Infra Solutions brings together interior design, architectural planning,
+              De Marvel Infra Solutions brings together interior design, architectural planning,
               infrastructure development and landscaping for spaces that need clarity from concept
               through execution.
             </p>
@@ -47,7 +47,7 @@ export default function AboutPage() {
             </p>
             <p className="leading-relaxed text-foreground/80">
               From architectural drawings and interior design to project execution and curated
-              design solutions and project execution, D Marvel Infra Solutions brings the complete
+              design solutions and project execution, De Marvel Infra Solutions brings the complete
               design journey together under one roof.
             </p>
           </div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
               Vision & Mission
             </div>
             <h2 className="mb-5 text-3xl font-bold md:text-5xl">
-              The direction behind every D Marvel service
+              The direction behind every De Marvel Infra Solutions service
             </h2>
             <p className="max-w-xl leading-relaxed text-white/75">
               Every vertical works toward the same promise: simplify daily life through reliable,
@@ -137,10 +137,10 @@ export default function AboutPage() {
         <div className="container-x grid gap-14 lg:grid-cols-2 lg:items-start">
           <div>
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-              Why D Marvel
+              Why De Marvel Infra Solutions
             </div>
             <h2 className="gold-underline mb-8 text-3xl font-bold text-primary md:text-5xl">
-              The D Marvel advantage
+              The De Marvel Infra Solutions advantage
             </h2>
             <div className="space-y-4">
               {demarvelWhyChoose.map((item) => {
@@ -163,7 +163,7 @@ export default function AboutPage() {
               Projects Handled
             </div>
             <h3 className="mb-5 text-3xl font-bold text-primary">
-              Work that reflects the D Marvel standard
+              Work that reflects the De Marvel Infra Solutions standard
             </h3>
             <div className="space-y-4">
               {demarvelProjectHighlights.map((project) => (
@@ -245,7 +245,7 @@ export default function AboutPage() {
                 One platform. Multiple services. A better daily experience.
               </h2>
               <p className="mb-8 text-white/80">
-                From interiors and architectural planning to infrastructure and landscaping, D Marvel
+                From interiors and architectural planning to infrastructure and landscaping, De Marvel Infra Solutions
                 Infra Solutions is designed to keep the project journey connected.
               </p>
               <Link

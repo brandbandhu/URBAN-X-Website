@@ -41,7 +41,7 @@ export default function ContactPage() {
   return (
     <SiteLayout>
       <PageBanner
-        title="Contact D Marvel Infra Solutions"
+        title="Contact De Marvel Infra Solutions"
         subtitle="From site development to the final detail, let’s design and transform your space."
         crumbs={[{ label: "Contact" }]}
         image={aboutImg}
@@ -68,7 +68,7 @@ export default function ContactPage() {
               {[
                 {
                   icon: MapPin,
-                  title: "D Marvel Infra Solutions Office",
+                  title: "De Marvel Infra Solutions Office",
                   lines: [demarvelContact.office, demarvelContact.highway, demarvelContact.studioSize],
                 },
                 {
@@ -182,7 +182,7 @@ export default function ContactPage() {
                 <form onSubmit={onSubmit} className="space-y-5">
                   <h3 className="mb-2 text-2xl font-bold text-primary">Enquiry Form</h3>
                   <p className="text-sm text-muted-foreground">
-                    Tell us the service you need and we will connect you with the right D Marvel team.
+                    Tell us the service you need and we will connect you with the right De Marvel Infra Solutions team.
                   </p>
 
                   <div className="grid gap-4 sm:grid-cols-2">
@@ -305,7 +305,7 @@ export default function ContactPage() {
               </div>
               <div className="relative min-h-[220px] flex-1 sm:min-h-[260px]">
                 <iframe
-                  title="D Marvel Infra Solutions location map"
+                  title="De Marvel Infra Solutions location map"
                   src={mapEmbedSrc}
                   className="absolute inset-0 h-full w-full border-0"
                   loading="lazy"

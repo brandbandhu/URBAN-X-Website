@@ -75,9 +75,9 @@ export default function ProjectPage({ projectSlug }: { projectSlug: string }) {
   return (
     <SiteLayout
       seo={{
-        title: `${project.title} | D Marvel Infra Solutions`,
+        title: `${project.title} | De Marvel Infra Solutions`,
         description:
-          project.description ?? `${project.title} project record by D Marvel Infra Solutions.`,
+          project.description ?? `${project.title} project record by De Marvel Infra Solutions.`,
       }}
     >
       <PageBanner

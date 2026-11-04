@@ -213,14 +213,14 @@ export const aishwaryaHeightData = {
 } satisfies ServicePageData;
 
 export const deMarvelFurnishingsData = {
-  companyName: "D Marvel Infra Solutions",
+  companyName: "De Marvel Infra Solutions",
   accentLabel: "Interior Experience for All Places",
   tagline:
     "Modern, functional and aesthetic interior solutions for homes, offices, healthcare spaces, schools and colleges.",
   detailBasePath: "/de-marvel-furnishings",
   banner: marble,
   intro:
-    "D Marvel Infra Solutions transforms spaces with modern, functional and beautifully resolved interiors designed by professionals with more than 10 years of experience and over 10 lakh square feet of completed work.",
+    "De Marvel Infra Solutions transforms spaces with modern, functional and beautifully resolved interiors designed by professionals with more than 10 years of experience and over 10 lakh square feet of completed work.",
   about: [
     "We combine creativity with practical planning to deliver spaces that reflect your personality, purpose and budget.",
     "Our work spans homes, offices, healthcare spaces and institutions, with a strong focus on mood boards, colour themes and complete furnishing solutions.",
