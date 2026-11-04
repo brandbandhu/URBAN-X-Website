@@ -2,7 +2,7 @@ import { BrandLogo } from "@/components/site/BrandLogo";
 import { Link } from "@/components/site/AppLink";
 import { demarvelBrandCards } from "@/lib/siteContent";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -16,6 +16,32 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [drop, setDrop] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setOpen(false);
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", closeOnEscape);
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+      desktop.removeEventListener("change", closeOnDesktop);
+    };
+  }, [open]);
 
   useEffect(() => {
     let rafId = 0;
@@ -113,10 +139,12 @@ export function Header() {
         </nav>
 
         <button
+          ref={menuButtonRef}
           type="button"
           aria-expanded={open}
+          aria-controls="mobile-navigation"
           aria-label={open ? "Close menu" : "Open menu"}
-          className="shrink-0 rounded-md p-2 text-foreground transition-colors hover:bg-secondary lg:hidden"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-foreground transition-colors hover:bg-secondary lg:hidden"
           onClick={() => setOpen((current) => !current)}
         >
           {open ? <X /> : <Menu />}
@@ -124,7 +152,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="max-h-[calc(100svh-4rem)] overflow-y-auto border-t border-border bg-background shadow-card-luxe animate-fade-in lg:hidden sm:max-h-[calc(100svh-5rem)]">
+        <nav id="mobile-navigation" aria-label="Mobile navigation" className="absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-border bg-background pb-[env(safe-area-inset-bottom)] shadow-card-luxe animate-fade-in sm:max-h-[calc(100dvh-5rem)] lg:hidden">
           <div className="container-x flex flex-col gap-1 py-4">
             {nav.map((item) => (
               <Link
@@ -158,7 +186,7 @@ export function Header() {
               Get a Quote
             </Link>
           </div>
-        </div>
+        </nav>
       )}
     </header>
   );

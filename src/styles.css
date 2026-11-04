@@ -101,6 +101,7 @@
   }
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
   body {
     background-color: var(--color-background);
@@ -203,10 +204,6 @@
       transform 0.35s ease,
       box-shadow 0.35s ease;
   }
-  .hover-lift:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-luxe);
-  }
 
   .gold-underline {
     position: relative;
@@ -223,7 +220,18 @@
   }
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-luxe);
+  }
+}
+
 @media (min-width: 640px) {
+  html {
+    scroll-padding-top: 6rem;
+  }
+
   .container-x {
     padding-inline: 1.25rem;
   }
@@ -244,6 +252,12 @@
   h3,
   h4 {
     overflow-wrap: anywhere;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 1rem;
   }
 }
 

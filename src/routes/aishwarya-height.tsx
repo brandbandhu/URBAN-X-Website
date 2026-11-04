@@ -312,7 +312,7 @@ export default function AishwaryaHeightPage() {
                 <img
                   src={photo.src}
                   alt={photo.alt}
-                  className="h-[28rem] w-full object-cover object-center transition-transform duration-700 group-hover:scale-105 md:h-[36rem]"
+                  className="h-auto w-full transition-transform duration-700 group-hover:scale-105 md:h-[36rem] md:object-cover md:object-center"
                   loading="lazy"
                   decoding="async"
                 />

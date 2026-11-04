@@ -71,7 +71,7 @@ export function ActiveBrandsSection({
                 <div className="absolute left-4 top-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-gold">
                   <brand.icon className="h-6 w-6 text-primary" />
                 </div>
-                <div className="absolute bottom-4 left-5 text-white">
+                <div className="absolute inset-x-5 bottom-4 text-white">
                   <div className="text-[10px] uppercase tracking-[0.3em] text-gold">
                     {brand.tagline}
                   </div>

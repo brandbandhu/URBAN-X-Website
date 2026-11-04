@@ -5,7 +5,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="mt-16 bg-navy pt-14 pb-8 text-white/85 sm:mt-24 sm:pt-20">
+    <footer className="mt-16 bg-navy pt-14 pb-[calc(6rem+env(safe-area-inset-bottom))] text-white/85 sm:mt-24 sm:pt-20 md:pb-8">
       <div className="container-x grid gap-8 md:grid-cols-2 md:gap-12 lg:grid-cols-4">
         <div>
           <BrandLogo variant="full" className="mb-5 max-w-[11rem] rounded-md bg-white p-3" imageClassName="max-h-[7.5rem]" />

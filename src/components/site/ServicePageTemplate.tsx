@@ -92,7 +92,7 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
               decoding="async"
               fetchPriority="low"
             />
-            <div className="absolute -bottom-6 -left-6 bg-gradient-gold p-6 rounded-xl shadow-luxe text-primary max-w-[220px] hidden md:block">
+            <div className="absolute -bottom-6 left-4 bg-gradient-gold p-6 rounded-xl shadow-luxe text-primary max-w-[220px] hidden md:block lg:-left-6">
               <div className="text-3xl font-bold">15+</div>
               <div className="text-xs uppercase tracking-wider mt-1">
                 Years of trusted service excellence

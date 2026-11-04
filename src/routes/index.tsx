@@ -45,11 +45,8 @@ import {
   type ReactNode,
 } from "react";
 import aboutImg from "@/assets/about-building-enhanced.png";
-import constructionSite from "@/assets/construction-site.jpg";
-import gardening from "@/assets/service-gardening.jpg";
+import landscapingCampus from "@/assets/landscaping-campus.jpeg";
 import marble from "@/assets/service-marble.jpg";
-import rental from "@/assets/service-rental.jpg";
-import hero2 from "@/assets/hero-2.jpg";
 import foodHeroImage from "@/assets/food-banner.jpeg";
 import housingHeroImage from "@/assets/new-royal-services/new-royal-services-featured.png";
 import interiorHeroImage from "@/assets/hero-luxury-living-room.png";
@@ -80,7 +77,7 @@ const heroSlides = [
     eyebrow: "Food Delivery",
     title: "Fresh meals, large-scale catering and cloud kitchen support.",
     description:
-      "Serving more than 2,000 customers every day with menus built for taste, nutrition, hygiene and timely delivery.",
+      "Serving more than 2,500 customers every day with menus built for taste, nutrition, hygiene and timely delivery.",
   },
 ];
 
@@ -131,7 +128,7 @@ function StackRail({ children, className = "" }: { children: ReactNode; classNam
   const cards = Children.toArray(children);
 
   return (
-    <div className={cn("relative pb-16 md:pb-32", className)}>
+    <div className={cn("relative space-y-6 lg:space-y-0 lg:pb-32", className)}>
       {cards.map((card, index) => {
         const stackStyle = {
           "--stack-top": `calc(5.75rem + ${Math.min(index, 4) * 0.45}rem)`,
@@ -143,8 +140,8 @@ function StackRail({ children, className = "" }: { children: ReactNode; classNam
           <div
             key={index}
             className={cn(
-              "sticky top-[var(--stack-top)] rounded-[1.5rem] border border-border bg-background p-4 shadow-luxe sm:p-5 md:top-[var(--stack-top-md)] md:rounded-[2rem] md:p-6",
-              index > 0 && "-mt-6 md:-mt-14",
+              "rounded-[1.5rem] border border-border bg-background shadow-luxe sm:p-5 lg:sticky lg:top-[var(--stack-top-md)] lg:rounded-[2rem] lg:p-6",
+              index > 0 && "lg:-mt-14",
             )}
             style={stackStyle}
           >
@@ -185,6 +182,7 @@ type InteriorStackCard = {
 
 export default function HomePage() {
   const [active, setActive] = useState(0);
+  const [heroPaused, setHeroPaused] = useState(false);
   const slideDurationMs = 6500;
   const activeSlide = heroSlides[active];
   const interiorStackCards: InteriorStackCard[] = [
@@ -221,6 +219,8 @@ export default function HomePage() {
   ];
 
   useEffect(() => {
+    if (heroPaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     const timeoutId = window.setTimeout(() => {
       setActive((current) => (current + 1) % heroSlides.length);
     }, slideDurationMs);
@@ -228,12 +228,23 @@ export default function HomePage() {
     return () => {
       window.clearTimeout(timeoutId);
     };
-  }, [active]);
+  }, [active, heroPaused]);
 
   return (
     <SiteLayout>
       <section className="relative pb-4 sm:pb-16 md:pb-20">
-        <div className="relative min-h-[calc(100svh-4rem)] overflow-hidden sm:min-h-[min(100svh-5rem,760px)]">
+        <div
+          className="relative min-h-[max(36rem,calc(100svh-4rem))] overflow-hidden sm:min-h-[min(100svh-5rem,760px)]"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Featured services"
+          onMouseEnter={() => setHeroPaused(true)}
+          onMouseLeave={() => setHeroPaused(false)}
+          onFocusCapture={() => setHeroPaused(true)}
+          onBlurCapture={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget)) setHeroPaused(false);
+          }}
+        >
           <div
             key={activeSlide.title}
             className="absolute inset-0 animate-fade-in bg-[oklch(0.18_0.05_255)]"
@@ -257,8 +268,8 @@ export default function HomePage() {
 
           <div
             className={cn(
-              "relative flex min-h-[calc(100svh-4rem)] items-center py-8 sm:min-h-[min(100svh-5rem,760px)] sm:py-14 lg:py-10",
-              activeSlide.designedBackground && "items-end pb-10 sm:pb-14 md:pb-16",
+              "relative flex min-h-[max(36rem,calc(100svh-4rem))] items-center pt-12 pb-24 sm:min-h-[min(100svh-5rem,760px)] sm:pt-14 sm:pb-24 lg:pt-10",
+              activeSlide.designedBackground && "md:items-end",
             )}
           >
             <div className="container-x text-white">
@@ -267,12 +278,12 @@ export default function HomePage() {
                 className={cn(
                   "max-w-5xl animate-fade-up",
                   activeSlide.designedBackground &&
-                    "max-w-3xl rounded-[1.5rem] border border-white/10 bg-[oklch(0.12_0.04_255/0.66)] p-6 shadow-2xl backdrop-blur-[2px] sm:rounded-[2rem] sm:p-8 md:max-w-2xl md:border-0 md:bg-transparent md:p-0 md:shadow-none md:backdrop-blur-0",
+                    "max-w-3xl md:max-w-2xl",
                 )}
               >
                 {activeSlide.designedBackground ? (
                   <>
-                    <h1 className="mb-5 max-w-2xl text-[2.45rem] font-semibold leading-[0.98] tracking-[-0.035em] sm:mb-6 sm:text-5xl md:text-6xl lg:text-7xl">
+                    <h1 className="mb-5 max-w-2xl text-[clamp(2rem,9vw,3rem)] font-semibold leading-[1.05] tracking-[-0.035em] sm:mb-6 sm:text-5xl md:text-6xl lg:text-7xl">
                       <span className="block">Designing spaces.</span>
                       <span className="block">Building <em className="text-gold not-italic">possibilities.</em></span>
                     </h1>
@@ -289,7 +300,7 @@ export default function HomePage() {
                       <Sparkles className="h-3.5 w-3.5" />
                       {activeSlide.eyebrow}
                     </div>
-                    <h1 className="mb-3 max-w-3xl text-[1.875rem] font-bold leading-[1.04] sm:mb-6 sm:text-4xl md:text-6xl lg:text-7xl">
+                    <h1 className="mb-4 max-w-3xl text-[clamp(2rem,8vw,3rem)] font-bold leading-[1.08] sm:mb-6 sm:text-4xl md:text-6xl lg:text-7xl">
                       {activeSlide.title}
                     </h1>
                     <p className="mb-5 max-w-2xl text-[0.9rem] leading-[1.45] text-white/85 sm:mb-9 sm:text-lg md:text-xl">
@@ -297,31 +308,45 @@ export default function HomePage() {
                     </p>
                   </>
                 )}
-                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+                <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:gap-4">
                   <Link
                     to="/contact"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-gold px-7 py-2.5 font-semibold text-primary hover-lift sm:w-auto sm:py-3.5"
+                    className="col-span-2 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-gradient-gold px-3 py-3 text-center text-sm font-semibold text-primary hover-lift sm:w-auto sm:px-7 sm:py-3.5 sm:text-base"
                   >
-                    Contact De Marvel Infra Solutions <ArrowRight className="h-4 w-4" />
+                    Contact De Marvel Infra Solutions <ArrowRight className="h-4 w-4 shrink-0" />
                   </Link>
                   <Link
                     to="/services"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-md border-2 border-white/40 px-7 py-2.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary sm:w-auto sm:py-3.5"
+                    className="inline-flex min-h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-md border-2 border-white/40 px-2 py-3 text-[13px] font-semibold text-white transition-colors hover:bg-white hover:text-primary sm:w-auto sm:px-7 sm:py-3.5 sm:text-base"
                   >
-                    View Services <ArrowRight className="h-4 w-4" />
+                    View Services <ArrowRight className="h-4 w-4 shrink-0" />
                   </Link>
                   <a
                     href={demarvelContact.whatsappHref}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#25D366] px-7 py-2.5 font-semibold text-white hover-lift sm:w-auto sm:py-3.5"
+                    className="inline-flex min-h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-md bg-[#25D366] px-2 py-3 text-[13px] font-semibold text-white hover-lift sm:w-auto sm:px-7 sm:py-3.5 sm:text-base"
                   >
-                    <WhatsAppIcon className="h-4 w-4" />
+                    <WhatsAppIcon className="h-4 w-4 shrink-0" />
                     WhatsApp Now
                   </a>
                 </div>
               </div>
             </div>
+          </div>
+          <div className="absolute inset-x-0 bottom-5 flex justify-center gap-1" role="group" aria-label="Choose a featured service">
+            {heroSlides.map((slide, index) => (
+              <button
+                key={slide.title}
+                type="button"
+                aria-label={`Show ${slide.eyebrow}`}
+                aria-pressed={active === index}
+                onClick={() => setActive(index)}
+                className="flex h-11 w-11 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              >
+                <span className={cn("h-2 rounded-full transition-all", active === index ? "w-6 bg-gold" : "w-2 bg-white/60")} />
+              </button>
+            ))}
           </div>
         </div>
       </section>
@@ -337,7 +362,7 @@ export default function HomePage() {
               decoding="async"
               fetchPriority="low"
             />
-            <div className="absolute -bottom-8 -right-6 hidden rounded-2xl bg-gradient-gold p-7 text-primary shadow-luxe md:block">
+            <div className="absolute -bottom-8 right-4 hidden rounded-2xl bg-gradient-gold p-7 text-primary shadow-luxe md:block lg:-right-6">
               <div className="text-5xl font-bold">10+</div>
               <div className="mt-1 text-xs font-semibold uppercase tracking-[0.2em]">
                 Years of expertise
@@ -430,7 +455,7 @@ export default function HomePage() {
 
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={hero2} alt="De Marvel Infra Solutions residential spaces" />
+          <ServiceMedia src="/project-photos/shree-angan-hostel/shree-angan-hostel-01.jpeg" alt="Shree Angan Hostel residential building project" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
@@ -494,7 +519,7 @@ export default function HomePage() {
               <SectionHeading
                 align="left"
                 eyebrow="De Marvel Infra Solutions: Food Delivery Services"
-                title="Fresh meals for more than 2,000 customers every day"
+                title="Fresh meals for more than 2,500 customers every day"
                 subtitle="Freshly prepared meals, special dietary options and large-scale catering handled with hygiene, taste and timely delivery."
                 titleClassName="max-w-2xl text-primary"
                 subtitleClassName="max-w-xl text-muted-foreground"
@@ -627,7 +652,7 @@ export default function HomePage() {
 
       <section className="bg-secondary/40 py-20">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={rental} alt="De Marvel Infra Solutions events and construction" />
+          <ServiceMedia src="/project-photos/vip-events/vip-events-01.jpeg" alt="VIP event from the supplied project album" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
@@ -712,7 +737,7 @@ export default function HomePage() {
 
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={constructionSite} alt="Building construction site with scaffolding" />
+          <ServiceMedia src="/aishwarya-realtors/aishwarya-realtors.jpg" alt="Aishwarya Realtors building construction project" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
@@ -810,7 +835,7 @@ export default function HomePage() {
 
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={gardening} alt="De Marvel Infra Solutions landscaping" />
+          <ServiceMedia src={landscapingCampus} alt="Landscaped campus with lawns, palm trees and a domed building" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
@@ -897,7 +922,7 @@ export default function HomePage() {
 
       <section className="bg-secondary/40 py-20">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={hero2} alt="De Marvel Infra Solutions IT solutions" />
+          <ServiceMedia src="/project-photos/isbj-studio/isbj-studio-01.jpeg" alt="Studio project with lighting and media production equipment" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">

@@ -436,7 +436,7 @@ export const demarvelHousingDetails = {
 
 export const demarvelFoodDetails = {
   summary:
-    "De Marvel Infra Solutions serves freshly prepared meals to more than 2,000 customers every day with a strong focus on taste, nutrition, hygiene and timely delivery.",
+    "De Marvel Infra Solutions serves freshly prepared meals to more than 2,500 customers every day with a strong focus on taste, nutrition, hygiene and timely delivery.",
   menu: [
     "Indian cuisine, including authentic Maharashtrian flavours",
     "Continental dishes",
