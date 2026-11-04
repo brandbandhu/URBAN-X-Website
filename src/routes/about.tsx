@@ -13,7 +13,7 @@ import {
   demarvelWhyChoose,
 } from "@/lib/siteContent";
 import { ArrowRight, Compass, Mail, Phone, Route, Sparkles, Star } from "lucide-react";
-import aboutImg from "@/assets/about-demarvel.jpg";
+import aboutImg from "@/assets/about-building-enhanced.png";
 
 const focusCards = demarvelServiceAreas.slice(0, 4);
 

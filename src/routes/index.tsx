@@ -44,7 +44,7 @@ import {
   type CSSProperties,
   type ReactNode,
 } from "react";
-import aboutImg from "@/assets/about-demarvel.jpg";
+import aboutImg from "@/assets/about-building-enhanced.png";
 import constructionSite from "@/assets/construction-site.jpg";
 import gardening from "@/assets/service-gardening.jpg";
 import interiorDesign from "@/assets/interior-design.jpg";

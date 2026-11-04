@@ -320,6 +320,14 @@ export const demarvelBrandCards: BrandCard[] = [
       "Trusted food service for educational institutions, large-scale daily operations and hygienic kitchen management.",
     to: "/the-hungry-scholars",
   },
+  {
+    icon: Briefcase,
+    label: "SGM Services",
+    tagline: "Commercial Offices & Guest Houses",
+    description:
+      "Commercial interior work represented as a named service group in the client brief.",
+    to: "/sgm-services",
+  },
 ];
 
 export const demarvelIndustries = [

@@ -10,6 +10,7 @@ const NewRoyalServicesPage = lazy(() => import("./routes/new-royal-services"));
 const AishwaryaHeightPage = lazy(() => import("./routes/aishwarya-height"));
 const DeMarvelFurnishingsPage = lazy(() => import("./routes/de-marvel-furnishings"));
 const TheHungryScholarsPage = lazy(() => import("./routes/royal-foods"));
+const SgmServicesPage = lazy(() => import("./routes/sgm-services"));
 const BrandServiceDetailPage = lazy(() => import("./routes/brand-service-detail"));
 
 function RouteFallback() {
@@ -88,6 +89,8 @@ export default function App() {
             return <AboutPage />;
           case "/services":
             return <ServicesPage />;
+          case "/sgm-services":
+            return <SgmServicesPage />;
           case "/portfolio":
             return <PortfolioPage />;
           case "/contact":

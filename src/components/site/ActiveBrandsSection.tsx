@@ -5,8 +5,9 @@ import { ArrowRight } from "lucide-react";
 import gardening from "@/assets/service-gardening.jpg";
 import buildingExterior from "@/assets/aishwarya-heights/building-exterior.jpeg";
 import hungryScholar from "@/assets/the-hungry-scholars/the-hungry-scholar.jpeg";
+import marble from "@/assets/service-marble.jpg";
 
-const brandImages = [gardening, buildingExterior, hungryScholar] as const;
+const brandImages = [gardening, buildingExterior, hungryScholar, marble] as const;
 
 type ActiveBrandsSectionProps = {
   eyebrow: string;

@@ -81,7 +81,7 @@ const vipEventsGallery = projectPhotoGallery("vip-events", "VIP Events", 7);
 const vitthalKrupaGallery = projectPhotoGallery("vitthal-krupa-hostel", "Vitthal Krupa Hostel", 6).slice(1);
 const classroomsGallery = projectPhotoGallery("classrooms", "Classrooms", 9);
 const guestHouseGallery = projectPhotoGallery("guest-house", "Guest House", 4);
-const officeInteriorsGallery = projectPhotoGallery("isbj-studio", "Office Interiors", 4);
+const officeInteriorsGallery = projectPhotoGallery("isbj-studio", "Office Studio", 4);
 const libraryGallery = projectPhotoGallery("library", "Library", 12);
 const naliniPrideGallery = projectPhotoGallery("nalini-pride-hostel", "Nalini Pride Hostel", 5);
 
@@ -115,50 +115,6 @@ export const projects: Project[] = [
       "Project photographs and design drawings where available",
     ],
     status: "completed",
-  },
-  {
-    id: "suryajyoti-services",
-    slug: "suryajyoti-services",
-    title: "Suryajyoti Services",
-    primaryCategory: portfolioCategories.infrastructure,
-    categories: ["infrastructure", "institutional"],
-    description:
-      "Canteen development and mess facilities represented as facilities infrastructure work.",
-    scopeOfWork: ["Canteen development", "Mess facilities"],
-    status: "completed",
-    thumbnail: "/suryajyoti-services/DSC_4709.JPG",
-    gallery: [
-      {
-        src: "/suryajyoti-services/DSC_4659.JPG",
-        alt: "Suryajyoti Services institutional campus classroom",
-        type: "photo",
-        caption: "Verified project photograph",
-      },
-      {
-        src: "/suryajyoti-services/DSC_4680.JPG",
-        alt: "Suryajyoti Services institutional building",
-        type: "photo",
-        caption: "Verified project photograph",
-      },
-      {
-        src: "/suryajyoti-services/DSC_4709.JPG",
-        alt: "Suryajyoti Services mess dining hall",
-        type: "photo",
-        caption: "Verified mess facility photograph",
-      },
-      {
-        src: "/suryajyoti-services/DSC_4711 copy.jpg",
-        alt: "Suryajyoti Services mess seating area",
-        type: "photo",
-        caption: "Verified mess facility photograph",
-      },
-      {
-        src: "/suryajyoti-services/DSC_4768.JPG",
-        alt: "Suryajyoti Services food serving counter",
-        type: "photo",
-        caption: "Verified mess facility photograph",
-      },
-    ],
   },
   {
     id: "raj-bungalows",
@@ -236,18 +192,6 @@ export const projects: Project[] = [
       "The available gallery is limited to the supplied Aishwarya Heights exterior photographs.",
   },
   {
-    id: "sgm-services",
-    slug: "sgm-services",
-    title: "SGM Services",
-    primaryCategory: portfolioCategories.commercial,
-    categories: ["commercial", "interior-design"],
-    description:
-      "Commercial interior work represented as a named project group in the client brief.",
-    scopeOfWork: ["Relevant completed project work where verified"],
-    confirmationNote:
-      "Project photographs and further scope require client confirmation before publication.",
-  },
-  {
     id: "com-laboratories",
     slug: "com-laboratories",
     title: "COM Laboratories",
@@ -290,24 +234,6 @@ export const projects: Project[] = [
         caption: "Verified library facility photograph",
       },
     ],
-  },
-  {
-    id: "new-hostel-building",
-    slug: "new-hostel-building",
-    title: "New Hostel Building",
-    primaryCategory: portfolioCategories.institutional,
-    categories: ["institutional", "infrastructure", "architectural"],
-    description:
-      "Hostel building development represented through the available design and planning material.",
-    scopeOfWork: [
-      "Architectural drawings",
-      "Design images",
-      "Proposed layouts",
-      "Project development details",
-    ],
-    status: "proposed",
-    confirmationNote:
-      "Current stage is presented as proposed/design material; completion has not been claimed.",
   },
   {
     id: "new-royal-services",
@@ -421,7 +347,7 @@ export const projects: Project[] = [
   {
     id: "office-interiors",
     slug: "office-interiors",
-    title: "Office Interiors",
+    title: "Office Studio",
     primaryCategory: portfolioCategories.commercial,
     categories: ["commercial", "interior-design", "architectural"],
     description: "Interior site photographs showing completed studio and workplace spaces.",
