@@ -104,7 +104,7 @@ const vipEventsGallery = projectPhotoGallery("vip-events", "VIP Events", 7);
 const vitthalKrupaGallery = projectPhotoGallery("vitthal-krupa-hostel", "Vitthal Krupa Hostel", 6).slice(1);
 const classroomsGallery = projectPhotoGallery("classrooms", "Classrooms", 9);
 const guestHouseGallery = projectPhotoGallery("guest-house", "Guest House", 4);
-const officeInteriorsGallery = projectPhotoGallery("isbj-studio", "Office Studio", 4);
+const officeInteriorsGallery = projectPhotoGallery("isbj-studio", "Studio", 4);
 const libraryGallery = projectPhotoGallery("library", "Library", 12);
 const naliniPrideGallery = projectPhotoGallery("nalini-pride-hostel", "Nalini Pride Hostel", 5);
 
@@ -334,7 +334,7 @@ export const projects: Project[] = [
   {
     id: "office-interiors",
     slug: "office-interiors",
-    title: "Office Studio",
+    title: "Studio",
     primaryCategory: portfolioCategories.commercial,
     categories: ["commercial", "interior-design", "architectural"],
     description: "Interior site photographs showing completed studio and workplace spaces.",

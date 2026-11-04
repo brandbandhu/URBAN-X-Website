@@ -47,31 +47,35 @@ import {
 import aboutImg from "@/assets/about-building-enhanced.png";
 import constructionSite from "@/assets/construction-site.jpg";
 import gardening from "@/assets/service-gardening.jpg";
-import interiorDesign from "@/assets/interior-design.jpg";
 import marble from "@/assets/service-marble.jpg";
 import rental from "@/assets/service-rental.jpg";
 import hero2 from "@/assets/hero-2.jpg";
+import foodHeroImage from "@/assets/food-banner.jpeg";
+import housingHeroImage from "@/assets/new-royal-services/new-royal-services-featured.png";
 
 const foodDeliveryImage =
   "/project-photos/royal-foods-hospitality-services/royal-foods-hospitality-services-01.jpeg";
 
 const heroSlides = [
   {
-    img: interiorDesign,
+    img: "/de-marvel-furnishings/interior-living-01.png",
+    designedBackground: true,
     eyebrow: "De marvel infra solutions",
     title: "Designing Spaces. Building Possibilities.",
     description:
       "From site development and architectural planning to interiors, automation, landscaping, furniture and turnkey execution - one integrated design studio for the complete journey.",
   },
   {
-    img: hero2,
+    img: housingHeroImage,
+    designedBackground: false,
     eyebrow: "Smart Housing",
     title: "50+ projects delivered across Pune.",
     description:
       "Thoughtful residential, commercial and institutional spaces shaped around comfort and dependable management.",
   },
   {
-    img: foodDeliveryImage,
+    img: foodHeroImage,
+    designedBackground: false,
     eyebrow: "Food Delivery",
     title: "Fresh meals, large-scale catering and cloud kitchen support.",
     description:
@@ -250,19 +254,48 @@ export default function HomePage() {
             )}
           </div>
 
-          <div className="relative flex min-h-[calc(100svh-4rem)] items-center py-8 sm:min-h-[min(100svh-5rem,760px)] sm:py-14 lg:py-10">
+          <div
+            className={cn(
+              "relative flex min-h-[calc(100svh-4rem)] items-center py-8 sm:min-h-[min(100svh-5rem,760px)] sm:py-14 lg:py-10",
+              activeSlide.designedBackground && "items-end pb-10 sm:pb-14 md:pb-16",
+            )}
+          >
             <div className="container-x text-white">
-              <div key={active} className="max-w-5xl animate-fade-up">
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/15 px-3.5 py-1.5 text-[11px] font-semibold normal-case tracking-[0.25em] text-gold sm:mb-6 sm:px-4 sm:text-xs">
-                  <Sparkles className="h-3.5 w-3.5" />
-                  {activeSlide.eyebrow}
-                </div>
-                <h1 className="mb-3 max-w-3xl text-[1.875rem] font-bold leading-[1.04] sm:mb-6 sm:text-4xl md:text-6xl lg:text-7xl">
-                  {activeSlide.title}
-                </h1>
-                <p className="mb-5 max-w-2xl text-[0.9rem] leading-[1.45] text-white/85 sm:mb-9 sm:text-lg md:text-xl">
-                  {activeSlide.description}
-                </p>
+              <div
+                key={active}
+                className={cn(
+                  "max-w-5xl animate-fade-up",
+                  activeSlide.designedBackground &&
+                    "max-w-3xl rounded-[1.5rem] border border-white/10 bg-[oklch(0.12_0.04_255/0.66)] p-6 shadow-2xl backdrop-blur-[2px] sm:rounded-[2rem] sm:p-8 md:max-w-2xl md:border-0 md:bg-transparent md:p-0 md:shadow-none md:backdrop-blur-0",
+                )}
+              >
+                {activeSlide.designedBackground ? (
+                  <>
+                    <h1 className="mb-5 max-w-2xl text-[2.45rem] font-semibold leading-[0.98] tracking-[-0.035em] sm:mb-6 sm:text-5xl md:text-6xl lg:text-7xl">
+                      <span className="block">Designing spaces.</span>
+                      <span className="block">Building <em className="text-gold not-italic">possibilities.</em></span>
+                    </h1>
+                    <div className="mb-5 h-1 w-20 rounded-full bg-gradient-gold sm:mb-7" />
+                    <p className="mb-6 max-w-xl text-[0.92rem] leading-[1.55] text-white/85 sm:mb-9 sm:text-lg md:text-xl">
+                      From site development and architectural planning to interiors, automation,
+                      landscaping, furniture and turnkey execution - one integrated design studio
+                      for the complete journey.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/15 px-3.5 py-1.5 text-[11px] font-semibold normal-case tracking-[0.25em] text-gold sm:mb-6 sm:px-4 sm:text-xs">
+                      <Sparkles className="h-3.5 w-3.5" />
+                      {activeSlide.eyebrow}
+                    </div>
+                    <h1 className="mb-3 max-w-3xl text-[1.875rem] font-bold leading-[1.04] sm:mb-6 sm:text-4xl md:text-6xl lg:text-7xl">
+                      {activeSlide.title}
+                    </h1>
+                    <p className="mb-5 max-w-2xl text-[0.9rem] leading-[1.45] text-white/85 sm:mb-9 sm:text-lg md:text-xl">
+                      {activeSlide.description}
+                    </p>
+                  </>
+                )}
                 <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                   <Link
                     to="/contact"
