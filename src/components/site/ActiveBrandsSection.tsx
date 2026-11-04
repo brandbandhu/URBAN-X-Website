@@ -56,7 +56,7 @@ export function ActiveBrandsSection({
               key={brand.to}
               to={brand.to}
               aria-label={`Open ${brand.label} brand details`}
-              className="group overflow-hidden rounded-2xl bg-card shadow-card-luxe hover-lift"
+              className="group flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-card-luxe hover-lift"
             >
               <div className="relative h-52 overflow-hidden sm:h-60">
                 <img
@@ -79,11 +79,11 @@ export function ActiveBrandsSection({
                 </div>
               </div>
 
-              <div className="p-5 sm:p-6">
-                <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
+                <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {brand.description}
                 </p>
-                <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors group-hover:text-gold">
+                <div className="mt-auto inline-flex items-center gap-2 whitespace-nowrap text-sm font-semibold text-primary transition-colors group-hover:text-gold">
                   View Details <ArrowRight className="h-4 w-4" />
                 </div>
               </div>
