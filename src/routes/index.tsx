@@ -52,13 +52,14 @@ import rental from "@/assets/service-rental.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import foodHeroImage from "@/assets/food-banner.jpeg";
 import housingHeroImage from "@/assets/new-royal-services/new-royal-services-featured.png";
+import interiorHeroImage from "@/assets/hero-luxury-living-room.png";
 
 const foodDeliveryImage =
   "/project-photos/royal-foods-hospitality-services/royal-foods-hospitality-services-01.jpeg";
 
 const heroSlides = [
   {
-    img: "/de-marvel-furnishings/interior-living-01.png",
+    img: interiorHeroImage,
     designedBackground: true,
     eyebrow: "De marvel infra solutions",
     title: "Designing Spaces. Building Possibilities.",
