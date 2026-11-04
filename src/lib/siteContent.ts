@@ -306,7 +306,7 @@ export const demarvelBrandCards: BrandCard[] = [
   },
   {
     icon: Construction,
-    label: "Aishwarya Realtors",
+    label: "Aishwarya Heights",
     tagline: "2 BHK & 3 BHK Homes",
     description:
       "Inspired living in Kothrud with thoughtfully designed homes, modern amenities and project support from Marvel Holdings LLP.",
@@ -370,7 +370,7 @@ export const demarvelWhyChoose: IconCard[] = [
 export const demarvelProjectHighlights = [
   "Aishwarya Purva",
   "Aishwarya Heights",
-  "New Hostel Tower - Aishwarya Realtors",
+  "New Hostel Tower - Aishwarya Heights",
   "SRM Services",
   "Surya Jyoti Services",
   "Royal Foods",
@@ -497,7 +497,7 @@ export const demarvelInteriorDetails = {
     "New Royal Services",
     "The Hungry Scholars",
     "De Marvel Infra Solutions",
-    "Aishwarya Realtors",
+    "Aishwarya Heights",
   ],
   note: "Our specialty lies in mood board design and colour theme development, ranging from contemporary and modern to neoclassical interiors.",
 };
@@ -535,7 +535,7 @@ export const demarvelConstructionDetails = {
     "Modern glass facade and cladding for corporate spaces",
   ],
   projects: [
-    "Aishwarya Realtors",
+    "Aishwarya Heights",
     "Aishwarya Poorva",
     "Aishwarya Hostels",
     "Bungalows and many others",

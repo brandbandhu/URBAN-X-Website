@@ -22,13 +22,13 @@ import {
   Wind,
   MonitorSmartphone,
 } from "lucide-react";
-import gardening from "@/assets/service-gardening.jpg";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import marble from "@/assets/service-marble.jpg";
 import rental from "@/assets/service-rental.jpg";
 import { theHungryScholarsGallery } from "@/lib/theHungryScholarsGallery";
+import { newRoyalServicesGallery } from "@/lib/newRoyalServicesGallery";
 import {
   theHungryScholarsDirectorMessage,
   theHungryScholarsOperationalStrength,
@@ -56,7 +56,7 @@ export const newRoyalServicesData = {
   tagline:
     "Landscaping, outdoor design, interior designing, architecture and IT support for homes and businesses.",
   detailBasePath: "/new-royal-services",
-  banner: gardening,
+  banner: newRoyalServicesGallery[0],
   intro:
     "New Royal Services brings multi-discipline support for homes, institutions and workplaces - from landscaping and outdoor design to interiors, architecture and IT solutions.",
   about: [
@@ -120,18 +120,18 @@ export const newRoyalServicesData = {
       desc: "Supervision and feedback keep standards consistent over time.",
     },
   ],
-  gallery: [gardening, hero2, gardening],
+  gallery: [...newRoyalServicesGallery],
 } satisfies ServicePageData;
 
 export const aishwaryaHeightData = {
-  companyName: "Aishwarya Realtors",
+  companyName: "Aishwarya Heights",
   accentLabel: "Construction & Contracting",
   tagline:
     "End-to-end construction, project support and site equipment rental for residential, commercial and institutional work.",
   detailBasePath: "/aishwarya-height",
   banner: rental,
   intro:
-    "Aishwarya Realtors powers builders, contractors and developers with a complete construction ecosystem - from planning and execution to machinery, scaffolding and site support.",
+    "Aishwarya Heights brings together planning, execution and site support for a complete residential project experience.",
   about: [
     "Our team manages labour, budgeting, billing and detailed execution oversight so projects stay on schedule and on spec.",
     "We provide reliable equipment rental and site support for residential towers, commercial complexes, hospitals, institutions and more.",

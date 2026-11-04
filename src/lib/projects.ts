@@ -1,4 +1,4 @@
-import gardening from "@/assets/service-gardening.jpg";
+import { newRoyalServicesGallery } from "@/lib/newRoyalServicesGallery";
 
 export type ProjectStatus = "completed" | "ongoing" | "proposed";
 export type ProjectCategory =
@@ -63,6 +63,13 @@ const projectPhotoGallery = (slug: string, title: string, count: number) =>
     type: "photo" as const,
     caption: "Project photograph",
   }));
+
+const newRoyalProjectGallery = newRoyalServicesGallery.map((src, index) => ({
+  src,
+  alt: `New Royal Services project photograph ${index + 1}`,
+  type: "photo" as const,
+  caption: "Original New Royal Services photograph",
+}));
 
 const hungryScholarGallery = projectPhotoGallery("hungry-scholar-cafe", "Hungry Scholar Cafe", 12).slice(1);
 const rajBungalowGallery = projectPhotoGallery("raj-bungalow", "Raj Bungalow", 9);
@@ -156,7 +163,7 @@ export const projects: Project[] = [
   {
     id: "aishwarya-realtors",
     slug: "aishwarya-realtors",
-    title: "Aishwarya Realtors",
+    title: "Aishwarya Heights",
     primaryCategory: portfolioCategories.residential,
     categories: ["residential", "architectural"],
     description:
@@ -171,7 +178,7 @@ export const projects: Project[] = [
     gallery: [
       {
         src: "/aishwarya-realtors/aishwarya-realtors.jpg",
-        alt: "Aishwarya Realtors building site photograph",
+        alt: "Aishwarya Heights building site photograph",
         type: "photo",
         caption: "Verified project photograph",
       },
@@ -249,15 +256,8 @@ export const projects: Project[] = [
       "Other verified design or execution work",
     ],
     status: "completed",
-    thumbnail: gardening,
-    gallery: [
-      {
-        src: gardening,
-        alt: "New Royal Services landscaped outdoor space",
-        type: "photo",
-        caption: "Landscaping project photograph",
-      },
-    ],
+    thumbnail: newRoyalProjectGallery[0]?.src,
+    gallery: newRoyalProjectGallery,
     associatedOrganization: "New Royal Services",
   },
   {
