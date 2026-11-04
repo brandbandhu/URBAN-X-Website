@@ -346,12 +346,12 @@ export default function HomePage() {
   return (
     <SiteLayout>
       <section className="relative pb-4 sm:pb-16 md:pb-20">
-        <div className="relative overflow-hidden sm:min-h-[560px] md:min-h-[620px] lg:min-h-[680px]">
+        <div className="relative min-h-[calc(100svh-4rem)] overflow-hidden sm:min-h-[min(100svh-5rem,760px)]">
           <div key={activeSlide.title} className="absolute inset-0 animate-fade-in">
             <img
               src={activeSlide.img}
               alt=""
-              className="h-full w-full scale-105 object-cover object-[68%_center] sm:object-center"
+              className="h-full w-full object-cover object-[68%_center] sm:object-center"
               loading="eager"
               decoding="async"
               fetchPriority="high"
@@ -359,9 +359,9 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.18_0.05_255/0.94)] via-[oklch(0.18_0.05_255/0.72)] to-[oklch(0.18_0.05_255/0.28)]" />
           </div>
 
-          <div className="relative flex items-start pt-4 pb-8 sm:absolute sm:inset-0 sm:items-center sm:pt-20 sm:pb-20 md:items-center md:pt-0 md:pb-28 lg:items-start lg:pt-28 xl:pt-28">
+          <div className="relative flex min-h-[calc(100svh-4rem)] items-center py-8 sm:min-h-[min(100svh-5rem,760px)] sm:py-14 lg:py-10">
             <div className="container-x text-white">
-              <div key={active} className="max-w-4xl animate-fade-up">
+              <div key={active} className="max-w-5xl animate-fade-up">
                 <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/15 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-gold sm:mb-6 sm:px-4 sm:text-xs">
                   <Sparkles className="h-3.5 w-3.5" />
                   {activeSlide.eyebrow}
