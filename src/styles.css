@@ -92,6 +92,7 @@
 @layer base {
   * {
     border-color: var(--color-border);
+    min-width: 0;
   }
   html,
   body {
@@ -106,6 +107,7 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
   }
   img,
   picture,
@@ -121,6 +123,14 @@
   h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
+    overflow-wrap: anywhere;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    max-width: 100%;
   }
 }
 
@@ -223,6 +233,10 @@
   html,
   body {
     min-width: 320px;
+  }
+
+  .container-x {
+    padding-inline: 1rem;
   }
 
   h1,

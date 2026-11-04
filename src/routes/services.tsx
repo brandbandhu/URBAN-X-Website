@@ -25,7 +25,7 @@ export default function ServicesPage() {
         image={aboutImg}
       />
 
-      <section id="services" className="py-20 md:py-28">
+      <section id="services" className="py-14 md:py-28">
         <div className="container-x">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -58,7 +58,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-secondary/40 py-20 md:py-28">
+      <section className="bg-secondary/40 py-14 md:py-28">
         <div className="container-x">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -94,9 +94,9 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="products" className="py-20 md:py-28">
+      <section id="products" className="py-14 md:py-28">
         <div className="container-x grid gap-6 lg:grid-cols-2">
-          <div className="rounded-3xl bg-primary p-8 text-white shadow-luxe md:p-10">
+          <div className="rounded-3xl bg-primary p-6 text-white shadow-luxe sm:p-8 md:p-10">
             <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
               Sofa Making Studio
             </div>
@@ -114,7 +114,7 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="rounded-3xl bg-card p-8 shadow-luxe md:p-10">
+          <div className="rounded-3xl bg-card p-6 shadow-luxe sm:p-8 md:p-10">
             <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
               Products & Lifestyle Details
             </div>
@@ -137,7 +137,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="projects" className="bg-secondary/40 py-20 md:py-28">
+      <section id="projects" className="bg-secondary/40 py-14 md:py-28">
         <div className="container-x">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -165,11 +165,26 @@ export default function ServicesPage() {
 
           <div id="gallery" className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
             {[
-              ["/de-marvel-furnishings/interior-bedroom-01.png", "Bedroom interior"],
-              ["/de-marvel-furnishings/interior-study-01.png", "Study and storage interior"],
-              ["/de-marvel-furnishings/interior-living-01.png", "Living room interior"],
-              ["/de-marvel-furnishings/interior-bedroom-02.png", "Bedroom design"],
-              ["/de-marvel-furnishings/interior-living-02.png", "Living and TV unit"],
+              [
+                "/de-marvel-furnishings/furniture/furniture-new-03.jpeg",
+                "Custom chair design",
+              ],
+              [
+                "/de-marvel-furnishings/furniture/furniture-new-04.jpeg",
+                "Living room seating",
+              ],
+              [
+                "/de-marvel-furnishings/furniture/furniture-new-05.jpeg",
+                "Bedroom furniture",
+              ],
+              [
+                "/de-marvel-furnishings/furniture/furniture-new-06.jpeg",
+                "Interior study unit",
+              ],
+              [
+                "/de-marvel-furnishings/furniture/furniture-new-07.jpeg",
+                "Living room interior",
+              ],
             ].map(([src, alt]) => (
               <div key={src} className="overflow-hidden rounded-2xl bg-card shadow-card-luxe">
                 <img src={src} alt={alt} className="h-64 w-full object-cover" loading="lazy" />
@@ -186,9 +201,9 @@ export default function ServicesPage() {
         ctaTo="/contact"
       />
 
-      <section className="pb-20">
+      <section className="pb-14 md:pb-20">
         <div className="container-x">
-          <div className="rounded-3xl bg-gradient-to-br from-primary via-navy to-primary p-10 text-center text-white shadow-luxe md:p-16">
+          <div className="rounded-3xl bg-gradient-to-br from-primary via-navy to-primary p-6 text-center text-white shadow-luxe sm:p-10 md:p-16">
             <div className="mx-auto max-w-3xl">
               <Sparkles className="mx-auto mb-4 h-12 w-12 text-gold" />
               <h2 className="mb-4 text-3xl font-bold md:text-5xl">
@@ -198,16 +213,16 @@ export default function ServicesPage() {
                 D Marvel Infra Solutions is structured to handle both everyday needs and larger operational
                 requirements with one point of contact.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift sm:w-auto"
                 >
                   Request a Quote <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
                   href={demarvelContact.phoneHref}
-                  className="inline-flex items-center gap-2 rounded-md border-2 border-white/40 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-md border-2 border-white/40 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary sm:w-auto"
                 >
                   {demarvelContact.phoneDisplay}
                 </a>

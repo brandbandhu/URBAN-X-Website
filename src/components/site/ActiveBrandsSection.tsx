@@ -27,9 +27,9 @@ export function ActiveBrandsSection({
   ctaTo = "/contact",
 }: ActiveBrandsSectionProps) {
   return (
-    <section className={cn("py-20 md:py-28", className)}>
+    <section className={cn("py-14 md:py-28", className)}>
       <div className="container-x">
-        <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
+        <div className="mb-8 flex flex-col gap-5 sm:mb-12 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between sm:gap-6">
           <div className="max-w-3xl">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
               {eyebrow}
@@ -43,7 +43,7 @@ export function ActiveBrandsSection({
           {ctaLabel ? (
             <Link
               to={ctaTo}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-gold"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-border px-4 py-3 text-sm font-semibold text-primary hover:border-gold hover:text-gold sm:w-auto sm:border-0 sm:px-0 sm:py-0"
             >
               {ctaLabel} <ArrowRight className="h-4 w-4" />
             </Link>
@@ -79,7 +79,7 @@ export function ActiveBrandsSection({
                 </div>
               </div>
 
-              <div className="p-6">
+              <div className="p-5 sm:p-6">
                 <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
                   {brand.description}
                 </p>

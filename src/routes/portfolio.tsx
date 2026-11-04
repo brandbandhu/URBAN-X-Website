@@ -149,9 +149,9 @@ export default function PortfolioPage() {
         image={hero3}
       />
 
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-24">
         <div className="container-x">
-          <div className="grid gap-8 rounded-[1.5rem] border border-border bg-secondary/60 p-6 md:grid-cols-[1.2fr_0.8fr] md:p-9">
+          <div className="grid gap-6 rounded-[1.5rem] border border-border bg-secondary/60 p-5 sm:p-6 md:grid-cols-[1.2fr_0.8fr] md:gap-8 md:p-9">
             <div>
               <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
                 D Marvel Infra Solutions
@@ -190,7 +190,7 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          <div className="mt-16" id="portfolio-categories">
+          <div className="mt-12 md:mt-16" id="portfolio-categories">
             <div className="mb-7 max-w-2xl">
               <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
                 Portfolio structure
@@ -235,7 +235,7 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          <div className="mt-16" id="project-records">
+          <div className="mt-12 md:mt-16" id="project-records">
             <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
               <div>
                 <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -288,7 +288,7 @@ export default function PortfolioPage() {
           </div>
           <Link
             to="/contact"
-            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-gradient-gold px-6 py-3.5 font-semibold text-primary hover-lift"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-gold px-6 py-3.5 font-semibold text-primary hover-lift md:w-auto"
           >
             Contact D Marvel <ArrowRight className="h-4 w-4" />
           </Link>

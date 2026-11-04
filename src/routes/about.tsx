@@ -4,7 +4,6 @@ import { SiteLayout } from "@/components/site/Layout";
 import {
   demarvelBrand,
   demarvelContact,
-  demarvelMetrics,
   demarvelProjectHighlights,
   demarvelServiceAreas,
   demarvelStudio,
@@ -15,7 +14,6 @@ import {
 } from "@/lib/siteContent";
 import { ArrowRight, Compass, Mail, Phone, Route, Sparkles, Star } from "lucide-react";
 import aboutImg from "@/assets/about-demarvel.jpg";
-import hero1 from "@/assets/hero-1.jpg";
 
 const focusCards = demarvelServiceAreas.slice(0, 4);
 
@@ -29,9 +27,9 @@ export default function AboutPage() {
         image={aboutImg}
       />
 
-      <section className="py-20 md:py-28">
-        <div className="container-x grid gap-14 lg:grid-cols-2 lg:items-center">
-          <div>
+      <section className="py-14 md:py-28">
+        <div className="container-x">
+          <div className="max-w-4xl">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
               Our Story
             </div>
@@ -53,25 +51,10 @@ export default function AboutPage() {
               design journey together under one roof.
             </p>
           </div>
-
-          <div className="relative">
-            <img
-              src={hero1}
-              alt="D Marvel Infra Solutions team and workspace"
-              className="h-[320px] w-full rounded-2xl object-cover shadow-luxe sm:h-[420px] lg:h-[520px]"
-              loading="eager"
-              decoding="async"
-              fetchPriority="high"
-            />
-            <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-gradient-gold p-6 text-primary shadow-luxe md:block">
-              <div className="text-sm font-semibold uppercase tracking-[0.24em]">Based in Pune</div>
-              <div className="mt-2 text-2xl font-bold">{demarvelContact.office}</div>
-            </div>
-          </div>
         </div>
       </section>
 
-      <section className="bg-secondary/40 py-20">
+      <section className="bg-secondary/40 py-14 md:py-20">
         <div className="container-x">
           <div className="mx-auto mb-14 max-w-3xl text-center">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -101,23 +84,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28">
-        <div className="container-x grid gap-8 lg:grid-cols-4">
-          {demarvelMetrics.map((metric) => (
-            <div
-              key={metric.label}
-              className="rounded-2xl bg-card p-8 text-center shadow-card-luxe"
-            >
-              <div className="text-4xl font-bold text-primary md:text-5xl">{metric.value}</div>
-              <div className="mt-2 text-sm uppercase tracking-[0.2em] text-muted-foreground">
-                {metric.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-navy py-20 text-white">
+      <section className="bg-navy py-14 text-white md:py-20">
         <div className="container-x grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div>
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -166,7 +133,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-28">
         <div className="container-x grid gap-14 lg:grid-cols-2 lg:items-start">
           <div>
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -191,7 +158,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="rounded-3xl bg-card p-8 shadow-luxe">
+          <div className="rounded-3xl bg-card p-6 shadow-luxe sm:p-8">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
               Projects Handled
             </div>
@@ -238,7 +205,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-secondary/40 py-20">
+      <section className="bg-secondary/40 py-14 md:py-20">
         <div className="container-x">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -269,9 +236,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="pb-20">
+      <section className="pb-14 md:pb-20">
         <div className="container-x">
-          <div className="rounded-3xl bg-gradient-to-br from-primary via-navy to-primary p-10 text-center text-white shadow-luxe md:p-16">
+          <div className="rounded-3xl bg-gradient-to-br from-primary via-navy to-primary p-6 text-center text-white shadow-luxe sm:p-10 md:p-16">
             <div className="mx-auto max-w-3xl">
               <Star className="mx-auto mb-4 h-12 w-12 text-gold" />
               <h2 className="mb-4 text-3xl font-bold md:text-5xl">
@@ -283,7 +250,7 @@ export default function AboutPage() {
               </p>
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift sm:w-auto"
               >
                 Explore Services <ArrowRight className="h-4 w-4" />
               </Link>

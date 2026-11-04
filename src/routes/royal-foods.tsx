@@ -60,7 +60,7 @@ export default function TheHungryScholarsPage() {
         image={hungryScholarsBanner}
       />
 
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-28">
         <div className="container-x grid gap-14 lg:grid-cols-2 lg:items-center">
           <div>
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -99,7 +99,7 @@ export default function TheHungryScholarsPage() {
         </div>
       </section>
 
-      <section className="bg-secondary/40 py-20">
+      <section className="bg-secondary/40 py-14 md:py-20">
         <div className="container-x">
           <div className="mx-auto mb-14 max-w-3xl text-center">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -129,7 +129,7 @@ export default function TheHungryScholarsPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-28">
         <div className="container-x grid gap-14 lg:grid-cols-2">
           <div>
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -159,7 +159,7 @@ export default function TheHungryScholarsPage() {
             </div>
           </div>
 
-          <div className="rounded-3xl bg-card p-8 shadow-luxe">
+          <div className="rounded-3xl bg-card p-6 shadow-luxe sm:p-8">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
               Food and Menu Focus
             </div>
@@ -193,7 +193,7 @@ export default function TheHungryScholarsPage() {
         </div>
       </section>
 
-      <section className="bg-secondary/40 py-20">
+      <section className="bg-secondary/40 py-14 md:py-20">
         <div className="container-x">
           <div className="mb-12">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -221,7 +221,7 @@ export default function TheHungryScholarsPage() {
       </section>
 
       {theHungryScholarsGallery.length > 0 ? (
-        <section className="py-20 md:py-28">
+        <section className="py-14 md:py-28">
           <div className="container-x">
             <div className="mx-auto mb-12 max-w-3xl text-center">
               <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -268,9 +268,9 @@ export default function TheHungryScholarsPage() {
         </section>
       ) : null}
 
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-28">
         <div className="container-x grid gap-8 lg:grid-cols-2">
-          <div className="rounded-3xl bg-card p-8 shadow-luxe">
+          <div className="rounded-3xl bg-card p-6 shadow-luxe sm:p-8">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
               Director's Message
             </div>
@@ -286,7 +286,7 @@ export default function TheHungryScholarsPage() {
             </div>
           </div>
 
-          <div className="rounded-3xl bg-primary p-8 text-white shadow-luxe">
+          <div className="rounded-3xl bg-primary p-6 text-white shadow-luxe sm:p-8">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
               Quality Commitment
             </div>
@@ -315,7 +315,7 @@ export default function TheHungryScholarsPage() {
         </div>
       </section>
 
-      <section className="bg-secondary/40 py-20">
+      <section className="bg-secondary/40 py-14 md:py-20">
         <div className="container-x">
           <div className="mx-auto mb-12 max-w-3xl text-center">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -327,14 +327,14 @@ export default function TheHungryScholarsPage() {
           </div>
 
           <div className="grid gap-6 lg:grid-cols-3">
-            <div className="rounded-2xl bg-card p-7 shadow-card-luxe">
+            <div className="rounded-2xl bg-card p-5 shadow-card-luxe sm:p-7">
               <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-gold">
                 <MapPin className="h-7 w-7 text-primary" />
               </div>
               <h3 className="mb-2 text-xl font-bold text-primary">Location</h3>
               <p className="text-muted-foreground">{theHungryScholarsContact.venue}</p>
             </div>
-            <div className="rounded-2xl bg-card p-7 shadow-card-luxe">
+            <div className="rounded-2xl bg-card p-5 shadow-card-luxe sm:p-7">
               <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-gold">
                 <Phone className="h-7 w-7 text-primary" />
               </div>
@@ -345,7 +345,7 @@ export default function TheHungryScholarsPage() {
                 ))}
               </div>
             </div>
-            <div className="rounded-2xl bg-card p-7 shadow-card-luxe">
+            <div className="rounded-2xl bg-card p-5 shadow-card-luxe sm:p-7">
               <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-gold">
                 <Mail className="h-7 w-7 text-primary" />
               </div>
@@ -365,7 +365,7 @@ export default function TheHungryScholarsPage() {
           <div className="mt-10 text-center">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift sm:w-auto"
             >
               Enquire Now <ArrowRight className="h-4 w-4" />
             </Link>

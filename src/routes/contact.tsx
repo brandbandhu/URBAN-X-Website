@@ -47,7 +47,7 @@ export default function ContactPage() {
         image={aboutImg}
       />
 
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="container-x grid gap-10 lg:grid-cols-5">
           <div className="space-y-6 lg:col-span-2">
             <div>
@@ -160,7 +160,7 @@ export default function ContactPage() {
           </div>
 
           <div className="flex h-full flex-col gap-6 lg:col-span-3">
-            <div className="rounded-2xl border border-border bg-card p-8 shadow-luxe md:p-10">
+            <div className="rounded-2xl border border-border bg-card p-5 shadow-luxe sm:p-8 md:p-10">
               {sent ? (
                 <div className="py-12 text-center">
                   <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-gold">

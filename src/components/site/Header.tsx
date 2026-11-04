@@ -47,11 +47,11 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${chromeClass}`}
     >
-      <div className="container-x flex h-16 items-center justify-between gap-4 sm:h-20">
+      <div className="container-x flex h-16 items-center justify-between gap-3 sm:h-20 sm:gap-4">
         <Link to="/" className="group flex items-center">
           <BrandLogo
             variant="navbar"
-            className="h-14 w-24 shrink-0 sm:h-[4.75rem] sm:w-28"
+            className="h-12 w-20 shrink-0 sm:h-[4.75rem] sm:w-28"
             imageClassName={
               scrolled
                 ? "drop-shadow-[0_4px_12px_rgba(15,23,42,0.12)]"
@@ -87,7 +87,7 @@ export function Header() {
               Brands <ChevronDown className="w-4 h-4" />
             </button>
             {drop && (
-              <div className="absolute top-full right-0 w-72 pt-2">
+              <div className="absolute top-full right-0 w-[min(18rem,calc(100vw-2rem))] pt-2">
                 <div className="bg-card rounded-lg shadow-luxe border border-border overflow-hidden animate-fade-in">
                   {demarvelBrandCards.map((brand) => (
                     <Link
@@ -116,7 +116,7 @@ export function Header() {
           type="button"
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
-          className="rounded-md p-2 text-foreground transition-colors hover:bg-secondary lg:hidden"
+          className="shrink-0 rounded-md p-2 text-foreground transition-colors hover:bg-secondary lg:hidden"
           onClick={() => setOpen((current) => !current)}
         >
           {open ? <X /> : <Menu />}
@@ -124,7 +124,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="lg:hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-border bg-background shadow-card-luxe animate-fade-in sm:max-h-[calc(100vh-5rem)]">
+        <div className="max-h-[calc(100svh-4rem)] overflow-y-auto border-t border-border bg-background shadow-card-luxe animate-fade-in lg:hidden sm:max-h-[calc(100svh-5rem)]">
           <div className="container-x flex flex-col gap-1 py-4">
             {nav.map((item) => (
               <Link

@@ -44,6 +44,12 @@ const featuredInteriorGallery = [
   "/de-marvel-furnishings/interior-living-02.png",
 ];
 
+const newFurnitureGallery = Array.from(
+  { length: 17 },
+  (_, index) =>
+    `/de-marvel-furnishings/furniture/furniture-new-${String(index + 1).padStart(2, "0")}.jpeg`,
+);
+
 export const newRoyalServicesData = {
   companyName: "New Royal Services",
   accentLabel: "Landscaping, Interior & Design Support",
@@ -294,6 +300,7 @@ export const deMarvelFurnishingsData = {
   ],
   gallery: [
     ...featuredInteriorGallery,
+    ...newFurnitureGallery,
     ...Array.from({ length: 31 }, (_, index) =>
       `/de-marvel-furnishings/furnishing-${String(index + 1).padStart(2, "0")}.jpeg`,
     ),

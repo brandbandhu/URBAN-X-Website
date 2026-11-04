@@ -43,8 +43,8 @@ export function BrandServiceDetailTemplate({ data }: { data: BrandServiceDetailD
         image={data.brandBanner}
       />
 
-      <section className="py-20 md:py-28">
-        <div className="container-x grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+      <section className="py-14 md:py-28">
+        <div className="container-x grid gap-8 lg:gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div>
             <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
               <Sparkles className="h-4 w-4" />
@@ -73,7 +73,7 @@ export function BrandServiceDetailTemplate({ data }: { data: BrandServiceDetailD
             </div>
           </div>
 
-          <div className="rounded-3xl bg-card p-8 shadow-luxe">
+          <div className="rounded-3xl bg-card p-5 shadow-luxe sm:p-8">
             <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-gold">
               <ServiceIcon className="h-7 w-7 text-primary" />
             </div>
@@ -96,16 +96,16 @@ export function BrandServiceDetailTemplate({ data }: { data: BrandServiceDetailD
               ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 to={data.brandBasePath}
-                className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-5 py-3 font-semibold text-primary hover-lift"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-gold px-5 py-3 font-semibold text-primary hover-lift sm:w-auto"
               >
                 Back to Brand <ChevronRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-md border border-border px-5 py-3 font-semibold text-primary transition-colors hover:border-gold hover:text-gold"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-border px-5 py-3 font-semibold text-primary transition-colors hover:border-gold hover:text-gold sm:w-auto"
               >
                 Contact Us <Mail className="h-4 w-4" />
               </Link>
@@ -114,7 +114,7 @@ export function BrandServiceDetailTemplate({ data }: { data: BrandServiceDetailD
         </div>
       </section>
 
-      <section className="bg-secondary/40 py-20">
+      <section className="bg-secondary/40 py-14 md:py-20">
         <div className="container-x">
           <div className="mx-auto mb-14 max-w-3xl text-center">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -143,7 +143,7 @@ export function BrandServiceDetailTemplate({ data }: { data: BrandServiceDetailD
         </div>
       </section>
 
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -155,7 +155,7 @@ export function BrandServiceDetailTemplate({ data }: { data: BrandServiceDetailD
             <p className="mt-8 leading-relaxed text-muted-foreground">{data.brandTagline}</p>
           </div>
 
-          <div className="rounded-3xl bg-primary p-8 text-white shadow-luxe">
+          <div className="rounded-3xl bg-primary p-6 text-white shadow-luxe sm:p-8">
             <div className="space-y-5">
               {data.brandProcess.map((step) => (
                 <div key={step.step} className="flex gap-4">
@@ -173,7 +173,7 @@ export function BrandServiceDetailTemplate({ data }: { data: BrandServiceDetailD
         </div>
       </section>
 
-      <section className="bg-secondary/40 py-20">
+      <section className="bg-secondary/40 py-14 md:py-20">
         <div className="container-x">
           <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
             <div>
@@ -207,9 +207,9 @@ export function BrandServiceDetailTemplate({ data }: { data: BrandServiceDetailD
         </div>
       </section>
 
-      <section className="pb-20">
+      <section className="pb-14 md:pb-20">
         <div className="container-x">
-          <div className="rounded-3xl bg-gradient-to-br from-primary via-navy to-primary p-10 text-center text-white shadow-luxe md:p-16">
+          <div className="rounded-3xl bg-gradient-to-br from-primary via-navy to-primary p-6 text-center text-white shadow-luxe sm:p-10 md:p-16">
             <div className="mx-auto max-w-3xl">
               <Phone className="mx-auto mb-4 h-12 w-12 text-gold" />
               <h2 className="mb-4 text-3xl font-bold md:text-5xl">
@@ -219,16 +219,16 @@ export function BrandServiceDetailTemplate({ data }: { data: BrandServiceDetailD
                 Call, WhatsApp or contact us and we'll help you choose the right scope for your
                 requirement.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                 <a
                   href={demarvelContact.phoneHref}
-                  className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift sm:w-auto"
                 >
                   {demarvelContact.phoneDisplay} <ChevronRight className="h-4 w-4" />
                 </a>
                 <a
                   href={demarvelContact.whatsappHref}
-                  className="inline-flex items-center gap-2 rounded-md border border-white/30 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/30 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary sm:w-auto"
                 >
                   WhatsApp <WhatsAppIcon className="h-4 w-4" />
                 </a>

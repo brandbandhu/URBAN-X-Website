@@ -87,7 +87,7 @@ export default function ProjectPage({ projectSlug }: { projectSlug: string }) {
         image={project.thumbnail}
       />
 
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-24">
         <div className="container-x">
           <Link
             to="/portfolio"
@@ -124,7 +124,7 @@ export default function ProjectPage({ projectSlug }: { projectSlug: string }) {
               )}
             </div>
 
-            <div className="rounded-[1.5rem] border border-border bg-secondary/60 p-6 md:p-8">
+            <div className="rounded-[1.5rem] border border-border bg-secondary/60 p-5 sm:p-6 md:p-8">
               <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
                 Project record
               </div>
@@ -151,7 +151,7 @@ export default function ProjectPage({ projectSlug }: { projectSlug: string }) {
             </div>
           </div>
 
-          <div className="mt-16">
+          <div className="mt-12 md:mt-16">
             <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
               <div>
                 <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -241,7 +241,7 @@ export default function ProjectPage({ projectSlug }: { projectSlug: string }) {
 
       {activeIndex !== null && gallery[activeIndex] && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-primary/95 p-4 sm:p-8"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-primary/95 p-3 sm:p-8"
           role="dialog"
           aria-modal="true"
           aria-label={`${project.title} gallery lightbox`}
@@ -262,7 +262,7 @@ export default function ProjectPage({ projectSlug }: { projectSlug: string }) {
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
-          <figure className="flex max-h-full max-w-6xl flex-col items-center">
+          <figure className="flex max-h-full max-w-6xl flex-col items-center px-8 sm:px-0">
             <img
               src={gallery[activeIndex].src}
               alt={gallery[activeIndex].alt}

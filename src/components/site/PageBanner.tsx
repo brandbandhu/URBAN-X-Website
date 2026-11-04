@@ -10,7 +10,7 @@ interface Props {
 
 export function PageBanner({ title, subtitle, crumbs, image }: Props) {
   return (
-    <section className="relative overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-44 md:pb-28">
+    <section className="relative overflow-hidden pt-20 pb-12 sm:pt-28 sm:pb-16 md:pt-44 md:pb-28">
       <div className="absolute inset-0">
         {image ? (
           <img
@@ -44,7 +44,7 @@ export function PageBanner({ title, subtitle, crumbs, image }: Props) {
             </span>
           ))}
         </nav>
-        <h1 className="max-w-3xl text-3xl font-bold leading-tight sm:text-4xl md:text-6xl">
+        <h1 className="max-w-3xl text-3xl font-bold leading-[1.08] sm:text-4xl md:text-6xl">
           {title}
         </h1>
         {subtitle && (

@@ -13,11 +13,9 @@ import {
   demarvelHousingDetails,
   demarvelInteriorDetails,
   demarvelItDetails,
-  demarvelMetrics,
   demarvelMission,
   demarvelVision,
   demarvelWhyChoose,
-  type DeMarvelMetric,
 } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import { projects } from "@/lib/projects";
@@ -42,22 +40,24 @@ import {
 import {
   Children,
   useEffect,
-  useRef,
   useState,
   type CSSProperties,
   type ReactNode,
 } from "react";
 import aboutImg from "@/assets/about-demarvel.jpg";
+import constructionSite from "@/assets/construction-site.jpg";
 import gardening from "@/assets/service-gardening.jpg";
+import interiorDesign from "@/assets/interior-design.jpg";
 import marble from "@/assets/service-marble.jpg";
 import rental from "@/assets/service-rental.jpg";
-import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
-import hero3 from "@/assets/hero-3.jpg";
+
+const foodDeliveryImage =
+  "/project-photos/royal-foods-hospitality-services/royal-foods-hospitality-services-01.jpeg";
 
 const heroSlides = [
   {
-    img: hero1,
+    img: interiorDesign,
     eyebrow: "D Marvel Infra Solutions",
     title: "Designing Spaces. Building Possibilities.",
     description:
@@ -66,12 +66,12 @@ const heroSlides = [
   {
     img: hero2,
     eyebrow: "Smart Housing",
-    title: "More than 2,000 living spaces every year across Pune.",
+    title: "50+ projects delivered across Pune.",
     description:
-      "Designed for working professionals, boys and girls, students and academic communities with safety, comfort and reliability at the center.",
+      "Thoughtful residential, commercial and institutional spaces shaped around comfort and dependable management.",
   },
   {
-    img: hero3,
+    img: foodDeliveryImage,
     eyebrow: "Food Delivery",
     title: "Fresh meals, large-scale catering and cloud kitchen support.",
     description:
@@ -151,86 +151,6 @@ function StackRail({ children, className = "" }: { children: ReactNode; classNam
   );
 }
 
-function useCountUp(target: number, active: boolean, delayMs = 0, durationMs = 1600) {
-  const [value, setValue] = useState(0);
-
-  useEffect(() => {
-    if (!active) {
-      setValue(0);
-      return;
-    }
-
-    const reduceMotion =
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (reduceMotion) {
-      setValue(target);
-      return;
-    }
-
-    let rafId = 0;
-    let timeoutId = 0;
-
-    const start = () => {
-      const startTime = performance.now();
-
-      const tick = (now: number) => {
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / durationMs, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        setValue(Math.round(target * eased));
-
-        if (progress < 1) {
-          rafId = window.requestAnimationFrame(tick);
-        }
-      };
-
-      rafId = window.requestAnimationFrame(tick);
-    };
-
-    if (delayMs > 0) {
-      timeoutId = window.setTimeout(start, delayMs);
-    } else {
-      start();
-    }
-
-    return () => {
-      window.clearTimeout(timeoutId);
-      window.cancelAnimationFrame(rafId);
-    };
-  }, [active, delayMs, durationMs, target]);
-
-  return value;
-}
-
-function MetricCard({
-  metric,
-  active,
-  delayMs,
-}: {
-  metric: DeMarvelMetric;
-  active: boolean;
-  delayMs: number;
-}) {
-  const count = useCountUp(metric.target, active, delayMs);
-  const valueText = `${count}+${metric.unit ? ` ${metric.unit}` : ""}`;
-
-  return (
-    <div className="flex min-h-[120px] flex-col items-center justify-center rounded-2xl bg-secondary/60 p-4 text-center md:min-h-[132px] md:p-5">
-      <div
-        className="text-2xl font-bold leading-none text-primary md:text-4xl"
-        aria-label={valueText}
-      >
-        {valueText}
-      </div>
-      <div className="mt-2 max-w-[12rem] text-[11px] uppercase leading-tight tracking-[0.26em] text-muted-foreground">
-        {metric.label}
-      </div>
-    </div>
-  );
-}
-
 function ServiceMedia({ src, alt }: { src: string; alt: string }) {
   return (
     <div className="self-start lg:sticky lg:top-24">
@@ -260,8 +180,6 @@ type InteriorStackCard = {
 
 export default function HomePage() {
   const [active, setActive] = useState(0);
-  const statsRef = useRef<HTMLElement>(null);
-  const [statsInView, setStatsInView] = useState(false);
   const slideDurationMs = 6500;
   const activeSlide = heroSlides[active];
   const interiorStackCards: InteriorStackCard[] = [
@@ -307,61 +225,34 @@ export default function HomePage() {
     };
   }, [active]);
 
-  useEffect(() => {
-    const section = statsRef.current;
-
-    if (!section) {
-      return;
-    }
-
-    const reduceMotion =
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (reduceMotion || typeof window.IntersectionObserver === "undefined") {
-      setStatsInView(true);
-      return;
-    }
-
-    const observer = new window.IntersectionObserver(
-      (entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          setStatsInView(true);
-          observer.disconnect();
-        }
-      },
-      {
-        threshold: 0.35,
-        rootMargin: "0px 0px -10% 0px",
-      },
-    );
-
-    observer.observe(section);
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
   return (
     <SiteLayout>
       <section className="relative pb-4 sm:pb-16 md:pb-20">
-        <div className="relative overflow-hidden sm:min-h-[560px] md:min-h-[620px] lg:min-h-[680px]">
-          <div key={activeSlide.title} className="absolute inset-0 animate-fade-in">
-            <img
-              src={activeSlide.img}
-              alt=""
-              className="h-full w-full scale-105 object-cover object-[68%_center] sm:object-center"
-              loading="eager"
-              decoding="async"
-              fetchPriority="high"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.18_0.05_255/0.94)] via-[oklch(0.18_0.05_255/0.72)] to-[oklch(0.18_0.05_255/0.28)]" />
+        <div className="relative min-h-[calc(100svh-4rem)] overflow-hidden sm:min-h-[min(100svh-5rem,760px)]">
+          <div
+            key={activeSlide.title}
+            className="absolute inset-0 animate-fade-in bg-[oklch(0.18_0.05_255)]"
+          >
+            {activeSlide.img ? (
+              <>
+                <img
+                  src={activeSlide.img}
+                  alt=""
+                  className="h-full w-full object-cover object-[68%_center] sm:object-center"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.18_0.05_255/0.94)] via-[oklch(0.18_0.05_255/0.72)] to-[oklch(0.18_0.05_255/0.28)]" />
+              </>
+            ) : (
+              <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.24_0.07_255)] via-[oklch(0.18_0.05_255)] to-[oklch(0.12_0.04_255)]" />
+            )}
           </div>
 
-          <div className="relative flex items-start pt-4 pb-8 sm:absolute sm:inset-0 sm:items-center sm:pt-20 sm:pb-20 md:items-center md:pt-0 md:pb-28 lg:items-start lg:pt-28 xl:pt-28">
+          <div className="relative flex min-h-[calc(100svh-4rem)] items-center py-8 sm:min-h-[min(100svh-5rem,760px)] sm:py-14 lg:py-10">
             <div className="container-x text-white">
-              <div key={active} className="max-w-4xl animate-fade-up">
+              <div key={active} className="max-w-5xl animate-fade-up">
                 <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/15 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-gold sm:mb-6 sm:px-4 sm:text-xs">
                   <Sparkles className="h-3.5 w-3.5" />
                   {activeSlide.eyebrow}
@@ -397,21 +288,6 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section ref={statsRef} className="relative z-10 mt-0 pb-3 sm:-mt-10 md:pb-8">
-        <div className="container-x">
-          <div className="grid gap-3 rounded-[1.5rem] border border-border bg-background/98 p-3 shadow-luxe sm:gap-4 sm:p-4 md:grid-cols-2 xl:grid-cols-4 md:rounded-[1.75rem] md:p-6">
-            {demarvelMetrics.map((metric, index) => (
-              <MetricCard
-                key={metric.label}
-                metric={metric}
-                active={statsInView}
-                delayMs={index * 120}
-              />
-            ))}
           </div>
         </div>
       </section>
@@ -527,8 +403,8 @@ export default function HomePage() {
               <SectionHeading
                 align="left"
                 eyebrow="Smart Housing"
-                title="More than 2,000 living spaces every year across Pune"
-                subtitle="We create safe, comfortable and well-managed living spaces for working professionals, boys and girls, students and academic communities."
+                title="50+ projects delivered across Pune"
+                subtitle="We create comfortable and well-managed spaces for working professionals, students and academic communities."
                 titleClassName="max-w-2xl text-primary"
                 subtitleClassName="max-w-xl text-muted-foreground"
               />
@@ -536,33 +412,22 @@ export default function HomePage() {
                 {demarvelHousingDetails.summary}
               </p>
               <p className="mt-4 text-sm leading-relaxed text-foreground/80">
-                Secure living with dependable management and daily comfort for residents and
-                parents.
+                Thoughtful management and daily comfort for residents and parents.
               </p>
             </div>
 
-            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="rounded-2xl bg-secondary/40 p-6">
-                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                  Safety and security
-                </div>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  Built around safety, security and daily convenience for boys and girls alike.
-                </p>
-              </div>
-              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
-                <ul className="grid gap-3 sm:grid-cols-2">
-                  {demarvelHousingDetails.focus.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
-                    >
-                      <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
+              <ul className="grid gap-3 sm:grid-cols-2">
+                {demarvelHousingDetails.focus.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
+                  >
+                    <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
@@ -588,7 +453,7 @@ export default function HomePage() {
 
       <section className="bg-secondary/40 py-20">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={hero3} alt="D Marvel institutional food service" />
+          <ServiceMedia src={foodDeliveryImage} alt="Institutional food service dining hall" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
@@ -813,7 +678,7 @@ export default function HomePage() {
 
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={hero1} alt="D Marvel construction" />
+          <ServiceMedia src={constructionSite} alt="Building construction site with scaffolding" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">

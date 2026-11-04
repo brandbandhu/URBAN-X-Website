@@ -67,8 +67,8 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
       />
 
       {/* About */}
-      <section className="py-20 md:py-28">
-        <div className="container-x grid lg:grid-cols-2 gap-14 items-center">
+      <section className="py-14 md:py-28">
+        <div className="container-x grid gap-8 lg:grid-cols-2 lg:gap-14 lg:items-center">
           <div>
             <div className="text-gold font-semibold uppercase text-xs tracking-[0.3em] mb-3 flex items-center gap-2">
               <Sparkles className="w-4 h-4" /> {data.accentLabel}
@@ -134,8 +134,8 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
       </section>
 
       {/* Benefits */}
-      <section className="py-20">
-        <div className="container-x grid lg:grid-cols-2 gap-14">
+      <section className="py-14 md:py-20">
+        <div className="container-x grid gap-8 lg:grid-cols-2 lg:gap-14">
           <div>
             <div className="text-gold font-semibold uppercase text-xs tracking-[0.3em] mb-3">
               Benefits
@@ -154,7 +154,7 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
               ))}
             </ul>
           </div>
-          <div className="bg-navy rounded-2xl p-10 text-white shadow-luxe relative overflow-hidden">
+          <div className="bg-navy rounded-2xl p-6 text-white shadow-luxe relative overflow-hidden sm:p-10">
             <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-gold/20 blur-3xl" />
             <h3 className="font-display text-3xl mb-2 relative">Our Process</h3>
             <p className="text-white/70 mb-8 relative">Simple, transparent, and result-driven.</p>
@@ -176,7 +176,7 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
       </section>
 
       {/* Gallery */}
-      <section className="py-20 bg-secondary/40">
+      <section className="py-14 bg-secondary/40 md:py-20">
         <div className="container-x">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <div className="text-gold font-semibold uppercase text-xs tracking-[0.3em] mb-3">
@@ -206,8 +206,8 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
       </section>
 
       {/* Enquiry Form */}
-      <section ref={enquiryRef} className="py-20 scroll-mt-24">
-        <div className="container-x grid lg:grid-cols-5 gap-10 items-start">
+      <section ref={enquiryRef} className="py-14 scroll-mt-24 md:py-20">
+        <div className="container-x grid gap-8 lg:grid-cols-5 lg:gap-10 lg:items-start">
           <div className="lg:col-span-2">
             <div className="text-gold font-semibold uppercase text-xs tracking-[0.3em] mb-3">
               Service Enquiry
@@ -238,7 +238,7 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
             </div>
           </div>
 
-          <div className="lg:col-span-3 bg-card p-8 md:p-10 rounded-2xl shadow-luxe border border-border">
+          <div className="lg:col-span-3 rounded-2xl border border-border bg-card p-5 shadow-luxe sm:p-8 md:p-10">
             {sent ? (
               <div className="text-center py-12">
                 <div className="w-16 h-16 rounded-full bg-gradient-gold mx-auto flex items-center justify-center mb-5">
@@ -329,13 +329,13 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
                 <div className="grid sm:grid-cols-2 gap-3">
                   <button
                     type="submit"
-                    className="px-6 py-3.5 bg-gradient-gold text-primary font-semibold rounded-md hover-lift inline-flex items-center justify-center gap-2"
+                    className="w-full px-6 py-3.5 bg-gradient-gold text-primary font-semibold rounded-md hover-lift inline-flex items-center justify-center gap-2"
                   >
                     Send Enquiry <Send className="w-4 h-4" />
                   </button>
                   <a
                     href="https://wa.me/918983630096"
-                    className="px-6 py-3.5 border border-border text-primary font-semibold rounded-md hover:border-gold hover:text-gold transition-colors inline-flex items-center justify-center gap-2"
+                    className="w-full px-6 py-3.5 border border-border text-primary font-semibold rounded-md hover:border-gold hover:text-gold transition-colors inline-flex items-center justify-center gap-2"
                   >
                     WhatsApp <WhatsAppIcon className="w-4 h-4" />
                   </a>
@@ -347,9 +347,9 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-secondary/40">
+      <section className="py-14 bg-secondary/40 md:py-20">
         <div className="container-x">
-          <div className="bg-gradient-to-br from-primary to-navy rounded-3xl p-10 md:p-16 text-center text-white shadow-luxe relative overflow-hidden">
+          <div className="bg-gradient-to-br from-primary to-navy rounded-3xl p-6 sm:p-10 md:p-16 text-center text-white shadow-luxe relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.78_0.13_78/0.2),transparent_50%)]" />
             <div className="relative">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Ready to get started?</h2>
@@ -357,16 +357,16 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
                 Tell us about your project - our team will get back with a personalized quote within
                 24 hours.
               </p>
-              <div className="flex flex-wrap gap-4 justify-center">
+              <div className="flex flex-col gap-3 justify-center sm:flex-row sm:flex-wrap sm:gap-4">
                 <Link
                   to="/contact"
-                  className="px-7 py-3.5 bg-gradient-gold text-primary font-semibold rounded-md hover-lift inline-flex items-center gap-2"
+                  className="w-full justify-center px-7 py-3.5 bg-gradient-gold text-primary font-semibold rounded-md hover-lift inline-flex items-center gap-2 sm:w-auto"
                 >
                   Enquire Now <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
                     href="https://wa.me/918983630096"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-white/30 text-white font-semibold rounded-md hover:bg-white/10 transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-white/30 text-white font-semibold rounded-md hover:bg-white/10 transition-colors sm:w-auto"
                 >
                   WhatsApp Now <WhatsAppIcon className="w-4 h-4" />
                 </a>

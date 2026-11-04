@@ -199,7 +199,7 @@ export default function AishwaryaHeightPage() {
         image={rental}
       />
 
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-28">
         <div className="container-x grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
             <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -225,7 +225,7 @@ export default function AishwaryaHeightPage() {
               ))}
             </div>
 
-            <div className="mt-8 rounded-3xl bg-primary p-8 text-white shadow-luxe">
+            <div className="mt-8 rounded-3xl bg-primary p-6 text-white shadow-luxe sm:p-8">
               <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
                 Inspired quote
               </div>
@@ -240,7 +240,7 @@ export default function AishwaryaHeightPage() {
             <img
               src={hero1}
               alt="Aishwarya Realtors living interior"
-              className="h-64 w-full rounded-3xl object-cover shadow-luxe sm:col-span-2 sm:h-80"
+              className="h-56 w-full rounded-3xl object-cover shadow-luxe sm:col-span-2 sm:h-80"
               loading="lazy"
               decoding="async"
               fetchPriority="low"
@@ -283,7 +283,7 @@ export default function AishwaryaHeightPage() {
         </div>
       </section>
 
-      <section className="bg-secondary/40 py-20">
+      <section className="bg-secondary/40 py-14 md:py-20">
         <div className="container-x">
           <SectionHeading
             eyebrow="Project Gallery"
@@ -310,7 +310,7 @@ export default function AishwaryaHeightPage() {
         </div>
       </section>
 
-      <section className="bg-secondary/40 py-20">
+      <section className="bg-secondary/40 py-14 md:py-20">
         <div className="container-x">
           <SectionHeading
             eyebrow="Accessories"
@@ -364,7 +364,7 @@ export default function AishwaryaHeightPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-28">
         <div className="container-x">
           <SectionHeading
             eyebrow="Aishwarya Realtors"
@@ -391,7 +391,7 @@ export default function AishwaryaHeightPage() {
         </div>
       </section>
 
-      <section className="bg-secondary/40 py-20">
+      <section className="bg-secondary/40 py-14 md:py-20">
         <div className="container-x">
           <SectionHeading
             eyebrow="Specifications"
@@ -412,10 +412,10 @@ export default function AishwaryaHeightPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-28">
         <div className="container-x">
           <div className="mx-auto flex max-w-5xl flex-col gap-6">
-            <div className="rounded-3xl bg-card p-8 shadow-luxe">
+              <div className="rounded-3xl bg-card p-6 shadow-luxe sm:p-8">
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
                 <MapPin className="h-4 w-4" />
                 Location map
@@ -437,7 +437,7 @@ export default function AishwaryaHeightPage() {
                 ))}
               </div>
 
-              <div className="mt-8 rounded-2xl border border-gold/25 bg-gold/10 p-5">
+              <div className="mt-8 rounded-2xl border border-gold/25 bg-gold/10 p-4 sm:p-5">
                 <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
                   Brochure note
                 </div>
@@ -462,9 +462,9 @@ export default function AishwaryaHeightPage() {
         </div>
       </section>
 
-      <section className="pb-20">
+      <section className="pb-14 md:pb-20">
         <div className="container-x">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-navy to-primary p-10 text-center text-white shadow-luxe md:p-16">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-navy to-primary p-6 text-center text-white shadow-luxe sm:p-10 md:p-16">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.78_0.13_78/0.2),transparent_45%)]" />
             <div className="relative mx-auto max-w-3xl">
               <Sparkles className="mx-auto mb-4 h-12 w-12 text-gold" />
@@ -474,24 +474,24 @@ export default function AishwaryaHeightPage() {
               <p className="mb-8 text-white/80">
                 Reach out for availability, unit plans and a walk-through of the brochure details.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                 <a
                   href="tel:+918983630096"
-                  className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift sm:w-auto"
                 >
                   <Phone className="h-4 w-4" />
                   Call Developer
                 </a>
                 <a
                   href="mailto:Suneel.gilda@live.com"
-                  className="inline-flex items-center gap-2 rounded-md border-2 border-white/40 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-md border-2 border-white/40 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary sm:w-auto"
                 >
                   <Mail className="h-4 w-4" />
                   Email Team
                 </a>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 rounded-md border-2 border-white/40 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-md border-2 border-white/40 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-primary sm:w-auto"
                 >
                   D Marvel Contact <ArrowRight className="h-4 w-4" />
                 </Link>

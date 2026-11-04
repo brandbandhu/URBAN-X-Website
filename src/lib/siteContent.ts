@@ -35,12 +35,6 @@ export type BrandCard = {
   to: string;
 };
 
-export type DeMarvelMetric = {
-  target: number;
-  label: string;
-  unit?: string;
-};
-
 export const demarvelBrand = {
   name: "D Marvel Infra Solutions",
   tagline: "Designing Spaces. Building Possibilities.",
@@ -94,7 +88,7 @@ export const demarvelHeroSlides = [
     eyebrow: "Smart Housing",
     title: "Living spaces designed for students, professionals and families.",
     description:
-      "We provide more than 2,000 living spaces every year across Pune with a strong focus on safety, comfort and dependable management.",
+      "We have delivered 50+ projects across Pune with a strong focus on comfort and dependable management.",
   },
   {
     eyebrow: "Food and Interiors",
@@ -336,13 +330,6 @@ export const demarvelBrandCards: BrandCard[] = [
   },
 ];
 
-export const demarvelMetrics: DeMarvelMetric[] = [
-  { target: 350, label: "Staff" },
-  { target: 15, label: "Years of experience", unit: "years" },
-  { target: 150, label: "Happy clients" },
-  { target: 2000, label: "Students/Guests served per day" },
-];
-
 export const demarvelIndustries = [
   { icon: Home, label: "Residential" },
   { icon: Building2, label: "Commercial" },
@@ -438,14 +425,13 @@ export const demarvelCoreCapabilities: IconCard[] = [
 
 export const demarvelHousingDetails = {
   summary:
-    "D Marvel provides more than 2,000 living spaces every year across Pune for working professionals, boys and girls, students and academic communities.",
+    "D Marvel has delivered 50+ projects across Pune for working professionals, students and academic communities.",
   focus: [
-    "Safety and security for both boys and girls",
     "Essential amenities for daily living",
     "Comfortable and well-maintained spaces",
   ],
   promise:
-    "Every space is thoughtfully planned to feel like a true home away from home, giving parents peace of mind and residents a secure, supportive environment.",
+    "Every space is thoughtfully planned to feel like a true home away from home, giving residents a supportive environment.",
 };
 
 export const demarvelFoodDetails = {

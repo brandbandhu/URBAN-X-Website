@@ -1,12 +1,12 @@
 import { BrandLogo } from "@/components/site/BrandLogo";
 import { Link } from "@/components/site/AppLink";
-import { demarvelBrand, demarvelBrandCards, demarvelContact } from "@/lib/siteContent";
+import { demarvelBrand, demarvelContact } from "@/lib/siteContent";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="mt-24 bg-navy pt-20 pb-8 text-white/85">
-      <div className="container-x grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="mt-16 bg-navy pt-14 pb-8 text-white/85 sm:mt-24 sm:pt-20">
+      <div className="container-x grid gap-8 md:grid-cols-2 md:gap-12 lg:grid-cols-4">
         <div>
           <BrandLogo variant="full" className="mb-5 max-w-[11rem] rounded-md bg-white p-3" imageClassName="max-h-[7.5rem]" />
           <p className="text-sm leading-relaxed text-white/70">
@@ -25,11 +25,10 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="gold-underline mb-5 font-display text-lg text-white">Our Brands</h4>
+          <h4 className="gold-underline mb-5 font-display text-lg text-white">Our Clients</h4>
           <ul className="mt-7 space-y-2 text-sm">
-            {demarvelBrandCards.map((brand) => (
-              <li key={brand.to}><Link to={brand.to} className="transition-colors hover:text-gold">{brand.label}</Link></li>
-            ))}
+            <li>SGM Services</li>
+            <li>Suryajyoti Services</li>
           </ul>
         </div>
 
@@ -43,7 +42,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="container-x mt-14 flex justify-center border-t border-white/10 pt-6 text-center text-xs text-white/60">
+      <div className="container-x mt-10 flex justify-center border-t border-white/10 pt-6 text-center text-xs text-white/60 sm:mt-14">
         <div>© 2026 D Marvel Infra Solutions. All Rights Reserved. Developed by{" "}<a href="https://webakoof.com/" target="_blank" rel="noreferrer" className="font-semibold text-white transition-colors hover:text-gold">Webakoof</a></div>
       </div>
     </footer>

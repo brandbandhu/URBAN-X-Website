@@ -1,3 +1,5 @@
+import gardening from "@/assets/service-gardening.jpg";
+
 export type ProjectStatus = "completed" | "ongoing" | "proposed";
 export type ProjectCategory =
   | "interior-design"
@@ -62,7 +64,7 @@ const projectPhotoGallery = (slug: string, title: string, count: number) =>
     caption: "Project photograph",
   }));
 
-const hungryScholarGallery = projectPhotoGallery("hungry-scholar-cafe", "Hungry Scholar Cafe", 12);
+const hungryScholarGallery = projectPhotoGallery("hungry-scholar-cafe", "Hungry Scholar Cafe", 12).slice(1);
 const rajBungalowGallery = projectPhotoGallery("raj-bungalow", "Raj Bungalow", 9);
 const royalFoodsGallery = projectPhotoGallery(
   "royal-foods-hospitality-services",
@@ -76,10 +78,10 @@ const vaishnaviPrideGallery = projectPhotoGallery(
   6,
 );
 const vipEventsGallery = projectPhotoGallery("vip-events", "VIP Events", 7);
-const vitthalKrupaGallery = projectPhotoGallery("vitthal-krupa-hostel", "Vitthal Krupa Hostel", 6);
+const vitthalKrupaGallery = projectPhotoGallery("vitthal-krupa-hostel", "Vitthal Krupa Hostel", 6).slice(1);
 const classroomsGallery = projectPhotoGallery("classrooms", "Classrooms", 9);
 const guestHouseGallery = projectPhotoGallery("guest-house", "Guest House", 4);
-const isbjStudioGallery = projectPhotoGallery("isbj-studio", "ISBJ Studio", 4);
+const officeInteriorsGallery = projectPhotoGallery("isbj-studio", "Office Interiors", 4);
 const libraryGallery = projectPhotoGallery("library", "Library", 12);
 const naliniPrideGallery = projectPhotoGallery("nalini-pride-hostel", "Nalini Pride Hostel", 5);
 
@@ -319,24 +321,6 @@ export const projects: Project[] = [
       "Current stage is presented as proposed/design material; completion has not been claimed.",
   },
   {
-    id: "it-tower",
-    slug: "it-tower",
-    title: "IT Tower",
-    primaryCategory: portfolioCategories.architectural,
-    categories: ["commercial", "architectural", "infrastructure"],
-    description:
-      "Commercial architectural development represented through the confirmed third-floor and fifth-floor drawings.",
-    scopeOfWork: [
-      "Third-floor drawings",
-      "Fifth-floor drawings",
-      "Architectural designs",
-      "Design and infrastructure work",
-    ],
-    status: "proposed",
-    confirmationNote:
-      "Execution is incomplete or unconfirmed; this record does not present the tower as completed.",
-  },
-  {
     id: "new-royal-services",
     slug: "new-royal-services",
     title: "New Royal Services",
@@ -349,9 +333,17 @@ export const projects: Project[] = [
       "Outdoor design",
       "Other verified design or execution work",
     ],
+    status: "completed",
+    thumbnail: gardening,
+    gallery: [
+      {
+        src: gardening,
+        alt: "New Royal Services landscaped outdoor space",
+        type: "photo",
+        caption: "Landscaping project photograph",
+      },
+    ],
     associatedOrganization: "New Royal Services",
-    confirmationNote:
-      "Project credits are retained as an association and require permission/asset confirmation for each case study.",
   },
   {
     id: "royal-foods-hospitality-services",
@@ -438,16 +430,16 @@ export const projects: Project[] = [
     gallery: guestHouseGallery,
   },
   {
-    id: "isbj-studio",
-    slug: "isbj-studio",
-    title: "ISBJ Studio",
+    id: "office-interiors",
+    slug: "office-interiors",
+    title: "Office Interiors",
     primaryCategory: portfolioCategories.commercial,
     categories: ["commercial", "interior-design", "architectural"],
-    description: "Studio and workplace design work represented through the supplied project album.",
-    scopeOfWork: ["Studio interiors", "Workplace design", "Interior execution"],
+    description: "Interior site photographs showing completed studio and workplace spaces.",
+    scopeOfWork: ["Office interiors", "Workplace design", "Interior execution"],
     status: "completed",
-    thumbnail: isbjStudioGallery[0]?.src,
-    gallery: isbjStudioGallery,
+    thumbnail: officeInteriorsGallery[0]?.src,
+    gallery: officeInteriorsGallery,
   },
   {
     id: "library",
