@@ -2,12 +2,11 @@ import { Link } from "@/components/site/AppLink";
 import { demarvelBrandCards } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
-import hero2 from "@/assets/hero-2.jpg";
 import gardening from "@/assets/service-gardening.jpg";
-import rental from "@/assets/service-rental.jpg";
 import buildingExterior from "@/assets/aishwarya-heights/building-exterior.jpeg";
+import hungryScholar from "@/assets/the-hungry-scholars/the-hungry-scholar.jpeg";
 
-const brandImages = [gardening, buildingExterior, hero2] as const;
+const brandImages = [gardening, buildingExterior, hungryScholar] as const;
 
 type ActiveBrandsSectionProps = {
   eyebrow: string;
