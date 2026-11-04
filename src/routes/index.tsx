@@ -354,11 +354,11 @@ export default function HomePage() {
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {projects.slice(0, 4).map((project) => (
-              <Link key={project.id} to={`/projects/${project.slug}`} className="group overflow-hidden rounded-2xl border border-border bg-card shadow-card-luxe transition hover:-translate-y-1 hover:shadow-luxe">
+              <Link key={project.id} to={`/projects/${project.slug}`} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-card-luxe transition hover:-translate-y-1 hover:shadow-luxe">
                 <div className="relative h-48 overflow-hidden bg-[linear-gradient(135deg,#e9e4d9,#c8bda9)]">
                   {project.thumbnail ? <img src={project.thumbnail} alt={`${project.title} project visual`} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" /> : <div className="flex h-full items-center justify-center p-5 text-center text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">Project visual pending</div>}
                 </div>
-                <div className="p-5"><div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold">{project.primaryCategory}</div><h3 className="mt-2 text-xl font-bold text-primary">{project.title}</h3><span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-gold">View project <ArrowRight className="h-4 w-4" /></span></div>
+                <div className="flex flex-1 flex-col p-5"><div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold">{project.primaryCategory}</div><h3 className="mt-2 min-h-[3.5rem] text-xl font-bold text-primary">{project.title}</h3><span className="mt-auto inline-flex items-center gap-2 whitespace-nowrap pt-4 text-sm font-semibold text-primary group-hover:text-gold">View project <ArrowRight className="h-4 w-4" /></span></div>
               </Link>
             ))}
           </div>
