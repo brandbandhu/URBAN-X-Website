@@ -109,21 +109,6 @@ export const projects: Project[] = [
       "Photographs supplied in the project repository are shown as verified project assets.",
   },
   {
-    id: "mp-office-sob-com-soc",
-    slug: "mp-office-sob-com-soc",
-    title: "MP Office and SOB, COM and SOC Projects",
-    primaryCategory: portfolioCategories.commercial,
-    categories: ["commercial", "infrastructure"],
-    description:
-      "Commercial office and infrastructure work listed by the client, including completed interior work and available drawings.",
-    scopeOfWork: [
-      "Completed interior work",
-      "Infrastructure development",
-      "Project photographs and design drawings where available",
-    ],
-    status: "completed",
-  },
-  {
     id: "raj-bungalows",
     slug: "raj-bungalows",
     title: "Raj Bungalows",
