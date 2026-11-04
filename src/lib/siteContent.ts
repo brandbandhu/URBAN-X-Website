@@ -325,7 +325,7 @@ export const demarvelBrandCards: BrandCard[] = [
     label: "SGM Services",
     tagline: "Commercial Offices & Guest Houses",
     description:
-      "Commercial interior work represented as a named service group in the client brief.",
+      "Commercial office interiors, guest-house spaces and institutional projects delivered with practical planning and execution.",
     to: "/sgm-services",
   },
 ];

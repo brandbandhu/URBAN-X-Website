@@ -4,7 +4,7 @@ import { SiteLayout } from "@/components/site/Layout";
 import { demarvelContact } from "@/lib/siteContent";
 import { projects } from "@/lib/projects";
 import { ArrowRight, Building2, Check, Phone } from "lucide-react";
-import marble from "@/assets/service-marble.jpg";
+import sgmServices from "@/assets/sgm-services.jpeg";
 
 const hostelProjects = projects.filter(
   (project) =>
@@ -24,7 +24,7 @@ export default function SgmServicesPage() {
         title="SGM Services"
         subtitle="Commercial Offices & Guest Houses"
         crumbs={[{ label: "Services", to: "/services" }, { label: "SGM Services" }]}
-        image={marble}
+        image={sgmServices}
       />
 
       <section className="py-14 md:py-24">
