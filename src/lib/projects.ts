@@ -1,5 +1,6 @@
 import { newRoyalServicesGallery } from "@/lib/newRoyalServicesGallery";
 import { comLaboratoriesGallery } from "@/lib/comLaboratoriesGallery";
+import { sobProjectGallery } from "@/lib/sobProjectGallery";
 
 export type ProjectStatus = "completed" | "ongoing" | "proposed";
 export type ProjectCategory =
@@ -79,6 +80,13 @@ const comLaboratoriesProjectGallery = comLaboratoriesGallery.map((src, index) =>
   caption: "Original COM Laboratories photograph",
 }));
 
+const sobProjectImageGallery = sobProjectGallery.map((src, index) => ({
+  src,
+  alt: `SOB, COM and SOC project photograph ${index + 1}`,
+  type: "photo" as const,
+  caption: "Original SOB, COM and SOC project photograph",
+}));
+
 const hungryScholarGallery = projectPhotoGallery("hungry-scholar-cafe", "Hungry Scholar Cafe", 12).slice(1);
 const rajBungalowGallery = projectPhotoGallery("raj-bungalow", "Raj Bungalow", 9);
 const royalFoodsGallery = projectPhotoGallery(
@@ -130,6 +138,8 @@ export const projects: Project[] = [
       "Project photographs and design drawings where available",
     ],
     status: "completed",
+    thumbnail: sobProjectImageGallery[0]?.src,
+    gallery: sobProjectImageGallery,
   },
   {
     id: "raj-bungalows",
