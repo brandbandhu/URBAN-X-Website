@@ -2,14 +2,18 @@ import { Link } from "@/components/site/AppLink";
 import { PageBanner } from "@/components/site/PageBanner";
 import { SiteLayout } from "@/components/site/Layout";
 import { ArrowRight, Check, Mail, MapPin, Phone, Sparkles } from "lucide-react";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import locationMap from "@/assets/aishwarya-location-map.png";
-import rental from "@/assets/service-rental.jpg";
+import buildingExterior from "@/assets/aishwarya-heights/building-exterior.jpeg";
+import diningRoom from "@/assets/aishwarya-heights/dining-room.jpeg";
+import livingRoom from "@/assets/aishwarya-heights/living-room.jpeg";
+import locationMap from "@/assets/aishwarya-heights/location-map.png";
+import tvUnit from "@/assets/aishwarya-heights/tv-unit.jpeg";
+import unitPlans from "@/assets/aishwarya-heights/unit-plans.png";
 
 const quickFacts = [
   { label: "Location", value: "Kothrud, Pune" },
-  { label: "Homes", value: "2 BHK & 3 BHK" },
+  { label: "3 BHK", value: "1,042 sq.ft. carpet" },
+  { label: "3 BHK built-up", value: "1,405 sq.ft." },
+  { label: "2 BHK", value: "850 / 873 sq.ft. carpet" },
 ];
 
 const amenityGroups = [
@@ -44,24 +48,24 @@ const amenityGroups = [
 
 const companyHighlights = [
   {
-    label: "Residential focus",
-    title: "Thoughtful home planning",
+    label: "3 BHK homes",
+    title: "1,405 sq.ft. built-up",
     description:
-      "Aishwarya Realtors focuses on residential developments designed around comfort, practical layouts and day-to-day ease for families and professionals.",
+      "3 BHK flats 201, 301, 401, 501 and 601 carry a 1,042 sq.ft. carpet area and 1,405 sq.ft. built-up area.",
     accent: "bg-secondary/40",
   },
   {
-    label: "Location approach",
-    title: "Well-connected living",
+    label: "2 BHK homes",
+    title: "Two area options",
     description:
-      "The company emphasizes projects in accessible urban locations so residents can stay close to city essentials while enjoying a more comfortable lifestyle.",
+      "2 BHK flats are offered in two configurations: 873 sq.ft. carpet with 1,179 sq.ft. built-up, and 850 sq.ft. carpet with 1,148 sq.ft. built-up.",
     accent: "bg-background",
   },
   {
-    label: "Project philosophy",
-    title: "Quality with convenience",
+    label: "Promoters & developer",
+    title: "Marvel Holdings LLP",
     description:
-      "Across projects, the aim is to combine dependable execution, useful amenities and a living experience that feels practical, modern and welcoming.",
+      "Project by Dr. Mangesh Karad Sir at CTS No. 714, Survey No. 163, Sutar Hospital Road, Azad Nagar, Kothrud, Pune.",
     accent: "bg-secondary/40",
   },
 ];
@@ -134,12 +138,20 @@ const nearbyPlaces = [
 
 const projectPhotos = [
   {
-    src: "/aishwarya-height/aishwarya-heights-exterior-01.jpeg",
+    src: buildingExterior,
     alt: "Aishwarya Heights residential building exterior",
   },
   {
-    src: "/aishwarya-height/aishwarya-heights-exterior-02.jpeg",
-    alt: "Aishwarya Heights front elevation and entrance",
+    src: livingRoom,
+    alt: "Aishwarya Heights living room from the brochure",
+  },
+  {
+    src: diningRoom,
+    alt: "Aishwarya Heights dining room from the brochure",
+  },
+  {
+    src: tvUnit,
+    alt: "Aishwarya Heights TV unit from the brochure",
   },
 ];
 
@@ -193,10 +205,10 @@ export default function AishwaryaHeightPage() {
   return (
     <SiteLayout>
       <PageBanner
-        title="Aishwarya Realtors"
+        title="Aishwarya Heights"
         subtitle="Inspired Living, Perfectly Placed in Kothrud"
-        crumbs={[{ label: "Brands", to: "/services" }, { label: "Aishwarya Realtors" }]}
-        image={rental}
+        crumbs={[{ label: "Brands", to: "/services" }, { label: "Aishwarya Heights" }]}
+        image={buildingExterior}
       />
 
       <section className="py-14 md:py-28">
@@ -207,16 +219,17 @@ export default function AishwaryaHeightPage() {
               Project by Dr. Mangesh Karad Sir
             </div>
             <h2 className="gold-underline mb-6 text-3xl font-bold text-primary md:text-5xl">
-              A smarter way of city living
+              Inspired living, perfectly placed in Kothrud
             </h2>
             <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
-              At Aishwarya Realtors, you are not just buying a flat. You are stepping into a more
-              thoughtful way of living, with 2 BHK and 3 BHK homes designed for urban families and
-              professionals who want city access without giving up privacy, comfort or lifestyle.
+              At Aishwarya Heights, you're not just buying a flat - you're stepping into a smarter
+              way of city living. These thoughtfully designed 2 BHK and 3 BHK homes are made for
+              urban families and professionals who want to stay connected to the city's pulse
+              without compromising on privacy and lifestyle.
             </p>
             <p className="mt-5 leading-relaxed text-foreground/80">
-              The brochure presents the project as a refined residential offering in Kothrud, with
-              clear area statements, practical amenities and a strong focus on everyday ease.
+              The project is promoted by Marvel Holdings LLP and is located at CTS No. 714, Survey
+              No. 163, Sutar Hospital Road, Azad Nagar, Kothrud, Pune, Maharashtra - 411038.
             </p>
 
             <div className="mt-10 grid max-w-2xl gap-4 sm:grid-cols-2">
@@ -230,24 +243,23 @@ export default function AishwaryaHeightPage() {
                 Inspired quote
               </div>
               <p className="mt-4 text-lg leading-relaxed text-white/85">
-                "Inspired Living, Perfectly Placed in Kothrud" is the guiding idea behind the
-                brochure and the planning of the homes.
+                "Inspired Living, Perfectly Placed in Kothrud" is the project’s brochure promise.
               </p>
             </div>
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2">
             <img
-              src={hero1}
-              alt="Aishwarya Realtors living interior"
+              src={buildingExterior}
+              alt="Aishwarya Heights building exterior from the brochure"
               className="h-56 w-full rounded-3xl object-cover shadow-luxe sm:col-span-2 sm:h-80"
               loading="lazy"
               decoding="async"
               fetchPriority="low"
             />
             <img
-              src={hero2}
-              alt="Aishwarya Realtors residential ambience"
+              src={livingRoom}
+              alt="Aishwarya Heights living room from the brochure"
               className="h-56 w-full rounded-3xl object-cover shadow-card-luxe"
               loading="lazy"
               decoding="async"
@@ -264,7 +276,7 @@ export default function AishwaryaHeightPage() {
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
-                  href="tel:+918983630096"
+                  href="tel:+919637672233"
                   className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-4 py-2.5 text-sm font-semibold text-primary hover-lift"
                 >
                   <Phone className="h-4 w-4" />
@@ -286,9 +298,9 @@ export default function AishwaryaHeightPage() {
       <section className="bg-secondary/40 py-14 md:py-20">
         <div className="container-x">
           <SectionHeading
-            eyebrow="Project Gallery"
+            eyebrow="Brochure Gallery"
             title="Aishwarya Heights in Kothrud"
-            subtitle="A closer look at the residential project exterior, elevation and entrance approach."
+            subtitle="Actual project and interior visuals taken from the Aishwarya Heights brochure."
           />
 
           <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -310,27 +322,46 @@ export default function AishwaryaHeightPage() {
         </div>
       </section>
 
+      <section className="py-14 md:py-20">
+        <div className="container-x">
+          <SectionHeading
+            eyebrow="Unit Plans"
+            title="Typical 2nd to 6th floor plan"
+            subtitle="The brochure shows the 2 BHK and 3 BHK layouts together with their carpet and built-up area statements."
+          />
+          <div className="mx-auto mt-12 max-w-6xl overflow-hidden rounded-3xl bg-card shadow-luxe">
+            <img
+              src={unitPlans}
+              alt="Aishwarya Heights unit plans and area statements from the brochure"
+              className="h-auto w-full"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </section>
+
       <section className="bg-secondary/40 py-14 md:py-20">
         <div className="container-x">
           <SectionHeading
             eyebrow="Accessories"
             title="Comforts and fittings highlighted in the brochure"
-            subtitle="Security, access control, branded fixtures and living-room furnishings come together to shape the project's everyday experience."
+            subtitle="The brochure highlights security, elevators, sanitaryware, windows, generator backup and living-room furnishings."
           />
 
           <div className="mt-12 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
             <div className="grid gap-4 sm:grid-cols-2">
               <img
-                src={hero1}
-                alt="Interior living room"
+                src={livingRoom}
+                alt="Aishwarya Heights living room from the brochure"
                 className="h-64 w-full rounded-3xl object-cover shadow-luxe sm:col-span-2"
                 loading="lazy"
                 decoding="async"
                 fetchPriority="low"
               />
               <img
-                src={hero2}
-                alt="Styled residential room"
+                src={diningRoom}
+                alt="Aishwarya Heights dining room from the brochure"
                 className="h-56 w-full rounded-3xl object-cover shadow-card-luxe"
                 loading="lazy"
                 decoding="async"
@@ -367,9 +398,9 @@ export default function AishwaryaHeightPage() {
       <section className="py-14 md:py-28">
         <div className="container-x">
           <SectionHeading
-            eyebrow="Aishwarya Realtors"
+            eyebrow="Aishwarya Heights"
             title="What people should know about the company"
-            subtitle="Project layouts and specifications may vary, but Aishwarya Realtors is consistently centered on thoughtful planning, city convenience and comfortable residential living."
+            subtitle="Aishwarya Heights combines practical layouts, everyday amenities and a connected Kothrud location for comfortable residential living."
           />
 
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
@@ -451,7 +482,7 @@ export default function AishwaryaHeightPage() {
             <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-luxe">
               <img
                 src={locationMap}
-                alt="Aishwarya Realtors location map"
+                alt="Aishwarya Heights location map from the brochure"
                 className="aspect-[16/7] w-full object-cover object-center"
                 loading="lazy"
                 decoding="async"
@@ -469,14 +500,14 @@ export default function AishwaryaHeightPage() {
             <div className="relative mx-auto max-w-3xl">
               <Sparkles className="mx-auto mb-4 h-12 w-12 text-gold" />
               <h2 className="mb-4 text-3xl font-bold md:text-5xl">
-                Ready to explore Aishwarya Realtors?
+                Ready to explore Aishwarya Heights?
               </h2>
               <p className="mb-8 text-white/80">
                 Reach out for availability, unit plans and a walk-through of the brochure details.
               </p>
               <div className="flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                 <a
-                  href="tel:+918983630096"
+                  href="tel:+919637672233"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-gold px-7 py-3.5 font-semibold text-primary hover-lift sm:w-auto"
                 >
                   <Phone className="h-4 w-4" />

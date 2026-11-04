@@ -7,6 +7,10 @@ const galleryLabels: Record<string, string> = {
   "zz-university-higher-authority-guests.jpg": "University Higher authority Guests",
 };
 
+const excludedGalleryFiles = new Set([
+  "WhatsApp Image 2026-07-20 at 1.12.55 PM.jpeg",
+]);
+
 const compareGalleryEntries = ([pathA]: [string, string], [pathB]: [string, string]) => {
   const fileNameA = pathA.split("/").pop() ?? "";
   const fileNameB = pathB.split("/").pop() ?? "";
@@ -21,6 +25,7 @@ const compareGalleryEntries = ([pathA]: [string, string], [pathB]: [string, stri
 };
 
 export const theHungryScholarsGalleryItems = Object.entries(galleryModules)
+  .filter(([path]) => !excludedGalleryFiles.has(path.split("/").pop() ?? ""))
   .sort(compareGalleryEntries)
   .map(([path, src]) => {
     const fileName = path.split("/").pop() ?? "";

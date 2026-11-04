@@ -198,17 +198,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "agm-hostel-other-buildings",
-    slug: "agm-hostel-other-buildings",
-    title: "AGM Hostel and Other Buildings",
-    primaryCategory: portfolioCategories.institutional,
-    categories: ["institutional", "infrastructure", "interior-design"],
-    description:
-      "Hostel and institutional building work covering interior execution and infrastructure.",
-    scopeOfWork: ["Interior execution", "Building infrastructure"],
-    status: "completed",
-  },
-  {
     id: "aishwarya-realtors",
     slug: "aishwarya-realtors",
     title: "Aishwarya Realtors",

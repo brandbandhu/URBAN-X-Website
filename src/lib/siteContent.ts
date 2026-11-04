@@ -313,14 +313,6 @@ export const demarvelBrandCards: BrandCard[] = [
     to: "/aishwarya-height",
   },
   {
-    icon: Sofa,
-    label: "De Marvel Infra Solutions",
-    tagline: "Interior Experience",
-    description:
-      "Custom interiors, furnishing, mood boards and aesthetic solutions for homes, offices and specialist spaces.",
-    to: "/de-marvel-furnishings",
-  },
-  {
     icon: ChefHat,
     label: "The Hungry Scholars",
     tagline: "Institutional Catering",

@@ -120,7 +120,7 @@ export const newRoyalServicesData = {
       desc: "Supervision and feedback keep standards consistent over time.",
     },
   ],
-  gallery: [gardening, hero2, hero1, gardening],
+  gallery: [gardening, hero2, gardening],
 } satisfies ServicePageData;
 
 export const aishwaryaHeightData = {
