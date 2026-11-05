@@ -42,12 +42,12 @@ import {
   type CSSProperties,
   type ReactNode,
 } from "react";
-import aboutImg from "@/assets/about-building-enhanced.png";
+import aboutImg from "@/assets/about-building-enhanced.jpg";
 import landscapingCampus from "@/assets/landscaping-campus.jpeg";
 import marble from "@/assets/service-marble.jpg";
 import foodHeroImage from "@/assets/food-banner.jpeg";
-import housingHeroImage from "@/assets/new-royal-services/new-royal-services-featured.png";
-import interiorHeroImage from "@/assets/hero-luxury-living-room.png";
+import housingHeroImage from "@/assets/new-royal-services/new-royal-services-featured.jpg";
+import interiorHeroImage from "@/assets/hero-luxury-living-room.jpg";
 
 const foodDeliveryImage =
   "/project-photos/royal-foods-hospitality-services/royal-foods-hospitality-services-01.jpeg";

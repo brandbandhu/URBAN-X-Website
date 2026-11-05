@@ -1,4 +1,4 @@
-import featuredPhoto from "@/assets/new-royal-services/new-royal-services-featured.png";
+import featuredPhoto from "@/assets/new-royal-services/new-royal-services-featured.jpg";
 import photo01 from "@/assets/new-royal-services/new-royal-services-01.jpeg";
 import photo02 from "@/assets/new-royal-services/new-royal-services-02.jpeg";
 import photo03 from "@/assets/new-royal-services/new-royal-services-03.jpeg";

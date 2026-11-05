@@ -37,11 +37,11 @@ import {
 } from "@/lib/siteContent";
 
 const featuredInteriorGallery = [
-  "/de-marvel-furnishings/interior-bedroom-01.png",
-  "/de-marvel-furnishings/interior-study-01.png",
-  "/de-marvel-furnishings/interior-living-01.png",
-  "/de-marvel-furnishings/interior-bedroom-02.png",
-  "/de-marvel-furnishings/interior-living-02.png",
+  "/de-marvel-furnishings/interior-bedroom-01.jpg",
+  "/de-marvel-furnishings/interior-study-01.jpg",
+  "/de-marvel-furnishings/interior-living-01.jpg",
+  "/de-marvel-furnishings/interior-bedroom-02.jpg",
+  "/de-marvel-furnishings/interior-living-02.jpg",
 ];
 
 const newFurnitureGallery = Array.from(
