@@ -1,7 +1,17 @@
 import { BrandLogo } from "@/components/site/BrandLogo";
 import { Link } from "@/components/site/AppLink";
+import { projects } from "@/lib/projects";
 import { demarvelBrand, demarvelContact } from "@/lib/siteContent";
 import { Mail, MapPin, Phone } from "lucide-react";
+
+const footerProjectSlugs = [
+  "hungry-scholar",
+  "raj-bungalows",
+  "aishwarya-realtors",
+  "new-royal-services",
+  "royal-foods-hospitality-services",
+  "guest-house",
+];
 
 export function Footer() {
   return (
@@ -25,10 +35,20 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="gold-underline mb-5 font-display text-lg text-white">Our Clients</h4>
+          <h4 className="gold-underline mb-5 font-display text-lg text-white">Our Projects</h4>
           <ul className="mt-7 space-y-2 text-sm">
-            <li>SGM Services</li>
-            <li>Suryajyoti Services</li>
+            {projects
+              .filter((project) => footerProjectSlugs.includes(project.slug))
+              .map((project) => (
+                <li key={project.id}>
+                  <Link
+                    to={`/projects/${project.slug}`}
+                    className="transition-colors hover:text-gold"
+                  >
+                    {project.title}
+                  </Link>
+                </li>
+              ))}
           </ul>
         </div>
 

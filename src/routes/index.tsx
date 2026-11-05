@@ -12,7 +12,6 @@ import {
   demarvelGardeningDetails,
   demarvelHousingDetails,
   demarvelInteriorDetails,
-  demarvelItDetails,
   demarvelMission,
   demarvelVision,
   demarvelWhyChoose,
@@ -28,7 +27,6 @@ import {
   Construction,
   Home as HomeIcon,
   MapPin,
-  MonitorSmartphone,
   Phone,
   Route,
   ShieldCheck,
@@ -915,108 +913,6 @@ export default function HomePage() {
                 From concept design to execution and maintenance, every project is delivered with
                 precision, creativity and long-term value.
               </p>
-            </div>
-          </StackRail>
-        </div>
-      </section>
-
-      <section className="bg-secondary/40 py-20">
-        <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src="/project-photos/isbj-studio/isbj-studio-01.jpeg" alt="Studio project with lighting and media production equipment" />
-
-          <StackRail>
-            <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
-              <SectionHeading
-                align="left"
-                eyebrow="Technology and Media"
-                title="Professional, customized and scalable IT solutions"
-                subtitle="Supporting social media, digital marketing, software, content, training and automation needs."
-                titleClassName="max-w-2xl text-primary"
-                subtitleClassName="max-w-xl text-muted-foreground"
-              />
-              <div className="mt-6 rounded-2xl bg-secondary/50 p-5">
-                <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                  IT support promise
-                </div>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {demarvelItDetails.promise}
-                </p>
-              </div>
-            </div>
-
-            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="rounded-2xl bg-secondary/40 p-6">
-                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                  Content and growth
-                </div>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  Social media content, lead management, campaigns and production support shaped for
-                  consistent growth.
-                </p>
-              </div>
-              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
-                <ul className="grid gap-3 sm:grid-cols-2">
-                  {demarvelItDetails.services.slice(0, 4).map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
-                    >
-                      <MonitorSmartphone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="rounded-2xl bg-secondary/40 p-6">
-                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                  Development and operations
-                </div>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  Website content, ERP implementation, mobile apps, team handling and training
-                  support.
-                </p>
-              </div>
-              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
-                <ul className="grid gap-3 sm:grid-cols-2">
-                  {demarvelItDetails.services.slice(4, 8).map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
-                    >
-                      <MonitorSmartphone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="rounded-2xl bg-secondary/40 p-6">
-                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                  Engagement and support
-                </div>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  Chatbot development, customer engagement and scalable support built around your
-                  workflow.
-                </p>
-              </div>
-              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
-                <ul className="grid gap-3 sm:grid-cols-2">
-                  {demarvelItDetails.services.slice(8).map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
-                    >
-                      <MonitorSmartphone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
           </StackRail>
         </div>

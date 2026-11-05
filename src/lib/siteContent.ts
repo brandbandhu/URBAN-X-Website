@@ -53,7 +53,7 @@ export const demarvelContact = {
   whatsappHref: "https://wa.me/918983630096",
   email: undefined,
   emailHref: undefined,
-  director: "Raghvendra Chate",
+  director: "Virendra Pratap Karad",
   studioSize: "1,500 sq. ft. design studio",
 };
 
@@ -67,7 +67,7 @@ export const demarvelStudio = {
 
 export const demarvelTeam = [
   { name: "Rajeshwari Karad", role: "De Marvel Infra Solutions Team" },
-  { name: "Raghvendra Chate", role: "Director" },
+  { name: "Virendra Pratap Karad", role: "Director" },
   { name: "Virendra Pratap Karad", role: "Deputy Director" },
   { name: "Krishna Yadav", role: "Special Duty Officer" },
   { name: "Bhosale", role: "Operations Manager" },
