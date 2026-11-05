@@ -1,10 +1,10 @@
 import { Link } from "@/components/site/AppLink";
 import { PageBanner } from "@/components/site/PageBanner";
 import { SiteLayout } from "@/components/site/Layout";
+import { projects } from "@/lib/projects";
 import {
   demarvelBrand,
   demarvelContact,
-  demarvelProjectHighlights,
   demarvelServiceAreas,
   demarvelStudio,
   demarvelTeam,
@@ -16,6 +16,14 @@ import { ArrowRight, Compass, Mail, Phone, Route, Sparkles, Star } from "lucide-
 import aboutImg from "@/assets/about-building-enhanced.png";
 
 const focusCards = demarvelServiceAreas.slice(0, 4);
+const aboutProjectSlugs = [
+  "hungry-scholar",
+  "raj-bungalows",
+  "aishwarya-realtors",
+  "new-royal-services",
+  "royal-foods-hospitality-services",
+  "guest-house",
+];
 
 export default function AboutPage() {
   return (
@@ -165,16 +173,18 @@ export default function AboutPage() {
             <h3 className="mb-5 text-3xl font-bold text-primary">
               Work that reflects the De Marvel Infra Solutions standard
             </h3>
-            <div className="space-y-4">
-              {demarvelProjectHighlights.map((project) => (
+            <div className="grid gap-3 lg:grid-cols-2">
+              {projects
+                .filter((project) => aboutProjectSlugs.includes(project.slug))
+                .map((project) => (
                 <div
-                  key={project}
+                  key={project.id}
                   className="flex items-center gap-3 rounded-xl border border-border bg-secondary p-4"
                 >
                   <Sparkles className="h-5 w-5 text-gold" />
-                  <span className="font-semibold text-primary">{project}</span>
+                  <span className="font-semibold text-primary">{project.title}</span>
                 </div>
-              ))}
+                ))}
             </div>
             <div className="mt-8 rounded-2xl bg-primary p-6 text-white">
               <div className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
