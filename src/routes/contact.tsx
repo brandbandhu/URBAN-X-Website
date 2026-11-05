@@ -5,7 +5,6 @@ import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import { demarvelBrand, demarvelContact, theHungryScholarsContact } from "@/lib/siteContent";
 import { Check, Mail, MapPin, Phone, Send } from "lucide-react";
 import type { FormEvent } from "react";
-import aboutImg from "@/assets/about-demarvel.jpg";
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
@@ -44,7 +43,7 @@ export default function ContactPage() {
         title="Contact De Marvel Infra Solutions"
         subtitle="From site development to the final detail, let’s design and transform your space."
         crumbs={[{ label: "Contact" }]}
-        image={aboutImg}
+        image="/shriniwas/sahyadri.JPG"
       />
 
       <section className="py-14 md:py-20">

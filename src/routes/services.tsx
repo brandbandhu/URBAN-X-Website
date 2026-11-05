@@ -13,7 +13,6 @@ import {
   demarvelStudio,
 } from "@/lib/siteContent";
 import { ArrowRight, Check, Sparkles } from "lucide-react";
-import aboutImg from "@/assets/about-demarvel.jpg";
 
 export default function ServicesPage() {
   return (
@@ -22,7 +21,7 @@ export default function ServicesPage() {
         title="Services"
         subtitle={demarvelBrand.tagline}
         crumbs={[{ label: "Services" }]}
-        image={aboutImg}
+        image="/aishwarya-realtors/aishwarya-realtors.jpg"
       />
 
       <section id="services" className="py-14 md:py-28">

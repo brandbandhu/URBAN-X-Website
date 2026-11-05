@@ -276,7 +276,7 @@ export default function HomePage() {
                 className={cn(
                   "max-w-5xl animate-fade-up",
                   activeSlide.designedBackground &&
-                    "max-w-3xl md:max-w-2xl",
+                    "max-w-3xl md:max-w-4xl",
                 )}
               >
                 {activeSlide.designedBackground ? (
@@ -306,7 +306,7 @@ export default function HomePage() {
                     </p>
                   </>
                 )}
-                <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:gap-4">
+                <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:gap-4 md:flex-nowrap">
                   <Link
                     to="/contact"
                     className="col-span-2 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-gradient-gold px-3 py-3 text-center text-sm font-semibold text-primary hover-lift sm:w-auto sm:px-7 sm:py-3.5 sm:text-base"
