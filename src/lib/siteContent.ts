@@ -66,11 +66,11 @@ export const demarvelStudio = {
 };
 
 export const demarvelTeam = [
-  { name: "Rajeshwari Karad", role: "De Marvel Infra Solutions Team" },
+  { name: "Raghvendra", role: "De Marvel Infra Solutions Team" },
   { name: "Virendra Pratap Karad", role: "Director" },
   { name: "Virendra Pratap Karad", role: "Deputy Director" },
   { name: "Krishna Yadav", role: "Special Duty Officer" },
-  { name: "Bhosale", role: "Operations Manager" },
+  { name: "Sagar Bhosale", role: "Operations Manager" },
   { name: "Alefia", role: "Interior Designer" },
   { name: "Sahil", role: "Interior Design Team" },
   { name: "Rahul Singh", role: "Interior Design Team" },
