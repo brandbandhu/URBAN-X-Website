@@ -546,8 +546,13 @@ export default function HomePage() {
       </section>
 
       <section className="bg-secondary/40 py-20">
-        <div className="container-x">
-          <StackRail className="mx-auto max-w-4xl">
+        <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <ServiceMedia
+            src="/project-photos/vip-events/vip-events-04.jpeg"
+            alt="Guests gathered in a decorated event hall"
+          />
+
+          <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
               <SectionHeading
                 align="left"
