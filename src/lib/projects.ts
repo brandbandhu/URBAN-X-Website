@@ -1,3 +1,4 @@
+import landscapedLawn from "@/assets/lawns.png";
 import { newRoyalServicesGallery } from "@/lib/newRoyalServicesGallery";
 import { comLaboratoriesGallery } from "@/lib/comLaboratoriesGallery";
 import { sobProjectGallery } from "@/lib/sobProjectGallery";
@@ -243,7 +244,7 @@ export const projects: Project[] = [
       "Other verified design or execution work",
     ],
     status: "completed",
-    thumbnail: newRoyalProjectGallery[0]?.src,
+    thumbnail: landscapedLawn,
     gallery: newRoyalProjectGallery,
     associatedOrganization: "New Royal Services",
   },

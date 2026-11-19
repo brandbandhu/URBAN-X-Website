@@ -41,7 +41,7 @@ import {
   type ReactNode,
 } from "react";
 import aboutImg from "@/assets/about-building-enhanced.jpg";
-import landscapingCampus from "@/assets/landscaping-campus.jpeg";
+import landscapedLawn from "@/assets/lawns.png";
 import marble from "@/assets/service-marble.jpg";
 import housingHeroImage from "@/assets/new-royal-services/new-royal-services-featured.jpg";
 import interiorHeroImage from "@/assets/hero-luxury-living-room.jpg";
@@ -729,7 +729,7 @@ export default function HomePage() {
 
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={landscapingCampus} alt="Landscaped campus with lawns, palm trees and a domed building" />
+          <ServiceMedia src={landscapedLawn} alt="Landscaped lawn with curved planting beds" />
 
           <StackRail>
             <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">

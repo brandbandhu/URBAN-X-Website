@@ -28,6 +28,7 @@ import hero3 from "@/assets/hero-3.jpg";
 import marble from "@/assets/service-marble.jpg";
 import rental from "@/assets/service-rental.jpg";
 import { theHungryScholarsGallery } from "@/lib/theHungryScholarsGallery";
+import landscapedLawn from "@/assets/lawns.png";
 import { newRoyalServicesGallery } from "@/lib/newRoyalServicesGallery";
 import {
   theHungryScholarsDirectorMessage,
@@ -56,7 +57,7 @@ export const newRoyalServicesData = {
   tagline:
     "Landscaping, outdoor design, interior designing, architecture and IT support for homes and businesses.",
   detailBasePath: "/new-royal-services",
-  banner: newRoyalServicesGallery[0],
+  banner: landscapedLawn,
   intro:
     "New Royal Services brings multi-discipline support for homes, institutions and workplaces - from landscaping and outdoor design to interiors, architecture and IT solutions.",
   about: [
