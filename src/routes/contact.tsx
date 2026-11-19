@@ -242,7 +242,6 @@ export default function ContactPage() {
                     >
                       <option value="">Select a service</option>
                       <option>Smart Housing & Real Estate Solutions</option>
-                      <option>Food Delivery Services</option>
                       <option>Interior Experience for All Places</option>
                       <option>Events & Management</option>
                       <option>Construction & Contracting Services</option>

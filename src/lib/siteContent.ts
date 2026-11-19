@@ -90,12 +90,6 @@ export const demarvelHeroSlides = [
     description:
       "We have delivered 50+ projects across Pune with a strong focus on comfort and dependable management.",
   },
-  {
-    eyebrow: "Food and Interiors",
-    title: "Fresh meals and beautiful spaces, planned with care.",
-    description:
-      "From daily meals and catering to custom interiors and premium furnishing, De Marvel Infra Solutions helps build better routines and better environments.",
-  },
 ];
 
 export const demarvelServiceAreas: IconCard[] = [
@@ -434,28 +428,6 @@ export const demarvelHousingDetails = {
     "Every space is thoughtfully planned to feel like a true home away from home, giving residents a supportive environment.",
 };
 
-export const demarvelFoodDetails = {
-  summary:
-    "De Marvel Infra Solutions serves freshly prepared meals to more than 2,500 customers every day with a strong focus on taste, nutrition, hygiene and timely delivery.",
-  menu: [
-    "Indian cuisine, including authentic Maharashtrian flavours",
-    "Continental dishes",
-    "Italian, Mexican and Chinese cuisines",
-    "Specialized meals for diabetic patients and hospital dietary requirements",
-    "Dietary foods, salads and sprouts",
-  ],
-  catering: [
-    "Weddings",
-    "Birthday parties",
-    "Cocktail events",
-    "Corporate gatherings",
-    "Social celebrations",
-  ],
-  kitchen:
-    "Our kitchen spaces are more than 1000 square feet, supporting both daily meals and large-scale catering operations.",
-  note: "Add different menus to suit changing customer needs and special occasions.",
-};
-
 export const demarvelInteriorDetails = {
   summary:
     "Transform your space with modern, functional and aesthetic interior solutions designed by professionals with over 10 years of experience and more than 10 lakh square feet of completed work.",
@@ -617,22 +589,6 @@ export const demarvelConstructionSpecialties = [
   "Air conditioning and HVAC systems",
   "Lift lobbies and common area development",
   "Glass facades and cladding for corporate spaces",
-];
-
-export const demarvelFoodMenuHighlights = [
-  "Indian cuisine with authentic Maharashtrian flavors",
-  "Continental dishes",
-  "Italian, Mexican and Chinese cuisine",
-  "Special meals for diabetic and hospital dietary requirements",
-  "Dietary foods, salads and sprouts",
-];
-
-export const demarvelFoodServiceCategories = [
-  "Weddings",
-  "Birthday parties",
-  "Cocktail events",
-  "Corporate gatherings",
-  "Social celebrations",
 ];
 
 export const theHungryScholarsMetrics = [

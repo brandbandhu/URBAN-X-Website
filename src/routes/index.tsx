@@ -8,7 +8,6 @@ import {
   demarvelContact,
   demarvelCoreCapabilities,
   demarvelEventsDetails,
-  demarvelFoodDetails,
   demarvelGardeningDetails,
   demarvelHousingDetails,
   demarvelInteriorDetails,
@@ -22,7 +21,6 @@ import {
   ArrowRight,
   CalendarDays,
   Check,
-  ChefHat,
   Compass,
   Construction,
   Home as HomeIcon,
@@ -45,12 +43,8 @@ import {
 import aboutImg from "@/assets/about-building-enhanced.jpg";
 import landscapingCampus from "@/assets/landscaping-campus.jpeg";
 import marble from "@/assets/service-marble.jpg";
-import foodHeroImage from "@/assets/food-banner.jpeg";
 import housingHeroImage from "@/assets/new-royal-services/new-royal-services-featured.jpg";
 import interiorHeroImage from "@/assets/hero-luxury-living-room.jpg";
-
-const foodDeliveryImage =
-  "/project-photos/royal-foods-hospitality-services/royal-foods-hospitality-services-01.jpeg";
 
 const heroSlides = [
   {
@@ -68,14 +62,6 @@ const heroSlides = [
     title: "50+ projects delivered across Pune.",
     description:
       "Thoughtful residential, commercial and institutional spaces shaped around comfort and dependable management.",
-  },
-  {
-    img: foodHeroImage,
-    designedBackground: false,
-    eyebrow: "Food Delivery",
-    title: "Fresh meals, large-scale catering and cloud kitchen support.",
-    description:
-      "Serving more than 2,500 customers every day with menus built for taste, nutrition, hygiene and timely delivery.",
   },
 ];
 
@@ -503,94 +489,6 @@ export default function HomePage() {
                   </span>
                 ))}
               </div>
-            </div>
-          </StackRail>
-        </div>
-      </section>
-
-      <section className="bg-secondary/40 py-20">
-        <div className="container-x grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <ServiceMedia src={foodDeliveryImage} alt="Institutional food service dining hall" />
-
-          <StackRail>
-            <div className="rounded-[2rem] bg-background p-6 shadow-luxe md:p-8">
-              <SectionHeading
-                align="left"
-                eyebrow="De Marvel Infra Solutions: Food Delivery Services"
-                title="Fresh meals for more than 2,500 customers every day"
-                subtitle="Freshly prepared meals, special dietary options and large-scale catering handled with hygiene, taste and timely delivery."
-                titleClassName="max-w-2xl text-primary"
-                subtitleClassName="max-w-xl text-muted-foreground"
-              />
-              <div className="mt-6 rounded-2xl bg-secondary/50 p-5">
-                <div className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                  Kitchen scale
-                </div>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {demarvelFoodDetails.kitchen}
-                </p>
-              </div>
-            </div>
-
-            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="rounded-2xl bg-secondary/40 p-6">
-                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                  Menu range
-                </div>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  Fresh menus built for changing tastes, nutrition and everyday convenience.
-                </p>
-              </div>
-              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
-                <ul className="grid gap-3 sm:grid-cols-2">
-                  {demarvelFoodDetails.menu.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
-                    >
-                      <ChefHat className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="rounded-2xl bg-secondary/40 p-6">
-                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                  Catering focus
-                </div>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  Weddings, birthdays, cocktail events, corporate gatherings and social
-                  celebrations.
-                </p>
-              </div>
-              <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
-                <div className="flex flex-wrap gap-2">
-                  {demarvelFoodDetails.catering.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-border bg-secondary px-4 py-2 text-sm text-foreground/80"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-2xl bg-card p-6 shadow-card-luxe">
-              <div className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                Menus on request
-              </div>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {demarvelFoodDetails.note}
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-foreground/80">
-                We keep the service flexible so changing customer needs and special occasions are
-                easy to handle.
-              </p>
             </div>
           </StackRail>
         </div>
