@@ -43,7 +43,6 @@ import {
 import aboutImg from "@/assets/about-building-enhanced.jpg";
 import landscapedLawn from "@/assets/lawns.png";
 import marble from "@/assets/service-marble.jpg";
-import housingHeroImage from "@/assets/new-royal-services/new-royal-services-featured.jpg";
 import interiorHeroImage from "@/assets/hero-luxury-living-room.jpg";
 
 const heroSlides = [
@@ -56,7 +55,7 @@ const heroSlides = [
       "From site development and architectural planning to interiors, automation, landscaping, furniture and turnkey execution - one integrated design studio for the complete journey.",
   },
   {
-    img: housingHeroImage,
+    img: landscapedLawn,
     designedBackground: false,
     eyebrow: "Smart Housing",
     title: "50+ projects delivered across Pune.",
